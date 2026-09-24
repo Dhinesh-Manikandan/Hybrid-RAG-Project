@@ -1,0 +1,244 @@
+SCHEME NAME
+Pradhan Mantri Awas Yojana - Urban
+
+MINISTRY
+Ministry Of Housing & Urban Affairs
+
+CATEGORIES
+Housing
+Loan
+Rehabilitation
+Sanitation
+Urban
+
+
+DETAILS
+
+Pradhan Mantri Awas Yojana - Urban (PMAY-U) is a scheme of the Ministry of Housing & Urban Affairs (MoHUA), Government of India.
+
+The scheme was launched to address the urban housing shortage among economically weaker sections (EWS), low income groups (LIG), middle income groups (MIG), including slum dwellers, by ensuring a pucca house to eligible urban households.
+
+The scheme covers statutory towns as per Census 2011 and towns subsequently notified. It also provides support for affordable housing and improvement of housing conditions in urban areas.
+
+The scheme includes provisions related to slum rehabilitation, affordable housing, credit linked subsidy and beneficiary-led individual house construction or enhancement.
+
+Aadhaar or Virtual ID may be required for beneficiaries under the scheme.
+
+The mission aims to provide affordable and adequate housing to eligible beneficiaries in urban areas.
+
+
+BENEFITS
+
+1. Slum Rehabilitation
+
+Slum dwellers are provided houses using land as a resource with the participation of private developers wherever applicable.
+
+2. Credit Linked Subsidy Scheme (CLSS)
+
+Interest subsidy is provided on housing loans to eligible beneficiaries belonging to specified income categories.
+
+The scheme covers eligible beneficiaries under different income categories including Economically Weaker Sections (EWS), Low Income Groups (LIG), and Middle Income Groups (MIG).
+
+3. Affordable Housing in Partnership (AHP)
+
+Affordable housing is provided through partnerships between public and private agencies for eligible beneficiaries.
+
+4. Beneficiary-Led Individual House Construction or Enhancement (BLC)
+
+Eligible beneficiaries are provided assistance for construction of new houses or enhancement of existing houses.
+
+
+ELIGIBILITY
+
+1. Income Category
+
+The family should fall under the applicable income category specified under the scheme, including:
+
+- Economically Weaker Section (EWS)
+- Low Income Group (LIG)
+- Middle Income Group I (MIG-I)
+- Middle Income Group II (MIG-II)
+
+2. Ownership of Pucca House
+
+The beneficiary family should not own a pucca house anywhere in India.
+
+3. Definition of Family
+
+The beneficiary family consists of the husband, wife and unmarried children.
+
+4. Location
+
+The beneficiary should belong to a town or city covered under the scheme.
+
+5. Previous Government Housing Benefits
+
+The beneficiary family should not have previously availed benefits under any housing-related scheme of the Government of India, as applicable under the scheme.
+
+
+APPLICATION PROCESS
+
+1. Eligible beneficiaries can apply for PMAY-U through the applicable application process provided by the government.
+
+2. Applications may be submitted through the online system or through the concerned Urban Local Body (ULB) or other designated agencies.
+
+3. The applicant must provide the required personal, family, income and other details along with the necessary documents.
+
+4. The application is verified by the concerned authorities before the beneficiary is considered for assistance under the applicable component of PMAY-U.
+
+
+DOCUMENTS REQUIRED
+
+1. Aadhaar Card / Aadhaar Number or Virtual ID, wherever applicable.
+
+2. Identity proof.
+
+3. Address proof.
+
+4. Income certificate / income-related details.
+
+5. Bank account details.
+
+6. Mobile number.
+
+7. Details of family members.
+
+8. Details related to existing house or land, wherever applicable.
+
+9. Self-declaration or undertaking regarding ownership of a pucca house.
+
+10. Documents required by the concerned Urban Local Body or implementing agency.
+
+11. Additional documents as required under the applicable component of PMAY-U.
+
+12. Other supporting documents as specified by the concerned authority.
+
+
+FREQUENTLY ASKED QUESTIONS
+
+1. What are the implementation components of PMAY-U?
+
+Except for the component of Credit Linked Subsidy which is implemented as a Central Sector Scheme, the rest of the mission is implemented as Centrally Sponsored Scheme (CSS).
+
+
+2. I need to know the technical specifications, construction standards of the houses/slums that will be built under this scheme?
+
+The houses must conform to the standards provided in National Building Code (NBC) and Bureau of Indian Standards (BIS).
+
+For a detailed description of the houses/slums, please refer Section-2 of the scheme guidelines:
+
+https://pmay-urban.gov.in/uploads/guidelines/60180813309f2-Updated%20guidelines%20of%20PMAY-U.pdf
+
+
+3. Are there any sections that would be given preference while providing the benefits?
+
+Preference will be given to differently-abled persons, senior citizens, SCs, STs, OBCs, Minority, single women, transgender and other weaker & vulnerable sections of the society.
+
+
+4. Will I still be eligible to apply for government’s ongoing or upcoming schemes if I apply for PMAY-U?
+
+The benefits of all existing and future rural schemes will not be denied to a beneficiary solely on the grounds that she/he has availed a house under PMAY(U).
+
+
+5. I am a beneficiary of PMAY (G) but I am in the permanent waitlist. What are my options?
+
+The beneficiaries in the permanent wait list of PMAY (G) will have the flexibility for opting for a house under PMAY(G) or PMAY(U).
+
+
+6. How do I know if my town is covered under the scheme?
+
+You can visit the following website to check the same:
+
+https://pmay-urban.gov.in/pmayprogress
+
+Alternatively, you can visit:
+
+https://pmay-urban.gov.in/
+
+and head to "City Wise Progress".
+
+
+7. For how long am I required to be residing in an urban area to become a beneficiary under this scheme?
+
+The States/UTs, at their discretion, may decide a cut-off date on which beneficiaries need to be a resident of that urban area for being eligible to take benefits under the scheme.
+
+
+8. Will central assistance be provided for rehabilitation of dwellers from slums built on private land?
+
+No, slums built on private land are not covered under central assistance.
+
+
+9. Is there a private entity authorised by MoHUA to collect fee from the beneficiary under PMAY-U?
+
+No private entity/persons have been authorised by MoHUA to collect this fee from any beneficiary under this scheme.
+
+
+10. How do I check my application status?
+
+There are two ways in which the applicant can check his/her application status.
+
+Method-1: Using Assessment ID.
+
+Step 1:
+Log on to the Pradhan Mantri Awas Yojana website:
+
+http://pmaymis.gov.in/Track_Application_Status.aspx
+
+or go to the "Citizen Application" option and then choose the "Check Status" button.
+
+Step 2:
+When you hit the track button, there will be two options displayed:
+
+"By Name, Father's Name & Mobile No"
+
+and
+
+"By Assessment ID".
+
+Step 3:
+Choose the "By Assessment ID" option.
+
+Step 4:
+Enter the Assessment ID and Mobile Number that was assigned when the form was filled and submitted.
+
+Step 5:
+After filling in the details, click "Submit".
+
+Step 6:
+The user can view the progress of his/her application.
+
+
+Method-2: Using Name, Father's Name and Mobile Number.
+
+Step 1:
+Log on to the Pradhan Mantri Awas Yojana website:
+
+http://pmaymis.gov.in/
+
+and go to the "Citizen Application" option and then choose the "Check Status" button.
+
+Step 2:
+After clicking on the "Know Your Status" button, choose the "By Name, Father's Name & Mobile No" option.
+
+Step 3:
+Provide the State, District and City details.
+
+Step 4:
+The next step is to fill in the Name, Father's name and Mobile Number.
+
+Step 5:
+Once this is done, click "Submit".
+
+Step 6:
+Once this is done, the status can be viewed.
+
+
+SOURCE
+
+Government of India - myScheme
+
+https://www.myscheme.gov.in/schemes/pmay-u
+
+Official PMAY-U Website
+
+https://pmay-urban.gov.in/
