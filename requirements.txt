@@ -1,0 +1,10 @@
+# Core AI & RAG Dependencies
+# langchain
+# llama-index
+# sentence-transformers
+# chromadb / faiss-cpu / qdrant-client
+# openai / google-generativeai / anthropic
+# rank_bm25
+# pandas
+# numpy
+# jupyter
