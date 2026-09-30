@@ -1,0 +1,5 @@
+Model,Num Queries,Correctness Mean,Correctness Std,Relevancy Mean,Relevancy Std,Faithfulness Mean,Faithfulness Std
+Naive RAG,1,1.0000,0.0000,0.5341,0.0000,1.0000,0.0000
+Sentence Window,1,1.0000,0.0000,0.5318,0.0000,0.0000,0.0000
+Parent-Child,1,1.0000,0.0000,0.5318,0.0000,0.0000,0.0000
+Hybrid RAG,1,1.0000,0.0000,0.5518,0.0000,1.0000,0.0000

@@ -7,9 +7,9 @@
     "overall_hit_at_10": 1.0,
     "overall_mrr": 0.9858,
     "latency": {
-      "mean_seconds": 3.758,
-      "median_seconds": 3.3745,
-      "p95_seconds": 6.8802
+      "mean_seconds": 2.3849,
+      "median_seconds": 2.328,
+      "p95_seconds": 2.867
     },
     "multi_target_queries": 11,
     "all_expected_in_top5_rate": 0.7273,
@@ -206,7 +206,7 @@
       "question_type": "eligibility",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 16.8836,
+      "latency_seconds": 5.4375,
       "top_1_doc": "atal_pension_yojana.txt",
       "top_3_docs": [
         "atal_pension_yojana.txt",
@@ -270,7 +270,7 @@
       "question_type": "financial_limits",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.2112,
+      "latency_seconds": 4.1667,
       "top_1_doc": "atal_pension_yojana.txt",
       "top_3_docs": [
         "atal_pension_yojana.txt",
@@ -334,7 +334,7 @@
       "question_type": "rules",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 2.303,
+      "latency_seconds": 2.9805,
       "top_1_doc": "atal_pension_yojana.txt",
       "top_3_docs": [
         "atal_pension_yojana.txt",
@@ -398,7 +398,7 @@
       "question_type": "benefits",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.0449,
+      "latency_seconds": 2.5867,
       "top_1_doc": "atal_pension_yojana.txt",
       "top_3_docs": [
         "atal_pension_yojana.txt",
@@ -462,7 +462,7 @@
       "question_type": "procedure",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 2.5828,
+      "latency_seconds": 2.8281,
       "top_1_doc": "atal_pension_yojana.txt",
       "top_3_docs": [
         "atal_pension_yojana.txt",
@@ -526,7 +526,7 @@
       "question_type": "benefits",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 2.1335,
+      "latency_seconds": 2.2998,
       "top_1_doc": "pm_gkay.txt",
       "top_3_docs": [
         "pm_gkay.txt",
@@ -590,7 +590,7 @@
       "question_type": "eligibility",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.2813,
+      "latency_seconds": 2.5469,
       "top_1_doc": "pm_gkay.txt",
       "top_3_docs": [
         "pm_gkay.txt",
@@ -654,7 +654,7 @@
       "question_type": "rules",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 2.3511,
+      "latency_seconds": 2.5909,
       "top_1_doc": "pm_gkay.txt",
       "top_3_docs": [
         "pm_gkay.txt",
@@ -718,7 +718,7 @@
       "question_type": "procedure",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.5248,
+      "latency_seconds": 3.0931,
       "top_1_doc": "pmuy.txt",
       "top_3_docs": [
         "pmuy.txt",
@@ -782,7 +782,7 @@
       "question_type": "documents",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 2.4663,
+      "latency_seconds": 2.6448,
       "top_1_doc": "pm_gkay.txt",
       "top_3_docs": [
         "pm_gkay.txt",
@@ -846,7 +846,7 @@
       "question_type": "financial_limits",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 2.2512,
+      "latency_seconds": 2.2374,
       "top_1_doc": "pm_kisan.txt",
       "top_3_docs": [
         "pm_kisan.txt",
@@ -910,7 +910,7 @@
       "question_type": "eligibility",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.2627,
+      "latency_seconds": 2.2131,
       "top_1_doc": "pm_kisan.txt",
       "top_3_docs": [
         "pm_kisan.txt",
@@ -974,7 +974,7 @@
       "question_type": "rules",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 2.1606,
+      "latency_seconds": 2.1472,
       "top_1_doc": "pm_kisan.txt",
       "top_3_docs": [
         "pm_kisan.txt",
@@ -1038,7 +1038,7 @@
       "question_type": "documents",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.0554,
+      "latency_seconds": 2.4904,
       "top_1_doc": "pm_kisan.txt",
       "top_3_docs": [
         "pm_kisan.txt",
@@ -1102,7 +1102,7 @@
       "question_type": "purpose",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 1.9019,
+      "latency_seconds": 1.9123,
       "top_1_doc": "pm_kisan.txt",
       "top_3_docs": [
         "pm_kisan.txt",
@@ -1166,7 +1166,7 @@
       "question_type": "financial_limits",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 1.8503,
+      "latency_seconds": 2.2024,
       "top_1_doc": "pm_svanidhi.txt",
       "top_3_docs": [
         "pm_svanidhi.txt",
@@ -1230,7 +1230,7 @@
       "question_type": "benefits",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.1317,
+      "latency_seconds": 2.3361,
       "top_1_doc": "pm_svanidhi.txt",
       "top_3_docs": [
         "pm_svanidhi.txt",
@@ -1294,7 +1294,7 @@
       "question_type": "eligibility",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 2.495,
+      "latency_seconds": 2.6574,
       "top_1_doc": "pm_svanidhi.txt",
       "top_3_docs": [
         "pm_svanidhi.txt",
@@ -1358,7 +1358,7 @@
       "question_type": "procedure",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.2621,
+      "latency_seconds": 2.3267,
       "top_1_doc": "pm_svanidhi.txt",
       "top_3_docs": [
         "pm_svanidhi.txt",
@@ -1422,7 +1422,7 @@
       "question_type": "documents",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 2.9905,
+      "latency_seconds": 2.0792,
       "top_1_doc": "pm_svanidhi.txt",
       "top_3_docs": [
         "pm_svanidhi.txt",
@@ -1486,7 +1486,7 @@
       "question_type": "purpose",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 3.6341,
+      "latency_seconds": 2.2656,
       "top_1_doc": "pm_vishwakarma.txt",
       "top_3_docs": [
         "pm_vishwakarma.txt",
@@ -1550,7 +1550,7 @@
       "question_type": "financial_limits",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 3.6261,
+      "latency_seconds": 2.2636,
       "top_1_doc": "pm_vishwakarma.txt",
       "top_3_docs": [
         "pm_vishwakarma.txt",
@@ -1614,7 +1614,7 @@
       "question_type": "benefits",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 3.6153,
+      "latency_seconds": 2.4129,
       "top_1_doc": "pm_vishwakarma.txt",
       "top_3_docs": [
         "pm_vishwakarma.txt",
@@ -1678,7 +1678,7 @@
       "question_type": "rules",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 3.9602,
+      "latency_seconds": 2.7644,
       "top_1_doc": "pm_vishwakarma.txt",
       "top_3_docs": [
         "pm_vishwakarma.txt",
@@ -1742,7 +1742,7 @@
       "question_type": "benefits",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 3.4312,
+      "latency_seconds": 2.3358,
       "top_1_doc": "pm_vishwakarma.txt",
       "top_3_docs": [
         "pm_vishwakarma.txt",
@@ -1806,7 +1806,7 @@
       "question_type": "financial_limits",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 4.4833,
+      "latency_seconds": 2.5276,
       "top_1_doc": "pmay_g.txt",
       "top_3_docs": [
         "pmay_g.txt",
@@ -1870,7 +1870,7 @@
       "question_type": "benefits",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 3.6269,
+      "latency_seconds": 2.2777,
       "top_1_doc": "pmay_g.txt",
       "top_3_docs": [
         "pmay_g.txt",
@@ -1934,7 +1934,7 @@
       "question_type": "eligibility",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 3.7732,
+      "latency_seconds": 2.4154,
       "top_1_doc": "pmay_g.txt",
       "top_3_docs": [
         "pmay_g.txt",
@@ -1998,7 +1998,7 @@
       "question_type": "rules",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 3.827,
+      "latency_seconds": 2.4231,
       "top_1_doc": "pmay_g.txt",
       "top_3_docs": [
         "pmay_g.txt",
@@ -2062,7 +2062,7 @@
       "question_type": "procedure",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 3.7851,
+      "latency_seconds": 2.4592,
       "top_1_doc": "pmay_g.txt",
       "top_3_docs": [
         "pmay_g.txt",
@@ -2126,7 +2126,7 @@
       "question_type": "purpose",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 3.5244,
+      "latency_seconds": 2.2397,
       "top_1_doc": "pmay_u.txt",
       "top_3_docs": [
         "pmay_u.txt",
@@ -2190,7 +2190,7 @@
       "question_type": "eligibility",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 3.3177,
+      "latency_seconds": 2.2376,
       "top_1_doc": "pmay_u.txt",
       "top_3_docs": [
         "pmay_u.txt",
@@ -2254,7 +2254,7 @@
       "question_type": "rules",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 3.9763,
+      "latency_seconds": 2.869,
       "top_1_doc": "pmay_u.txt",
       "top_3_docs": [
         "pmay_u.txt",
@@ -2318,7 +2318,7 @@
       "question_type": "benefits",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 4.0236,
+      "latency_seconds": 2.0787,
       "top_1_doc": "pmay_u.txt",
       "top_3_docs": [
         "pmay_u.txt",
@@ -2382,7 +2382,7 @@
       "question_type": "documents",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 4.1274,
+      "latency_seconds": 2.5025,
       "top_1_doc": "pmay_u.txt",
       "top_3_docs": [
         "pmay_u.txt",
@@ -2446,7 +2446,7 @@
       "question_type": "financial_limits",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 2.7769,
+      "latency_seconds": 1.6008,
       "top_1_doc": "pmfby.txt",
       "top_3_docs": [
         "pmfby.txt",
@@ -2510,7 +2510,7 @@
       "question_type": "benefits",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 5.7492,
+      "latency_seconds": 2.1591,
       "top_1_doc": "pmfby.txt",
       "top_3_docs": [
         "pmfby.txt",
@@ -2574,7 +2574,7 @@
       "question_type": "rules",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 5.3992,
+      "latency_seconds": 2.1076,
       "top_1_doc": "pmfby.txt",
       "top_3_docs": [
         "pmfby.txt",
@@ -2638,7 +2638,7 @@
       "question_type": "purpose",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 4.8521,
+      "latency_seconds": 2.1246,
       "top_1_doc": "pmfby.txt",
       "top_3_docs": [
         "pmfby.txt",
@@ -2702,7 +2702,7 @@
       "question_type": "procedure",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 2.7692,
+      "latency_seconds": 1.9847,
       "top_1_doc": "pmfby.txt",
       "top_3_docs": [
         "pmfby.txt",
@@ -2766,7 +2766,7 @@
       "question_type": "benefits",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 2.4361,
+      "latency_seconds": 2.081,
       "top_1_doc": "pmjdy.txt",
       "top_3_docs": [
         "pmjdy.txt",
@@ -2830,7 +2830,7 @@
       "question_type": "financial_limits",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.8616,
+      "latency_seconds": 2.3531,
       "top_1_doc": "pmjdy.txt",
       "top_3_docs": [
         "pmjdy.txt",
@@ -2894,7 +2894,7 @@
       "question_type": "rules",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 2.5738,
+      "latency_seconds": 2.4166,
       "top_1_doc": "pmjdy.txt",
       "top_3_docs": [
         "pmjdy.txt",
@@ -2958,7 +2958,7 @@
       "question_type": "purpose",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.7303,
+      "latency_seconds": 2.7309,
       "top_1_doc": "pmjdy.txt",
       "top_3_docs": [
         "pmjdy.txt",
@@ -3022,7 +3022,7 @@
       "question_type": "eligibility",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 2.3006,
+      "latency_seconds": 2.2749,
       "top_1_doc": "pmjdy.txt",
       "top_3_docs": [
         "pmjdy.txt",
@@ -3086,7 +3086,7 @@
       "question_type": "purpose",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 2.1817,
+      "latency_seconds": 2.2079,
       "top_1_doc": "pmkvy.txt",
       "top_3_docs": [
         "pmkvy.txt",
@@ -3150,7 +3150,7 @@
       "question_type": "procedure",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.1389,
+      "latency_seconds": 2.0618,
       "top_1_doc": "pmkvy.txt",
       "top_3_docs": [
         "pmkvy.txt",
@@ -3214,7 +3214,7 @@
       "question_type": "rules",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 2.1428,
+      "latency_seconds": 2.1235,
       "top_1_doc": "pmkvy.txt",
       "top_3_docs": [
         "pmkvy.txt",
@@ -3278,7 +3278,7 @@
       "question_type": "benefits",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.4922,
+      "latency_seconds": 2.3896,
       "top_1_doc": "pmkvy.txt",
       "top_3_docs": [
         "pmkvy.txt",
@@ -3342,7 +3342,7 @@
       "question_type": "procedure",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 2.4053,
+      "latency_seconds": 2.2451,
       "top_1_doc": "pmkvy.txt",
       "top_3_docs": [
         "pmkvy.txt",
@@ -3406,7 +3406,7 @@
       "question_type": "financial_limits",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 2.0411,
+      "latency_seconds": 2.2459,
       "top_1_doc": "pmmy.txt",
       "top_3_docs": [
         "pmmy.txt",
@@ -3470,7 +3470,7 @@
       "question_type": "financial_limits",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.0241,
+      "latency_seconds": 2.1203,
       "top_1_doc": "pmmy.txt",
       "top_3_docs": [
         "pmmy.txt",
@@ -3534,7 +3534,7 @@
       "question_type": "rules",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 2.4101,
+      "latency_seconds": 2.4102,
       "top_1_doc": "pmmy.txt",
       "top_3_docs": [
         "pmmy.txt",
@@ -3598,7 +3598,7 @@
       "question_type": "eligibility",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.0258,
+      "latency_seconds": 2.2023,
       "top_1_doc": "pmmy.txt",
       "top_3_docs": [
         "pmmy.txt",
@@ -3662,7 +3662,7 @@
       "question_type": "procedure",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 1.8611,
+      "latency_seconds": 2.0872,
       "top_1_doc": "pmmy.txt",
       "top_3_docs": [
         "pmmy.txt",
@@ -3726,7 +3726,7 @@
       "question_type": "benefits",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 2.3504,
+      "latency_seconds": 2.3425,
       "top_1_doc": "pmuy.txt",
       "top_3_docs": [
         "pmuy.txt",
@@ -3790,7 +3790,7 @@
       "question_type": "financial_limits",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.0908,
+      "latency_seconds": 2.1319,
       "top_1_doc": "pmuy.txt",
       "top_3_docs": [
         "pmuy.txt",
@@ -3854,7 +3854,7 @@
       "question_type": "eligibility",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 2.1996,
+      "latency_seconds": 2.2791,
       "top_1_doc": "pmuy.txt",
       "top_3_docs": [
         "pmuy.txt",
@@ -3918,7 +3918,7 @@
       "question_type": "rules",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 2.2097,
+      "latency_seconds": 2.3723,
       "top_1_doc": "pmuy.txt",
       "top_3_docs": [
         "pmuy.txt",
@@ -3982,7 +3982,7 @@
       "question_type": "documents",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 6.9197,
+      "latency_seconds": 2.3931,
       "top_1_doc": "pmuy.txt",
       "top_3_docs": [
         "pmuy.txt",
@@ -4046,7 +4046,7 @@
       "question_type": "financial_limits",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 4.4346,
+      "latency_seconds": 2.0297,
       "top_1_doc": "stand_up_india.txt",
       "top_3_docs": [
         "stand_up_india.txt",
@@ -4110,7 +4110,7 @@
       "question_type": "eligibility",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 7.2464,
+      "latency_seconds": 2.5576,
       "top_1_doc": "stand_up_india.txt",
       "top_3_docs": [
         "stand_up_india.txt",
@@ -4174,7 +4174,7 @@
       "question_type": "rules",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 5.0184,
+      "latency_seconds": 2.4031,
       "top_1_doc": "stand_up_india.txt",
       "top_3_docs": [
         "stand_up_india.txt",
@@ -4238,7 +4238,7 @@
       "question_type": "documents",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 6.1304,
+      "latency_seconds": 2.3293,
       "top_1_doc": "stand_up_india.txt",
       "top_3_docs": [
         "stand_up_india.txt",
@@ -4302,7 +4302,7 @@
       "question_type": "procedure",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 4.7952,
+      "latency_seconds": 2.1126,
       "top_1_doc": "stand_up_india.txt",
       "top_3_docs": [
         "stand_up_india.txt",
@@ -4366,7 +4366,7 @@
       "question_type": "financial_limits",
       "difficulty": "easy",
       "is_cross_document": false,
-      "latency_seconds": 4.7511,
+      "latency_seconds": 2.4773,
       "top_1_doc": "sukanya_samriddhi.txt",
       "top_3_docs": [
         "sukanya_samriddhi.txt",
@@ -4430,7 +4430,7 @@
       "question_type": "eligibility",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 4.555,
+      "latency_seconds": 2.5273,
       "top_1_doc": "sukanya_samriddhi.txt",
       "top_3_docs": [
         "sukanya_samriddhi.txt",
@@ -4494,7 +4494,7 @@
       "question_type": "rules",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 5.1873,
+      "latency_seconds": 2.6607,
       "top_1_doc": "sukanya_samriddhi.txt",
       "top_3_docs": [
         "sukanya_samriddhi.txt",
@@ -4558,7 +4558,7 @@
       "question_type": "rules",
       "difficulty": "medium",
       "is_cross_document": false,
-      "latency_seconds": 4.6154,
+      "latency_seconds": 2.4269,
       "top_1_doc": "sukanya_samriddhi.txt",
       "top_3_docs": [
         "sukanya_samriddhi.txt",
@@ -4622,7 +4622,7 @@
       "question_type": "rules",
       "difficulty": "hard",
       "is_cross_document": false,
-      "latency_seconds": 5.4795,
+      "latency_seconds": 2.7439,
       "top_1_doc": "sukanya_samriddhi.txt",
       "top_3_docs": [
         "sukanya_samriddhi.txt",
@@ -4687,7 +4687,7 @@
       "question_type": "eligibility",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 4.945,
+      "latency_seconds": 1.985,
       "top_1_doc": "pm_gkay.txt",
       "top_3_docs": [
         "pm_gkay.txt",
@@ -4752,7 +4752,7 @@
       "question_type": "financial_limits",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 11.5514,
+      "latency_seconds": 2.38,
       "top_1_doc": "pmay_g.txt",
       "top_3_docs": [
         "pmay_g.txt",
@@ -4817,7 +4817,7 @@
       "question_type": "purpose",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 10.9784,
+      "latency_seconds": 1.8049,
       "top_1_doc": "pm_vishwakarma.txt",
       "top_3_docs": [
         "pm_vishwakarma.txt",
@@ -4876,14 +4876,14 @@
       "query_id": "Q74",
       "query": "What financial assistance or credit is provided to small businesses and enterprises?",
       "expected_documents": [
+        "stand_up_india.txt",
         "pmmy.txt",
-        "pm_svanidhi.txt",
-        "stand_up_india.txt"
+        "pm_svanidhi.txt"
       ],
       "question_type": "financial_limits",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 3.9612,
+      "latency_seconds": 1.7961,
       "top_1_doc": "pmmy.txt",
       "top_3_docs": [
         "pmmy.txt",
@@ -4949,7 +4949,7 @@
       "question_type": "benefits",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 4.058,
+      "latency_seconds": 2.0684,
       "top_1_doc": "pm_svanidhi.txt",
       "top_3_docs": [
         "pm_svanidhi.txt",
@@ -5008,13 +5008,13 @@
       "query_id": "Q76",
       "query": "What government welfare schemes provide direct financial assistance to farmers?",
       "expected_documents": [
-        "pm_kisan.txt",
-        "pmfby.txt"
+        "pmfby.txt",
+        "pm_kisan.txt"
       ],
       "question_type": "benefits",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 4.4088,
+      "latency_seconds": 2.153,
       "top_1_doc": "pm_kisan.txt",
       "top_3_docs": [
         "pm_kisan.txt",
@@ -5080,7 +5080,7 @@
       "question_type": "eligibility",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 4.2645,
+      "latency_seconds": 2.3625,
       "top_1_doc": "sukanya_samriddhi.txt",
       "top_3_docs": [
         "sukanya_samriddhi.txt",
@@ -5144,7 +5144,7 @@
       "question_type": "purpose",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 4.5508,
+      "latency_seconds": 2.3531,
       "top_1_doc": "atal_pension_yojana.txt",
       "top_3_docs": [
         "atal_pension_yojana.txt",
@@ -5203,13 +5203,13 @@
       "query_id": "Q79",
       "query": "What government initiatives provide free food or subsidized cooking gas to BPL families?",
       "expected_documents": [
-        "pm_gkay.txt",
-        "pmuy.txt"
+        "pmuy.txt",
+        "pm_gkay.txt"
       ],
       "question_type": "benefits",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 5.0247,
+      "latency_seconds": 2.4787,
       "top_1_doc": "pm_gkay.txt",
       "top_3_docs": [
         "pm_gkay.txt",
@@ -5274,7 +5274,7 @@
       "question_type": "benefits",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 4.1538,
+      "latency_seconds": 2.1168,
       "top_1_doc": "pmjdy.txt",
       "top_3_docs": [
         "pmjdy.txt",
@@ -5339,7 +5339,7 @@
       "question_type": "benefits",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 4.2019,
+      "latency_seconds": 2.2152,
       "top_1_doc": "pm_vishwakarma.txt",
       "top_3_docs": [
         "pm_vishwakarma.txt",
@@ -5399,14 +5399,14 @@
       "query": "What assistance is provided to unorganized sector workers and laborers?",
       "expected_documents": [
         "pm_vishwakarma.txt",
-        "pm_svanidhi.txt",
         "pm_gkay.txt",
-        "atal_pension_yojana.txt"
+        "atal_pension_yojana.txt",
+        "pm_svanidhi.txt"
       ],
       "question_type": "benefits",
       "difficulty": "cross_document",
       "is_cross_document": true,
-      "latency_seconds": 5.0253,
+      "latency_seconds": 2.2823,
       "top_1_doc": "atal_pension_yojana.txt",
       "top_3_docs": [
         "atal_pension_yojana.txt",

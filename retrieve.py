@@ -11,7 +11,7 @@ No document-specific logic. Automatically searches ALL indexed documents.
 
 import sys
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(PROJECT_ROOT))
@@ -30,6 +30,7 @@ from src.config import (
     BM25_CORPUS_PATH,
     ENABLE_QUERY_REFORMULATION, NUM_REFORMULATIONS,
     ENABLE_MULTI_QUERY_RERANKING,
+    GENERATION_CONTEXT_TOP_K,
 )
 from src.indexing.faiss_store   import load_all_indexes
 from src.retrieval.dense        import retrieve_dense
@@ -73,8 +74,17 @@ class HybridRAG:
         # Model names from config
         self.embedding_model = EMBEDDING_MODEL_NAME
         self.reranker_model  = RERANKER_MODEL_NAME
+        self.generation_context_top_k = GENERATION_CONTEXT_TOP_K
+        self._generator = None
 
         print("Hybrid-RAG system ready.")
+
+    def get_generator(self):
+        """Lazy load LLM generator instance."""
+        if self._generator is None:
+            from src.generation.llm_generator import get_generator
+            self._generator = get_generator()
+        return self._generator
 
     def query(
         self,
@@ -87,6 +97,9 @@ class HybridRAG:
         use_bm25:        bool = True,
         use_mmr:         bool = True,
         enable_reformulation: Optional[bool] = None,
+        generate_answer: bool = False,
+        context_top_k:   int = GENERATION_CONTEXT_TOP_K,
+        generator:       Optional[Any] = None,
     ) -> dict:
         """
         Run the full Hybrid-RAG pipeline for a query.
@@ -124,7 +137,9 @@ class HybridRAG:
         # Step 1: Query Reformulation
         # --------------------------------------------------
         if enable_reformulation:
-            query_variants = reformulate_query(query, num_reformulations=NUM_REFORMULATIONS)
+            # NUM_REFORMULATIONS in config specifies total query perspectives (V=3: original + 2 alternatives)
+            num_alts = NUM_REFORMULATIONS - 1 if NUM_REFORMULATIONS > 1 else 1
+            query_variants = reformulate_query(query, num_reformulations=num_alts)
         else:
             query_variants = [query]
 
@@ -207,7 +222,7 @@ class HybridRAG:
             query_variants=variants_for_reranking,
         )
 
-        return {
+        output = {
             "query":             query,
             "query_variants":    query_variants,
             "naive_results":     orig_naive_results,
@@ -219,6 +234,41 @@ class HybridRAG:
             "final_results":     final_results,
         }
 
+        if generate_answer:
+            from src.generation.context_builder import build_context
+            gen = generator if generator is not None else self.get_generator()
+            context_str, sources = build_context(final_results, top_k=context_top_k)
+            gen_res = gen.generate(
+                query=query,
+                context=context_str,
+                candidates=final_results,
+                top_k=context_top_k,
+            )
+            output["context"] = context_str
+            output["answer"]  = gen_res["answer"]
+            output["sources"] = gen_res["sources"] if gen_res.get("sources") else sources
+
+        return output
+
+    def answer(
+        self,
+        query: str,
+        context_top_k: int = GENERATION_CONTEXT_TOP_K,
+        generator: Optional[Any] = None,
+        **kwargs,
+    ) -> dict:
+        """
+        Convenience end-to-end interface: retrieve relevant passages and generate
+        a grounded answer with source attribution using Qwen3-8B.
+        """
+        return self.query(
+            query=query,
+            generate_answer=True,
+            context_top_k=context_top_k,
+            generator=generator,
+            **kwargs,
+        )
+
     def display(self, results: dict) -> None:
         """Pretty-print the final results with full traceability."""
         query  = results["query"]
@@ -228,10 +278,25 @@ class HybridRAG:
         print(f"QUERY: {query}")
         print(f"{'='*70}")
 
+        if "answer" in results:
+            print("\n" + "-"*70)
+            print("GROUNDED ANSWER (Qwen3-8B):")
+            print("-"*70)
+            print(results["answer"])
+            print("\n" + "-"*70)
+            print("CITED SOURCES:")
+            print("-"*70)
+            for s in results.get("sources", []):
+                print(f"  [{s.get('source_index', '?')}] {s.get('document_title', 'Unknown')} ({s.get('source_file', 'N/A')})")
+                print(f"      Section : {s.get('section', 'N/A')}")
+                print(f"      Chunk ID: {s.get('chunk_id', 'N/A')}")
+            print("-"*70)
+
         if not finals:
             print("No results found.")
             return
 
+        print("\nRETRIEVAL CANDIDATES:")
         for i, r in enumerate(finals, start=1):
             print(f"\nRank {i}")
             print(f"  document_id      : {r.get('document_id', 'N/A')}")

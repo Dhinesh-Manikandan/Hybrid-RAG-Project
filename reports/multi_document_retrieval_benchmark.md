@@ -34,9 +34,9 @@ The objective of this evaluation benchmark is to rigorously quantify the retriev
 | **Hit@5** | **100.00%** |
 | **Hit@10** | **100.00%** |
 | **MRR (Mean Reciprocal Rank)** | **0.9858** |
-| **Mean Latency** | 3.76 s |
-| **Median Latency** | 3.37 s |
-| **P95 Latency** | 6.88 s |
+| **Mean Latency** | 2.38 s |
+| **Median Latency** | 2.33 s |
+| **P95 Latency** | 2.87 s |
 
 ## 5. Difficulty-Wise Performance
 | Difficulty Tier | Queries | Hit@1 | Hit@3 | Hit@5 | MRR |

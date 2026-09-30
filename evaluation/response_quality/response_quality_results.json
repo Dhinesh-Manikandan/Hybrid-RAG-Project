@@ -1,0 +1,141 @@
+{
+  "evaluation_metadata": {
+    "num_queries": 1,
+    "generator_model": "Qwen/Qwen3-0.6B",
+    "evaluator_model": "SentenceTransformers",
+    "evaluation_type": "semantic-similarity",
+    "correctness_range": "1-5",
+    "relevancy_range": "0-1",
+    "faithfulness_range": "0-1",
+    "std_method": "sample",
+    "runtime_seconds": 295.8298828601837
+  },
+  "summary": {
+    "Naive RAG": {
+      "correctness": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "relevancy": {
+        "mean": 0.5340947508811951,
+        "std": 0.0
+      },
+      "faithfulness": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "num_samples": 1
+    },
+    "Sentence Window": {
+      "correctness": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "relevancy": {
+        "mean": 0.5317850708961487,
+        "std": 0.0
+      },
+      "faithfulness": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "num_samples": 1
+    },
+    "Parent-Child": {
+      "correctness": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "relevancy": {
+        "mean": 0.5317850708961487,
+        "std": 0.0
+      },
+      "faithfulness": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "num_samples": 1
+    },
+    "Hybrid RAG": {
+      "correctness": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "relevancy": {
+        "mean": 0.5517870783805847,
+        "std": 0.0
+      },
+      "faithfulness": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "num_samples": 1
+    }
+  },
+  "per_query": [
+    {
+      "query_id": "GEN_01",
+      "query": "What is the age limit to join Atal Pension Yojana?",
+      "Naive RAG": {
+        "response": "- Minimum age of joining APY is 18 years.  \n- Maximum age of joining APY is 40 years.",
+        "correctness": {
+          "score": 1,
+          "similarity": 0.4430740773677826
+        },
+        "relevancy": {
+          "score": 0.5340947508811951
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "supported_claims": 2,
+          "total_claims": 2
+        }
+      },
+      "Sentence Window": {
+        "response": "- Minimum age: 18 years  \n- Maximum age: 40 years",
+        "correctness": {
+          "score": 1,
+          "similarity": 0.5586307644844055
+        },
+        "relevancy": {
+          "score": 0.5317850708961487
+        },
+        "faithfulness": {
+          "score": 0.0,
+          "supported_claims": 0,
+          "total_claims": 2
+        }
+      },
+      "Parent-Child": {
+        "response": "- Minimum age: 18 years  \n- Maximum age: 40 years",
+        "correctness": {
+          "score": 1,
+          "similarity": 0.5586307644844055
+        },
+        "relevancy": {
+          "score": 0.5317850708961487
+        },
+        "faithfulness": {
+          "score": 0.0,
+          "supported_claims": 0,
+          "total_claims": 2
+        }
+      },
+      "Hybrid RAG": {
+        "response": "- The minimum age of joining APY is 18 years and the maximum age is 40 years.",
+        "correctness": {
+          "score": 1,
+          "similarity": 0.46568071842193604
+        },
+        "relevancy": {
+          "score": 0.5517870783805847
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "supported_claims": 1,
+          "total_claims": 1
+        }
+      }
+    }
+  ]
+}

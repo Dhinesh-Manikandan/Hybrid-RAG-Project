@@ -1,0 +1,351 @@
+[
+  {
+    "query_id": "GEN_01",
+    "query": "What is the age limit to join Atal Pension Yojana?",
+    "target_document": "atal_pension_yojana.txt",
+    "category": "eligibility",
+    "expected_answer": "Subscribers must be between 18 and 40 years of age.",
+    "key_facts": [
+      ["18", "18-40", "18 to 40"],
+      ["40", "40 years", "age group of 18-40"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_02",
+    "query": "What is the guaranteed monthly pension amount under Atal Pension Yojana upon turning 60?",
+    "target_document": "atal_pension_yojana.txt",
+    "category": "financial_limits",
+    "expected_answer": "Subscribers receive a guaranteed monthly pension of Rs. 1,000, Rs. 2,000, Rs. 3,000, Rs. 4,000, or Rs. 5,000 per month.",
+    "key_facts": [
+      ["1000", "1,000", "rs. 1000"],
+      ["5000", "5,000", "rs. 5000"],
+      ["monthly pension", "pension"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_03",
+    "query": "How much free food grain is supplied per month under PM-GKAY?",
+    "target_document": "pm_gkay.txt",
+    "category": "financial_limits",
+    "expected_answer": "The Centre provides 5 kg of free food grains per month to eligible beneficiaries.",
+    "key_facts": [
+      ["5 kg", "5 kilograms", "5kg"],
+      ["free", "food grain", "food grains"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_04",
+    "query": "Which household categories are eligible for PM-GKAY food grains?",
+    "target_document": "pm_gkay.txt",
+    "category": "eligibility",
+    "expected_answer": "Antyodaya Anna Yojana (AAY) and Priority Households (PHH) categories are eligible.",
+    "key_facts": [
+      ["antyodaya", "aay"],
+      ["priority household", "priority households", "phh"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_05",
+    "query": "What is the annual financial benefit provided under PM-KISAN and how is it paid?",
+    "target_document": "pm_kisan.txt",
+    "category": "benefits",
+    "expected_answer": "Financial benefit of Rs. 6,000 per year payable in three equal installments of Rs. 2,000 each every four months.",
+    "key_facts": [
+      ["6,000", "6000", "rs. 6,000"],
+      ["2,000", "2000", "three installments", "equal installments", "three equal"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_06",
+    "query": "Who is excluded from receiving benefits under the PM-KISAN scheme?",
+    "target_document": "pm_kisan.txt",
+    "category": "rules_conditions",
+    "expected_answer": "Institutional landholders, constitutional post holders, income tax payers, retired pensioners with monthly pension of Rs. 10,000 or more, and registered professionals (doctors, engineers, lawyers, CAs).",
+    "key_facts": [
+      ["institutional", "institutional landholder", "constitutional", "income tax", "pensioners", "doctors", "professionals"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_07",
+    "query": "What is the initial working capital loan amount provided under PM SVANidhi?",
+    "target_document": "pm_svanidhi.txt",
+    "category": "financial_limits",
+    "expected_answer": "An initial collateral-free working capital loan of Rs. 10,000 is provided, followed by Rs. 20,000 and Rs. 50,000 in subsequent tranches.",
+    "key_facts": [
+      ["10,000", "10000", "₹10,000"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_08",
+    "query": "What cashback incentive is given for digital transactions under PM SVANidhi?",
+    "target_document": "pm_svanidhi.txt",
+    "category": "benefits",
+    "expected_answer": "A cashback of up to Rs. 100 per month is given to street vendors for digital transactions.",
+    "key_facts": [
+      ["100", "rs. 100", "₹100"],
+      ["cashback", "digital", "per month"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_09",
+    "query": "How many traditional trades are covered under the PM Vishwakarma scheme?",
+    "target_document": "pm_vishwakarma.txt",
+    "category": "definitions_purpose",
+    "expected_answer": "The scheme covers artisans and craftspeople engaged in 18 traditional trades.",
+    "key_facts": [
+      ["18", "eighteen", "18 trades", "18 traditional trades"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_10",
+    "query": "What financial toolkit incentive and training stipend are provided under PM Vishwakarma?",
+    "target_document": "pm_vishwakarma.txt",
+    "category": "financial_limits",
+    "expected_answer": "A toolkit incentive grant of Rs. 15,000 and a training stipend of Rs. 500 per day are provided.",
+    "key_facts": [
+      ["15,000", "15000", "toolkit"],
+      ["500", "rs. 500", "per day", "stipend"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_11",
+    "query": "What is the financial assistance amount for constructing a house in plain areas under PMAY-G?",
+    "target_document": "pmay_g.txt",
+    "category": "financial_limits",
+    "expected_answer": "Financial assistance of Rs. 1,20,000 per unit is provided for plain areas.",
+    "key_facts": [
+      ["1,20,000", "1.20 lakh", "120000", "1.2 lakh"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_12",
+    "query": "What is the minimum size of a house constructed under PMAY-G?",
+    "target_document": "pmay_g.txt",
+    "category": "rules_conditions",
+    "expected_answer": "The minimum size of the house is 25 square meters, including a dedicated hygienic cooking area.",
+    "key_facts": [
+      ["25", "25 sq m", "25 sq. m", "25 square meters", "25 sq meter"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_13",
+    "query": "Who are the eligible beneficiary categories under PMAY-U?",
+    "target_document": "pmay_u.txt",
+    "category": "eligibility",
+    "expected_answer": "Economically Weaker Section (EWS), Low Income Group (LIG), Middle Income Group (MIG), and slum dwellers living in statutory towns.",
+    "key_facts": [
+      ["ews", "economically weaker"],
+      ["lig", "low income"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_14",
+    "query": "What documents or declarations are needed to apply for PMAY-U?",
+    "target_document": "pmay_u.txt",
+    "category": "required_documents",
+    "expected_answer": "Aadhaar card or voter ID, bank account details, income proof, and self-declaration affidavit of not owning a pucca house.",
+    "key_facts": [
+      ["aadhaar", "identity", "id card", "bank", "pucca house", "declaration", "income"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_15",
+    "query": "What is the maximum insurance premium payable by farmers for Kharif and Rabi crops under PMFBY?",
+    "target_document": "pmfby.txt",
+    "category": "financial_limits",
+    "expected_answer": "Maximum premium is 2% for Kharif crops and 1.5% for Rabi food and oilseed crops.",
+    "key_facts": [
+      ["2%", "2 percent"],
+      ["1.5%", "1.5 percent"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_16",
+    "query": "What risks and crop losses are covered under PMFBY?",
+    "target_document": "pmfby.txt",
+    "category": "benefits",
+    "expected_answer": "Covers yield loss due to non-preventable natural risks like drought, flood, pests, post-harvest losses, and localized calamities like hailstorms and landslides.",
+    "key_facts": [
+      ["drought", "flood", "natural", "hail", "pest", "yield", "post-harvest", "calamities"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_17",
+    "query": "What is the overdraft limit available on PMJDY bank accounts?",
+    "target_document": "pmjdy.txt",
+    "category": "financial_limits",
+    "expected_answer": "Overdraft facility up to Rs. 10,000 is available to eligible PMJDY account holders.",
+    "key_facts": [
+      ["10,000", "10000", "rs. 10,000", "10 thousand"],
+      ["overdraft", "od"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_18",
+    "query": "What accident insurance coverage is provided with the PMJDY RuPay debit card?",
+    "target_document": "pmjdy.txt",
+    "category": "benefits",
+    "expected_answer": "Accident insurance cover of Rs. 2 lakhs is provided with the RuPay debit card for accounts opened after 28.08.2018.",
+    "key_facts": [
+      ["2 lakh", "2 lakhs", "2,00,000", "200000", "rs. 2 lakh"],
+      ["accident", "insurance", "rupay"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_19",
+    "query": "What are the key training components under PMKVY 4.0?",
+    "target_document": "pmkvy.txt",
+    "category": "definitions_purpose",
+    "expected_answer": "Short-Term Training (STT) and up-skilling or re-skilling through Recognition of Prior Learning (RPL).",
+    "key_facts": [
+      ["short-term training", "stt", "short term"],
+      ["recognition of prior learning", "rpl", "prior learning"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_20",
+    "query": "Which digital platform manages the candidate lifecycle under PMKVY 4.0?",
+    "target_document": "pmkvy.txt",
+    "category": "application_procedure",
+    "expected_answer": "The candidate lifecycle is digitally managed through the Skill India Digital Hub (SIDH).",
+    "key_facts": [
+      ["skill india digital hub", "sidh", "skill india"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_21",
+    "query": "What are the loan categories and their limits under Pradhan Mantri Mudra Yojana?",
+    "target_document": "pmmy.txt",
+    "category": "financial_limits",
+    "expected_answer": "Shishu (up to Rs. 50,000), Kishore (Rs. 50,000 to Rs. 5 lakhs), and Tarun (Rs. 5 lakhs to Rs. 10 lakhs).",
+    "key_facts": [
+      ["shishu", "50,000"],
+      ["kishore", "5 lakh"],
+      ["tarun", "10 lakh"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_22",
+    "query": "Is collateral security required for loans up to Rs 10 lakhs under PMMY?",
+    "target_document": "pmmy.txt",
+    "category": "rules_conditions",
+    "expected_answer": "No, no collateral security is required for loans up to Rs. 10 lakhs under PMMY.",
+    "key_facts": [
+      ["no collateral", "collateral-free", "without collateral", "not required", "no security"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_23",
+    "query": "What financial assistance and free items are provided for a new LPG connection under PMUY?",
+    "target_document": "pmuy.txt",
+    "category": "benefits",
+    "expected_answer": "Financial assistance of Rs. 1,600 (for 14.2 kg cylinder) or Rs. 1,150 (for 5 kg), with first refill and stove (hot plate) provided free of cost.",
+    "key_facts": [
+      ["1,600", "1600", "1,150", "1150"],
+      ["refill", "stove", "hot plate", "free"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_24",
+    "query": "Who is eligible to apply for an LPG connection under PMUY Ujjwala 2.0?",
+    "target_document": "pmuy.txt",
+    "category": "eligibility",
+    "expected_answer": "An adult woman belonging to a poor household without an existing LPG connection in her household.",
+    "key_facts": [
+      ["woman", "women", "adult woman"],
+      ["poor household", "no lpg", "without an lpg", "bpl"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_25",
+    "query": "What is the loan amount range provided under the Stand-Up India scheme?",
+    "target_document": "stand_up_india.txt",
+    "category": "financial_limits",
+    "expected_answer": "Bank loans between Rs. 10 lakh and Rs. 1 Crore (Rs. 100 Lakhs) for greenfield projects.",
+    "key_facts": [
+      ["10 lakh", "10 lakhs", "₹10 lakh"],
+      ["1 crore", "100 lakh", "100 lakhs", "₹100 lakh", "1 cr"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_26",
+    "query": "Who are the targeted eligible borrowers under Stand-Up India?",
+    "target_document": "stand_up_india.txt",
+    "category": "eligibility",
+    "expected_answer": "Scheduled Caste (SC), Scheduled Tribe (ST), and women entrepreneurs setting up greenfield enterprises.",
+    "key_facts": [
+      ["sc", "st", "scheduled caste", "scheduled tribe"],
+      ["women", "woman"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_27",
+    "query": "What is the maximum age limit of a girl child to open a Sukanya Samriddhi account?",
+    "target_document": "sukanya_samriddhi.txt",
+    "category": "eligibility",
+    "expected_answer": "The girl child must not have attained the age of 10 years at the time of account opening.",
+    "key_facts": [
+      ["10", "10 years", "ten years", "age of 10"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_28",
+    "query": "What is the maturity period of a Sukanya Samriddhi account?",
+    "target_document": "sukanya_samriddhi.txt",
+    "category": "rules_conditions",
+    "expected_answer": "The account matures on completion of 21 years from the date of its opening.",
+    "key_facts": [
+      ["21", "21 years", "twenty-one years"]
+    ],
+    "is_unanswerable": false
+  },
+  {
+    "query_id": "GEN_29",
+    "query": "What are the eligibility criteria for the ISRO Gaganyaan astronaut training program?",
+    "target_document": "NONE",
+    "category": "abstention",
+    "expected_answer": "The information is not available in the retrieved sources.",
+    "key_facts": [
+      ["not available", "insufficient", "not contain", "not found", "cannot answer"]
+    ],
+    "is_unanswerable": true
+  },
+  {
+    "query_id": "GEN_30",
+    "query": "What is the maximum subsidy for electric vehicle purchases under the FAME II scheme?",
+    "target_document": "NONE",
+    "category": "abstention",
+    "expected_answer": "The information is not available in the retrieved sources.",
+    "key_facts": [
+      ["not available", "insufficient", "not contain", "not found", "cannot answer"]
+    ],
+    "is_unanswerable": true
+  }
+]

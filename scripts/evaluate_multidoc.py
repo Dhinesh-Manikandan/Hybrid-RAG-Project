@@ -64,6 +64,11 @@ def run_benchmark():
     print("Initializing production Hybrid-RAG engine...")
     rag = HybridRAG()
 
+    # Pre-warm query to eliminate PyTorch and Tokenizer cold-start outlier (standardized methodology)
+    print("Executing single pre-warm query to eliminate cold-start...")
+    _ = rag.query("Warmup query to initialize PyTorch threadpool and CrossEncoder weights")
+    print("Pre-warm complete. Beginning standardized timing...")
+
     detailed_results = []
     latencies = []
 

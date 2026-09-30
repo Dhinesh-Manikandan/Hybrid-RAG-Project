@@ -1,0 +1,122 @@
+[
+  {
+    "config_name": "Baseline (K=15, V=3)",
+    "hit_at_1": 97.56,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9858,
+    "mean_latency": 3.1,
+    "median_latency": 2.56,
+    "p95_latency": 3.79
+  },
+  {
+    "config_name": "E1: Pool K=12",
+    "hit_at_1": 96.34,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9797,
+    "mean_latency": 2.6,
+    "median_latency": 2.1,
+    "p95_latency": 3.06
+  },
+  {
+    "config_name": "E1: Pool K=10",
+    "hit_at_1": 97.56,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9858,
+    "mean_latency": 2.25,
+    "median_latency": 1.79,
+    "p95_latency": 2.59
+  },
+  {
+    "config_name": "E1: Pool K=8",
+    "hit_at_1": 98.78,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9919,
+    "mean_latency": 1.91,
+    "median_latency": 1.48,
+    "p95_latency": 2.15
+  },
+  {
+    "config_name": "E1: Pool K=6",
+    "hit_at_1": 98.78,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9919,
+    "mean_latency": 1.57,
+    "median_latency": 1.16,
+    "p95_latency": 1.7
+  },
+  {
+    "config_name": "E2: Variants V=2",
+    "hit_at_1": 97.56,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9858,
+    "mean_latency": 2.08,
+    "median_latency": 1.71,
+    "p95_latency": 2.53
+  },
+  {
+    "config_name": "E2: Variants V=1",
+    "hit_at_1": 98.78,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9939,
+    "mean_latency": 1.05,
+    "median_latency": 0.84,
+    "p95_latency": 1.28
+  },
+  {
+    "config_name": "E3: Batch Size BS=16",
+    "hit_at_1": 97.56,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9858,
+    "mean_latency": 3.1,
+    "median_latency": 2.56,
+    "p95_latency": 3.79
+  },
+  {
+    "config_name": "E3: Batch Size BS=64",
+    "hit_at_1": 97.56,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9858,
+    "mean_latency": 3.1,
+    "median_latency": 2.56,
+    "p95_latency": 3.79
+  },
+  {
+    "config_name": "Synergy: K=10, V=2",
+    "hit_at_1": 96.34,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9797,
+    "mean_latency": 1.52,
+    "median_latency": 1.2,
+    "p95_latency": 1.74
+  },
+  {
+    "config_name": "Synergy: K=8, V=2",
+    "hit_at_1": 96.34,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9797,
+    "mean_latency": 1.29,
+    "median_latency": 0.99,
+    "p95_latency": 1.44
+  },
+  {
+    "config_name": "Synergy: K=10, V=1",
+    "hit_at_1": 98.78,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9939,
+    "mean_latency": 0.79,
+    "median_latency": 0.6,
+    "p95_latency": 0.91
+  }
+]

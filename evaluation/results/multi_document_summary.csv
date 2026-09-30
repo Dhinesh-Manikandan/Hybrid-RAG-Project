@@ -1,83 +1,83 @@
 Query ID,Query,Expected Documents,Difficulty,Question Type,Top 1 Doc,Hit@1,Hit@3,Hit@5,MRR,Latency (s)
-Q01,What is the age limit to join Atal Pension Yojana?,atal_pension_yojana.txt,easy,eligibility,atal_pension_yojana.txt,1,1,1,1.0,16.8836
-Q02,What is the guaranteed monthly pension range for unorganized workers upon reaching 60 years of age?,atal_pension_yojana.txt,medium,financial_limits,atal_pension_yojana.txt,1,1,1,1.0,2.2112
-Q03,What options are available to the spouse if an old age pension subscriber passes away before sixty years?,atal_pension_yojana.txt,hard,rules,atal_pension_yojana.txt,1,1,1,1.0,2.303
-Q04,Are contributions to the unorganized worker retirement pension scheme eligible for income tax deduction under Section 80CCD?,atal_pension_yojana.txt,medium,benefits,atal_pension_yojana.txt,1,1,1,1.0,2.0449
-Q05,How can an unorganized sector pension subscriber lodge and track a grievance on CGMS?,atal_pension_yojana.txt,hard,procedure,atal_pension_yojana.txt,1,1,1,1.0,2.5828
-Q06,How much free food grain is supplied per month under Pradhan Mantri Garib Kalyan Anna Yojana?,pm_gkay.txt,easy,benefits,pm_gkay.txt,1,1,1,1.0,2.1335
-Q07,Which ration card holder categories are entitled to free grain distribution under Atmanirbhar Bharat?,pm_gkay.txt,medium,eligibility,pm_gkay.txt,1,1,1,1.0,2.2813
-Q08,Which states and union territories received wheat instead of rice under the free grain distribution scheme?,pm_gkay.txt,hard,rules,pm_gkay.txt,1,1,1,1.0,2.3511
-Q09,How can migrant workers obtain subsidized or free ration outside their home state using biometric authentication?,pm_gkay.txt,medium,procedure,pmuy.txt,0,1,1,0.3333,2.5248
-Q10,What documents are required to receive food grain rations at a Fair Price Shop under PM-GKAY?,pm_gkay.txt,easy,documents,pm_gkay.txt,1,1,1,1.0,2.4663
-Q11,What is the annual financial assistance provided under PM-KISAN?,pm_kisan.txt,easy,financial_limits,pm_kisan.txt,1,1,1,1.0,2.2512
-Q12,Who is eligible for direct income support for agricultural inputs?,pm_kisan.txt,medium,eligibility,pm_kisan.txt,1,1,1,1.0,2.2627
-Q13,Are retired government pensioners receiving more than ten thousand rupees per month eligible for farmer income support?,pm_kisan.txt,hard,rules,pm_kisan.txt,1,1,1,1.0,2.1606
-Q14,What land records and identification papers must be submitted for farmer registration via Common Service Centres?,pm_kisan.txt,medium,documents,pm_kisan.txt,1,1,1,1.0,2.0554
-Q15,What is the main objective of the Pradhan Mantri Kisan Samman Nidhi?,pm_kisan.txt,easy,purpose,pm_kisan.txt,1,1,1,1.0,1.9019
-Q16,What is the initial collateral-free working capital loan amount under PM SVANidhi?,pm_svanidhi.txt,easy,financial_limits,pm_svanidhi.txt,1,1,1,1.0,1.8503
-Q17,What interest subsidy and monthly digital cashback are offered to urban street vendors?,pm_svanidhi.txt,medium,benefits,pm_svanidhi.txt,1,1,1,1.0,2.1317
-Q18,Can street vendors operating in peri-urban areas without a Certificate of Vending qualify for micro-credit?,pm_svanidhi.txt,hard,eligibility,pm_svanidhi.txt,1,1,1,1.0,2.495
-Q19,What is the repayment tenure for the initial micro-credit tranche for street hawkers?,pm_svanidhi.txt,medium,procedure,pm_svanidhi.txt,1,1,1,1.0,2.2621
-Q20,What documents must Category C and D street vendors produce to apply for PM SVANidhi?,pm_svanidhi.txt,easy,documents,pm_svanidhi.txt,1,1,1,1.0,2.9905
-Q21,How many traditional trades are covered under the PM Vishwakarma scheme?,pm_vishwakarma.txt,easy,purpose,pm_vishwakarma.txt,1,1,1,1.0,3.6341
-Q22,What is the maximum loan amount and interest rate for the two tranches of enterprise credit support for artisans?,pm_vishwakarma.txt,medium,financial_limits,pm_vishwakarma.txt,1,1,1,1.0,3.6261
-Q23,What daily training stipend and toolkit incentive voucher are provided to traditional craftspeople?,pm_vishwakarma.txt,hard,benefits,pm_vishwakarma.txt,1,1,1,1.0,3.6153
-Q24,What conditions must a craftsman fulfill to unlock the second loan tranche of Rs 2 lakh?,pm_vishwakarma.txt,medium,rules,pm_vishwakarma.txt,1,1,1,1.0,3.9602
-Q25,What incentive is paid to artisans per digital transaction under PM Vishwakarma?,pm_vishwakarma.txt,easy,benefits,pm_vishwakarma.txt,1,1,1,1.0,3.4312
-Q26,How much unit assistance is granted for house construction in plain areas under PMAY-G?,pmay_g.txt,easy,financial_limits,pmay_g.txt,1,1,1,1.0,4.4833
-Q27,What additional toilet construction assistance is provided in convergence with Swachh Bharat Mission-Gramin?,pmay_g.txt,medium,benefits,pmay_g.txt,1,1,1,1.0,3.6269
-Q28,What criteria cause a household to be automatically excluded from rural housing assistance?,pmay_g.txt,hard,eligibility,pmay_g.txt,1,1,1,1.0,3.7732
-Q29,What is the minimum prescribed floor area for a rural house under PMAY-G?,pmay_g.txt,medium,rules,pmay_g.txt,1,1,1,1.0,3.827
-Q30,How are eligible rural housing beneficiaries identified and verified at the village level?,pmay_g.txt,hard,procedure,pmay_g.txt,1,1,1,1.0,3.7851
-Q31,What are the four core components of Pradhan Mantri Awas Yojana - Urban?,pmay_u.txt,easy,purpose,pmay_u.txt,1,1,1,1.0,3.5244
-Q32,What income categories qualify for housing assistance in urban areas?,pmay_u.txt,medium,eligibility,pmay_u.txt,1,1,1,1.0,3.3177
-Q33,Can a family that already owns a pucca house in their native village qualify for urban housing benefits?,pmay_u.txt,hard,rules,pmay_u.txt,1,1,1,1.0,3.9763
-Q34,What is the Credit Linked Subsidy Scheme under urban housing assistance?,pmay_u.txt,medium,benefits,pmay_u.txt,1,1,1,1.0,4.0236
-Q35,What proof of identity and income details are required to apply for PMAY-U?,pmay_u.txt,easy,documents,pmay_u.txt,1,1,1,1.0,4.1274
-Q36,What is the maximum crop insurance premium payable by farmers for Kharif and Rabi food crops under PMFBY?,pmfby.txt,easy,financial_limits,pmfby.txt,1,1,1,1.0,2.7769
-Q37,What compensation is available if insured farmers are prevented from sowing due to adverse weather?,pmfby.txt,medium,benefits,pmfby.txt,1,1,1,1.0,5.7492
-Q38,For how many days after harvesting are crops covered against localized post-harvest losses?,pmfby.txt,hard,rules,pmfby.txt,1,1,1,1.0,5.3992
-Q39,What risks are excluded from crop insurance coverage during the cultivation cycle?,pmfby.txt,medium,purpose,pmfby.txt,1,1,1,1.0,4.8521
-Q40,How can farmers track the status of their crop insurance application online?,pmfby.txt,easy,procedure,pmfby.txt,1,1,1,1.0,2.7692
-Q41,What is the accidental insurance cover provided on RuPay debit cards under PMJDY?,pmjdy.txt,easy,benefits,pmjdy.txt,1,1,1,1.0,2.4361
-Q42,What is the maximum overdraft limit available on Jan Dhan accounts?,pmjdy.txt,medium,financial_limits,pmjdy.txt,1,1,1,1.0,2.8616
-Q43,What are the rules and validity period for opening a small bank account without standard KYC documents?,pmjdy.txt,hard,rules,pmjdy.txt,1,1,1,1.0,2.5738
-Q44,What role do Bank Mitras or Business Correspondents play in financial inclusion in remote areas?,pmjdy.txt,medium,purpose,pmjdy.txt,1,1,1,1.0,2.7303
-Q45,Can a minor above ten years of age open a basic savings bank account under PMJDY?,pmjdy.txt,easy,eligibility,pmjdy.txt,1,1,1,1.0,2.3006
-Q46,What does Recognition of Prior Learning mean under PMKVY 4.0?,pmkvy.txt,easy,purpose,pmkvy.txt,1,1,1,1.0,2.1817
-Q47,Which digital platform manages the candidate skilling lifecycle and employment opportunities?,pmkvy.txt,medium,procedure,pmkvy.txt,1,1,1,1.0,2.1389
-Q48,What new-age and futuristic technological job domains are prioritized under the national skills curriculum?,pmkvy.txt,hard,rules,pmkvy.txt,1,1,1,1.0,2.1428
-Q49,How does alignment with the National Skills Qualification Framework ensure standardized vocational training?,pmkvy.txt,medium,benefits,pmkvy.txt,1,1,1,1.0,2.4922
-Q50,What role do industry-led Awarding Bodies play in vocational courses under PMKVY?,pmkvy.txt,hard,procedure,pmkvy.txt,1,1,1,1.0,2.4053
-Q51,"What are the loan limits for Shishu, Kishore, and Tarun categories under Mudra?",pmmy.txt,easy,financial_limits,pmmy.txt,1,1,1,1.0,2.0411
-Q52,What is the maximum loan limit under the Tarun Plus category for micro enterprises?,pmmy.txt,medium,financial_limits,pmmy.txt,1,1,1,1.0,2.0241
-Q53,Are upfront fees or processing charges levied on micro enterprise loans up to fifty thousand rupees?,pmmy.txt,hard,rules,pmmy.txt,1,1,1,1.0,2.4101
-Q54,What types of business entities and activities allied to agriculture qualify for MUDRA loans?,pmmy.txt,medium,eligibility,pmmy.txt,1,1,1,1.0,2.0258
-Q55,Through which online portal can entrepreneurs submit applications for a Mudra loan?,pmmy.txt,easy,procedure,pmmy.txt,1,1,1,1.0,1.8611
-Q56,What free benefits are provided to beneficiaries with their first LPG connection under Ujjwala 2.0?,pmuy.txt,easy,benefits,pmuy.txt,1,1,1,1.0,2.3504
-Q57,What is the financial grant provided for a 14.2 kg LPG cylinder connection under PMUY?,pmuy.txt,medium,financial_limits,pmuy.txt,1,1,1,1.0,2.0908
-Q58,Can adult women from poor households not listed in SECC 2011 qualify for a gas connection?,pmuy.txt,hard,eligibility,pmuy.txt,1,1,1,1.0,2.1996
-Q59,Can male household members apply for the clean cooking fuel subsidy scheme?,pmuy.txt,medium,rules,pmuy.txt,1,1,1,1.0,2.2097
-Q60,What documents are required to apply for an LPG connection under Pradhan Mantri Ujjwala Yojana?,pmuy.txt,easy,documents,pmuy.txt,1,1,1,1.0,6.9197
-Q61,What is the loan amount range provided to greenfield enterprises under Stand-Up India?,stand_up_india.txt,easy,financial_limits,stand_up_india.txt,1,1,1,1.0,4.4346
-Q62,Who is eligible to apply for enterprise loans under the Stand-Up India scheme?,stand_up_india.txt,medium,eligibility,stand_up_india.txt,1,1,1,1.0,7.2464
-Q63,What shareholding and controlling stake requirement applies to non-individual enterprises?,stand_up_india.txt,hard,rules,stand_up_india.txt,1,1,1,1.0,5.0184
-Q64,What additional project reports and balance sheets are required for loan exposures exceeding 25 lakhs?,stand_up_india.txt,medium,documents,stand_up_india.txt,1,1,1,1.0,6.1304
-Q65,What hand-holding support does SIDBI arrange for greenfield borrowers?,stand_up_india.txt,hard,procedure,stand_up_india.txt,1,1,1,1.0,4.7952
-Q66,What is the minimum initial deposit and maximum annual investment limit for a Sukanya Samriddhi account?,sukanya_samriddhi.txt,easy,financial_limits,sukanya_samriddhi.txt,1,1,1,1.0,4.7511
-Q67,What is the maximum age of a girl child at the time of opening a savings account under the scheme?,sukanya_samriddhi.txt,medium,eligibility,sukanya_samriddhi.txt,1,1,1,1.0,4.555
-Q68,Under what circumstances can more than two accounts be opened within one family?,sukanya_samriddhi.txt,hard,rules,sukanya_samriddhi.txt,1,1,1,1.0,5.1873
-Q69,What is the maturity period and deposit tenure for a girl child savings account?,sukanya_samriddhi.txt,medium,rules,sukanya_samriddhi.txt,1,1,1,1.0,4.6154
-Q70,What penalty is charged to regularize a defaulted small savings account?,sukanya_samriddhi.txt,hard,rules,sukanya_samriddhi.txt,1,1,1,1.0,5.4795
-Q71,Who is eligible for government housing assistance?,pmay_u.txt|pmay_g.txt,cross_document,eligibility,pm_gkay.txt,0,1,1,0.5,4.945
-Q72,What government financial assistance is available for building a permanent house?,pmay_u.txt|pmay_g.txt,cross_document,financial_limits,pmay_g.txt,1,1,1,1.0,11.5514
-Q73,What support is available for skill development and vocational training?,pm_vishwakarma.txt|pmkvy.txt,cross_document,purpose,pm_vishwakarma.txt,1,1,1,1.0,10.9784
-Q74,What financial assistance or credit is provided to small businesses and enterprises?,pmmy.txt|pm_svanidhi.txt|stand_up_india.txt,cross_document,financial_limits,pmmy.txt,1,1,1,1.0,3.9612
-Q75,What loan facilities are available without collateral?,pm_vishwakarma.txt|pmmy.txt|pm_svanidhi.txt,cross_document,benefits,pm_svanidhi.txt,1,1,1,1.0,4.058
-Q76,What government welfare schemes provide direct financial assistance to farmers?,pm_kisan.txt|pmfby.txt,cross_document,benefits,pm_kisan.txt,1,1,1,1.0,4.4088
-Q77,What financial security and savings schemes are designed for women beneficiaries?,stand_up_india.txt|sukanya_samriddhi.txt|pmuy.txt,cross_document,eligibility,sukanya_samriddhi.txt,1,1,1,1.0,4.2645
-Q78,What pension and old age income security schemes are available for poor citizens?,atal_pension_yojana.txt,cross_document,purpose,atal_pension_yojana.txt,1,1,1,1.0,4.5508
-Q79,What government initiatives provide free food or subsidized cooking gas to BPL families?,pm_gkay.txt|pmuy.txt,cross_document,benefits,pm_gkay.txt,1,1,1,1.0,5.0247
-Q80,What accident insurance coverage is available through RuPay cards?,stand_up_india.txt|pmjdy.txt,cross_document,benefits,pmjdy.txt,1,1,1,1.0,4.1538
-Q81,What financial incentives are provided for conducting digital transactions?,pm_vishwakarma.txt|pm_svanidhi.txt,cross_document,benefits,pm_vishwakarma.txt,1,1,1,1.0,4.2019
-Q82,What assistance is provided to unorganized sector workers and laborers?,pm_vishwakarma.txt|pm_svanidhi.txt|pm_gkay.txt|atal_pension_yojana.txt,cross_document,benefits,atal_pension_yojana.txt,1,1,1,1.0,5.0253
+Q01,What is the age limit to join Atal Pension Yojana?,atal_pension_yojana.txt,easy,eligibility,atal_pension_yojana.txt,1,1,1,1.0,5.4375
+Q02,What is the guaranteed monthly pension range for unorganized workers upon reaching 60 years of age?,atal_pension_yojana.txt,medium,financial_limits,atal_pension_yojana.txt,1,1,1,1.0,4.1667
+Q03,What options are available to the spouse if an old age pension subscriber passes away before sixty years?,atal_pension_yojana.txt,hard,rules,atal_pension_yojana.txt,1,1,1,1.0,2.9805
+Q04,Are contributions to the unorganized worker retirement pension scheme eligible for income tax deduction under Section 80CCD?,atal_pension_yojana.txt,medium,benefits,atal_pension_yojana.txt,1,1,1,1.0,2.5867
+Q05,How can an unorganized sector pension subscriber lodge and track a grievance on CGMS?,atal_pension_yojana.txt,hard,procedure,atal_pension_yojana.txt,1,1,1,1.0,2.8281
+Q06,How much free food grain is supplied per month under Pradhan Mantri Garib Kalyan Anna Yojana?,pm_gkay.txt,easy,benefits,pm_gkay.txt,1,1,1,1.0,2.2998
+Q07,Which ration card holder categories are entitled to free grain distribution under Atmanirbhar Bharat?,pm_gkay.txt,medium,eligibility,pm_gkay.txt,1,1,1,1.0,2.5469
+Q08,Which states and union territories received wheat instead of rice under the free grain distribution scheme?,pm_gkay.txt,hard,rules,pm_gkay.txt,1,1,1,1.0,2.5909
+Q09,How can migrant workers obtain subsidized or free ration outside their home state using biometric authentication?,pm_gkay.txt,medium,procedure,pmuy.txt,0,1,1,0.3333,3.0931
+Q10,What documents are required to receive food grain rations at a Fair Price Shop under PM-GKAY?,pm_gkay.txt,easy,documents,pm_gkay.txt,1,1,1,1.0,2.6448
+Q11,What is the annual financial assistance provided under PM-KISAN?,pm_kisan.txt,easy,financial_limits,pm_kisan.txt,1,1,1,1.0,2.2374
+Q12,Who is eligible for direct income support for agricultural inputs?,pm_kisan.txt,medium,eligibility,pm_kisan.txt,1,1,1,1.0,2.2131
+Q13,Are retired government pensioners receiving more than ten thousand rupees per month eligible for farmer income support?,pm_kisan.txt,hard,rules,pm_kisan.txt,1,1,1,1.0,2.1472
+Q14,What land records and identification papers must be submitted for farmer registration via Common Service Centres?,pm_kisan.txt,medium,documents,pm_kisan.txt,1,1,1,1.0,2.4904
+Q15,What is the main objective of the Pradhan Mantri Kisan Samman Nidhi?,pm_kisan.txt,easy,purpose,pm_kisan.txt,1,1,1,1.0,1.9123
+Q16,What is the initial collateral-free working capital loan amount under PM SVANidhi?,pm_svanidhi.txt,easy,financial_limits,pm_svanidhi.txt,1,1,1,1.0,2.2024
+Q17,What interest subsidy and monthly digital cashback are offered to urban street vendors?,pm_svanidhi.txt,medium,benefits,pm_svanidhi.txt,1,1,1,1.0,2.3361
+Q18,Can street vendors operating in peri-urban areas without a Certificate of Vending qualify for micro-credit?,pm_svanidhi.txt,hard,eligibility,pm_svanidhi.txt,1,1,1,1.0,2.6574
+Q19,What is the repayment tenure for the initial micro-credit tranche for street hawkers?,pm_svanidhi.txt,medium,procedure,pm_svanidhi.txt,1,1,1,1.0,2.3267
+Q20,What documents must Category C and D street vendors produce to apply for PM SVANidhi?,pm_svanidhi.txt,easy,documents,pm_svanidhi.txt,1,1,1,1.0,2.0792
+Q21,How many traditional trades are covered under the PM Vishwakarma scheme?,pm_vishwakarma.txt,easy,purpose,pm_vishwakarma.txt,1,1,1,1.0,2.2656
+Q22,What is the maximum loan amount and interest rate for the two tranches of enterprise credit support for artisans?,pm_vishwakarma.txt,medium,financial_limits,pm_vishwakarma.txt,1,1,1,1.0,2.2636
+Q23,What daily training stipend and toolkit incentive voucher are provided to traditional craftspeople?,pm_vishwakarma.txt,hard,benefits,pm_vishwakarma.txt,1,1,1,1.0,2.4129
+Q24,What conditions must a craftsman fulfill to unlock the second loan tranche of Rs 2 lakh?,pm_vishwakarma.txt,medium,rules,pm_vishwakarma.txt,1,1,1,1.0,2.7644
+Q25,What incentive is paid to artisans per digital transaction under PM Vishwakarma?,pm_vishwakarma.txt,easy,benefits,pm_vishwakarma.txt,1,1,1,1.0,2.3358
+Q26,How much unit assistance is granted for house construction in plain areas under PMAY-G?,pmay_g.txt,easy,financial_limits,pmay_g.txt,1,1,1,1.0,2.5276
+Q27,What additional toilet construction assistance is provided in convergence with Swachh Bharat Mission-Gramin?,pmay_g.txt,medium,benefits,pmay_g.txt,1,1,1,1.0,2.2777
+Q28,What criteria cause a household to be automatically excluded from rural housing assistance?,pmay_g.txt,hard,eligibility,pmay_g.txt,1,1,1,1.0,2.4154
+Q29,What is the minimum prescribed floor area for a rural house under PMAY-G?,pmay_g.txt,medium,rules,pmay_g.txt,1,1,1,1.0,2.4231
+Q30,How are eligible rural housing beneficiaries identified and verified at the village level?,pmay_g.txt,hard,procedure,pmay_g.txt,1,1,1,1.0,2.4592
+Q31,What are the four core components of Pradhan Mantri Awas Yojana - Urban?,pmay_u.txt,easy,purpose,pmay_u.txt,1,1,1,1.0,2.2397
+Q32,What income categories qualify for housing assistance in urban areas?,pmay_u.txt,medium,eligibility,pmay_u.txt,1,1,1,1.0,2.2376
+Q33,Can a family that already owns a pucca house in their native village qualify for urban housing benefits?,pmay_u.txt,hard,rules,pmay_u.txt,1,1,1,1.0,2.869
+Q34,What is the Credit Linked Subsidy Scheme under urban housing assistance?,pmay_u.txt,medium,benefits,pmay_u.txt,1,1,1,1.0,2.0787
+Q35,What proof of identity and income details are required to apply for PMAY-U?,pmay_u.txt,easy,documents,pmay_u.txt,1,1,1,1.0,2.5025
+Q36,What is the maximum crop insurance premium payable by farmers for Kharif and Rabi food crops under PMFBY?,pmfby.txt,easy,financial_limits,pmfby.txt,1,1,1,1.0,1.6008
+Q37,What compensation is available if insured farmers are prevented from sowing due to adverse weather?,pmfby.txt,medium,benefits,pmfby.txt,1,1,1,1.0,2.1591
+Q38,For how many days after harvesting are crops covered against localized post-harvest losses?,pmfby.txt,hard,rules,pmfby.txt,1,1,1,1.0,2.1076
+Q39,What risks are excluded from crop insurance coverage during the cultivation cycle?,pmfby.txt,medium,purpose,pmfby.txt,1,1,1,1.0,2.1246
+Q40,How can farmers track the status of their crop insurance application online?,pmfby.txt,easy,procedure,pmfby.txt,1,1,1,1.0,1.9847
+Q41,What is the accidental insurance cover provided on RuPay debit cards under PMJDY?,pmjdy.txt,easy,benefits,pmjdy.txt,1,1,1,1.0,2.081
+Q42,What is the maximum overdraft limit available on Jan Dhan accounts?,pmjdy.txt,medium,financial_limits,pmjdy.txt,1,1,1,1.0,2.3531
+Q43,What are the rules and validity period for opening a small bank account without standard KYC documents?,pmjdy.txt,hard,rules,pmjdy.txt,1,1,1,1.0,2.4166
+Q44,What role do Bank Mitras or Business Correspondents play in financial inclusion in remote areas?,pmjdy.txt,medium,purpose,pmjdy.txt,1,1,1,1.0,2.7309
+Q45,Can a minor above ten years of age open a basic savings bank account under PMJDY?,pmjdy.txt,easy,eligibility,pmjdy.txt,1,1,1,1.0,2.2749
+Q46,What does Recognition of Prior Learning mean under PMKVY 4.0?,pmkvy.txt,easy,purpose,pmkvy.txt,1,1,1,1.0,2.2079
+Q47,Which digital platform manages the candidate skilling lifecycle and employment opportunities?,pmkvy.txt,medium,procedure,pmkvy.txt,1,1,1,1.0,2.0618
+Q48,What new-age and futuristic technological job domains are prioritized under the national skills curriculum?,pmkvy.txt,hard,rules,pmkvy.txt,1,1,1,1.0,2.1235
+Q49,How does alignment with the National Skills Qualification Framework ensure standardized vocational training?,pmkvy.txt,medium,benefits,pmkvy.txt,1,1,1,1.0,2.3896
+Q50,What role do industry-led Awarding Bodies play in vocational courses under PMKVY?,pmkvy.txt,hard,procedure,pmkvy.txt,1,1,1,1.0,2.2451
+Q51,"What are the loan limits for Shishu, Kishore, and Tarun categories under Mudra?",pmmy.txt,easy,financial_limits,pmmy.txt,1,1,1,1.0,2.2459
+Q52,What is the maximum loan limit under the Tarun Plus category for micro enterprises?,pmmy.txt,medium,financial_limits,pmmy.txt,1,1,1,1.0,2.1203
+Q53,Are upfront fees or processing charges levied on micro enterprise loans up to fifty thousand rupees?,pmmy.txt,hard,rules,pmmy.txt,1,1,1,1.0,2.4102
+Q54,What types of business entities and activities allied to agriculture qualify for MUDRA loans?,pmmy.txt,medium,eligibility,pmmy.txt,1,1,1,1.0,2.2023
+Q55,Through which online portal can entrepreneurs submit applications for a Mudra loan?,pmmy.txt,easy,procedure,pmmy.txt,1,1,1,1.0,2.0872
+Q56,What free benefits are provided to beneficiaries with their first LPG connection under Ujjwala 2.0?,pmuy.txt,easy,benefits,pmuy.txt,1,1,1,1.0,2.3425
+Q57,What is the financial grant provided for a 14.2 kg LPG cylinder connection under PMUY?,pmuy.txt,medium,financial_limits,pmuy.txt,1,1,1,1.0,2.1319
+Q58,Can adult women from poor households not listed in SECC 2011 qualify for a gas connection?,pmuy.txt,hard,eligibility,pmuy.txt,1,1,1,1.0,2.2791
+Q59,Can male household members apply for the clean cooking fuel subsidy scheme?,pmuy.txt,medium,rules,pmuy.txt,1,1,1,1.0,2.3723
+Q60,What documents are required to apply for an LPG connection under Pradhan Mantri Ujjwala Yojana?,pmuy.txt,easy,documents,pmuy.txt,1,1,1,1.0,2.3931
+Q61,What is the loan amount range provided to greenfield enterprises under Stand-Up India?,stand_up_india.txt,easy,financial_limits,stand_up_india.txt,1,1,1,1.0,2.0297
+Q62,Who is eligible to apply for enterprise loans under the Stand-Up India scheme?,stand_up_india.txt,medium,eligibility,stand_up_india.txt,1,1,1,1.0,2.5576
+Q63,What shareholding and controlling stake requirement applies to non-individual enterprises?,stand_up_india.txt,hard,rules,stand_up_india.txt,1,1,1,1.0,2.4031
+Q64,What additional project reports and balance sheets are required for loan exposures exceeding 25 lakhs?,stand_up_india.txt,medium,documents,stand_up_india.txt,1,1,1,1.0,2.3293
+Q65,What hand-holding support does SIDBI arrange for greenfield borrowers?,stand_up_india.txt,hard,procedure,stand_up_india.txt,1,1,1,1.0,2.1126
+Q66,What is the minimum initial deposit and maximum annual investment limit for a Sukanya Samriddhi account?,sukanya_samriddhi.txt,easy,financial_limits,sukanya_samriddhi.txt,1,1,1,1.0,2.4773
+Q67,What is the maximum age of a girl child at the time of opening a savings account under the scheme?,sukanya_samriddhi.txt,medium,eligibility,sukanya_samriddhi.txt,1,1,1,1.0,2.5273
+Q68,Under what circumstances can more than two accounts be opened within one family?,sukanya_samriddhi.txt,hard,rules,sukanya_samriddhi.txt,1,1,1,1.0,2.6607
+Q69,What is the maturity period and deposit tenure for a girl child savings account?,sukanya_samriddhi.txt,medium,rules,sukanya_samriddhi.txt,1,1,1,1.0,2.4269
+Q70,What penalty is charged to regularize a defaulted small savings account?,sukanya_samriddhi.txt,hard,rules,sukanya_samriddhi.txt,1,1,1,1.0,2.7439
+Q71,Who is eligible for government housing assistance?,pmay_u.txt|pmay_g.txt,cross_document,eligibility,pm_gkay.txt,0,1,1,0.5,1.985
+Q72,What government financial assistance is available for building a permanent house?,pmay_u.txt|pmay_g.txt,cross_document,financial_limits,pmay_g.txt,1,1,1,1.0,2.38
+Q73,What support is available for skill development and vocational training?,pm_vishwakarma.txt|pmkvy.txt,cross_document,purpose,pm_vishwakarma.txt,1,1,1,1.0,1.8049
+Q74,What financial assistance or credit is provided to small businesses and enterprises?,stand_up_india.txt|pmmy.txt|pm_svanidhi.txt,cross_document,financial_limits,pmmy.txt,1,1,1,1.0,1.7961
+Q75,What loan facilities are available without collateral?,pm_vishwakarma.txt|pmmy.txt|pm_svanidhi.txt,cross_document,benefits,pm_svanidhi.txt,1,1,1,1.0,2.0684
+Q76,What government welfare schemes provide direct financial assistance to farmers?,pmfby.txt|pm_kisan.txt,cross_document,benefits,pm_kisan.txt,1,1,1,1.0,2.153
+Q77,What financial security and savings schemes are designed for women beneficiaries?,stand_up_india.txt|sukanya_samriddhi.txt|pmuy.txt,cross_document,eligibility,sukanya_samriddhi.txt,1,1,1,1.0,2.3625
+Q78,What pension and old age income security schemes are available for poor citizens?,atal_pension_yojana.txt,cross_document,purpose,atal_pension_yojana.txt,1,1,1,1.0,2.3531
+Q79,What government initiatives provide free food or subsidized cooking gas to BPL families?,pmuy.txt|pm_gkay.txt,cross_document,benefits,pm_gkay.txt,1,1,1,1.0,2.4787
+Q80,What accident insurance coverage is available through RuPay cards?,stand_up_india.txt|pmjdy.txt,cross_document,benefits,pmjdy.txt,1,1,1,1.0,2.1168
+Q81,What financial incentives are provided for conducting digital transactions?,pm_vishwakarma.txt|pm_svanidhi.txt,cross_document,benefits,pm_vishwakarma.txt,1,1,1,1.0,2.2152
+Q82,What assistance is provided to unorganized sector workers and laborers?,pm_vishwakarma.txt|pm_gkay.txt|atal_pension_yojana.txt|pm_svanidhi.txt,cross_document,benefits,atal_pension_yojana.txt,1,1,1,1.0,2.2823

@@ -1,0 +1,72 @@
+{
+  "A_reformulation": {
+    "label": "A. Query Reformulation (T5/ling)",
+    "mean": 0.00020255365857670634,
+    "median": 0.0001330000000052678,
+    "p95": 0.0006768549997104856,
+    "percent_of_total": 0.00448017744601692
+  },
+  "B_dense_naive": {
+    "label": "B. Dense Naive Retrieval",
+    "mean": 0.10638585121955102,
+    "median": 0.08530125000015687,
+    "p95": 0.18642473499985504,
+    "percent_of_total": 2.353092482052833
+  },
+  "C_dense_sw": {
+    "label": "C. Dense Sentence-Window Retrieval",
+    "mean": 0.0914584878048184,
+    "median": 0.07945859999972527,
+    "p95": 0.14383978500077318,
+    "percent_of_total": 2.022922010834921
+  },
+  "D_dense_pc": {
+    "label": "D. Dense Parent-Child Retrieval",
+    "mean": 0.0985380024389664,
+    "median": 0.07808569999997417,
+    "p95": 0.16813219499972554,
+    "percent_of_total": 2.1795100577530926
+  },
+  "E_bm25": {
+    "label": "E. BM25 Lexical Retrieval",
+    "mean": 0.00878008780478567,
+    "median": 0.006436150000354246,
+    "p95": 0.014491259998294492,
+    "percent_of_total": 0.19420212714722418
+  },
+  "F_rrf_fusion": {
+    "label": "F. Canonical RRF Fusion",
+    "mean": 0.000777589024437475,
+    "median": 0.0006167500000628934,
+    "p95": 0.0014048599997295243,
+    "percent_of_total": 0.017199081142421312
+  },
+  "G_mmr_diversify": {
+    "label": "G. Candidate Pool / MMR Diversify",
+    "mean": 0.027120591463333368,
+    "median": 0.023808650000319176,
+    "p95": 0.04222444499955601,
+    "percent_of_total": 0.5998660456219389
+  },
+  "H_crossencoder_inference": {
+    "label": "H. CrossEncoder Inference",
+    "mean": 4.187408324390217,
+    "median": 3.853360050000447,
+    "p95": 6.409846595000318,
+    "percent_of_total": 92.6190741950587
+  },
+  "I_final_aggregation": {
+    "label": "I. Final Aggregation & Sorting",
+    "mean": 0.00019033048785076527,
+    "median": 8.625000009487849e-05,
+    "p95": 0.00026043500020023213,
+    "percent_of_total": 0.004209819585339536
+  },
+  "J_total_latency": {
+    "label": "J. TOTAL END-TO-END",
+    "mean": 4.521107947560999,
+    "median": 4.156767749999744,
+    "p95": 7.089162310000166,
+    "percent_of_total": 100.0
+  }
+}

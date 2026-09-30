@@ -1,0 +1,24 @@
+{
+  "configuration_a": {
+    "config": "Configuration A: Baseline (K=15, V=3)",
+    "fusion_top_k": 15,
+    "hit_at_1": 97.56,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9858,
+    "mean_latency": 3.24,
+    "median_latency": 3.07,
+    "p95_latency": 3.71
+  },
+  "configuration_b": {
+    "config": "Configuration B: Optimized (K=10, V=3)",
+    "fusion_top_k": 10,
+    "hit_at_1": 97.56,
+    "hit_at_3": 100.0,
+    "hit_at_5": 100.0,
+    "mrr": 0.9858,
+    "mean_latency": 2.47,
+    "median_latency": 2.33,
+    "p95_latency": 2.92
+  }
+}

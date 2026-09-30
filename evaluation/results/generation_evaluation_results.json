@@ -1,0 +1,2740 @@
+{
+  "num_queries": 30,
+  "metrics": {
+    "faithfulness": {
+      "average_score": 1.867,
+      "pct_score_2": 93.33
+    },
+    "correctness": {
+      "average_score": 1.8,
+      "pct_score_2": 90.0
+    },
+    "context_relevance": {
+      "average_score": 1.967,
+      "pct_score_2": 96.67
+    },
+    "source_attribution": {
+      "average_score": 1.967,
+      "pct_score_2": 96.67
+    },
+    "abstention_accuracy": {
+      "pct_correct": 93.33
+    },
+    "latency": {
+      "mean_seconds": 2.55
+    }
+  },
+  "detailed_results": [
+    {
+      "query_id": "GEN_01",
+      "query": "What is the age limit to join Atal Pension Yojana?",
+      "category": "eligibility",
+      "target_document": "atal_pension_yojana.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Subscribers must be between 18 and 40 years of age.",
+      "generated_answer": "1. The minimum age of joining APY is 18 years and the maximum age is 40 years.\n\n2. The age of exit and start of pension is 60 years.\n\n3. Subscriber contribution to APY shall be made through the facility of \"auto-debit\" of the prescribed contribution amount from the savings bank account of the subscriber on a monthly, quarterly or half-yearly basis.\n\n4. Subscribers are required to contribute the prescribed contribution amount from the age of joining APY until the age of 60 years. Atal Pension Yojana (APY) is an old age income security scheme for a savings account holder in the age group of 18-40 years who is not an income tax-payee.\n\nThe scheme helps in addressing the longevity risks among workers in the unorganized sector and encourages workers to voluntarily save for their retirement. 2. Tax Benefits\n\nContributions to the Atal Pension Yojana (APY) are eligible for tax benefits similar to the National Pension System (NPS) under Section 80CCD(1).\n\n3. Voluntary Exit Before 60 Years of Age\n\nThe subscriber shall be refunded only the contributions made by him/her to APY along with the net actual accrued income earned on the contributions, after deducting account maintenance charges.\n\nHowever, in the case of subscribers who joined the scheme before 31st March 2016 and have received the Government Co-Contribution, the Government Co-Contribution including the accrued income earned thereon shall not be refunded.\n\n4. Death Before 60 Years\n\nOption 1:\nIn case of death of the subscriber before 60 years, the spouse of the subscriber may continue contribution in the APY account of the subscriber, which can be maintained in the spouse's name, for the remaining vesting period until the original subscriber would have attained the age of 60 years.",
+      "latency_seconds": 22.82,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_49ae75c5187d",
+          "document_title": "Atal Pension Yojana (APY)",
+          "source_file": "atal_pension_yojana.txt",
+          "section": "AGE OF JOINING AND CONTRIBUTION PERIOD",
+          "heading_path": [
+            "AGE OF JOINING AND CONTRIBUTION PERIOD"
+          ],
+          "chunk_id": "doc_49ae75c5187d__naive__10",
+          "retrieval_type": "naive",
+          "rerank_score": 7.613141854604085
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_49ae75c5187d",
+          "document_title": "Atal Pension Yojana (APY)",
+          "source_file": "atal_pension_yojana.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_49ae75c5187d__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 6.077333291371663
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_49ae75c5187d",
+          "document_title": "Atal Pension Yojana (APY)",
+          "source_file": "atal_pension_yojana.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_49ae75c5187d__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": 3.592150608698527
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_49ae75c5187d",
+          "document_title": "Atal Pension Yojana (APY)",
+          "source_file": "atal_pension_yojana.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_49ae75c5187d__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": 3.5107688903808594
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_49ae75c5187d",
+          "document_title": "Atal Pension Yojana (APY)",
+          "source_file": "atal_pension_yojana.txt",
+          "section": "EXCLUSIONS",
+          "heading_path": [
+            "EXCLUSIONS"
+          ],
+          "chunk_id": "doc_49ae75c5187d__naive__11",
+          "retrieval_type": "naive",
+          "rerank_score": 1.5697346727053325
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (atal_pension_yojana.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [atal_pension_yojana.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_02",
+      "query": "What is the guaranteed monthly pension amount under Atal Pension Yojana upon turning 60?",
+      "category": "financial_limits",
+      "target_document": "atal_pension_yojana.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Subscribers receive a guaranteed monthly pension of Rs. 1,000, Rs. 2,000, Rs. 3,000, Rs. 4,000, or Rs. 5,000 per month.",
+      "generated_answer": "1. Upon Exit on Attaining 60 Years\n\nThe subscriber shall receive the following three benefits on attaining the age of 60:\n\n(i) Guaranteed Minimum Pension Amount\n\nEach subscriber under APY shall receive a guaranteed minimum pension of Rs. 1000/- per month or Rs. 2000/- per month or Rs. 3000/- per month or Rs. 4000/- per month or Rs. 5000/- per month, after the age of 60 years until death.\n\n(ii) Guaranteed Minimum Pension Amount to the Spouse\n\nAfter the subscriber's demise, the spouse of the subscriber shall be entitled to receive the same pension amount as that of the subscriber, until death.\n\n(iii) Return of Pension Wealth to the Nominee\n\nAfter the demise of both the subscriber and the spouse, the nominee of the subscriber shall be entitled to receive the pension wealth accumulated till the subscriber's age of 60 years. 1. The minimum age of joining APY is 18 years and the maximum age is 40 years.\n\n2. The age of exit and start of pension is 60 years.\n\n3. Subscriber contribution to APY shall be made through the facility of \"auto-debit\" of the prescribed contribution amount from the savings bank account of the subscriber on a monthly, quarterly or half-yearly basis.\n\n4. Subscribers are required to contribute the prescribed contribution amount from the age of joining APY until the age of 60 years. 2. Tax Benefits\n\nContributions to the Atal Pension Yojana (APY) are eligible for tax benefits similar to the National Pension System (NPS) under Section 80CCD(1).\n\n3. Voluntary Exit Before 60 Years of Age\n\nThe subscriber shall be refunded only the contributions made by him/her to APY along with the net actual accrued income earned on the contributions, after deducting account maintenance charges.\n\nHowever, in the case of subscribers who joined the scheme before 31st March 2016 and have received the Government Co-Contribution, the Government Co-Contribution including the accrued income earned thereon shall not be refunded.\n\n4. Death Before 60 Years\n\nOption 1:\nIn case of death of the subscriber before 60 years, the spouse of the subscriber may continue contribution in the APY account of the subscriber, which can be maintained in the spouse's name, for the remaining vesting period until the original subscriber would have attained the age of 60 years.",
+      "latency_seconds": 1.82,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_49ae75c5187d",
+          "document_title": "Atal Pension Yojana (APY)",
+          "source_file": "atal_pension_yojana.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_49ae75c5187d__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": 6.773015022277832
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_49ae75c5187d",
+          "document_title": "Atal Pension Yojana (APY)",
+          "source_file": "atal_pension_yojana.txt",
+          "section": "AGE OF JOINING AND CONTRIBUTION PERIOD",
+          "heading_path": [
+            "AGE OF JOINING AND CONTRIBUTION PERIOD"
+          ],
+          "chunk_id": "doc_49ae75c5187d__naive__10",
+          "retrieval_type": "naive",
+          "rerank_score": 2.908802350362142
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_49ae75c5187d",
+          "document_title": "Atal Pension Yojana (APY)",
+          "source_file": "atal_pension_yojana.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_49ae75c5187d__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": 1.544298231601715
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_49ae75c5187d",
+          "document_title": "Atal Pension Yojana (APY)",
+          "source_file": "atal_pension_yojana.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_49ae75c5187d__naive__9",
+          "retrieval_type": "naive",
+          "rerank_score": 0.37225331862767536
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_49ae75c5187d",
+          "document_title": "Atal Pension Yojana (APY)",
+          "source_file": "atal_pension_yojana.txt",
+          "section": "PROCESS 2 - eNPS",
+          "heading_path": [
+            "PROCESS 2 - eNPS"
+          ],
+          "chunk_id": "doc_49ae75c5187d__naive__13",
+          "retrieval_type": "naive",
+          "rerank_score": -0.633147249619166
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 3/3 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (atal_pension_yojana.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [atal_pension_yojana.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_03",
+      "query": "How much free food grain is supplied per month under PM-GKAY?",
+      "category": "financial_limits",
+      "target_document": "pm_gkay.txt",
+      "is_unanswerable": false,
+      "expected_answer": "The Centre provides 5 kg of free food grains per month to eligible beneficiaries.",
+      "generated_answer": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY) is a scheme as part of Atmanirbhar Bharat to supply free food grains to migrants and poor.\n\nPhase-I and Phase-II of this scheme were operational from April to June, 2020 and July to November, 2020 respectively. Phase III of the scheme was operational from May to June, 2021. Phase-IV of the scheme was operational during July-November, 2021 and Phase V from December 2021 till March, 2022.\n\nUnder this scheme, the Centre provides 5 kg of free food grains per month to the poor. This is in addition to the subsidized ration provided under the National Food Security Act (NFSA) to families covered under the Public Distribution System (PDS). The subsidized ration was provided at Rs. 2-3 per kg. The food grain and the amount may be variable. 1. PMGKAY provides 5 kg of food grain to each family holding a ration card free of cost. This is in addition to the 5 kg of subsidized food grain already offered through the Public Distribution System (PDS).\n\n2. Wheat has been allocated to 6 States/UTs: Punjab, Haryana, Rajasthan, Chandigarh, Delhi, and Gujarat. Rice has been provided to the remaining States/UTs. The PMGKAY scheme for Phase VI from April-September, 2022 would entail an estimated additional food subsidy of Rs. 80,000 Crore.",
+      "latency_seconds": 1.66,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_dbf7841348a1",
+          "document_title": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY)",
+          "source_file": "pm_gkay.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_dbf7841348a1__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 5.339428901672363
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_dbf7841348a1",
+          "document_title": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY)",
+          "source_file": "pm_gkay.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_dbf7841348a1__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 3.687341849009196
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_dbf7841348a1",
+          "document_title": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY)",
+          "source_file": "pm_gkay.txt",
+          "section": "PHASE VI",
+          "heading_path": [
+            "PHASE VI"
+          ],
+          "chunk_id": "doc_dbf7841348a1__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": -1.186098722120126
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_dbf7841348a1",
+          "document_title": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY)",
+          "source_file": "pm_gkay.txt",
+          "section": "CATEGORIES",
+          "heading_path": [
+            "CATEGORIES"
+          ],
+          "chunk_id": "doc_dbf7841348a1__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": -2.3049405813217163
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_dbf7841348a1",
+          "document_title": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY)",
+          "source_file": "pm_gkay.txt",
+          "section": "SOURCE",
+          "heading_path": [
+            "SOURCE"
+          ],
+          "chunk_id": "doc_dbf7841348a1__naive__12",
+          "retrieval_type": "naive",
+          "rerank_score": -3.9616173108418784
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pm_gkay.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pm_gkay.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_04",
+      "query": "Which household categories are eligible for PM-GKAY food grains?",
+      "category": "eligibility",
+      "target_document": "pm_gkay.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Antyodaya Anna Yojana (AAY) and Priority Households (PHH) categories are eligible.",
+      "generated_answer": "1. Families belonging to Antyodaya Anna Yojana (AAY) and Priority Households (PHH) categories are eligible for the scheme.\n\n2. PHH are to be identified by State Governments/Union Territory Administrations as per criteria evolved by them. AAY families are to be identified by States/UTs as per the criteria prescribed by the Central Government.\n\n3. Households headed by widows, terminally ill persons, disabled persons, or persons aged 60 years or more with no assured means of subsistence or societal support.\n\n4. Widows, terminally ill persons, disabled persons, persons aged 60 years or more, single women, or single men with no family or societal support or assured means of subsistence.\n\n5. All primitive tribal households.\n\n6. Landless agriculture labourers, marginal farmers, and rural artisans/craftsmen such as potters, tanners, weavers, blacksmiths, and carpenters. 1. PMGKAY provides 5 kg of food grain to each family holding a ration card free of cost. This is in addition to the 5 kg of subsidized food grain already offered through the Public Distribution System (PDS).\n\n2. Wheat has been allocated to 6 States/UTs: Punjab, Haryana, Rajasthan, Chandigarh, Delhi, and Gujarat. Rice has been provided to the remaining States/UTs. Food Security\nFood Grains\nRation\nPublic Distribution System\nWelfare",
+      "latency_seconds": 1.73,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_dbf7841348a1",
+          "document_title": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY)",
+          "source_file": "pm_gkay.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_dbf7841348a1__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": 4.789898951848348
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_dbf7841348a1",
+          "document_title": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY)",
+          "source_file": "pm_gkay.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_dbf7841348a1__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 2.1753419240315757
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_dbf7841348a1",
+          "document_title": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY)",
+          "source_file": "pm_gkay.txt",
+          "section": "CATEGORIES",
+          "heading_path": [
+            "CATEGORIES"
+          ],
+          "chunk_id": "doc_dbf7841348a1__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 2.0411844650904336
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_dbf7841348a1",
+          "document_title": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY)",
+          "source_file": "pm_gkay.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_dbf7841348a1__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 0.3924787590901057
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "PRIORITISATION WITHIN THE UNIVERSE",
+          "heading_path": [
+            "PRIORITISATION WITHIN THE UNIVERSE"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__10",
+          "retrieval_type": "naive",
+          "rerank_score": 0.38071268796920776
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pm_gkay.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pm_gkay.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_05",
+      "query": "What is the annual financial benefit provided under PM-KISAN and how is it paid?",
+      "category": "benefits",
+      "target_document": "pm_kisan.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Financial benefit of Rs. 6,000 per year payable in three equal installments of Rs. 2,000 each every four months.",
+      "generated_answer": "1. A financial benefit of Rs. 6,000 per annum per family is provided.\n\n2. The amount is payable in three equal installments of Rs. 2,000 each, every four months. The scheme aims to supplement the financial needs of all landholding farmers' families by procuring various inputs to ensure proper crop health and appropriate yields, commensurate with the anticipated farm income as well as for domestic needs.\n\nUnder the scheme, an amount of Rs. 6,000 per year is released by the Central Government online directly into the bank accounts of eligible farmers under the Direct Benefit Transfer mode, subject to certain exclusions. 1. Financial assistance of up to ₹10,000 is provided to street vendors to help them restart and expand their businesses.\n\n2. The loan is provided at a low-interest rate of 7%, making it easier for street vendors to repay the loan.\n\n3. No collateral is required to avail of the loan, making it more accessible to street vendors.\n\n4. There is no processing fee to apply for the scheme, making it cost-effective for street vendors.\n\n5. The loan amount can be used for any purpose related to the street vending business, such as buying raw materials, paying rent, or purchasing equipment.\n\n6. The scheme provides financial stability to street vendors and helps them to become self-reliant.\n\n7. The loan repayment period is one year, which gives street vendors sufficient time to repay the loan.\n\n8. The scheme encourages entrepreneurship and helps to create employment opportunities.",
+      "latency_seconds": 1.8,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_a89f117958a7",
+          "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+          "source_file": "pm_kisan.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_a89f117958a7__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 4.927537679672241
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_a89f117958a7",
+          "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+          "source_file": "pm_kisan.txt",
+          "section": "OBJECTIVE",
+          "heading_path": [
+            "OBJECTIVE"
+          ],
+          "chunk_id": "doc_a89f117958a7__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 1.7974517742792766
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_e7a4c5f55fa0",
+          "document_title": "PM Street Vendor’s AtmaNirbhar Nidhi (PM SVANidhi)",
+          "source_file": "pm_svanidhi.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_e7a4c5f55fa0__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 0.06871727605660756
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_a89f117958a7",
+          "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+          "source_file": "pm_kisan.txt",
+          "section": "EXCLUSIONS",
+          "heading_path": [
+            "EXCLUSIONS"
+          ],
+          "chunk_id": "doc_a89f117958a7__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": -0.9330767393112183
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_a89f117958a7",
+          "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+          "source_file": "pm_kisan.txt",
+          "section": "STEP 1: PREREQUISITES",
+          "heading_path": [
+            "STEP 1: PREREQUISITES"
+          ],
+          "chunk_id": "doc_a89f117958a7__sw__34",
+          "retrieval_type": "sentence_window",
+          "rerank_score": -2.180966854095459
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pm_kisan.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pm_kisan.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_06",
+      "query": "Who is excluded from receiving benefits under the PM-KISAN scheme?",
+      "category": "rules_conditions",
+      "target_document": "pm_kisan.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Institutional landholders, constitutional post holders, income tax payers, retired pensioners with monthly pension of Rs. 10,000 or more, and registered professionals (doctors, engineers, lawyers, CAs).",
+      "generated_answer": "The following categories of beneficiaries of higher economic status are not eligible for benefits under the scheme:\n\n1. All institutional landholders.\n\n2. Farmer families in which one or more of their members belong to the categories listed below.\n\n3. Former and present holders of constitutional posts.\n\n4. Former and present Ministers, State Ministers, and former or present Members of Lok Sabha, Rajya Sabha, State Legislative Assemblies, or State Legislative Councils, as well as former and present Mayors of Municipal Corporations and former and present Chairpersons of District Panchayats.\n\n5. All serving or retired officers and employees of Central or State Government Ministries, Offices, Departments and their field units, Central or State Public Sector Enterprises, attached offices, autonomous institutions under Government, as well as regular employees of Local Bodies. Multi Tasking Staff, Class IV, and Group D employees are excluded from this category. All landholding farmers' families that have cultivable land holdings in their names are eligible to receive benefits under the scheme. 6. All superannuated or retired pensioners whose monthly pension is Rs. 10,000 or more, excluding Multi Tasking Staff, Class IV, and Group D employees of the above category.\n\n7. All persons who paid income tax in the last assessment year.\n\n8. Professionals such as Doctors, Engineers, Lawyers, Chartered Accountants, and Architects who are registered with professional bodies and carry out their professions through practice.",
+      "latency_seconds": 1.64,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_a89f117958a7",
+          "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+          "source_file": "pm_kisan.txt",
+          "section": "EXCLUSIONS",
+          "heading_path": [
+            "EXCLUSIONS"
+          ],
+          "chunk_id": "doc_a89f117958a7__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 5.442229429880778
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_a89f117958a7",
+          "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+          "source_file": "pm_kisan.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_a89f117958a7__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 4.088838974634807
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_a89f117958a7",
+          "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+          "source_file": "pm_kisan.txt",
+          "section": "EXCLUSIONS",
+          "heading_path": [
+            "EXCLUSIONS"
+          ],
+          "chunk_id": "doc_a89f117958a7__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 2.968327840169271
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_a89f117958a7",
+          "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+          "source_file": "pm_kisan.txt",
+          "section": "OBJECTIVE",
+          "heading_path": [
+            "OBJECTIVE"
+          ],
+          "chunk_id": "doc_a89f117958a7__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 2.89496378103892
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_a89f117958a7",
+          "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+          "source_file": "pm_kisan.txt",
+          "section": "STEP 1: PREREQUISITES",
+          "heading_path": [
+            "STEP 1: PREREQUISITES"
+          ],
+          "chunk_id": "doc_a89f117958a7__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": 0.46213876207669574
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 1/1 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pm_kisan.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pm_kisan.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_07",
+      "query": "What is the initial working capital loan amount provided under PM SVANidhi?",
+      "category": "financial_limits",
+      "target_document": "pm_svanidhi.txt",
+      "is_unanswerable": false,
+      "expected_answer": "An initial collateral-free working capital loan of Rs. 10,000 is provided, followed by Rs. 20,000 and Rs. 50,000 in subsequent tranches.",
+      "generated_answer": "PM SVANidhi is a central-sector micro-credit scheme launched on 1st June 2020 by the Ministry of Housing and Urban Affairs (MoHUA) to provide handholding support to street vendors.\n\nThe scheme facilitates a working capital collateral-free loan of ₹10,000, with subsequent loans of ₹20,000 and ₹50,000 with a 7% interest subsidy.\n\nThe scheme focuses on increasing the digital footprint in India by promoting the use of digital transactions among street vendors.\n\nTo incentivize the adoption of digital transactions, a cashback of up to ₹100 per month is given to Street Vendors. 1. Financial assistance of up to ₹10,000 is provided to street vendors to help them restart and expand their businesses.\n\n2. The loan is provided at a low-interest rate of 7%, making it easier for street vendors to repay the loan.\n\n3. No collateral is required to avail of the loan, making it more accessible to street vendors.\n\n4. There is no processing fee to apply for the scheme, making it cost-effective for street vendors.\n\n5. The loan amount can be used for any purpose related to the street vending business, such as buying raw materials, paying rent, or purchasing equipment.\n\n6. The scheme provides financial stability to street vendors and helps them to become self-reliant.\n\n7. The loan repayment period is one year, which gives street vendors sufficient time to repay the loan.\n\n8. The scheme encourages entrepreneurship and helps to create employment opportunities. Affordable Credit\nDigital Empowerment\nEnhanced Livelihood\nStreet Vendors\nWorking Capital Loan",
+      "latency_seconds": 1.67,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_e7a4c5f55fa0",
+          "document_title": "PM Street Vendor’s AtmaNirbhar Nidhi (PM SVANidhi)",
+          "source_file": "pm_svanidhi.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_e7a4c5f55fa0__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 4.867218494415283
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_e7a4c5f55fa0",
+          "document_title": "PM Street Vendor’s AtmaNirbhar Nidhi (PM SVANidhi)",
+          "source_file": "pm_svanidhi.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_e7a4c5f55fa0__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 2.94560698668162
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_e7a4c5f55fa0",
+          "document_title": "PM Street Vendor’s AtmaNirbhar Nidhi (PM SVANidhi)",
+          "source_file": "pm_svanidhi.txt",
+          "section": "CATEGORIES",
+          "heading_path": [
+            "CATEGORIES"
+          ],
+          "chunk_id": "doc_e7a4c5f55fa0__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": -0.3763175656398137
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_76bf5299f15f",
+          "document_title": "Pradhan Mantri Mudra Yojana (PMMY)",
+          "source_file": "pmmy.txt",
+          "section": "FOR KISHORE, TARUN AND TARUN PLUS LOAN",
+          "heading_path": [
+            "FOR KISHORE, TARUN AND TARUN PLUS LOAN"
+          ],
+          "chunk_id": "doc_76bf5299f15f__naive__17",
+          "retrieval_type": "naive",
+          "rerank_score": -1.67934250831604
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_e7a4c5f55fa0",
+          "document_title": "PM Street Vendor’s AtmaNirbhar Nidhi (PM SVANidhi)",
+          "source_file": "pm_svanidhi.txt",
+          "section": "OFFLINE",
+          "heading_path": [
+            "OFFLINE"
+          ],
+          "chunk_id": "doc_e7a4c5f55fa0__naive__10__child__0",
+          "retrieval_type": "parent_child",
+          "rerank_score": -2.099148988723755
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 1/1 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pm_svanidhi.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pm_svanidhi.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_08",
+      "query": "What cashback incentive is given for digital transactions under PM SVANidhi?",
+      "category": "benefits",
+      "target_document": "pm_svanidhi.txt",
+      "is_unanswerable": false,
+      "expected_answer": "A cashback of up to Rs. 100 per month is given to street vendors for digital transactions.",
+      "generated_answer": "PM SVANidhi is a central-sector micro-credit scheme launched on 1st June 2020 by the Ministry of Housing and Urban Affairs (MoHUA) to provide handholding support to street vendors.\n\nThe scheme facilitates a working capital collateral-free loan of ₹10,000, with subsequent loans of ₹20,000 and ₹50,000 with a 7% interest subsidy.\n\nThe scheme focuses on increasing the digital footprint in India by promoting the use of digital transactions among street vendors.\n\nTo incentivize the adoption of digital transactions, a cashback of up to ₹100 per month is given to Street Vendors. Beneficiaries who have completed Basic Training are eligible to avail the first tranche of credit support of up to Rs. 1 lakh.\n\nThe second loan tranche is available to beneficiaries who:\n\n- Have availed the first tranche and maintained a standard loan account and adopted digital transactions in their business; or\n\n- Have undergone Advanced Training.\n\n5. INCENTIVE FOR DIGITAL TRANSACTIONS\n\nAn amount of Re. 1 per digital transaction is credited to the beneficiary's account.\n\nThe incentive is available for up to a maximum of 100 transactions monthly for each digital pay-out or receipt.\n\n6. MARKETING SUPPORT\n\nMarketing support is provided to artisans and craftspeople through:\n\n- Quality certification\n\n- Branding\n\n- Onboarding on e-commerce platforms such as GeM\n\n- Advertising\n\n- Publicity\n\n- Other marketing activities to improve linkage to the value chain 1. Financial assistance of up to ₹10,000 is provided to street vendors to help them restart and expand their businesses.\n\n2. The loan is provided at a low-interest rate of 7%, making it easier for street vendors to repay the loan.\n\n3. No collateral is required to avail of the loan, making it more accessible to street vendors.\n\n4. There is no processing fee to apply for the scheme, making it cost-effective for street vendors.\n\n5. The loan amount can be used for any purpose related to the street vending business, such as buying raw materials, paying rent, or purchasing equipment.\n\n6. The scheme provides financial stability to street vendors and helps them to become self-reliant.\n\n7. The loan repayment period is one year, which gives street vendors sufficient time to repay the loan.\n\n8. The scheme encourages entrepreneurship and helps to create employment opportunities.",
+      "latency_seconds": 1.52,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_e7a4c5f55fa0",
+          "document_title": "PM Street Vendor’s AtmaNirbhar Nidhi (PM SVANidhi)",
+          "source_file": "pm_svanidhi.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_e7a4c5f55fa0__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 5.209024588267009
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_eb9fefc1351a",
+          "document_title": "PM Vishwakarma",
+          "source_file": "pm_vishwakarma.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_eb9fefc1351a__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 1.7143721183141072
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_e7a4c5f55fa0",
+          "document_title": "PM Street Vendor’s AtmaNirbhar Nidhi (PM SVANidhi)",
+          "source_file": "pm_svanidhi.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_e7a4c5f55fa0__naive__5__child__5",
+          "retrieval_type": "parent_child",
+          "rerank_score": -0.012712945540746054
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_e7a4c5f55fa0",
+          "document_title": "PM Street Vendor’s AtmaNirbhar Nidhi (PM SVANidhi)",
+          "source_file": "pm_svanidhi.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_e7a4c5f55fa0__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": -0.31839842597643536
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_e7a4c5f55fa0",
+          "document_title": "PM Street Vendor’s AtmaNirbhar Nidhi (PM SVANidhi)",
+          "source_file": "pm_svanidhi.txt",
+          "section": "CATEGORIES",
+          "heading_path": [
+            "CATEGORIES"
+          ],
+          "chunk_id": "doc_e7a4c5f55fa0__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": -0.965602899591128
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pm_svanidhi.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pm_svanidhi.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_09",
+      "query": "How many traditional trades are covered under the PM Vishwakarma scheme?",
+      "category": "definitions_purpose",
+      "target_document": "pm_vishwakarma.txt",
+      "is_unanswerable": false,
+      "expected_answer": "The scheme covers artisans and craftspeople engaged in 18 traditional trades.",
+      "generated_answer": "PM Vishwakarma is a Central Sector Scheme launched on 17th September 2023 by the Prime Minister to provide end-to-end support to artisans and craftspeople who work with their hands and tools.\n\nThe Scheme covers artisans and craftspeople engaged in 18 trades:\n\n1. Carpenter (Suthar/Badhai)\n\n2. Boat Maker\n\n3. Armourer\n\n4. Blacksmith (Lohar)\n\n5. Hammer and Tool Kit Maker\n\n6. Locksmith\n\n7. Goldsmith (Sonar)\n\n8. Potter (Kumhaar)\n\n9. Sculptor (Moortikar, stone carver), Stone breaker\n\n10. Cobbler (Charmkar), Shoesmith, Footwear artisan\n\n11. Mason (Rajmistri)\n\n12. Basket, Mat, Broom Maker, Coir Weaver\n\n13. Doll and Toy Maker (Traditional)\n\n14. Barber (Naai)\n\n15. Garland Maker (Malakaar)\n\n16. Washerman (Dhobi)\n\n17. Tailor (Darzi)\n\n18. Fishing Net Maker Press Information Bureau (PIB), Government of India\n\nMinistry of Micro, Small & Medium Enterprises\n\nTitle: Salient Features and Guidelines of PM Vishwakarma Scheme 1. RECOGNITION\n\nArtisans and craftspeople receive recognition through a PM Vishwakarma certificate and ID card.\n\n2. SKILL UPGRADATION\n\nBasic Training is provided for 5-7 days.\n\nAdvanced Training is provided for 15 days or more.\n\nA stipend of Rs. 500 per day is provided during training.\n\n3. TOOLKIT INCENTIVE\n\nA toolkit incentive of up to Rs. 15,000 is provided in the form of e-vouchers at the beginning of Basic Skill Training.\n\n4. CREDIT SUPPORT\n\nCollateral-free Enterprise Development Loans of up to Rs. 3 lakh are provided in two tranches:\n\n- First tranche: Rs. 1 lakh\n\n- Second tranche: Rs. 2 lakh\n\nThe first tranche has a tenure of 18 months.\n\nThe second tranche has a tenure of 30 months.\n\nThe loans are provided at a concessional rate of interest fixed at 5%, with Government of India subvention to the extent of 8%.",
+      "latency_seconds": 2.11,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_eb9fefc1351a",
+          "document_title": "PM Vishwakarma",
+          "source_file": "pm_vishwakarma.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_eb9fefc1351a__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 5.575422604878743
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_eb9fefc1351a",
+          "document_title": "PM Vishwakarma",
+          "source_file": "pm_vishwakarma.txt",
+          "section": "SOURCE",
+          "heading_path": [
+            "SOURCE"
+          ],
+          "chunk_id": "doc_eb9fefc1351a__naive__11",
+          "retrieval_type": "naive",
+          "rerank_score": -0.8552030920982361
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_eb9fefc1351a",
+          "document_title": "PM Vishwakarma",
+          "source_file": "pm_vishwakarma.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_eb9fefc1351a__naive__4__child__0",
+          "retrieval_type": "parent_child",
+          "rerank_score": -0.9205463329950968
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_eb9fefc1351a",
+          "document_title": "PM Vishwakarma",
+          "source_file": "pm_vishwakarma.txt",
+          "section": "FORMAL MSME ECOSYSTEM",
+          "heading_path": [
+            "FORMAL MSME ECOSYSTEM"
+          ],
+          "chunk_id": "doc_eb9fefc1351a__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": -2.039458394050598
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_eb9fefc1351a",
+          "document_title": "PM Vishwakarma",
+          "source_file": "pm_vishwakarma.txt",
+          "section": "CONTACT",
+          "heading_path": [
+            "CONTACT"
+          ],
+          "chunk_id": "doc_eb9fefc1351a__naive__9",
+          "retrieval_type": "naive",
+          "rerank_score": -2.0760531425476074
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 1/1 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pm_vishwakarma.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pm_vishwakarma.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_10",
+      "query": "What financial toolkit incentive and training stipend are provided under PM Vishwakarma?",
+      "category": "financial_limits",
+      "target_document": "pm_vishwakarma.txt",
+      "is_unanswerable": false,
+      "expected_answer": "A toolkit incentive grant of Rs. 15,000 and a training stipend of Rs. 500 per day are provided.",
+      "generated_answer": "1. RECOGNITION\n\nArtisans and craftspeople receive recognition through a PM Vishwakarma certificate and ID card.\n\n2. SKILL UPGRADATION\n\nBasic Training is provided for 5-7 days.\n\nAdvanced Training is provided for 15 days or more.\n\nA stipend of Rs. 500 per day is provided during training.\n\n3. TOOLKIT INCENTIVE\n\nA toolkit incentive of up to Rs. 15,000 is provided in the form of e-vouchers at the beginning of Basic Skill Training.\n\n4. CREDIT SUPPORT\n\nCollateral-free Enterprise Development Loans of up to Rs. 3 lakh are provided in two tranches:\n\n- First tranche: Rs. 1 lakh\n\n- Second tranche: Rs. 2 lakh\n\nThe first tranche has a tenure of 18 months.\n\nThe second tranche has a tenure of 30 months.\n\nThe loans are provided at a concessional rate of interest fixed at 5%, with Government of India subvention to the extent of 8%. Beneficiaries who have completed Basic Training are eligible to avail the first tranche of credit support of up to Rs. 1 lakh.\n\nThe second loan tranche is available to beneficiaries who:\n\n- Have availed the first tranche and maintained a standard loan account and adopted digital transactions in their business; or\n\n- Have undergone Advanced Training.\n\n5. INCENTIVE FOR DIGITAL TRANSACTIONS\n\nAn amount of Re. 1 per digital transaction is credited to the beneficiary's account.\n\nThe incentive is available for up to a maximum of 100 transactions monthly for each digital pay-out or receipt.\n\n6. MARKETING SUPPORT\n\nMarketing support is provided to artisans and craftspeople through:\n\n- Quality certification\n\n- Branding\n\n- Onboarding on e-commerce platforms such as GeM\n\n- Advertising\n\n- Publicity\n\n- Other marketing activities to improve linkage to the value chain PM Vishwakarma is a Central Sector Scheme launched on 17th September 2023 by the Prime Minister to provide end-to-end support to artisans and craftspeople who work with their hands and tools.\n\nThe Scheme covers artisans and craftspeople engaged in 18 trades:\n\n1. Carpenter (Suthar/Badhai)\n\n2. Boat Maker\n\n3. Armourer\n\n4. Blacksmith (Lohar)\n\n5. Hammer and Tool Kit Maker\n\n6. Locksmith\n\n7. Goldsmith (Sonar)\n\n8. Potter (Kumhaar)\n\n9. Sculptor (Moortikar, stone carver), Stone breaker\n\n10. Cobbler (Charmkar), Shoesmith, Footwear artisan\n\n11. Mason (Rajmistri)\n\n12. Basket, Mat, Broom Maker, Coir Weaver\n\n13. Doll and Toy Maker (Traditional)\n\n14. Barber (Naai)\n\n15. Garland Maker (Malakaar)\n\n16. Washerman (Dhobi)\n\n17. Tailor (Darzi)\n\n18. Fishing Net Maker",
+      "latency_seconds": 2.05,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_eb9fefc1351a",
+          "document_title": "PM Vishwakarma",
+          "source_file": "pm_vishwakarma.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_eb9fefc1351a__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 6.580376148223877
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_eb9fefc1351a",
+          "document_title": "PM Vishwakarma",
+          "source_file": "pm_vishwakarma.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_eb9fefc1351a__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 3.119231700897217
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_eb9fefc1351a",
+          "document_title": "PM Vishwakarma",
+          "source_file": "pm_vishwakarma.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_eb9fefc1351a__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 1.258203426996867
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_eb9fefc1351a",
+          "document_title": "PM Vishwakarma",
+          "source_file": "pm_vishwakarma.txt",
+          "section": "SOURCE",
+          "heading_path": [
+            "SOURCE"
+          ],
+          "chunk_id": "doc_eb9fefc1351a__naive__11",
+          "retrieval_type": "naive",
+          "rerank_score": -1.9472906589508057
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_eb9fefc1351a",
+          "document_title": "PM Vishwakarma",
+          "source_file": "pm_vishwakarma.txt",
+          "section": "MINISTRY",
+          "heading_path": [
+            "MINISTRY"
+          ],
+          "chunk_id": "doc_eb9fefc1351a__naive__0",
+          "retrieval_type": "naive",
+          "rerank_score": -3.0768176714579263
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pm_vishwakarma.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pm_vishwakarma.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_11",
+      "query": "What is the financial assistance amount for constructing a house in plain areas under PMAY-G?",
+      "category": "financial_limits",
+      "target_document": "pmay_g.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Financial assistance of Rs. 1,20,000 per unit is provided for plain areas.",
+      "generated_answer": "1. Financial assistance of Rs. 1,20,000 per unit is provided for plain areas.\n\n2. Financial assistance of Rs. 1,30,000 per unit is provided for hilly areas, difficult areas, and IAP districts, including Himalayan states, North-Eastern states, and the Union Territory of Jammu and Kashmir.\n\n3. A willing beneficiary can avail institutional finance (loan) of up to Rs. 70,000 at 3% lower interest rate to build a permanent house. The maximum principal amount for which subsidy can be sought is Rs. 2,00,000.\n\n4. The minimum size of the house shall be 25 sq m, including a dedicated area for hygienic cooking.\n\n5. In convergence with Swachh Bharat Mission-Gramin (SBM-G), beneficiaries receive financial assistance of up to Rs. 12,000 for the construction of toilets.\n\n6. In convergence with MGNREGA, the beneficiary is entitled to employment as unskilled labour at Rs. 90.95 per day for 95 days. PMAY-G aims to provide a pucca house with basic amenities to all houseless households and households living in kutcha or dilapidated houses in rural areas by 2024.\n\nThe immediate objective is to cover 1.00 Crore households in rural areas that are houseless or living in kutcha or dilapidated houses, in three years from 2016-17 to 2018-19.\n\nThe scheme aims to enable construction of quality houses by beneficiaries using local materials, designs and trained masons.\n\nFor houses to become homes, adoption of a habitat approach through convergence is proposed. Pradhan Mantri Awaas Yojana Gramin (PMAY-G) was launched on 1st April 2016. It is the Centre's flagship mission by the Ministry of Rural Development (MoRD), implemented by the Ministry of Housing and Urban Affairs (MoHUA).\n\nPMAY-G aims at providing a pucca house, with basic amenities, to all houseless households and households living in kutcha and dilapidated houses. PMAY-G addresses the rural housing shortage and bridges the housing deficit in rural areas of India, contributing significantly to the mission of \"Housing for All\".\n\nThe minimum size of the houses under PMAY-G is 25 sq m, including a dedicated area for hygienic cooking.\n\nAs of 27th September 2022, 2.00 crore houses had been constructed out of the total target of 2.72 crores.\n\nThe beneficiaries are identified using the Socio-Economic and Caste Census (SECC) parameters and verified by the Gram Sabhas.",
+      "latency_seconds": 2.12,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 6.805765787760417
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "AIM AND OBJECTIVE",
+          "heading_path": [
+            "AIM AND OBJECTIVE"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 0.3739022711912791
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 0.23042223850886026
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_dd33c7c901fd",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+          "source_file": "pmay_u.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_dd33c7c901fd__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": -0.5225207110246023
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "CATEGORIES",
+          "heading_path": [
+            "CATEGORIES"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__1",
+          "retrieval_type": "naive",
+          "rerank_score": -1.2220404545466106
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 1/1 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmay_g.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmay_g.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_12",
+      "query": "What is the minimum size of a house constructed under PMAY-G?",
+      "category": "rules_conditions",
+      "target_document": "pmay_g.txt",
+      "is_unanswerable": false,
+      "expected_answer": "The minimum size of the house is 25 square meters, including a dedicated hygienic cooking area.",
+      "generated_answer": "Pradhan Mantri Awaas Yojana Gramin (PMAY-G) was launched on 1st April 2016. It is the Centre's flagship mission by the Ministry of Rural Development (MoRD), implemented by the Ministry of Housing and Urban Affairs (MoHUA).\n\nPMAY-G aims at providing a pucca house, with basic amenities, to all houseless households and households living in kutcha and dilapidated houses. PMAY-G addresses the rural housing shortage and bridges the housing deficit in rural areas of India, contributing significantly to the mission of \"Housing for All\".\n\nThe minimum size of the houses under PMAY-G is 25 sq m, including a dedicated area for hygienic cooking.\n\nAs of 27th September 2022, 2.00 crore houses had been constructed out of the total target of 2.72 crores.\n\nThe beneficiaries are identified using the Socio-Economic and Caste Census (SECC) parameters and verified by the Gram Sabhas. 1. Financial assistance of Rs. 1,20,000 per unit is provided for plain areas.\n\n2. Financial assistance of Rs. 1,30,000 per unit is provided for hilly areas, difficult areas, and IAP districts, including Himalayan states, North-Eastern states, and the Union Territory of Jammu and Kashmir.\n\n3. A willing beneficiary can avail institutional finance (loan) of up to Rs. 70,000 at 3% lower interest rate to build a permanent house. The maximum principal amount for which subsidy can be sought is Rs. 2,00,000.\n\n4. The minimum size of the house shall be 25 sq m, including a dedicated area for hygienic cooking.\n\n5. In convergence with Swachh Bharat Mission-Gramin (SBM-G), beneficiaries receive financial assistance of up to Rs. 12,000 for the construction of toilets.\n\n6. In convergence with MGNREGA, the beneficiary is entitled to employment as unskilled labour at Rs. 90.95 per day for 95 days. The universe of eligible beneficiaries under PMAY-G includes houseless households living in zero, one, or two-room houses with kutcha walls and kutcha roofs, as per SECC data and subject to the exclusion process.",
+      "latency_seconds": 2.01,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 5.135436137517293
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 3.5413521925608316
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": 0.6965429882208506
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "PRIORITISATION WITHIN THE UNIVERSE",
+          "heading_path": [
+            "PRIORITISATION WITHIN THE UNIVERSE"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__10",
+          "retrieval_type": "naive",
+          "rerank_score": -0.024918248256047566
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "AIM AND OBJECTIVE",
+          "heading_path": [
+            "AIM AND OBJECTIVE"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": -0.1613250399629275
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 1/1 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmay_g.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmay_g.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_13",
+      "query": "Who are the eligible beneficiary categories under PMAY-U?",
+      "category": "eligibility",
+      "target_document": "pmay_u.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Economically Weaker Section (EWS), Low Income Group (LIG), Middle Income Group (MIG), and slum dwellers living in statutory towns.",
+      "generated_answer": "An adult woman belonging to a poor household and not having an LPG connection in her household is eligible under Ujjwala 2.0.\n\nThe beneficiary should belong to any of the following categories:\n\n1. Eligible as per the SECC 2011 list.\n\n2. Belongs to SC/ST households, is a beneficiary of Pradhan Mantri Awas Yojana (PMAY), Antyodaya Anna Yojana (AAY), is a forest dweller, belongs to Most Backward Classes (MBC), belongs to Tea and Ex-Tea Garden Tribes, or resides in river islands. The beneficiary must submit supporting documentation where applicable.\n\n3. If the applicant does not fall under the above categories, she can claim to be a beneficiary under the poor household category by submitting a 14-point declaration as per the prescribed format. 1. Income Category\n\nThe family should fall under the applicable income category specified under the scheme, including:\n\n- Economically Weaker Section (EWS)\n\n- Low Income Group (LIG)\n\n- Middle Income Group I (MIG-I)\n\n- Middle Income Group II (MIG-II)\n\n2. Ownership of Pucca House\n\nThe beneficiary family should not own a pucca house anywhere in India.\n\n3. Definition of Family\n\nThe beneficiary family consists of the husband, wife and unmarried children.\n\n4. Location\n\nThe beneficiary should belong to a town or city covered under the scheme.\n\n5. Previous Government Housing Benefits\n\nThe beneficiary family should not have previously availed benefits under any housing-related scheme of the Government of India, as applicable under the scheme. 1. Eligible beneficiaries can apply for PMAY-U through the applicable application process provided by the government.\n\n2. Applications may be submitted through the online system or through the concerned Urban Local Body (ULB) or other designated agencies.\n\n3. The applicant must provide the required personal, family, income and other details along with the necessary documents.\n\n4. The application is verified by the concerned authorities before the beneficiary is considered for assistance under the applicable component of PMAY-U.",
+      "latency_seconds": 2.01,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_df50c248ca70",
+          "document_title": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+          "source_file": "pmuy.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_df50c248ca70__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 5.295982201894124
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_dd33c7c901fd",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+          "source_file": "pmay_u.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_dd33c7c901fd__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 5.018197536468506
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_dd33c7c901fd",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+          "source_file": "pmay_u.txt",
+          "section": "APPLICATION PROCESS",
+          "heading_path": [
+            "APPLICATION PROCESS"
+          ],
+          "chunk_id": "doc_dd33c7c901fd__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 4.800651868184407
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_dd33c7c901fd",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+          "source_file": "pmay_u.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_dd33c7c901fd__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 4.637271086374919
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": 3.7110042572021484
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 1,
+        "context_relevance_reason": "Target document found at Rank 2 in candidate pool.",
+        "source_attribution": 1,
+        "source_attribution_reason": "Target document cited, but not top-ranked (cited: ['pmuy.txt', 'pmay_u.txt', 'pmay_u.txt', 'pmay_u.txt', 'pmay_g.txt']).",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_14",
+      "query": "What documents or declarations are needed to apply for PMAY-U?",
+      "category": "required_documents",
+      "target_document": "pmay_u.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Aadhaar card or voter ID, bank account details, income proof, and self-declaration affidavit of not owning a pucca house.",
+      "generated_answer": "1. Aadhaar Card / Aadhaar Number or Virtual ID, wherever applicable.\n\n2. Identity proof.\n\n3. Address proof.\n\n4. Income certificate / income-related details.\n\n5. Bank account details.\n\n6. Mobile number.\n\n7. Details of family members.\n\n8. Details related to existing house or land, wherever applicable.\n\n9. Self-declaration or undertaking regarding ownership of a pucca house.\n\n10. Documents required by the concerned Urban Local Body or implementing agency.\n\n11. Additional documents as required under the applicable component of PMAY-U.\n\n12. Other supporting documents as specified by the concerned authority. 1. Eligible beneficiaries can apply for PMAY-U through the applicable application process provided by the government.\n\n2. Applications may be submitted through the online system or through the concerned Urban Local Body (ULB) or other designated agencies.\n\n3. The applicant must provide the required personal, family, income and other details along with the necessary documents.\n\n4. The application is verified by the concerned authorities before the beneficiary is considered for assistance under the applicable component of PMAY-U. 1. Aadhaar number and a self-attested copy of the Aadhaar Card. If the applicant is illiterate, a consent letter must be obtained along with the applicant's thumbprint.\n\n2. Job Card duly registered with MGNREGA.\n\n3. Bank account details, including originals and duplicates.\n\n4. Swachh Bharat Mission (SBM) number.\n\n5. Affidavit stating that the beneficiary or their family members do not own a pucca house.",
+      "latency_seconds": 2.11,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_dd33c7c901fd",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+          "source_file": "pmay_u.txt",
+          "section": "DOCUMENTS REQUIRED",
+          "heading_path": [
+            "DOCUMENTS REQUIRED"
+          ],
+          "chunk_id": "doc_dd33c7c901fd__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": 5.811009565989177
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_dd33c7c901fd",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+          "source_file": "pmay_u.txt",
+          "section": "APPLICATION PROCESS",
+          "heading_path": [
+            "APPLICATION PROCESS"
+          ],
+          "chunk_id": "doc_dd33c7c901fd__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 5.382366180419922
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "DOCUMENTS REQUIRED",
+          "heading_path": [
+            "DOCUMENTS REQUIRED"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__21__child__1",
+          "retrieval_type": "parent_child",
+          "rerank_score": 2.7308923800786338
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_dd33c7c901fd",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+          "source_file": "pmay_u.txt",
+          "section": "FREQUENTLY ASKED QUESTIONS",
+          "heading_path": [
+            "FREQUENTLY ASKED QUESTIONS"
+          ],
+          "chunk_id": "doc_dd33c7c901fd__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": 1.8988977670669556
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_dd33c7c901fd",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+          "source_file": "pmay_u.txt",
+          "section": "FREQUENTLY ASKED QUESTIONS",
+          "heading_path": [
+            "FREQUENTLY ASKED QUESTIONS"
+          ],
+          "chunk_id": "doc_dd33c7c901fd__naive__9",
+          "retrieval_type": "naive",
+          "rerank_score": 1.6066109538078308
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 1/1 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmay_u.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmay_u.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_15",
+      "query": "What is the maximum insurance premium payable by farmers for Kharif and Rabi crops under PMFBY?",
+      "category": "financial_limits",
+      "target_document": "pmfby.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Maximum premium is 2% for Kharif crops and 1.5% for Rabi food and oilseed crops.",
+      "generated_answer": "1. The maximum premium payable by the farmer is 2% for Kharif food and oilseed crops.\n\n2. For Rabi food and oilseed crops, the maximum premium payable by the farmer is 1.5%.\n\n3. For yearly commercial or horticultural crops, the maximum premium payable by the farmer is 5%.\n\n4. The remaining premium is subsidised by the Government.\n\n5. For farmers in North-Eastern States, Jammu and Kashmir, and Himachal Pradesh, the Government also pays the entire premium. Pradhan Mantri Fasal Bima Yojana (PMFBY) was launched on 18th February 2016. It is a crop insurance scheme by the Department of Agriculture, Cooperation and Farmers' Welfare, Ministry of Agriculture.\n\nPMFBY aims to provide financial protection to farmers against crop loss due to natural disasters such as hail, drought, and famine, as well as pests and diseases.\n\nPMFBY provides crop insurance at a cost-effective premium to Indian farmers.\n\nPMFBY is an affordable crop insurance product implemented through a network of insurance companies and banks.\n\nThe scheme covers over 50 crore farmers and provides insurance coverage for over 50 different crops. Agriculture\nCrop\nFarmer\nInsurance\nPremium",
+      "latency_seconds": 1.49,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_cfe7fcf88053",
+          "document_title": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+          "source_file": "pmfby.txt",
+          "section": "AFFORDABLE PREMIUMS",
+          "heading_path": [
+            "AFFORDABLE PREMIUMS"
+          ],
+          "chunk_id": "doc_cfe7fcf88053__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 7.2864939371744795
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_cfe7fcf88053",
+          "document_title": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+          "source_file": "pmfby.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_cfe7fcf88053__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 0.11875175436337788
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_cfe7fcf88053",
+          "document_title": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+          "source_file": "pmfby.txt",
+          "section": "CATEGORIES",
+          "heading_path": [
+            "CATEGORIES"
+          ],
+          "chunk_id": "doc_cfe7fcf88053__naive__1",
+          "retrieval_type": "naive",
+          "rerank_score": -0.5130542367696762
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_cfe7fcf88053",
+          "document_title": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+          "source_file": "pmfby.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_cfe7fcf88053__naive__12",
+          "retrieval_type": "naive",
+          "rerank_score": -1.055088957150777
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_cfe7fcf88053",
+          "document_title": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+          "source_file": "pmfby.txt",
+          "section": "NON-PREMIUM PAYMENT",
+          "heading_path": [
+            "NON-PREMIUM PAYMENT"
+          ],
+          "chunk_id": "doc_cfe7fcf88053__naive__17",
+          "retrieval_type": "naive",
+          "rerank_score": -1.1372965574264526
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmfby.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmfby.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_16",
+      "query": "What risks and crop losses are covered under PMFBY?",
+      "category": "benefits",
+      "target_document": "pmfby.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Covers yield loss due to non-preventable natural risks like drought, flood, pests, post-harvest losses, and localized calamities like hailstorms and landslides.",
+      "generated_answer": "The Government provides insurance coverage for yield losses arising from non-preventable risks, including:\n\n1. Natural fire and lightning.\n\n2. Storm, hailstorm, tornado, and similar events.\n\n3. Flood, inundation, and landslide.\n\n4. Pests and diseases.\n\n5. Drought and other covered risks. The scheme covers natural disasters such as droughts and floods, pests, and diseases.\n\nPost-harvest losses due to local risks such as hailstorms and landslides are also included. The Government provides coverage for localised calamities on an individual farm basis.\n\nRisks such as loss or damage arising from identified localised hazards, including hailstorms, landslides, and inundation impacting separated farmlands in the notified area, come under this coverage.",
+      "latency_seconds": 1.49,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_cfe7fcf88053",
+          "document_title": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+          "source_file": "pmfby.txt",
+          "section": "YIELD LOSSES - STANDING CROPS",
+          "heading_path": [
+            "YIELD LOSSES - STANDING CROPS"
+          ],
+          "chunk_id": "doc_cfe7fcf88053__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": 7.533330122629802
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_cfe7fcf88053",
+          "document_title": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+          "source_file": "pmfby.txt",
+          "section": "COMPREHENSIVE COVERAGE",
+          "heading_path": [
+            "COMPREHENSIVE COVERAGE"
+          ],
+          "chunk_id": "doc_cfe7fcf88053__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 6.288007100423177
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_cfe7fcf88053",
+          "document_title": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+          "source_file": "pmfby.txt",
+          "section": "LOCALISED CALAMITIES",
+          "heading_path": [
+            "LOCALISED CALAMITIES"
+          ],
+          "chunk_id": "doc_cfe7fcf88053__naive__11",
+          "retrieval_type": "naive",
+          "rerank_score": 5.54722785949707
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_cfe7fcf88053",
+          "document_title": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+          "source_file": "pmfby.txt",
+          "section": "NEGLIGENCE AND NON-COMPLIANCE",
+          "heading_path": [
+            "NEGLIGENCE AND NON-COMPLIANCE"
+          ],
+          "chunk_id": "doc_cfe7fcf88053__naive__15",
+          "retrieval_type": "naive",
+          "rerank_score": 5.379888852437337
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_cfe7fcf88053",
+          "document_title": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+          "source_file": "pmfby.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_cfe7fcf88053__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 5.372145016988118
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 1/1 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmfby.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmfby.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_17",
+      "query": "What is the overdraft limit available on PMJDY bank accounts?",
+      "category": "financial_limits",
+      "target_document": "pmjdy.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Overdraft facility up to Rs. 10,000 is available to eligible PMJDY account holders.",
+      "generated_answer": "3. RuPay Debit Card with Inbuilt Accident Insurance\n\nUnder PMJDY, a free RuPay debit card, with inbuilt accident insurance cover of Rs. 2 lakhs (Rs. 1 lakh for accounts opened before 28.08.2018), is issued to all beneficiaries.\n\n4. Overdraft Facility\n\nUnder PMJDY, beneficiaries can avail OD facility up to Rs. 10,000/-.\n\n5. Business Correspondents (BCs) / Bank Mitras\n\nBCs/Bank Mitras are retail agents engaged by banks for providing banking services at locations other than a bank branch/ATM.\n\nIt is mainly meant for the rural areas, where bank branches are far-flung.\n\nBCs/Bank Mitras connect with the residents and guide them with banking solutions such as savings accounts, deposits, payments and withdrawals, mini account statements, etc.\n\nBanks with their strong network of BCs/Bank Mitras are providing hassle-free services to the customers in remote/rural areas. (ii) Accidental insurance cover on RuPay card holders from Rs. 1 lakh to Rs. 2 lakhs.\n\nPMJDY has been successful in increasing banking penetration and promoting financial inclusion across the country. The scheme has ensured access to various financial services like availability of basic savings bank account, access to need based credit, remittances facility, insurance and pension to the excluded sections, i.e. weaker sections and low-income groups. A National Mission for Financial Inclusion (NMFI), namely, Pradhan Mantri Jan Dhan Yojana (PMJDY) was launched across the Country in August, 2014 by the Prime Minister with the idea to ensure that citizens envisage their financial activities.\n\nPMJDY provides universal banking services for every unbanked household, based on the guiding principles of banking the unbanked, securing the unsecured, funding the unfunded and serving unserved and underserved areas.\n\nIn order to give impetus to financial inclusion initiatives of the Government, PMJDY scheme was extended beyond 14.08.2018 with the focus on opening of accounts shifting from \"every household\" to \"every unbanked adult\".\n\nThe scheme has been made more attractive with upward revision in:\n\n(i) OD limit from Rs. 5,000/- to Rs. 10,000/-\n\n(ii) Accidental insurance cover on RuPay card holders from Rs. 1 lakh to Rs. 2 lakhs.",
+      "latency_seconds": 2.0,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_da8bf8952c06",
+          "document_title": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+          "source_file": "pmjdy.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_da8bf8952c06__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 0.9770149886608124
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_da8bf8952c06",
+          "document_title": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+          "source_file": "pmjdy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_da8bf8952c06__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": -1.0192934274673462
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_da8bf8952c06",
+          "document_title": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+          "source_file": "pmjdy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_da8bf8952c06__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": -1.6420341730117798
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_da8bf8952c06",
+          "document_title": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+          "source_file": "pmjdy.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_da8bf8952c06__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": -2.7594292163848877
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_da8bf8952c06",
+          "document_title": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+          "source_file": "pmjdy.txt",
+          "section": "Offline",
+          "heading_path": [
+            "APPLICATION PROCESS",
+            "Offline"
+          ],
+          "chunk_id": "doc_da8bf8952c06__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": -3.3218533992767334
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmjdy.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmjdy.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_18",
+      "query": "What accident insurance coverage is provided with the PMJDY RuPay debit card?",
+      "category": "benefits",
+      "target_document": "pmjdy.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Accident insurance cover of Rs. 2 lakhs is provided with the RuPay debit card for accounts opened after 28.08.2018.",
+      "generated_answer": "3. RuPay Debit Card with Inbuilt Accident Insurance\n\nUnder PMJDY, a free RuPay debit card, with inbuilt accident insurance cover of Rs. 2 lakhs (Rs. 1 lakh for accounts opened before 28.08.2018), is issued to all beneficiaries.\n\n4. Overdraft Facility\n\nUnder PMJDY, beneficiaries can avail OD facility up to Rs. 10,000/-.\n\n5. Business Correspondents (BCs) / Bank Mitras\n\nBCs/Bank Mitras are retail agents engaged by banks for providing banking services at locations other than a bank branch/ATM.\n\nIt is mainly meant for the rural areas, where bank branches are far-flung.\n\nBCs/Bank Mitras connect with the residents and guide them with banking solutions such as savings accounts, deposits, payments and withdrawals, mini account statements, etc.\n\nBanks with their strong network of BCs/Bank Mitras are providing hassle-free services to the customers in remote/rural areas. These accounts would be valid normally for a period of twelve months. Thereafter, such accounts would be allowed to continue for a further period of twelve more months, if the account-holder provides a document showing that he/she has applied for any of the Officially Valid Documents within 12 months of opening the small account. 3. RuPay Debit Card with Inbuilt Accident Insurance\n\nUnder PMJDY, a free RuPay debit card, with inbuilt accident insurance cover of Rs. 2 lakhs (Rs. (ii) Accidental insurance cover on RuPay card holders from Rs. 1 lakh to Rs. 2 lakhs.\n\nPMJDY has been successful in increasing banking penetration and promoting financial inclusion across the country. The scheme has ensured access to various financial services like availability of basic savings bank account, access to need based credit, remittances facility, insurance and pension to the excluded sections, i.e. weaker sections and low-income groups.",
+      "latency_seconds": 2.01,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_da8bf8952c06",
+          "document_title": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+          "source_file": "pmjdy.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_da8bf8952c06__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 4.448050340016683
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_da8bf8952c06",
+          "document_title": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+          "source_file": "pmjdy.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_da8bf8952c06__sw__23",
+          "retrieval_type": "sentence_window",
+          "rerank_score": 3.2795303662618003
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_da8bf8952c06",
+          "document_title": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+          "source_file": "pmjdy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_da8bf8952c06__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 2.724788188934326
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_da8bf8952c06",
+          "document_title": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+          "source_file": "pmjdy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_da8bf8952c06__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": -2.7979750633239746
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_da8bf8952c06",
+          "document_title": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+          "source_file": "pmjdy.txt",
+          "section": "DOCUMENTS REQUIRED",
+          "heading_path": [
+            "DOCUMENTS REQUIRED"
+          ],
+          "chunk_id": "doc_da8bf8952c06__naive__9",
+          "retrieval_type": "naive",
+          "rerank_score": -3.2056221961975098
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmjdy.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmjdy.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_19",
+      "query": "What are the key training components under PMKVY 4.0?",
+      "category": "definitions_purpose",
+      "target_document": "pmkvy.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Short-Term Training (STT) and up-skilling or re-skilling through Recognition of Prior Learning (RPL).",
+      "generated_answer": "Under PMKVY 4.0, training has been standardized through the National Skills Qualification Framework (NSQF), aligning courses with industry needs and national priorities.\n\nTraining has been aligned to the requirements of new-age and futuristic job roles such as:\n\n1. Artificial Intelligence\n\n2. Drones\n\n3. Robotics\n\n4. Green Energy\n\n5. Semiconductor Manufacturing\n\nAs of 30 June 2026, more than 600 new-age and futuristic courses had been introduced under PMKVY 4.0. 1. Uniform and Quality-Assured Training\n\nCourses are aligned with the National Skills Qualification Framework (NSQF) to ensure standardized training, assessment and certification.\n\nA Standard Operating Procedure on Assessment and Certification is issued with clear timelines and responsibilities fixed for all stakeholders.\n\n2. Industry-Relevant Skills\n\nTraining covers new-age and futuristic job roles, with flexible curricula developed and periodically updated in consultation with industry.\n\nMore than 600 new-age and futuristic job roles have been developed under PMKVY 4.0.\n\n3. Improved Implementation and Monitoring\n\nThe candidate lifecycle is digitally managed through the Skill India Digital Hub (SIDH).\n\nThe system is supported by Aadhaar-based authentication, live attendance monitoring and cross-utilization of best-in-class infrastructure available with educational and Government institutions such as Institutes of National Importance, CIPET and NIELIT. The Ministry of Skill Development and Entrepreneurship (MSDE) has been implementing its flagship scheme Pradhan Mantri Kaushal Vikas Yojana (PMKVY) since 2015.\n\nThe scheme provides skill development training through Short-Term Training (STT) and up-skilling and re-skilling through Recognition of Prior Learning (RPL) to all sections of society.\n\nPMKVY 4.0 has been implemented since FY 2022-23 and has been realigned as a demand-driven, technology-enabled and candidate-centric scheme.",
+      "latency_seconds": 1.79,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_82efd3387088",
+          "document_title": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) 4.0",
+          "source_file": "pmkvy.txt",
+          "section": "TRAINING AND FUTURISTIC JOB ROLES",
+          "heading_path": [
+            "TRAINING AND FUTURISTIC JOB ROLES"
+          ],
+          "chunk_id": "doc_82efd3387088__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": 5.212223847707112
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_82efd3387088",
+          "document_title": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) 4.0",
+          "source_file": "pmkvy.txt",
+          "section": "IMPROVEMENT IN SKILLING",
+          "heading_path": [
+            "IMPROVEMENT IN SKILLING"
+          ],
+          "chunk_id": "doc_82efd3387088__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 4.080635070800781
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_82efd3387088",
+          "document_title": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) 4.0",
+          "source_file": "pmkvy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_82efd3387088__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 3.363973538080851
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_82efd3387088",
+          "document_title": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) 4.0",
+          "source_file": "pmkvy.txt",
+          "section": "STRENGTHENING INDUSTRY LINKAGES",
+          "heading_path": [
+            "STRENGTHENING INDUSTRY LINKAGES"
+          ],
+          "chunk_id": "doc_82efd3387088__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 2.7460509538650513
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_82efd3387088",
+          "document_title": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) 4.0",
+          "source_file": "pmkvy.txt",
+          "section": "IMPACT EVALUATION",
+          "heading_path": [
+            "IMPACT EVALUATION"
+          ],
+          "chunk_id": "doc_82efd3387088__naive__9",
+          "retrieval_type": "naive",
+          "rerank_score": 2.5537410577138266
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmkvy.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmkvy.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_20",
+      "query": "Which digital platform manages the candidate lifecycle under PMKVY 4.0?",
+      "category": "application_procedure",
+      "target_document": "pmkvy.txt",
+      "is_unanswerable": false,
+      "expected_answer": "The candidate lifecycle is digitally managed through the Skill India Digital Hub (SIDH).",
+      "generated_answer": "1. Uniform and Quality-Assured Training\n\nCourses are aligned with the National Skills Qualification Framework (NSQF) to ensure standardized training, assessment and certification.\n\nA Standard Operating Procedure on Assessment and Certification is issued with clear timelines and responsibilities fixed for all stakeholders.\n\n2. Industry-Relevant Skills\n\nTraining covers new-age and futuristic job roles, with flexible curricula developed and periodically updated in consultation with industry.\n\nMore than 600 new-age and futuristic job roles have been developed under PMKVY 4.0.\n\n3. Improved Implementation and Monitoring\n\nThe candidate lifecycle is digitally managed through the Skill India Digital Hub (SIDH).\n\nThe system is supported by Aadhaar-based authentication, live attendance monitoring and cross-utilization of best-in-class infrastructure available with educational and Government institutions such as Institutes of National Importance, CIPET and NIELIT. 1. Practical Workplace Exposure\n\nOn-the-Job Training is integrated into applicable courses to equip candidates with hands-on industry experience.\n\n2. Enhanced Employability\n\nReskilling and upskilling, including through Recognition of Prior Learning, enable candidates to acquire competencies aligned with evolving occupational requirements.\n\n3. Diverse Career Pathways\n\nCandidates are enabled to pursue wage employment, self-employment, entrepreneurship and sustainable livelihood opportunities.\n\n4. Skill India Digital Hub\n\nA unified platform, Skill India Digital Hub (SIDH), has been developed to integrate the skilling, education and employment landscape.\n\nThe platform provides lifelong services to beneficiaries, including employment opportunities. The Ministry of Skill Development and Entrepreneurship (MSDE) has been implementing its flagship scheme Pradhan Mantri Kaushal Vikas Yojana (PMKVY) since 2015.\n\nThe scheme provides skill development training through Short-Term Training (STT) and up-skilling and re-skilling through Recognition of Prior Learning (RPL) to all sections of society.\n\nPMKVY 4.0 has been implemented since FY 2022-23 and has been realigned as a demand-driven, technology-enabled and candidate-centric scheme.",
+      "latency_seconds": 1.95,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_82efd3387088",
+          "document_title": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) 4.0",
+          "source_file": "pmkvy.txt",
+          "section": "IMPROVEMENT IN SKILLING",
+          "heading_path": [
+            "IMPROVEMENT IN SKILLING"
+          ],
+          "chunk_id": "doc_82efd3387088__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 4.062286853790283
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_82efd3387088",
+          "document_title": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) 4.0",
+          "source_file": "pmkvy.txt",
+          "section": "IMPROVEMENT IN EMPLOYMENT OPPORTUNITIES",
+          "heading_path": [
+            "IMPROVEMENT IN EMPLOYMENT OPPORTUNITIES"
+          ],
+          "chunk_id": "doc_82efd3387088__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 1.5093968709309895
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_82efd3387088",
+          "document_title": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) 4.0",
+          "source_file": "pmkvy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_82efd3387088__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": -0.32930655280749005
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_82efd3387088",
+          "document_title": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) 4.0",
+          "source_file": "pmkvy.txt",
+          "section": "TRAINING AND FUTURISTIC JOB ROLES",
+          "heading_path": [
+            "TRAINING AND FUTURISTIC JOB ROLES"
+          ],
+          "chunk_id": "doc_82efd3387088__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": -0.4060240586598714
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_82efd3387088",
+          "document_title": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) 4.0",
+          "source_file": "pmkvy.txt",
+          "section": "IMPACT EVALUATION",
+          "heading_path": [
+            "IMPACT EVALUATION"
+          ],
+          "chunk_id": "doc_82efd3387088__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": -1.973075270652771
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 1/1 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmkvy.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmkvy.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_21",
+      "query": "What are the loan categories and their limits under Pradhan Mantri Mudra Yojana?",
+      "category": "financial_limits",
+      "target_document": "pmmy.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Shishu (up to Rs. 50,000), Kishore (Rs. 50,000 to Rs. 5 lakhs), and Tarun (Rs. 5 lakhs to Rs. 10 lakhs).",
+      "generated_answer": "The scheme has been classified under four categories as \"SHISHU\", \"KISHORE\", \"TARUN\" and \"TARUN PLUS\" to signify the stage of growth/development and funding needs of the beneficiary micro unit/entrepreneur.\n\n1. Shishu\nCovering loans up to Rs. 50,000/-.\n\n2. Kishore\nCovering loans above Rs. 50,000/- and up to Rs. 5 lakhs.\n\n3. Tarun\nCovering loans above Rs. 5 lakhs and up to Rs. 10 lakhs.\n\n4. Tarun Plus\nLoans up to Rs. 20 lakh for entrepreneurs who have successfully repaid previous loans under the \"Tarun\" category. The loans under Pradhan Mantri Mudra Yojana can be availed through eligible Member Lending Institutions (MLIs), which include:\n\n- Public Sector Banks\n\n- Private Sector Banks\n\n- State-operated cooperative banks\n\n- Rural banks from regional sector\n\n- Micro Finance Institutions (MFI)\n\n- Non-Banking Finance Companies (NBFC)\n\n- Small Finance Banks (SFBs)\n\n- Other financial intermediaries approved by MUDRA Ltd. as member financial institutions 8. Projected balance sheets for one year in case of working capital limits and for the period of the loan in case of term loan. Applicable for all cases from Rs. 2 lakhs and above.\n\n9. Sales achieved during the current financial year up to the date of submission of application.\n\n10. Project report for the proposed project containing details of technical and economic viability.\n\n11. Memorandum and Articles of Association of the company/Partnership Deed of Partners, etc.\n\n12. In the absence of a third-party guarantee, an Asset & Liability statement from the borrower, including Directors and Partners, may be sought to know the net worth.",
+      "latency_seconds": 1.78,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_76bf5299f15f",
+          "document_title": "Pradhan Mantri Mudra Yojana (PMMY)",
+          "source_file": "pmmy.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_76bf5299f15f__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": 4.712936798731486
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_76bf5299f15f",
+          "document_title": "Pradhan Mantri Mudra Yojana (PMMY)",
+          "source_file": "pmmy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_76bf5299f15f__naive__4__child__0",
+          "retrieval_type": "parent_child",
+          "rerank_score": 4.391932249069214
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_76bf5299f15f",
+          "document_title": "Pradhan Mantri Mudra Yojana (PMMY)",
+          "source_file": "pmmy.txt",
+          "section": "FOR KISHORE, TARUN AND TARUN PLUS LOAN",
+          "heading_path": [
+            "FOR KISHORE, TARUN AND TARUN PLUS LOAN"
+          ],
+          "chunk_id": "doc_76bf5299f15f__naive__17",
+          "retrieval_type": "naive",
+          "rerank_score": 3.2373568216959634
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_76bf5299f15f",
+          "document_title": "Pradhan Mantri Mudra Yojana (PMMY)",
+          "source_file": "pmmy.txt",
+          "section": "AFTER SUCCESSFUL REGISTRATION",
+          "heading_path": [
+            "AFTER SUCCESSFUL REGISTRATION"
+          ],
+          "chunk_id": "doc_76bf5299f15f__naive__14",
+          "retrieval_type": "naive",
+          "rerank_score": 3.139270067214966
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_76bf5299f15f",
+          "document_title": "Pradhan Mantri Mudra Yojana (PMMY)",
+          "source_file": "pmmy.txt",
+          "section": "CATEGORIES",
+          "heading_path": [
+            "CATEGORIES"
+          ],
+          "chunk_id": "doc_76bf5299f15f__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 2.925212105115255
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 3/3 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmmy.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmmy.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_22",
+      "query": "Is collateral security required for loans up to Rs 10 lakhs under PMMY?",
+      "category": "rules_conditions",
+      "target_document": "pmmy.txt",
+      "is_unanswerable": false,
+      "expected_answer": "No, no collateral security is required for loans up to Rs. 10 lakhs under PMMY.",
+      "generated_answer": "Pradhan Mantri Mudra Yojana (PMMY) is a flagship scheme of Government of India.\n\nThe scheme facilitates micro credit/loan up to Rs. 20 lakhs to income-generating micro enterprises engaged in the non-farm sector in manufacturing, trading or service sectors, including activities allied to agriculture such as poultry, dairy, beekeeping, etc.\n\nThe scheme provides financial assistance extended by Member Lending Institutions to the non-corporate, non-farm sector income-generating activities of micro and small entities.\n\nThese micro and small entities comprise millions of proprietorship/partnership firms running as small manufacturing units, service sector units, shopkeepers, fruits/vegetable vendors, truck operators, food-service units, repair shops, machine operators, small industries, artisans, food processors and others. The scheme has been classified under four categories as \"SHISHU\", \"KISHORE\", \"TARUN\" and \"TARUN PLUS\" to signify the stage of growth/development and funding needs of the beneficiary micro unit/entrepreneur.\n\n1. Shishu\nCovering loans up to Rs. 50,000/-.\n\n2. Kishore\nCovering loans above Rs. 50,000/- and up to Rs. 5 lakhs.\n\n3. Tarun\nCovering loans above Rs. 5 lakhs and up to Rs. 10 lakhs.\n\n4. Tarun Plus\nLoans up to Rs. 20 lakh for entrepreneurs who have successfully repaid previous loans under the \"Tarun\" category. Banks may consider charging an upfront fee as per their internal guidelines.\n\nThe upfront fee/processing charges for Shishu loans, covering loans up to Rs. 50,000/-, are waived by most banks.",
+      "latency_seconds": 1.76,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_76bf5299f15f",
+          "document_title": "Pradhan Mantri Mudra Yojana (PMMY)",
+          "source_file": "pmmy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_76bf5299f15f__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 0.7016449744502703
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_76bf5299f15f",
+          "document_title": "Pradhan Mantri Mudra Yojana (PMMY)",
+          "source_file": "pmmy.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_76bf5299f15f__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": 0.13383052746454874
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_76bf5299f15f",
+          "document_title": "Pradhan Mantri Mudra Yojana (PMMY)",
+          "source_file": "pmmy.txt",
+          "section": "UPFRONT FEE / PROCESSING CHARGES",
+          "heading_path": [
+            "UPFRONT FEE / PROCESSING CHARGES"
+          ],
+          "chunk_id": "doc_76bf5299f15f__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": -1.2794089317321777
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_e7a4c5f55fa0",
+          "document_title": "PM Street Vendor’s AtmaNirbhar Nidhi (PM SVANidhi)",
+          "source_file": "pm_svanidhi.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_e7a4c5f55fa0__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": -1.5663042590022087
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_76bf5299f15f",
+          "document_title": "Pradhan Mantri Mudra Yojana (PMMY)",
+          "source_file": "pmmy.txt",
+          "section": "NOTE 02",
+          "heading_path": [
+            "NOTE 02"
+          ],
+          "chunk_id": "doc_76bf5299f15f__naive__11__child__0",
+          "retrieval_type": "parent_child",
+          "rerank_score": -2.511456251144409
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 0,
+        "correctness_reason": "Incorrect: 0/1 key facts present. Missing: ['no collateral']",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmmy.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmmy.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_23",
+      "query": "What financial assistance and free items are provided for a new LPG connection under PMUY?",
+      "category": "benefits",
+      "target_document": "pmuy.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Financial assistance of Rs. 1,600 (for 14.2 kg cylinder) or Rs. 1,150 (for 5 kg), with first refill and stove (hot plate) provided free of cost.",
+      "generated_answer": "1. Financial assistance of Rs. 1,600 is provided for a 14.2 kg cylinder connection or Rs. 1,150 for a 5 kg cylinder connection.\n\n2. All PMUY beneficiaries are provided with the first LPG refill and stove (hot plate) free of cost along with their deposit-free connection. Under the Union Budget for FY 2021-22, provision was made for the release of an additional 1 Crore LPG connections under the PMUY scheme.\n\nIn this phase, special facility was provided to migrant families. In May 2016, the Ministry of Petroleum and Natural Gas (MOPNG) introduced the Pradhan Mantri Ujjwala Yojana (PMUY) as a flagship scheme with the objective of making clean cooking fuel such as LPG available to rural and deprived households that were otherwise using traditional cooking fuels such as firewood, coal, cow-dung cakes, and other traditional fuels.\n\nThe use of traditional cooking fuels has detrimental impacts on the health of rural women as well as on the environment.\n\nThe scheme was launched on 1st May 2016 in Ballia, Uttar Pradesh.\n\nThe target under the scheme was to release 8 Crore LPG connections to deprived households by March 2020.\n\nOn 7th September 2019, the 8th Crore LPG connection under the scheme was handed over in Aurangabad, Maharashtra.\n\nThe release of 8 Crore LPG connections under the scheme helped increase LPG coverage from 62% on 1st May 2016 to 99.8% as of 1st April 2021.",
+      "latency_seconds": 2.09,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_df50c248ca70",
+          "document_title": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+          "source_file": "pmuy.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_df50c248ca70__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 6.336917082468669
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_df50c248ca70",
+          "document_title": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+          "source_file": "pmuy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_df50c248ca70__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 3.7835315068562827
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_df50c248ca70",
+          "document_title": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+          "source_file": "pmuy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_df50c248ca70__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 1.5922610362370808
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": -0.6078172922134399
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_df50c248ca70",
+          "document_title": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+          "source_file": "pmuy.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_df50c248ca70__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": -0.8041010051965714
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmuy.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmuy.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_24",
+      "query": "Who is eligible to apply for an LPG connection under PMUY Ujjwala 2.0?",
+      "category": "eligibility",
+      "target_document": "pmuy.txt",
+      "is_unanswerable": false,
+      "expected_answer": "An adult woman belonging to a poor household without an existing LPG connection in her household.",
+      "generated_answer": "An adult woman belonging to a poor household and not having an LPG connection in her household is eligible under Ujjwala 2.0.\n\nThe beneficiary should belong to any of the following categories:\n\n1. Eligible as per the SECC 2011 list.\n\n2. Belongs to SC/ST households, is a beneficiary of Pradhan Mantri Awas Yojana (PMAY), Antyodaya Anna Yojana (AAY), is a forest dweller, belongs to Most Backward Classes (MBC), belongs to Tea and Ex-Tea Garden Tribes, or resides in river islands. The beneficiary must submit supporting documentation where applicable.\n\n3. If the applicant does not fall under the above categories, she can claim to be a beneficiary under the poor household category by submitting a 14-point declaration as per the prescribed format. 1. Apply through the official PMUY website:\n\nhttps://www.pmuy.gov.in/\n\n2. Select the oil company name, such as Indane, Bharatgas, or HP Gas.\n\n3. Select the type of connection, such as Ujjwala 2.0 New Connection.\n\n4. Choose the State, District, and Name of Distributor.\n\n5. Enter the mobile number, captcha, and OTP.\n\n6. Select Migrant Family status as YES or NO.\n\n7. If Migrant Family status is NO, fill Annexure 1 for the family identifier.\n\n8. If Migrant Family status is YES, provide the Ration Card.\n\n9. Select the applicable category.\n\n10. Fill in family details, personal details, address details, and bank details.\n\n11. Choose the cylinder type.\n\n12. Select whether the applicant is from a rural or urban area.\n\n13. Accept the declaration and submit the application.\n\n14. Generate the reference number and visit the gas agency. 1. Financial assistance of Rs. 1,600 is provided for a 14.2 kg cylinder connection or Rs. 1,150 for a 5 kg cylinder connection.\n\n2. All PMUY beneficiaries are provided with the first LPG refill and stove (hot plate) free of cost along with their deposit-free connection.",
+      "latency_seconds": 1.87,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_df50c248ca70",
+          "document_title": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+          "source_file": "pmuy.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_df50c248ca70__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 7.147477467854817
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_df50c248ca70",
+          "document_title": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+          "source_file": "pmuy.txt",
+          "section": "ONLINE APPLICATION",
+          "heading_path": [
+            "ONLINE APPLICATION"
+          ],
+          "chunk_id": "doc_df50c248ca70__naive__9",
+          "retrieval_type": "naive",
+          "rerank_score": 3.642207304636637
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_df50c248ca70",
+          "document_title": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+          "source_file": "pmuy.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_df50c248ca70__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 1.9036431709925334
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_df50c248ca70",
+          "document_title": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+          "source_file": "pmuy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_df50c248ca70__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 1.8245034217834473
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_df50c248ca70",
+          "document_title": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+          "source_file": "pmuy.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_df50c248ca70__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 1.1208430727322896
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (pmuy.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [pmuy.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_25",
+      "query": "What is the loan amount range provided under the Stand-Up India scheme?",
+      "category": "financial_limits",
+      "target_document": "stand_up_india.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Bank loans between Rs. 10 lakh and Rs. 1 Crore (Rs. 100 Lakhs) for greenfield projects.",
+      "generated_answer": "Stand-Up India is a scheme by the Ministry of Finance for financing SC/ST and/or Women Entrepreneurs by facilitating bank loans for setting up a greenfield project enterprise in manufacturing, services, trading sector and activities allied to agriculture.\n\nThe objective of this scheme is to facilitate bank loans between Rs. 10 lakh and Rs. 1 Crore to at least one Scheduled Caste (SC) or Scheduled Tribe (ST) borrower and at least one woman borrower per bank branch for setting up a greenfield enterprise.\n\nIn case of non-individual enterprises, at least 51% of the shareholding and controlling stake should be held by either an SC/ST or Woman entrepreneur. 1. Facilitation of a composite loan, inclusive of term loan and working capital, between ₹10 Lakhs and ₹100 Lakhs. RuPay debit card to be issued for the convenience of the borrower.\n\n2. The web portal by SIDBI provides hand-holding support through a network of agencies engaged in training, skill development, mentoring, project report preparation, application filling, work shed/utility support services, subsidy schemes, etc. Step 1 - Visit the official Stand-Up India portal:\nhttps://www.standupmitra.in/Login/Register\n\nStep 2 - Enter the full details of the business location.\n\nStep 3 - Select the category between SC, ST and Woman, and indicate whether the stake held is 51% or higher.\n\nStep 4 - Select the nature of the proposed business, the desired loan amount, description of the business, details of the premises, etc.\n\nStep 5 - Enter past business experience, including tenure.\n\nStep 6 - Indicate whether hand-holding support is required.\n\nStep 7 - Enter all the required personal details, including the name of the enterprise and its constitution.\n\nStep 8 - Select the \"Register\" button to complete the process.\n\nOnce registration is completed, the applicant can initiate the Stand-Up India Loan Application process with the respective financial institution. Officials will contact the applicant for completing the Stand-Up India Loan Process and requisite formalities.",
+      "latency_seconds": 1.77,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_c60bf91399fa",
+          "document_title": "Stand-Up India",
+          "source_file": "stand_up_india.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_c60bf91399fa__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 3.6630603472391763
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_c60bf91399fa",
+          "document_title": "Stand-Up India",
+          "source_file": "stand_up_india.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_c60bf91399fa__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 2.9977221488952637
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_c60bf91399fa",
+          "document_title": "Stand-Up India",
+          "source_file": "stand_up_india.txt",
+          "section": "PROCESS",
+          "heading_path": [
+            "PROCESS"
+          ],
+          "chunk_id": "doc_c60bf91399fa__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": 1.8868403037389119
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_c60bf91399fa",
+          "document_title": "Stand-Up India",
+          "source_file": "stand_up_india.txt",
+          "section": "FOR CASES WITH EXPOSURE ABOVE ₹25 LAKHS",
+          "heading_path": [
+            "FOR CASES WITH EXPOSURE ABOVE ₹25 LAKHS"
+          ],
+          "chunk_id": "doc_c60bf91399fa__naive__10__child__5",
+          "retrieval_type": "parent_child",
+          "rerank_score": 0.4689403971036275
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_c60bf91399fa",
+          "document_title": "Stand-Up India",
+          "source_file": "stand_up_india.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_c60bf91399fa__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 0.2864168932040532
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (stand_up_india.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [stand_up_india.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_26",
+      "query": "Who are the targeted eligible borrowers under Stand-Up India?",
+      "category": "eligibility",
+      "target_document": "stand_up_india.txt",
+      "is_unanswerable": false,
+      "expected_answer": "Scheduled Caste (SC), Scheduled Tribe (ST), and women entrepreneurs setting up greenfield enterprises.",
+      "generated_answer": "Stand-Up India is a scheme by the Ministry of Finance for financing SC/ST and/or Women Entrepreneurs by facilitating bank loans for setting up a greenfield project enterprise in manufacturing, services, trading sector and activities allied to agriculture.\n\nThe objective of this scheme is to facilitate bank loans between Rs. 10 lakh and Rs. 1 Crore to at least one Scheduled Caste (SC) or Scheduled Tribe (ST) borrower and at least one woman borrower per bank branch for setting up a greenfield enterprise.\n\nIn case of non-individual enterprises, at least 51% of the shareholding and controlling stake should be held by either an SC/ST or Woman entrepreneur. 1. Finance is provided for Greenfield Enterprises.\n\n2. If the applicant is a male, he must be from SC/ST category.\n\n3. The age of the applicant must be at least 18 years.\n\n4. The applicant must not be in default to any bank/financial institution. 1. Facilitation of a composite loan, inclusive of term loan and working capital, between ₹10 Lakhs and ₹100 Lakhs. RuPay debit card to be issued for the convenience of the borrower.\n\n2. The web portal by SIDBI provides hand-holding support through a network of agencies engaged in training, skill development, mentoring, project report preparation, application filling, work shed/utility support services, subsidy schemes, etc.",
+      "latency_seconds": 1.71,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_c60bf91399fa",
+          "document_title": "Stand-Up India",
+          "source_file": "stand_up_india.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_c60bf91399fa__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 2.837874174118042
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_c60bf91399fa",
+          "document_title": "Stand-Up India",
+          "source_file": "stand_up_india.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_c60bf91399fa__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": 2.6672967274983725
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_c60bf91399fa",
+          "document_title": "Stand-Up India",
+          "source_file": "stand_up_india.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_c60bf91399fa__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": 1.2397489945093791
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_c60bf91399fa",
+          "document_title": "Stand-Up India",
+          "source_file": "stand_up_india.txt",
+          "section": "PROCESS",
+          "heading_path": [
+            "PROCESS"
+          ],
+          "chunk_id": "doc_c60bf91399fa__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": 0.9182600180308024
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_c60bf91399fa",
+          "document_title": "Stand-Up India",
+          "source_file": "stand_up_india.txt",
+          "section": "ONLINE",
+          "heading_path": [
+            "ONLINE"
+          ],
+          "chunk_id": "doc_c60bf91399fa__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 0.35593934419254464
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 2/2 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (stand_up_india.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [stand_up_india.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_27",
+      "query": "What is the maximum age limit of a girl child to open a Sukanya Samriddhi account?",
+      "category": "eligibility",
+      "target_document": "sukanya_samriddhi.txt",
+      "is_unanswerable": false,
+      "expected_answer": "The girl child must not have attained the age of 10 years at the time of account opening.",
+      "generated_answer": "3.4 An account under this Scheme may be opened for a maximum of two girl children in one family.\n\n3.5 More than two accounts may be opened in a family if such children are born in the first or second order of birth, or in both, subject to submission of an affidavit by the guardian supported with birth certificates of the twins or triplets regarding the birth of such multiple girl children in the first two orders of birth in a family.\n\n3.6 The above provision does not apply to a girl child of the second order of birth if the first order of birth in the family results in two or more surviving girl children.\n\n4. DEPOSITS\n\n4.1 The account may be opened with a minimum initial deposit of Rs. 250.\n\n4.2 Subsequent deposits shall be in multiples of Rs. 50.\n\n4.3 A minimum deposit of Rs. 250 shall be made in a financial year in one account. 7.7 No premature closure under this provision shall be made before completion of five years from the date of opening of the account.\n\n8. WITHDRAWAL\n\n8.1 On application in Form-3, withdrawal of up to a maximum of 50% of the amount in the account at the end of the financial year preceding the year of application may be allowed for the education of the account holder.\n\n8.2 Withdrawal shall be allowed after the account holder attains the age of eighteen years or has passed tenth standard, whichever is earlier.\n\n8.3 The withdrawal application shall be accompanied by documentary proof in the form of a confirmed offer of admission of the account holder in an educational institution or a fee slip from such institution indicating the financial requirement.\n\n8.4 Withdrawal may be made in one lump sum or in instalments. 2.6 \"Financial year\" means the period commencing on 1st April and ending on 31st March of the following year.\n\n2.7 \"Form\" means forms appended to this Scheme.\n\n2.8 \"General Rules\" means the Government Savings Promotion General Rules, 2018.\n\n2.9 \"Maturity\" means maturity of an account on completion of a period of twenty-one years from the date of its opening.\n\n2.10 Words and expressions used in the Scheme but not defined shall have the meanings assigned to them in the Act and the General Rules.\n\n3. OPENING OF ACCOUNT\n\n3.1 The account may be opened by one of the guardians in the name of a girl child who has not attained the age of ten years as on the date of opening of the account.\n\n3.2 Every account holder shall have a single account under this Scheme.\n\n3.3 The application in Form-1 for opening an account shall be accompanied by the birth certificate of the girl child in whose name the account is to be opened, along with the required documents of the guardian.",
+      "latency_seconds": 1.93,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_6b4a88810c3b",
+          "document_title": "Sukanya Samriddhi Account Scheme, 2019",
+          "source_file": "sukanya_samriddhi.txt",
+          "section": "Sukanya Samriddhi Account Scheme",
+          "heading_path": [
+            "SOURCE DOCUMENT",
+            "Sukanya Samriddhi Account Scheme"
+          ],
+          "chunk_id": "doc_6b4a88810c3b__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": 5.290335655212402
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_6b4a88810c3b",
+          "document_title": "Sukanya Samriddhi Account Scheme, 2019",
+          "source_file": "sukanya_samriddhi.txt",
+          "section": "Sukanya Samriddhi Account Scheme",
+          "heading_path": [
+            "SOURCE DOCUMENT",
+            "Sukanya Samriddhi Account Scheme"
+          ],
+          "chunk_id": "doc_6b4a88810c3b__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": 3.318734327952067
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_6b4a88810c3b",
+          "document_title": "Sukanya Samriddhi Account Scheme, 2019",
+          "source_file": "sukanya_samriddhi.txt",
+          "section": "Sukanya Samriddhi Account Scheme",
+          "heading_path": [
+            "SOURCE DOCUMENT",
+            "Sukanya Samriddhi Account Scheme"
+          ],
+          "chunk_id": "doc_6b4a88810c3b__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 2.9325133164723716
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_6b4a88810c3b",
+          "document_title": "Sukanya Samriddhi Account Scheme, 2019",
+          "source_file": "sukanya_samriddhi.txt",
+          "section": "Sukanya Samriddhi Account Scheme",
+          "heading_path": [
+            "SOURCE DOCUMENT",
+            "Sukanya Samriddhi Account Scheme"
+          ],
+          "chunk_id": "doc_6b4a88810c3b__naive__9",
+          "retrieval_type": "naive",
+          "rerank_score": 2.895512819290161
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_6b4a88810c3b",
+          "document_title": "Sukanya Samriddhi Account Scheme, 2019",
+          "source_file": "sukanya_samriddhi.txt",
+          "section": "Sukanya Samriddhi Account Scheme",
+          "heading_path": [
+            "SOURCE DOCUMENT",
+            "Sukanya Samriddhi Account Scheme"
+          ],
+          "chunk_id": "doc_6b4a88810c3b__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 1.7820816834767659
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 1/1 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (sukanya_samriddhi.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [sukanya_samriddhi.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_28",
+      "query": "What is the maturity period of a Sukanya Samriddhi account?",
+      "category": "rules_conditions",
+      "target_document": "sukanya_samriddhi.txt",
+      "is_unanswerable": false,
+      "expected_answer": "The account matures on completion of 21 years from the date of its opening.",
+      "generated_answer": "2.6 \"Financial year\" means the period commencing on 1st April and ending on 31st March of the following year.\n\n2.7 \"Form\" means forms appended to this Scheme.\n\n2.8 \"General Rules\" means the Government Savings Promotion General Rules, 2018.\n\n2.9 \"Maturity\" means maturity of an account on completion of a period of twenty-one years from the date of its opening.\n\n2.10 Words and expressions used in the Scheme but not defined shall have the meanings assigned to them in the Act and the General Rules.\n\n3. OPENING OF ACCOUNT\n\n3.1 The account may be opened by one of the guardians in the name of a girl child who has not attained the age of ten years as on the date of opening of the account.\n\n3.2 Every account holder shall have a single account under this Scheme.\n\n3.3 The application in Form-1 for opening an account shall be accompanied by the birth certificate of the girl child in whose name the account is to be opened, along with the required documents of the guardian. 8.5 Instalment withdrawals shall not exceed one withdrawal per year and may be made for a maximum of five years.\n\n8.6 The total withdrawal shall remain subject to the maximum amount specified above.\n\n8.7 The amount of withdrawal shall be restricted to the actual requirement for fees and other charges required at the time of admission, as shown in the offer of admission or relevant fee slip issued by the educational institution.\n\n9. CLOSURE ON MATURITY\n\n9.1 The account shall mature on completion of twenty-one years from the date of opening.\n\n9.2 Closure may also be permitted before completion of twenty-one years if the account holder requests closure for the intended marriage of the account holder.\n\n9.3 The request for closure on intended marriage must include a declaration signed on non-judicial stamp paper and attested by a notary, supported by proof of age confirming that the applicant will not be less than eighteen years of age on the date of marriage. 7.7 No premature closure under this provision shall be made before completion of five years from the date of opening of the account.\n\n8. WITHDRAWAL\n\n8.1 On application in Form-3, withdrawal of up to a maximum of 50% of the amount in the account at the end of the financial year preceding the year of application may be allowed for the education of the account holder.\n\n8.2 Withdrawal shall be allowed after the account holder attains the age of eighteen years or has passed tenth standard, whichever is earlier.\n\n8.3 The withdrawal application shall be accompanied by documentary proof in the form of a confirmed offer of admission of the account holder in an educational institution or a fee slip from such institution indicating the financial requirement.\n\n8.4 Withdrawal may be made in one lump sum or in instalments.",
+      "latency_seconds": 2.0,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_6b4a88810c3b",
+          "document_title": "Sukanya Samriddhi Account Scheme, 2019",
+          "source_file": "sukanya_samriddhi.txt",
+          "section": "Sukanya Samriddhi Account Scheme",
+          "heading_path": [
+            "SOURCE DOCUMENT",
+            "Sukanya Samriddhi Account Scheme"
+          ],
+          "chunk_id": "doc_6b4a88810c3b__naive__2",
+          "retrieval_type": "naive",
+          "rerank_score": 5.807080904642741
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_6b4a88810c3b",
+          "document_title": "Sukanya Samriddhi Account Scheme, 2019",
+          "source_file": "sukanya_samriddhi.txt",
+          "section": "Sukanya Samriddhi Account Scheme",
+          "heading_path": [
+            "SOURCE DOCUMENT",
+            "Sukanya Samriddhi Account Scheme"
+          ],
+          "chunk_id": "doc_6b4a88810c3b__naive__9",
+          "retrieval_type": "naive",
+          "rerank_score": 5.602813879648845
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_6b4a88810c3b",
+          "document_title": "Sukanya Samriddhi Account Scheme, 2019",
+          "source_file": "sukanya_samriddhi.txt",
+          "section": "Sukanya Samriddhi Account Scheme",
+          "heading_path": [
+            "SOURCE DOCUMENT",
+            "Sukanya Samriddhi Account Scheme"
+          ],
+          "chunk_id": "doc_6b4a88810c3b__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": 3.550349394480387
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_6b4a88810c3b",
+          "document_title": "Sukanya Samriddhi Account Scheme, 2019",
+          "source_file": "sukanya_samriddhi.txt",
+          "section": "Sukanya Samriddhi Account Scheme",
+          "heading_path": [
+            "SOURCE DOCUMENT",
+            "Sukanya Samriddhi Account Scheme"
+          ],
+          "chunk_id": "doc_6b4a88810c3b__naive__6",
+          "retrieval_type": "naive",
+          "rerank_score": 2.9003053506215415
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_6b4a88810c3b",
+          "document_title": "Sukanya Samriddhi Account Scheme, 2019",
+          "source_file": "sukanya_samriddhi.txt",
+          "section": "Sukanya Samriddhi Account Scheme",
+          "heading_path": [
+            "SOURCE DOCUMENT",
+            "Sukanya Samriddhi Account Scheme"
+          ],
+          "chunk_id": "doc_6b4a88810c3b__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": 2.655656099319458
+        }
+      ],
+      "scores": {
+        "faithfulness": 2,
+        "faithfulness_reason": "Fully supported by context (100.0% lexical grounding).",
+        "correctness": 2,
+        "correctness_reason": "All 1/1 key facts present.",
+        "context_relevance": 2,
+        "context_relevance_reason": "Rank 1 source (sukanya_samriddhi.txt) matches target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "Top cited source [sukanya_samriddhi.txt] matches gold target document.",
+        "abstention_correct": true,
+        "abstention_reason": "Correctly attempted answer for answerable question."
+      }
+    },
+    {
+      "query_id": "GEN_29",
+      "query": "What are the eligibility criteria for the ISRO Gaganyaan astronaut training program?",
+      "category": "abstention",
+      "target_document": "NONE",
+      "is_unanswerable": true,
+      "expected_answer": "The information is not available in the retrieved sources.",
+      "generated_answer": "",
+      "latency_seconds": 1.69,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_dbf7841348a1",
+          "document_title": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY)",
+          "source_file": "pm_gkay.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_dbf7841348a1__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": -8.465128580729166
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_a89f117958a7",
+          "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+          "source_file": "pm_kisan.txt",
+          "section": "STEP 1: PREREQUISITES",
+          "heading_path": [
+            "STEP 1: PREREQUISITES"
+          ],
+          "chunk_id": "doc_a89f117958a7__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": -9.246327718098959
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_82efd3387088",
+          "document_title": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) 4.0",
+          "source_file": "pmkvy.txt",
+          "section": "TRAINING AND FUTURISTIC JOB ROLES",
+          "heading_path": [
+            "TRAINING AND FUTURISTIC JOB ROLES"
+          ],
+          "chunk_id": "doc_82efd3387088__naive__7",
+          "retrieval_type": "naive",
+          "rerank_score": -9.433483441670736
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_76bf5299f15f",
+          "document_title": "Pradhan Mantri Mudra Yojana (PMMY)",
+          "source_file": "pmmy.txt",
+          "section": "NOTE 03",
+          "heading_path": [
+            "NOTE 03"
+          ],
+          "chunk_id": "doc_76bf5299f15f__naive__12",
+          "retrieval_type": "naive",
+          "rerank_score": -9.718127568562826
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_c60bf91399fa",
+          "document_title": "Stand-Up India",
+          "source_file": "stand_up_india.txt",
+          "section": "ELIGIBILITY",
+          "heading_path": [
+            "ELIGIBILITY"
+          ],
+          "chunk_id": "doc_c60bf91399fa__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": -9.979688008626303
+        }
+      ],
+      "scores": {
+        "faithfulness": 0,
+        "faithfulness_reason": "Failed to abstain on unanswerable query; produced hallucinated claims.",
+        "correctness": 0,
+        "correctness_reason": "Hallucinated answers for out-of-domain/unanswerable query.",
+        "context_relevance": 2,
+        "context_relevance_reason": "N/A - Unanswerable query correctly has no target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "N/A - Unanswerable query.",
+        "abstention_correct": false,
+        "abstention_reason": "Failed to abstain on unanswerable question."
+      }
+    },
+    {
+      "query_id": "GEN_30",
+      "query": "What is the maximum subsidy for electric vehicle purchases under the FAME II scheme?",
+      "category": "abstention",
+      "target_document": "NONE",
+      "is_unanswerable": true,
+      "expected_answer": "The information is not available in the retrieved sources.",
+      "generated_answer": "",
+      "latency_seconds": 1.96,
+      "sources_count": 5,
+      "sources": [
+        {
+          "source_index": 1,
+          "document_id": "doc_dbf7841348a1",
+          "document_title": "Pradhan Mantri Garib Kalyan Anna Yojana (PM-GKAY)",
+          "source_file": "pm_gkay.txt",
+          "section": "PHASE VI",
+          "heading_path": [
+            "PHASE VI"
+          ],
+          "chunk_id": "doc_dbf7841348a1__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": -7.6117323239644366
+        },
+        {
+          "source_index": 2,
+          "document_id": "doc_885875a2d066",
+          "document_title": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+          "source_file": "pmay_g.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_885875a2d066__naive__5",
+          "retrieval_type": "naive",
+          "rerank_score": -8.908820788065592
+        },
+        {
+          "source_index": 3,
+          "document_id": "doc_dd33c7c901fd",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+          "source_file": "pmay_u.txt",
+          "section": "BENEFITS",
+          "heading_path": [
+            "BENEFITS"
+          ],
+          "chunk_id": "doc_dd33c7c901fd__naive__4",
+          "retrieval_type": "naive",
+          "rerank_score": -9.12937037150065
+        },
+        {
+          "source_index": 4,
+          "document_id": "doc_dd33c7c901fd",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+          "source_file": "pmay_u.txt",
+          "section": "FREQUENTLY ASKED QUESTIONS",
+          "heading_path": [
+            "FREQUENTLY ASKED QUESTIONS"
+          ],
+          "chunk_id": "doc_dd33c7c901fd__naive__8",
+          "retrieval_type": "naive",
+          "rerank_score": -9.412877400716146
+        },
+        {
+          "source_index": 5,
+          "document_id": "doc_dd33c7c901fd",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+          "source_file": "pmay_u.txt",
+          "section": "DETAILS",
+          "heading_path": [
+            "DETAILS"
+          ],
+          "chunk_id": "doc_dd33c7c901fd__naive__3",
+          "retrieval_type": "naive",
+          "rerank_score": -9.546146710713705
+        }
+      ],
+      "scores": {
+        "faithfulness": 0,
+        "faithfulness_reason": "Failed to abstain on unanswerable query; produced hallucinated claims.",
+        "correctness": 0,
+        "correctness_reason": "Hallucinated answers for out-of-domain/unanswerable query.",
+        "context_relevance": 2,
+        "context_relevance_reason": "N/A - Unanswerable query correctly has no target document.",
+        "source_attribution": 2,
+        "source_attribution_reason": "N/A - Unanswerable query.",
+        "abstention_correct": false,
+        "abstention_reason": "Failed to abstain on unanswerable question."
+      }
+    }
+  ]
+}

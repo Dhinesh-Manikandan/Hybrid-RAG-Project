@@ -36,7 +36,10 @@ CHILD_CHUNK_OVERLAP = 16
 
 RETRIEVAL_TOP_K = 10
 
-RRF_K        = 60
+RRF_K = 60
+
+# Candidate pool size after RRF fusion
+# Baseline: FUSION_TOP_K = 15
 FUSION_TOP_K = 15
 MMR_LAMBDA   = 0.7
 
@@ -58,10 +61,25 @@ GROUND_TRUTH_PATH = EVAL_DIR / "ground_truth.json"
 
 # Query Reformulation & Multi-Query Retrieval
 ENABLE_QUERY_REFORMULATION = True
-NUM_REFORMULATIONS         = 2
+# Total query formulations / perspectives evaluated (V=3: 1 original + 2 linguistic reformulations)
+# Baseline: NUM_REFORMULATIONS = 3 (V=3 query perspectives)
+NUM_REFORMULATIONS         = 3
 REFORMULATION_METHOD       = "linguistic"  # Options: "linguistic", "model", "none"
 REFORMULATION_MODEL_NAME   = "google/flan-t5-small"
 
 # Multi-Query CrossEncoder Reranking
 ENABLE_MULTI_QUERY_RERANKING = True
+
+# CrossEncoder Batch Size
+# Baseline: BATCH_SIZE = 32
+BATCH_SIZE                   = 32
+CROSS_ENCODER_BATCH_SIZE     = BATCH_SIZE
+
+# LLM Answer Generation
+LLM_MODEL_NAME           = "Qwen/Qwen3-0.6B"
+LLM_TEMPERATURE          = 0.1
+LLM_MAX_NEW_TOKENS       = 512
+LLM_ENABLE_THINKING      = False
+GENERATION_CONTEXT_TOP_K = 5
+
 
