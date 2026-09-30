@@ -1,0 +1,5465 @@
+{
+  "summary": {
+    "total_queries": 82,
+    "overall_hit_at_1": 0.9756,
+    "overall_hit_at_3": 1.0,
+    "overall_hit_at_5": 1.0,
+    "overall_hit_at_10": 1.0,
+    "overall_mrr": 0.9858,
+    "latency": {
+      "mean_seconds": 3.758,
+      "median_seconds": 3.3745,
+      "p95_seconds": 6.8802
+    },
+    "multi_target_queries": 11,
+    "all_expected_in_top5_rate": 0.7273,
+    "all_expected_in_top10_rate": 0.7273
+  },
+  "difficulty_breakdown": {
+    "easy": {
+      "count": 23,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "medium": {
+      "count": 28,
+      "hit_at_1": 0.9642857142857143,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 0.9761892857142858
+    },
+    "hard": {
+      "count": 19,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "cross_document": {
+      "count": 12,
+      "hit_at_1": 0.9166666666666666,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 0.9583333333333334
+    }
+  },
+  "document_breakdown": {
+    "atal_pension_yojana.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "pm_gkay.txt": {
+      "count": 5,
+      "hit_at_1": 0.8,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 0.8666600000000001
+    },
+    "pm_kisan.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "pm_svanidhi.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "pm_vishwakarma.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "pmay_g.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "pmay_u.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "pmfby.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "pmjdy.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "pmkvy.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "pmmy.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "pmuy.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "stand_up_india.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "sukanya_samriddhi.txt": {
+      "count": 5,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    }
+  },
+  "question_type_breakdown": {
+    "eligibility": {
+      "count": 13,
+      "hit_at_1": 0.9230769230769231,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 0.9615384615384616
+    },
+    "financial_limits": {
+      "count": 14,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "rules": {
+      "count": 15,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "benefits": {
+      "count": 17,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "procedure": {
+      "count": 9,
+      "hit_at_1": 0.8888888888888888,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 0.9259222222222222
+    },
+    "documents": {
+      "count": 6,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "purpose": {
+      "count": 8,
+      "hit_at_1": 1.0,
+      "hit_at_3": 1.0,
+      "hit_at_5": 1.0,
+      "mrr": 1.0
+    }
+  },
+  "queries": [
+    {
+      "query_id": "Q01",
+      "query": "What is the age limit to join Atal Pension Yojana?",
+      "expected_documents": [
+        "atal_pension_yojana.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 16.8836,
+      "top_1_doc": "atal_pension_yojana.txt",
+      "top_3_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_5_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_10_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the age limit to join Atal Pension Yojana?",
+          "What criteria, requirements, and details are defined for age limit to join Atal Pension Yojana",
+          "What is the comprehensive specification and list of age limit to join Atal Pension Yojana"
+        ],
+        "top_rerank_scores": [
+          7.6131,
+          6.0773,
+          3.5922,
+          3.5108,
+          1.5697
+        ],
+        "top_rrf_scores": [
+          0.1952,
+          0.1216,
+          0.135,
+          0.186,
+          0.094
+        ]
+      }
+    },
+    {
+      "query_id": "Q02",
+      "query": "What is the guaranteed monthly pension range for unorganized workers upon reaching 60 years of age?",
+      "expected_documents": [
+        "atal_pension_yojana.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.2112,
+      "top_1_doc": "atal_pension_yojana.txt",
+      "top_3_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_5_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_10_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the guaranteed monthly pension range for unorganized workers upon reaching 60 years of age?",
+          "What specifications, requirements, and details are defined for guaranteed monthly pension range in unorganized workers upon reaching 60 years of age",
+          "What are the comprehensive criteria and provisions for guaranteed monthly pension range in unorganized workers upon reaching 60 years of age"
+        ],
+        "top_rerank_scores": [
+          2.8906,
+          -0.206,
+          -2.6673,
+          -3.2177,
+          -4.8509
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1063,
+          0.1877,
+          0.0928,
+          0.0604
+        ]
+      }
+    },
+    {
+      "query_id": "Q03",
+      "query": "What options are available to the spouse if an old age pension subscriber passes away before sixty years?",
+      "expected_documents": [
+        "atal_pension_yojana.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 2.303,
+      "top_1_doc": "atal_pension_yojana.txt",
+      "top_3_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_5_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_10_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What options are available to the spouse if an old age pension subscriber passes away before sixty years?",
+          "What are the key requirements, criteria, and details regarding What options are available to the spouse if an old age pension subscriber passes away before sixty years",
+          "What specifications, guidelines, and procedures apply to What options are available to the spouse if an old age pension subscriber passes away before sixty years"
+        ],
+        "top_rerank_scores": [
+          1.1094,
+          -0.0235,
+          -1.113,
+          -5.8714,
+          -7.2585
+        ],
+        "top_rrf_scores": [
+          0.1928,
+          0.1914,
+          0.1931,
+          0.0938,
+          0.0466
+        ]
+      }
+    },
+    {
+      "query_id": "Q04",
+      "query": "Are contributions to the unorganized worker retirement pension scheme eligible for income tax deduction under Section 80CCD?",
+      "expected_documents": [
+        "atal_pension_yojana.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.0449,
+      "top_1_doc": "atal_pension_yojana.txt",
+      "top_3_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_5_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_10_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Are contributions to the unorganized worker retirement pension scheme eligible for income tax deduction under Section 80CCD?",
+          "What are the key requirements, criteria, and details regarding Are contributions to the unorganized worker retirement pension scheme eligible for income tax deduction under Section 80CCD",
+          "What specifications, guidelines, and procedures apply to Are contributions to the unorganized worker retirement pension scheme eligible for income tax deduction under Section 80CCD"
+        ],
+        "top_rerank_scores": [
+          1.7394,
+          -1.4128,
+          -1.7125,
+          -2.2389,
+          -2.4953
+        ],
+        "top_rrf_scores": [
+          0.1944,
+          0.077,
+          0.0951,
+          0.1234,
+          0.1712
+        ]
+      }
+    },
+    {
+      "query_id": "Q05",
+      "query": "How can an unorganized sector pension subscriber lodge and track a grievance on CGMS?",
+      "expected_documents": [
+        "atal_pension_yojana.txt"
+      ],
+      "question_type": "procedure",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 2.5828,
+      "top_1_doc": "atal_pension_yojana.txt",
+      "top_3_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_5_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_10_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "How can an unorganized sector pension subscriber lodge and track a grievance on CGMS?",
+          "What is the application procedure and step-by-step process for an unorganized sector pension subscriber lodge and track a grievance on to CGMS",
+          "What instructions, requirements, and parameters are needed for an unorganized sector pension subscriber lodge and track a grievance on to CGMS"
+        ],
+        "top_rerank_scores": [
+          -1.0073,
+          -4.199,
+          -7.196,
+          -7.3629,
+          -9.5313
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1083,
+          0.1213,
+          0.0474,
+          0.0462
+        ]
+      }
+    },
+    {
+      "query_id": "Q06",
+      "query": "How much free food grain is supplied per month under Pradhan Mantri Garib Kalyan Anna Yojana?",
+      "expected_documents": [
+        "pm_gkay.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 2.1335,
+      "top_1_doc": "pm_gkay.txt",
+      "top_3_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt"
+      ],
+      "top_5_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pmfby.txt"
+      ],
+      "top_10_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pmfby.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "How much free food grain is supplied per month under Pradhan Mantri Garib Kalyan Anna Yojana?",
+          "What are the key requirements, criteria, and details regarding How much free food grain is supplied per month under Pradhan Mantri Garib Kalyan Anna Yojana",
+          "What specifications, guidelines, and procedures apply to How much free food grain is supplied per month under Pradhan Mantri Garib Kalyan Anna Yojana"
+        ],
+        "top_rerank_scores": [
+          6.2097,
+          3.8288,
+          -0.1798,
+          -1.1761,
+          -1.5187
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1894,
+          0.1037,
+          0.1728,
+          0.0294
+        ]
+      }
+    },
+    {
+      "query_id": "Q07",
+      "query": "Which ration card holder categories are entitled to free grain distribution under Atmanirbhar Bharat?",
+      "expected_documents": [
+        "pm_gkay.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.2813,
+      "top_1_doc": "pm_gkay.txt",
+      "top_3_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt"
+      ],
+      "top_5_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_10_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_svanidhi.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Which ration card holder categories are entitled to free grain distribution under Atmanirbhar Bharat?",
+          "What are the key requirements, criteria, and details regarding Which ration card holder categories are entitled to free grain distribution under Atmanirbhar Bharat",
+          "What specifications, guidelines, and procedures apply to Which ration card holder categories are entitled to free grain distribution under Atmanirbhar Bharat"
+        ],
+        "top_rerank_scores": [
+          0.8929,
+          0.5371,
+          -3.2667,
+          -4.102,
+          -5.1442
+        ],
+        "top_rrf_scores": [
+          0.187,
+          0.1863,
+          0.1936,
+          0.1749,
+          0.0448
+        ]
+      }
+    },
+    {
+      "query_id": "Q08",
+      "query": "Which states and union territories received wheat instead of rice under the free grain distribution scheme?",
+      "expected_documents": [
+        "pm_gkay.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 2.3511,
+      "top_1_doc": "pm_gkay.txt",
+      "top_3_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_5_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_svanidhi.txt",
+        "pm_gkay.txt",
+        "pmuy.txt"
+      ],
+      "top_10_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_svanidhi.txt",
+        "pm_gkay.txt",
+        "pmuy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Which states and union territories received wheat instead of rice under the free grain distribution scheme?",
+          "What are the key requirements, criteria, and details regarding Which states and union territories received wheat instead of rice under the free grain distribution scheme",
+          "What specifications, guidelines, and procedures apply to Which states and union territories received wheat instead of rice under the free grain distribution scheme"
+        ],
+        "top_rerank_scores": [
+          0.5321,
+          -4.1775,
+          -7.2923,
+          -7.3979,
+          -8.8412
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1876,
+          0.0479,
+          0.1427,
+          0.0455
+        ]
+      }
+    },
+    {
+      "query_id": "Q09",
+      "query": "How can migrant workers obtain subsidized or free ration outside their home state using biometric authentication?",
+      "expected_documents": [
+        "pm_gkay.txt"
+      ],
+      "question_type": "procedure",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.5248,
+      "top_1_doc": "pmuy.txt",
+      "top_3_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pm_gkay.txt"
+      ],
+      "top_5_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt"
+      ],
+      "top_10_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt"
+      ],
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 0.3333,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "How can migrant workers obtain subsidized or free ration outside their home state using biometric authentication?",
+          "What is the application procedure and step-by-step process for migrant workers obtain subsidized or free ration outside their home state using biometric to authentication",
+          "What instructions, requirements, and parameters are needed for migrant workers obtain subsidized or free ration outside their home state using biometric to authentication"
+        ],
+        "top_rerank_scores": [
+          -2.67,
+          -6.0018,
+          -6.3324,
+          -6.7986,
+          -6.8578
+        ],
+        "top_rrf_scores": [
+          0.1903,
+          0.1878,
+          0.0465,
+          0.0299,
+          0.1124
+        ]
+      }
+    },
+    {
+      "query_id": "Q10",
+      "query": "What documents are required to receive food grain rations at a Fair Price Shop under PM-GKAY?",
+      "expected_documents": [
+        "pm_gkay.txt"
+      ],
+      "question_type": "documents",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 2.4663,
+      "top_1_doc": "pm_gkay.txt",
+      "top_3_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt"
+      ],
+      "top_5_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt"
+      ],
+      "top_10_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What documents are required to receive food grain rations at a Fair Price Shop under PM-GKAY?",
+          "What are the key requirements, criteria, and details regarding What documents are required to receive food grain rations at a Fair Price Shop under PM-GKAY",
+          "What specifications, guidelines, and procedures apply to What documents are required to receive food grain rations at a Fair Price Shop under PM-GKAY"
+        ],
+        "top_rerank_scores": [
+          -0.1427,
+          -0.4454,
+          -0.8705,
+          -1.0268,
+          -1.167
+        ],
+        "top_rrf_scores": [
+          0.1944,
+          0.0492,
+          0.0299,
+          0.1871,
+          0.0927
+        ]
+      }
+    },
+    {
+      "query_id": "Q11",
+      "query": "What is the annual financial assistance provided under PM-KISAN?",
+      "expected_documents": [
+        "pm_kisan.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 2.2512,
+      "top_1_doc": "pm_kisan.txt",
+      "top_3_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pmuy.txt"
+      ],
+      "top_5_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pmuy.txt",
+        "pm_svanidhi.txt",
+        "pm_kisan.txt"
+      ],
+      "top_10_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pmuy.txt",
+        "pm_svanidhi.txt",
+        "pm_kisan.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the annual financial assistance provided under PM-KISAN?",
+          "What specifications, requirements, and details are defined for annual financial assistance provided in PM-KISAN",
+          "What are the comprehensive criteria and provisions for annual financial assistance provided in PM-KISAN"
+        ],
+        "top_rerank_scores": [
+          3.6568,
+          2.0534,
+          1.6316,
+          1.3474,
+          1.0115
+        ],
+        "top_rrf_scores": [
+          0.1954,
+          0.1398,
+          0.0481,
+          0.0611,
+          0.1083
+        ]
+      }
+    },
+    {
+      "query_id": "Q12",
+      "query": "Who is eligible for direct income support for agricultural inputs?",
+      "expected_documents": [
+        "pm_kisan.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.2627,
+      "top_1_doc": "pm_kisan.txt",
+      "top_3_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_gkay.txt"
+      ],
+      "top_5_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_gkay.txt",
+        "pm_kisan.txt",
+        "pmfby.txt"
+      ],
+      "top_10_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_gkay.txt",
+        "pm_kisan.txt",
+        "pmfby.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Who is eligible for direct income support for agricultural inputs?",
+          "What are the eligibility criteria for direct income support for agricultural inputs",
+          "What conditions and requirements determine eligibility for direct income support for agricultural inputs"
+        ],
+        "top_rerank_scores": [
+          -0.4338,
+          -0.8536,
+          -4.5894,
+          -5.6679,
+          -5.8424
+        ],
+        "top_rrf_scores": [
+          0.1933,
+          0.1967,
+          0.0451,
+          0.1202,
+          0.0464
+        ]
+      }
+    },
+    {
+      "query_id": "Q13",
+      "query": "Are retired government pensioners receiving more than ten thousand rupees per month eligible for farmer income support?",
+      "expected_documents": [
+        "pm_kisan.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 2.1606,
+      "top_1_doc": "pm_kisan.txt",
+      "top_3_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_kisan.txt"
+      ],
+      "top_5_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "atal_pension_yojana.txt",
+        "pm_kisan.txt"
+      ],
+      "top_10_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "atal_pension_yojana.txt",
+        "pm_kisan.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Are retired government pensioners receiving more than ten thousand rupees per month eligible for farmer income support?",
+          "What are the key requirements, criteria, and details regarding Are retired government pensioners receiving more than ten thousand rupees per month eligible for farmer income support",
+          "What specifications, guidelines, and procedures apply to Are retired government pensioners receiving more than ten thousand rupees per month eligible for farmer income support"
+        ],
+        "top_rerank_scores": [
+          -4.0453,
+          -4.9755,
+          -4.9828,
+          -5.0831,
+          -5.2893
+        ],
+        "top_rrf_scores": [
+          0.1563,
+          0.1403,
+          0.1439,
+          0.0752,
+          0.1375
+        ]
+      }
+    },
+    {
+      "query_id": "Q14",
+      "query": "What land records and identification papers must be submitted for farmer registration via Common Service Centres?",
+      "expected_documents": [
+        "pm_kisan.txt"
+      ],
+      "question_type": "documents",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.0554,
+      "top_1_doc": "pm_kisan.txt",
+      "top_3_docs": [
+        "pm_kisan.txt",
+        "pmfby.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_5_docs": [
+        "pm_kisan.txt",
+        "pmfby.txt",
+        "pm_vishwakarma.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_10_docs": [
+        "pm_kisan.txt",
+        "pmfby.txt",
+        "pm_vishwakarma.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What land records and identification papers must be submitted for farmer registration via Common Service Centres?",
+          "What are the key requirements, criteria, and details regarding What land records and identification papers must be submitted for farmer registration via Common Service Centres",
+          "What specifications, guidelines, and procedures apply to What land records and identification papers must be submitted for farmer registration via Common Service Centres"
+        ],
+        "top_rerank_scores": [
+          -2.4649,
+          -2.9587,
+          -4.7811,
+          -4.9238,
+          -5.5794
+        ],
+        "top_rrf_scores": [
+          0.1887,
+          0.138,
+          0.0471,
+          0.0487,
+          0.0303
+        ]
+      }
+    },
+    {
+      "query_id": "Q15",
+      "query": "What is the main objective of the Pradhan Mantri Kisan Samman Nidhi?",
+      "expected_documents": [
+        "pm_kisan.txt"
+      ],
+      "question_type": "purpose",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 1.9019,
+      "top_1_doc": "pm_kisan.txt",
+      "top_3_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_kisan.txt"
+      ],
+      "top_5_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_kisan.txt"
+      ],
+      "top_10_docs": [
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_kisan.txt",
+        "pm_kisan.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the main objective of the Pradhan Mantri Kisan Samman Nidhi?",
+          "What specifications, requirements, and details are defined for main objective in the Pradhan Mantri Kisan Samman Nidhi",
+          "What are the comprehensive criteria and provisions for main objective in the Pradhan Mantri Kisan Samman Nidhi"
+        ],
+        "top_rerank_scores": [
+          5.7817,
+          3.229,
+          1.9703,
+          1.8855,
+          1.721
+        ],
+        "top_rrf_scores": [
+          0.1359,
+          0.1743,
+          0.0747,
+          0.1598,
+          0.1382
+        ]
+      }
+    },
+    {
+      "query_id": "Q16",
+      "query": "What is the initial collateral-free working capital loan amount under PM SVANidhi?",
+      "expected_documents": [
+        "pm_svanidhi.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 1.8503,
+      "top_1_doc": "pm_svanidhi.txt",
+      "top_3_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_5_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_10_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the initial collateral-free working capital loan amount under PM SVANidhi?",
+          "What specifications, requirements, and details are defined for initial collateral-free working capital loan amount in PM SVANidhi",
+          "What are the comprehensive criteria and provisions for initial collateral-free working capital loan amount in PM SVANidhi"
+        ],
+        "top_rerank_scores": [
+          5.6768,
+          2.2451,
+          -1.6105,
+          -2.2926,
+          -2.8524
+        ],
+        "top_rrf_scores": [
+          0.1931,
+          0.1895,
+          0.0776,
+          0.0437,
+          0.1513
+        ]
+      }
+    },
+    {
+      "query_id": "Q17",
+      "query": "What interest subsidy and monthly digital cashback are offered to urban street vendors?",
+      "expected_documents": [
+        "pm_svanidhi.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.1317,
+      "top_1_doc": "pm_svanidhi.txt",
+      "top_3_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_5_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_10_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What interest subsidy and monthly digital cashback are offered to urban street vendors?",
+          "What are the key requirements, criteria, and details regarding What interest subsidy and monthly digital cashback are offered to urban street vendors",
+          "What specifications, guidelines, and procedures apply to What interest subsidy and monthly digital cashback are offered to urban street vendors"
+        ],
+        "top_rerank_scores": [
+          3.652,
+          -0.9776,
+          -3.152,
+          -3.5298,
+          -3.8139
+        ],
+        "top_rrf_scores": [
+          0.1959,
+          0.1877,
+          0.1871,
+          0.1037,
+          0.1896
+        ]
+      }
+    },
+    {
+      "query_id": "Q18",
+      "query": "Can street vendors operating in peri-urban areas without a Certificate of Vending qualify for micro-credit?",
+      "expected_documents": [
+        "pm_svanidhi.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 2.495,
+      "top_1_doc": "pm_svanidhi.txt",
+      "top_3_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_5_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_10_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Can street vendors operating in peri-urban areas without a Certificate of Vending qualify for micro-credit?",
+          "What are the key requirements, criteria, and details regarding Can street vendors operating in peri-urban areas without a Certificate of Vending qualify for micro-credit",
+          "What specifications, guidelines, and procedures apply to Can street vendors operating in peri-urban areas without a Certificate of Vending qualify for micro-credit"
+        ],
+        "top_rerank_scores": [
+          3.7426,
+          -1.775,
+          -2.3752,
+          -3.2695,
+          -3.6182
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1725,
+          0.1366,
+          0.1537,
+          0.1371
+        ]
+      }
+    },
+    {
+      "query_id": "Q19",
+      "query": "What is the repayment tenure for the initial micro-credit tranche for street hawkers?",
+      "expected_documents": [
+        "pm_svanidhi.txt"
+      ],
+      "question_type": "procedure",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.2621,
+      "top_1_doc": "pm_svanidhi.txt",
+      "top_3_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_5_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_10_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the repayment tenure for the initial micro-credit tranche for street hawkers?",
+          "What specifications, requirements, and details are defined for repayment tenure in the initial micro-credit tranche for street hawkers",
+          "What are the comprehensive criteria and provisions for repayment tenure in the initial micro-credit tranche for street hawkers"
+        ],
+        "top_rerank_scores": [
+          -4.7095,
+          -5.0193,
+          -5.4232,
+          -6.0419,
+          -7.5609
+        ],
+        "top_rrf_scores": [
+          0.1889,
+          0.1919,
+          0.1706,
+          0.1744,
+          0.0474
+        ]
+      }
+    },
+    {
+      "query_id": "Q20",
+      "query": "What documents must Category C and D street vendors produce to apply for PM SVANidhi?",
+      "expected_documents": [
+        "pm_svanidhi.txt"
+      ],
+      "question_type": "documents",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 2.9905,
+      "top_1_doc": "pm_svanidhi.txt",
+      "top_3_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_5_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_10_docs": [
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What documents must Category C and D street vendors produce to apply for PM SVANidhi?",
+          "What are the key requirements, criteria, and details regarding What documents must Category C and D street vendors produce to apply for PM SVANidhi",
+          "What specifications, guidelines, and procedures apply to What documents must Category C and D street vendors produce to apply for PM SVANidhi"
+        ],
+        "top_rerank_scores": [
+          5.9019,
+          3.9382,
+          3.5634,
+          2.3298,
+          2.2624
+        ],
+        "top_rrf_scores": [
+          0.1957,
+          0.1885,
+          0.1809,
+          0.1337,
+          0.1202
+        ]
+      }
+    },
+    {
+      "query_id": "Q21",
+      "query": "How many traditional trades are covered under the PM Vishwakarma scheme?",
+      "expected_documents": [
+        "pm_vishwakarma.txt"
+      ],
+      "question_type": "purpose",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 3.6341,
+      "top_1_doc": "pm_vishwakarma.txt",
+      "top_3_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_5_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_10_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "How many traditional trades are covered under the PM Vishwakarma scheme?",
+          "What are the key requirements, criteria, and details regarding How many traditional trades are covered under the PM Vishwakarma scheme",
+          "What specifications, guidelines, and procedures apply to How many traditional trades are covered under the PM Vishwakarma scheme"
+        ],
+        "top_rerank_scores": [
+          5.5754,
+          -0.8552,
+          -0.9205,
+          -2.0395,
+          -2.0761
+        ],
+        "top_rrf_scores": [
+          0.1938,
+          0.1601,
+          0.1326,
+          0.0576,
+          0.1397
+        ]
+      }
+    },
+    {
+      "query_id": "Q22",
+      "query": "What is the maximum loan amount and interest rate for the two tranches of enterprise credit support for artisans?",
+      "expected_documents": [
+        "pm_vishwakarma.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 3.6261,
+      "top_1_doc": "pm_vishwakarma.txt",
+      "top_3_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_5_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt",
+        "pmay_g.txt",
+        "stand_up_india.txt"
+      ],
+      "top_10_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt",
+        "pmay_g.txt",
+        "stand_up_india.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the maximum loan amount and interest rate for the two tranches of enterprise credit support for artisans?",
+          "What specifications, requirements, and details are defined for maximum loan amount and interest rate in the two tranches of enterprise credit support for artisans",
+          "What are the comprehensive criteria and provisions for maximum loan amount and interest rate in the two tranches of enterprise credit support for artisans"
+        ],
+        "top_rerank_scores": [
+          1.4511,
+          0.9392,
+          -7.5212,
+          -7.6432,
+          -8.6124
+        ],
+        "top_rrf_scores": [
+          0.1934,
+          0.142,
+          0.0917,
+          0.0604,
+          0.1698
+        ]
+      }
+    },
+    {
+      "query_id": "Q23",
+      "query": "What daily training stipend and toolkit incentive voucher are provided to traditional craftspeople?",
+      "expected_documents": [
+        "pm_vishwakarma.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 3.6153,
+      "top_1_doc": "pm_vishwakarma.txt",
+      "top_3_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_5_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_10_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What daily training stipend and toolkit incentive voucher are provided to traditional craftspeople?",
+          "What are the key requirements, criteria, and details regarding What daily training stipend and toolkit incentive voucher are provided to traditional craftspeople",
+          "What specifications, guidelines, and procedures apply to What daily training stipend and toolkit incentive voucher are provided to traditional craftspeople"
+        ],
+        "top_rerank_scores": [
+          3.912,
+          -3.1105,
+          -5.6304,
+          -6.4909,
+          -7.7261
+        ],
+        "top_rrf_scores": [
+          0.1954,
+          0.0916,
+          0.1194,
+          0.144,
+          0.0308
+        ]
+      }
+    },
+    {
+      "query_id": "Q24",
+      "query": "What conditions must a craftsman fulfill to unlock the second loan tranche of Rs 2 lakh?",
+      "expected_documents": [
+        "pm_vishwakarma.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 3.9602,
+      "top_1_doc": "pm_vishwakarma.txt",
+      "top_3_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pmmy.txt"
+      ],
+      "top_5_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pmmy.txt",
+        "pm_svanidhi.txt",
+        "stand_up_india.txt"
+      ],
+      "top_10_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pmmy.txt",
+        "pm_svanidhi.txt",
+        "stand_up_india.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What conditions must a craftsman fulfill to unlock the second loan tranche of Rs 2 lakh?",
+          "What are the key requirements, criteria, and details regarding What conditions must a craftsman fulfill to unlock the second loan tranche of Rs 2 lakh",
+          "What specifications, guidelines, and procedures apply to What conditions must a craftsman fulfill to unlock the second loan tranche of Rs 2 lakh"
+        ],
+        "top_rerank_scores": [
+          1.8455,
+          0.171,
+          -6.42,
+          -7.7755,
+          -8.902
+        ],
+        "top_rrf_scores": [
+          0.1465,
+          0.1949,
+          0.0446,
+          0.1081,
+          0.0611
+        ]
+      }
+    },
+    {
+      "query_id": "Q25",
+      "query": "What incentive is paid to artisans per digital transaction under PM Vishwakarma?",
+      "expected_documents": [
+        "pm_vishwakarma.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 3.4312,
+      "top_1_doc": "pm_vishwakarma.txt",
+      "top_3_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_5_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_10_docs": [
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What incentive is paid to artisans per digital transaction under PM Vishwakarma?",
+          "What are the key requirements, criteria, and details regarding What incentive is paid to artisans per digital transaction under PM Vishwakarma",
+          "What specifications, guidelines, and procedures apply to What incentive is paid to artisans per digital transaction under PM Vishwakarma"
+        ],
+        "top_rerank_scores": [
+          4.9755,
+          2.8896,
+          0.4891,
+          -1.1099,
+          -1.7827
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1898,
+          0.1048,
+          0.1055,
+          0.169
+        ]
+      }
+    },
+    {
+      "query_id": "Q26",
+      "query": "How much unit assistance is granted for house construction in plain areas under PMAY-G?",
+      "expected_documents": [
+        "pmay_g.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 4.4833,
+      "top_1_doc": "pmay_g.txt",
+      "top_3_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt"
+      ],
+      "top_5_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_u.txt"
+      ],
+      "top_10_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_u.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "How much unit assistance is granted for house construction in plain areas under PMAY-G?",
+          "What are the key requirements, criteria, and details regarding How much unit assistance is granted for house construction in plain areas under PMAY-G",
+          "What specifications, guidelines, and procedures apply to How much unit assistance is granted for house construction in plain areas under PMAY-G"
+        ],
+        "top_rerank_scores": [
+          6.2006,
+          -1.2313,
+          -1.2594,
+          -2.4599,
+          -2.4705
+        ],
+        "top_rrf_scores": [
+          0.1724,
+          0.1361,
+          0.1894,
+          0.045,
+          0.0905
+        ]
+      }
+    },
+    {
+      "query_id": "Q27",
+      "query": "What additional toilet construction assistance is provided in convergence with Swachh Bharat Mission-Gramin?",
+      "expected_documents": [
+        "pmay_g.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 3.6269,
+      "top_1_doc": "pmay_g.txt",
+      "top_3_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt"
+      ],
+      "top_5_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt"
+      ],
+      "top_10_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What additional toilet construction assistance is provided in convergence with Swachh Bharat Mission-Gramin?",
+          "What provided additional toilet construction assistance and specifications are provided in convergence with Swachh Bharat Mission-Gramin",
+          "What are the details, provisions, and criteria for additional toilet construction assistance in convergence with Swachh Bharat Mission-Gramin"
+        ],
+        "top_rerank_scores": [
+          3.9834,
+          -0.0523,
+          -1.7226,
+          -1.9508,
+          -2.8524
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1414,
+          0.0481,
+          0.0623,
+          0.0732
+        ]
+      }
+    },
+    {
+      "query_id": "Q28",
+      "query": "What criteria cause a household to be automatically excluded from rural housing assistance?",
+      "expected_documents": [
+        "pmay_g.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 3.7732,
+      "top_1_doc": "pmay_g.txt",
+      "top_3_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt"
+      ],
+      "top_5_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pm_gkay.txt"
+      ],
+      "top_10_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pm_gkay.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What criteria cause a household to be automatically excluded from rural housing assistance?",
+          "What are the key requirements, criteria, and details regarding What criteria cause a household to be automatically excluded from rural housing assistance",
+          "What specifications, guidelines, and procedures apply to What criteria cause a household to be automatically excluded from rural housing assistance"
+        ],
+        "top_rerank_scores": [
+          2.8213,
+          1.0364,
+          0.0706,
+          -1.9486,
+          -5.6645
+        ],
+        "top_rrf_scores": [
+          0.0448,
+          0.1056,
+          0.1918,
+          0.1438,
+          0.1056
+        ]
+      }
+    },
+    {
+      "query_id": "Q29",
+      "query": "What is the minimum prescribed floor area for a rural house under PMAY-G?",
+      "expected_documents": [
+        "pmay_g.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 3.827,
+      "top_1_doc": "pmay_g.txt",
+      "top_3_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt"
+      ],
+      "top_5_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt"
+      ],
+      "top_10_docs": [
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_g.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the minimum prescribed floor area for a rural house under PMAY-G?",
+          "What specifications, requirements, and details are defined for minimum prescribed floor area in a rural house under PMAY-G",
+          "What are the comprehensive criteria and provisions for minimum prescribed floor area in a rural house under PMAY-G"
+        ],
+        "top_rerank_scores": [
+          2.8677,
+          -0.5526,
+          -0.7367,
+          -0.7554,
+          -1.0833
+        ],
+        "top_rrf_scores": [
+          0.1965,
+          0.1397,
+          0.0935,
+          0.1419,
+          0.1529
+        ]
+      }
+    },
+    {
+      "query_id": "Q30",
+      "query": "How are eligible rural housing beneficiaries identified and verified at the village level?",
+      "expected_documents": [
+        "pmay_g.txt"
+      ],
+      "question_type": "procedure",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 3.7851,
+      "top_1_doc": "pmay_g.txt",
+      "top_3_docs": [
+        "pmay_g.txt",
+        "pm_kisan.txt",
+        "pmay_u.txt"
+      ],
+      "top_5_docs": [
+        "pmay_g.txt",
+        "pm_kisan.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pm_gkay.txt"
+      ],
+      "top_10_docs": [
+        "pmay_g.txt",
+        "pm_kisan.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pm_gkay.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "How are eligible rural housing beneficiaries identified and verified at the village level?",
+          "What are the key requirements, criteria, and details regarding How are eligible rural housing beneficiaries identified and verified at the village level",
+          "What specifications, guidelines, and procedures apply to How are eligible rural housing beneficiaries identified and verified at the village level"
+        ],
+        "top_rerank_scores": [
+          0.4842,
+          -3.2649,
+          -3.9116,
+          -5.0849,
+          -5.1581
+        ],
+        "top_rrf_scores": [
+          0.1614,
+          0.031,
+          0.1694,
+          0.0927,
+          0.0901
+        ]
+      }
+    },
+    {
+      "query_id": "Q31",
+      "query": "What are the four core components of Pradhan Mantri Awas Yojana - Urban?",
+      "expected_documents": [
+        "pmay_u.txt"
+      ],
+      "question_type": "purpose",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 3.5244,
+      "top_1_doc": "pmay_u.txt",
+      "top_3_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt"
+      ],
+      "top_5_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt"
+      ],
+      "top_10_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What are the four core components of Pradhan Mantri Awas Yojana - Urban?",
+          "What specifications, requirements, and details are defined for four core components in Pradhan Mantri Awas Yojana - Urban",
+          "What are the comprehensive criteria and provisions for four core components in Pradhan Mantri Awas Yojana - Urban"
+        ],
+        "top_rerank_scores": [
+          4.5026,
+          3.9592,
+          3.8428,
+          2.4565,
+          2.4333
+        ],
+        "top_rrf_scores": [
+          0.1713,
+          0.1763,
+          0.1431,
+          0.0742,
+          0.0147
+        ]
+      }
+    },
+    {
+      "query_id": "Q32",
+      "query": "What income categories qualify for housing assistance in urban areas?",
+      "expected_documents": [
+        "pmay_u.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 3.3177,
+      "top_1_doc": "pmay_u.txt",
+      "top_3_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt"
+      ],
+      "top_5_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_g.txt",
+        "pmay_u.txt"
+      ],
+      "top_10_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_g.txt",
+        "pmay_u.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What income categories qualify for housing assistance in urban areas?",
+          "What are the key requirements, criteria, and details regarding What income categories qualify for housing assistance in urban areas",
+          "What specifications, guidelines, and procedures apply to What income categories qualify for housing assistance in urban areas"
+        ],
+        "top_rerank_scores": [
+          -0.0991,
+          -1.3835,
+          -2.0127,
+          -4.6546,
+          -4.9088
+        ],
+        "top_rrf_scores": [
+          0.1909,
+          0.1909,
+          0.1499,
+          0.1682,
+          0.1349
+        ]
+      }
+    },
+    {
+      "query_id": "Q33",
+      "query": "Can a family that already owns a pucca house in their native village qualify for urban housing benefits?",
+      "expected_documents": [
+        "pmay_u.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 3.9763,
+      "top_1_doc": "pmay_u.txt",
+      "top_3_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_g.txt"
+      ],
+      "top_5_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_u.txt"
+      ],
+      "top_10_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmay_u.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Can a family that already owns a pucca house in their native village qualify for urban housing benefits?",
+          "What are the key requirements, criteria, and details regarding Can a family that already owns a pucca house in their native village qualify for urban housing benefits",
+          "What specifications, guidelines, and procedures apply to Can a family that already owns a pucca house in their native village qualify for urban housing benefits"
+        ],
+        "top_rerank_scores": [
+          2.7847,
+          0.9716,
+          -1.0822,
+          -1.6093,
+          -1.7384
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1695,
+          0.1522,
+          0.1393,
+          0.1412
+        ]
+      }
+    },
+    {
+      "query_id": "Q34",
+      "query": "What is the Credit Linked Subsidy Scheme under urban housing assistance?",
+      "expected_documents": [
+        "pmay_u.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 4.0236,
+      "top_1_doc": "pmay_u.txt",
+      "top_3_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt"
+      ],
+      "top_5_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pm_svanidhi.txt",
+        "pmay_u.txt"
+      ],
+      "top_10_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pm_svanidhi.txt",
+        "pmay_u.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the Credit Linked Subsidy Scheme under urban housing assistance?",
+          "What specifications, requirements, and details are defined for Credit Linked Subsidy Scheme in urban housing assistance",
+          "What are the comprehensive criteria and provisions for Credit Linked Subsidy Scheme in urban housing assistance"
+        ],
+        "top_rerank_scores": [
+          5.7567,
+          3.4863,
+          2.9529,
+          -0.5691,
+          -5.1394
+        ],
+        "top_rrf_scores": [
+          0.1965,
+          0.1892,
+          0.1733,
+          0.0612,
+          0.0437
+        ]
+      }
+    },
+    {
+      "query_id": "Q35",
+      "query": "What proof of identity and income details are required to apply for PMAY-U?",
+      "expected_documents": [
+        "pmay_u.txt"
+      ],
+      "question_type": "documents",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 4.1274,
+      "top_1_doc": "pmay_u.txt",
+      "top_3_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt"
+      ],
+      "top_5_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_g.txt",
+        "pmmy.txt"
+      ],
+      "top_10_docs": [
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_g.txt",
+        "pmmy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What proof of identity and income details are required to apply for PMAY-U?",
+          "What are the key requirements, criteria, and details regarding What proof of identity and income details are required to apply for PMAY-U",
+          "What specifications, guidelines, and procedures apply to What proof of identity and income details are required to apply for PMAY-U"
+        ],
+        "top_rerank_scores": [
+          5.5864,
+          4.4023,
+          0.1849,
+          -0.6468,
+          -0.6649
+        ],
+        "top_rrf_scores": [
+          0.1921,
+          0.1916,
+          0.0446,
+          0.0588,
+          0.093
+        ]
+      }
+    },
+    {
+      "query_id": "Q36",
+      "query": "What is the maximum crop insurance premium payable by farmers for Kharif and Rabi food crops under PMFBY?",
+      "expected_documents": [
+        "pmfby.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 2.7769,
+      "top_1_doc": "pmfby.txt",
+      "top_3_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_5_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_10_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the maximum crop insurance premium payable by farmers for Kharif and Rabi food crops under PMFBY?",
+          "What specifications, requirements, and details are defined for maximum crop insurance premium payable by farmers in Kharif and Rabi food crops under PMFBY",
+          "What are the comprehensive criteria and provisions for maximum crop insurance premium payable by farmers in Kharif and Rabi food crops under PMFBY"
+        ],
+        "top_rerank_scores": [
+          7.4686,
+          -0.0625,
+          -0.5226,
+          -1.8945,
+          -2.6334
+        ],
+        "top_rrf_scores": [
+          0.1957,
+          0.1873,
+          0.1919,
+          0.1244,
+          0.0455
+        ]
+      }
+    },
+    {
+      "query_id": "Q37",
+      "query": "What compensation is available if insured farmers are prevented from sowing due to adverse weather?",
+      "expected_documents": [
+        "pmfby.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 5.7492,
+      "top_1_doc": "pmfby.txt",
+      "top_3_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_5_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_10_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What compensation is available if insured farmers are prevented from sowing due to adverse weather?",
+          "What are the key requirements, criteria, and details regarding What compensation is available if insured farmers are prevented from sowing due to adverse weather",
+          "What specifications, guidelines, and procedures apply to What compensation is available if insured farmers are prevented from sowing due to adverse weather"
+        ],
+        "top_rerank_scores": [
+          3.6912,
+          -1.0581,
+          -5.0022,
+          -5.9338,
+          -7.9363
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1928,
+          0.0761,
+          0.153,
+          0.0891
+        ]
+      }
+    },
+    {
+      "query_id": "Q38",
+      "query": "For how many days after harvesting are crops covered against localized post-harvest losses?",
+      "expected_documents": [
+        "pmfby.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 5.3992,
+      "top_1_doc": "pmfby.txt",
+      "top_3_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_5_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_10_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "For how many days after harvesting are crops covered against localized post-harvest losses?",
+          "What are the key requirements, criteria, and details regarding For how many days after harvesting are crops covered against localized post-harvest losses",
+          "What specifications, guidelines, and procedures apply to For how many days after harvesting are crops covered against localized post-harvest losses"
+        ],
+        "top_rerank_scores": [
+          5.8476,
+          -2.601,
+          -3.0572,
+          -3.6272,
+          -5.0012
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.0484,
+          0.1718,
+          0.1066,
+          0.1851
+        ]
+      }
+    },
+    {
+      "query_id": "Q39",
+      "query": "What risks are excluded from crop insurance coverage during the cultivation cycle?",
+      "expected_documents": [
+        "pmfby.txt"
+      ],
+      "question_type": "purpose",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 4.8521,
+      "top_1_doc": "pmfby.txt",
+      "top_3_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_5_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_10_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What risks are excluded from crop insurance coverage during the cultivation cycle?",
+          "What are the key requirements, criteria, and details regarding What risks are excluded from crop insurance coverage during the cultivation cycle",
+          "What specifications, guidelines, and procedures apply to What risks are excluded from crop insurance coverage during the cultivation cycle"
+        ],
+        "top_rerank_scores": [
+          2.8086,
+          0.3655,
+          -1.077,
+          -2.5491,
+          -3.3814
+        ],
+        "top_rrf_scores": [
+          0.1731,
+          0.1941,
+          0.1363,
+          0.0751,
+          0.1686
+        ]
+      }
+    },
+    {
+      "query_id": "Q40",
+      "query": "How can farmers track the status of their crop insurance application online?",
+      "expected_documents": [
+        "pmfby.txt"
+      ],
+      "question_type": "procedure",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 2.7692,
+      "top_1_doc": "pmfby.txt",
+      "top_3_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_5_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_10_docs": [
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "How can farmers track the status of their crop insurance application online?",
+          "What is the application procedure and step-by-step process for farmers track the status of their crop insurance application to online",
+          "What instructions, requirements, and parameters are needed for farmers track the status of their crop insurance application to online"
+        ],
+        "top_rerank_scores": [
+          1.0604,
+          -2.0442,
+          -3.925,
+          -4.0205,
+          -4.0205
+        ],
+        "top_rrf_scores": [
+          0.1446,
+          0.1701,
+          0.1475,
+          0.0617,
+          0.0612
+        ]
+      }
+    },
+    {
+      "query_id": "Q41",
+      "query": "What is the accidental insurance cover provided on RuPay debit cards under PMJDY?",
+      "expected_documents": [
+        "pmjdy.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 2.4361,
+      "top_1_doc": "pmjdy.txt",
+      "top_3_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt"
+      ],
+      "top_5_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "stand_up_india.txt"
+      ],
+      "top_10_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "stand_up_india.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the accidental insurance cover provided on RuPay debit cards under PMJDY?",
+          "What specifications, requirements, and details are defined for accidental insurance cover provided on RuPay debit cards in PMJDY",
+          "What are the comprehensive criteria and provisions for accidental insurance cover provided on RuPay debit cards in PMJDY"
+        ],
+        "top_rerank_scores": [
+          5.7504,
+          4.3027,
+          2.5407,
+          -0.6345,
+          -3.9047
+        ],
+        "top_rrf_scores": [
+          0.146,
+          0.1931,
+          0.045,
+          0.1913,
+          0.093
+        ]
+      }
+    },
+    {
+      "query_id": "Q42",
+      "query": "What is the maximum overdraft limit available on Jan Dhan accounts?",
+      "expected_documents": [
+        "pmjdy.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.8616,
+      "top_1_doc": "pmjdy.txt",
+      "top_3_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt"
+      ],
+      "top_5_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt"
+      ],
+      "top_10_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the maximum overdraft limit available on Jan Dhan accounts?",
+          "What criteria, requirements, and details are defined for maximum overdraft limit available on Jan Dhan accounts",
+          "What is the comprehensive specification and list of maximum overdraft limit available on Jan Dhan accounts"
+        ],
+        "top_rerank_scores": [
+          -1.5361,
+          -3.1619,
+          -4.1805,
+          -5.2443,
+          -5.616
+        ],
+        "top_rrf_scores": [
+          0.144,
+          0.1915,
+          0.1239,
+          0.0602,
+          0.0476
+        ]
+      }
+    },
+    {
+      "query_id": "Q43",
+      "query": "What are the rules and validity period for opening a small bank account without standard KYC documents?",
+      "expected_documents": [
+        "pmjdy.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 2.5738,
+      "top_1_doc": "pmjdy.txt",
+      "top_3_docs": [
+        "pmjdy.txt",
+        "atal_pension_yojana.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "top_5_docs": [
+        "pmjdy.txt",
+        "atal_pension_yojana.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_10_docs": [
+        "pmjdy.txt",
+        "atal_pension_yojana.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "pm_svanidhi.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What are the rules and validity period for opening a small bank account without standard KYC documents?",
+          "What specifications, requirements, and details are defined for rules and validity period in opening a small bank account without standard KYC documents",
+          "What are the comprehensive criteria and provisions for rules and validity period in opening a small bank account without standard KYC documents"
+        ],
+        "top_rerank_scores": [
+          2.6238,
+          -3.3203,
+          -5.67,
+          -5.8077,
+          -6.7575
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1218,
+          0.0597,
+          0.1572,
+          0.0763
+        ]
+      }
+    },
+    {
+      "query_id": "Q44",
+      "query": "What role do Bank Mitras or Business Correspondents play in financial inclusion in remote areas?",
+      "expected_documents": [
+        "pmjdy.txt"
+      ],
+      "question_type": "purpose",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.7303,
+      "top_1_doc": "pmjdy.txt",
+      "top_3_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt"
+      ],
+      "top_5_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmmy.txt"
+      ],
+      "top_10_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmmy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What role do Bank Mitras or Business Correspondents play in financial inclusion in remote areas?",
+          "What are the key requirements, criteria, and details regarding What role do Bank Mitras or Business Correspondents play in financial inclusion in remote areas",
+          "What specifications, guidelines, and procedures apply to What role do Bank Mitras or Business Correspondents play in financial inclusion in remote areas"
+        ],
+        "top_rerank_scores": [
+          0.5378,
+          0.0337,
+          -5.4504,
+          -8.1901,
+          -10.1516
+        ],
+        "top_rrf_scores": [
+          0.045,
+          0.1954,
+          0.0931,
+          0.0757,
+          0.0914
+        ]
+      }
+    },
+    {
+      "query_id": "Q45",
+      "query": "Can a minor above ten years of age open a basic savings bank account under PMJDY?",
+      "expected_documents": [
+        "pmjdy.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 2.3006,
+      "top_1_doc": "pmjdy.txt",
+      "top_3_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt"
+      ],
+      "top_5_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt"
+      ],
+      "top_10_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Can a minor above ten years of age open a basic savings bank account under PMJDY?",
+          "What are the key requirements, criteria, and details regarding Can a minor above ten years of age open a basic savings bank account under PMJDY",
+          "What specifications, guidelines, and procedures apply to Can a minor above ten years of age open a basic savings bank account under PMJDY"
+        ],
+        "top_rerank_scores": [
+          3.5515,
+          2.536,
+          -2.4321,
+          -2.5194,
+          -2.7848
+        ],
+        "top_rrf_scores": [
+          0.1923,
+          0.1949,
+          0.1059,
+          0.1188,
+          0.0459
+        ]
+      }
+    },
+    {
+      "query_id": "Q46",
+      "query": "What does Recognition of Prior Learning mean under PMKVY 4.0?",
+      "expected_documents": [
+        "pmkvy.txt"
+      ],
+      "question_type": "purpose",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 2.1817,
+      "top_1_doc": "pmkvy.txt",
+      "top_3_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_5_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_10_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What does Recognition of Prior Learning mean under PMKVY 4.0?",
+          "What are the key requirements, criteria, and details regarding What does Recognition of Prior Learning mean under PMKVY 4.0",
+          "What specifications, guidelines, and procedures apply to What does Recognition of Prior Learning mean under PMKVY 4.0"
+        ],
+        "top_rerank_scores": [
+          4.4595,
+          3.6178,
+          3.4991,
+          1.5929,
+          1.3386
+        ],
+        "top_rrf_scores": [
+          0.1939,
+          0.1252,
+          0.094,
+          0.1704,
+          0.188
+        ]
+      }
+    },
+    {
+      "query_id": "Q47",
+      "query": "Which digital platform manages the candidate skilling lifecycle and employment opportunities?",
+      "expected_documents": [
+        "pmkvy.txt"
+      ],
+      "question_type": "procedure",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.1389,
+      "top_1_doc": "pmkvy.txt",
+      "top_3_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_5_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_10_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Which digital platform manages the candidate skilling lifecycle and employment opportunities?",
+          "What are the key requirements, criteria, and details regarding Which digital platform manages the candidate skilling lifecycle and employment opportunities",
+          "What specifications, guidelines, and procedures apply to Which digital platform manages the candidate skilling lifecycle and employment opportunities"
+        ],
+        "top_rerank_scores": [
+          2.7658,
+          1.4206,
+          -4.4683,
+          -6.0293,
+          -6.6574
+        ],
+        "top_rrf_scores": [
+          0.1965,
+          0.1913,
+          0.1538,
+          0.094,
+          0.0912
+        ]
+      }
+    },
+    {
+      "query_id": "Q48",
+      "query": "What new-age and futuristic technological job domains are prioritized under the national skills curriculum?",
+      "expected_documents": [
+        "pmkvy.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 2.1428,
+      "top_1_doc": "pmkvy.txt",
+      "top_3_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_5_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_10_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What new-age and futuristic technological job domains are prioritized under the national skills curriculum?",
+          "What prioritized new-age and futuristic technological job domains and specifications are provided in the national skills curriculum",
+          "What are the details, provisions, and criteria for new-age and futuristic technological job domains in the national skills curriculum"
+        ],
+        "top_rerank_scores": [
+          5.6312,
+          4.6253,
+          -6.8507,
+          -6.9246,
+          -7.1382
+        ],
+        "top_rrf_scores": [
+          0.1946,
+          0.1934,
+          0.0924,
+          0.1228,
+          0.0597
+        ]
+      }
+    },
+    {
+      "query_id": "Q49",
+      "query": "How does alignment with the National Skills Qualification Framework ensure standardized vocational training?",
+      "expected_documents": [
+        "pmkvy.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.4922,
+      "top_1_doc": "pmkvy.txt",
+      "top_3_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_5_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_10_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "How does alignment with the National Skills Qualification Framework ensure standardized vocational training?",
+          "What are the key requirements, criteria, and details regarding How does alignment with the National Skills Qualification Framework ensure standardized vocational training",
+          "What specifications, guidelines, and procedures apply to How does alignment with the National Skills Qualification Framework ensure standardized vocational training"
+        ],
+        "top_rerank_scores": [
+          6.4369,
+          4.2506,
+          -1.4735,
+          -4.5514,
+          -5.8923
+        ],
+        "top_rrf_scores": [
+          0.1936,
+          0.1892,
+          0.1866,
+          0.1065,
+          0.1918
+        ]
+      }
+    },
+    {
+      "query_id": "Q50",
+      "query": "What role do industry-led Awarding Bodies play in vocational courses under PMKVY?",
+      "expected_documents": [
+        "pmkvy.txt"
+      ],
+      "question_type": "procedure",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 2.4053,
+      "top_1_doc": "pmkvy.txt",
+      "top_3_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_5_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_10_docs": [
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What role do industry-led Awarding Bodies play in vocational courses under PMKVY?",
+          "What are the key requirements, criteria, and details regarding What role do industry-led Awarding Bodies play in vocational courses under PMKVY",
+          "What specifications, guidelines, and procedures apply to What role do industry-led Awarding Bodies play in vocational courses under PMKVY"
+        ],
+        "top_rerank_scores": [
+          5.966,
+          2.9081,
+          2.7506,
+          0.1379,
+          -0.1159
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1808,
+          0.1424,
+          0.1193,
+          0.1564
+        ]
+      }
+    },
+    {
+      "query_id": "Q51",
+      "query": "What are the loan limits for Shishu, Kishore, and Tarun categories under Mudra?",
+      "expected_documents": [
+        "pmmy.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 2.0411,
+      "top_1_doc": "pmmy.txt",
+      "top_3_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt"
+      ],
+      "top_5_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt"
+      ],
+      "top_10_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What are the loan limits for Shishu, Kishore, and Tarun categories under Mudra?",
+          "What specifications, requirements, and details are defined for loan limits in Shishu, Kishore, and Tarun categories under Mudra",
+          "What are the comprehensive criteria and provisions for loan limits in Shishu, Kishore, and Tarun categories under Mudra"
+        ],
+        "top_rerank_scores": [
+          5.41,
+          2.8836,
+          2.1358,
+          1.57,
+          -1.9489
+        ],
+        "top_rrf_scores": [
+          0.1965,
+          0.1414,
+          0.1712,
+          0.1845,
+          0.1076
+        ]
+      }
+    },
+    {
+      "query_id": "Q52",
+      "query": "What is the maximum loan limit under the Tarun Plus category for micro enterprises?",
+      "expected_documents": [
+        "pmmy.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.0241,
+      "top_1_doc": "pmmy.txt",
+      "top_3_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt"
+      ],
+      "top_5_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt"
+      ],
+      "top_10_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the maximum loan limit under the Tarun Plus category for micro enterprises?",
+          "What specifications, requirements, and details are defined for maximum loan limit in the Tarun Plus category for micro enterprises",
+          "What are the comprehensive criteria and provisions for maximum loan limit in the Tarun Plus category for micro enterprises"
+        ],
+        "top_rerank_scores": [
+          2.9516,
+          -1.5373,
+          -3.1447,
+          -3.6709,
+          -5.2829
+        ],
+        "top_rrf_scores": [
+          0.1959,
+          0.1432,
+          0.1643,
+          0.1519,
+          0.0896
+        ]
+      }
+    },
+    {
+      "query_id": "Q53",
+      "query": "Are upfront fees or processing charges levied on micro enterprise loans up to fifty thousand rupees?",
+      "expected_documents": [
+        "pmmy.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 2.4101,
+      "top_1_doc": "pmmy.txt",
+      "top_3_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pm_svanidhi.txt"
+      ],
+      "top_5_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pm_svanidhi.txt",
+        "pmmy.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_10_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pm_svanidhi.txt",
+        "pmmy.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Are upfront fees or processing charges levied on micro enterprise loans up to fifty thousand rupees?",
+          "What are the key requirements, criteria, and details regarding Are upfront fees or processing charges levied on micro enterprise loans up to fifty thousand rupees",
+          "What specifications, guidelines, and procedures apply to Are upfront fees or processing charges levied on micro enterprise loans up to fifty thousand rupees"
+        ],
+        "top_rerank_scores": [
+          2.0232,
+          -4.8574,
+          -6.849,
+          -7.4936,
+          -7.5978
+        ],
+        "top_rrf_scores": [
+          0.1952,
+          0.134,
+          0.0763,
+          0.1373,
+          0.0484
+        ]
+      }
+    },
+    {
+      "query_id": "Q54",
+      "query": "What types of business entities and activities allied to agriculture qualify for MUDRA loans?",
+      "expected_documents": [
+        "pmmy.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.0258,
+      "top_1_doc": "pmmy.txt",
+      "top_3_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt"
+      ],
+      "top_5_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "stand_up_india.txt",
+        "pmmy.txt"
+      ],
+      "top_10_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "stand_up_india.txt",
+        "pmmy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What types of business entities and activities allied to agriculture qualify for MUDRA loans?",
+          "What are the key requirements, criteria, and details regarding What types of business entities and activities allied to agriculture qualify for MUDRA loans",
+          "What specifications, guidelines, and procedures apply to What types of business entities and activities allied to agriculture qualify for MUDRA loans"
+        ],
+        "top_rerank_scores": [
+          3.5765,
+          3.3369,
+          1.122,
+          -2.4375,
+          -2.5213
+        ],
+        "top_rrf_scores": [
+          0.1899,
+          0.1867,
+          0.1435,
+          0.0963,
+          0.1557
+        ]
+      }
+    },
+    {
+      "query_id": "Q55",
+      "query": "Through which online portal can entrepreneurs submit applications for a Mudra loan?",
+      "expected_documents": [
+        "pmmy.txt"
+      ],
+      "question_type": "procedure",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 1.8611,
+      "top_1_doc": "pmmy.txt",
+      "top_3_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt"
+      ],
+      "top_5_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "stand_up_india.txt"
+      ],
+      "top_10_docs": [
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "pmmy.txt",
+        "stand_up_india.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Through which online portal can entrepreneurs submit applications for a Mudra loan?",
+          "What are the key requirements, criteria, and details regarding Through which online portal can entrepreneurs submit applications for a Mudra loan",
+          "What specifications, guidelines, and procedures apply to Through which online portal can entrepreneurs submit applications for a Mudra loan"
+        ],
+        "top_rerank_scores": [
+          3.1987,
+          0.8068,
+          -1.9753,
+          -3.4037,
+          -3.5968
+        ],
+        "top_rrf_scores": [
+          0.189,
+          0.1921,
+          0.1492,
+          0.0448,
+          0.0734
+        ]
+      }
+    },
+    {
+      "query_id": "Q56",
+      "query": "What free benefits are provided to beneficiaries with their first LPG connection under Ujjwala 2.0?",
+      "expected_documents": [
+        "pmuy.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 2.3504,
+      "top_1_doc": "pmuy.txt",
+      "top_3_docs": [
+        "pmuy.txt",
+        "pmay_g.txt",
+        "pmay_g.txt"
+      ],
+      "top_5_docs": [
+        "pmuy.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmuy.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_10_docs": [
+        "pmuy.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pmuy.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What free benefits are provided to beneficiaries with their first LPG connection under Ujjwala 2.0?",
+          "What are the key requirements, criteria, and details regarding What free benefits are provided to beneficiaries with their first LPG connection under Ujjwala 2.0",
+          "What specifications, guidelines, and procedures apply to What free benefits are provided to beneficiaries with their first LPG connection under Ujjwala 2.0"
+        ],
+        "top_rerank_scores": [
+          4.44,
+          0.2259,
+          0.1335,
+          -0.0062,
+          -1.0493
+        ],
+        "top_rrf_scores": [
+          0.189,
+          0.0431,
+          0.1419,
+          0.1853,
+          0.0727
+        ]
+      }
+    },
+    {
+      "query_id": "Q57",
+      "query": "What is the financial grant provided for a 14.2 kg LPG cylinder connection under PMUY?",
+      "expected_documents": [
+        "pmuy.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.0908,
+      "top_1_doc": "pmuy.txt",
+      "top_3_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmuy.txt"
+      ],
+      "top_5_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmuy.txt"
+      ],
+      "top_10_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmuy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the financial grant provided for a 14.2 kg LPG cylinder connection under PMUY?",
+          "What specifications, requirements, and details are defined for financial grant provided in a 14.2 kg LPG cylinder connection under PMUY",
+          "What are the comprehensive criteria and provisions for financial grant provided in a 14.2 kg LPG cylinder connection under PMUY"
+        ],
+        "top_rerank_scores": [
+          6.813,
+          1.609,
+          -1.2197,
+          -3.2178,
+          -3.4044
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1889,
+          0.1827,
+          0.139,
+          0.0892
+        ]
+      }
+    },
+    {
+      "query_id": "Q58",
+      "query": "Can adult women from poor households not listed in SECC 2011 qualify for a gas connection?",
+      "expected_documents": [
+        "pmuy.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 2.1996,
+      "top_1_doc": "pmuy.txt",
+      "top_3_docs": [
+        "pmuy.txt",
+        "pmay_g.txt",
+        "pmay_g.txt"
+      ],
+      "top_5_docs": [
+        "pmuy.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pm_gkay.txt",
+        "pmuy.txt"
+      ],
+      "top_10_docs": [
+        "pmuy.txt",
+        "pmay_g.txt",
+        "pmay_g.txt",
+        "pm_gkay.txt",
+        "pmuy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Can adult women from poor households not listed in SECC 2011 qualify for a gas connection?",
+          "What are the key requirements, criteria, and details regarding Can adult women from poor households not listed in SECC 2011 qualify for a gas connection",
+          "What specifications, guidelines, and procedures apply to Can adult women from poor households not listed in SECC 2011 qualify for a gas connection"
+        ],
+        "top_rerank_scores": [
+          4.3661,
+          -5.5276,
+          -6.5683,
+          -8.3006,
+          -8.3371
+        ],
+        "top_rrf_scores": [
+          0.1762,
+          0.0459,
+          0.1526,
+          0.1081,
+          0.0455
+        ]
+      }
+    },
+    {
+      "query_id": "Q59",
+      "query": "Can male household members apply for the clean cooking fuel subsidy scheme?",
+      "expected_documents": [
+        "pmuy.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 2.2097,
+      "top_1_doc": "pmuy.txt",
+      "top_3_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmay_g.txt"
+      ],
+      "top_5_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmay_g.txt",
+        "pm_gkay.txt",
+        "pmay_u.txt"
+      ],
+      "top_10_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmay_g.txt",
+        "pm_gkay.txt",
+        "pmay_u.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Can male household members apply for the clean cooking fuel subsidy scheme?",
+          "What are the key requirements, criteria, and details regarding Can male household members apply for the clean cooking fuel subsidy scheme",
+          "What specifications, guidelines, and procedures apply to Can male household members apply for the clean cooking fuel subsidy scheme"
+        ],
+        "top_rerank_scores": [
+          0.7769,
+          -2.5341,
+          -7.0872,
+          -8.1881,
+          -8.7974
+        ],
+        "top_rrf_scores": [
+          0.1922,
+          0.1944,
+          0.0913,
+          0.0907,
+          0.1079
+        ]
+      }
+    },
+    {
+      "query_id": "Q60",
+      "query": "What documents are required to apply for an LPG connection under Pradhan Mantri Ujjwala Yojana?",
+      "expected_documents": [
+        "pmuy.txt"
+      ],
+      "question_type": "documents",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 6.9197,
+      "top_1_doc": "pmuy.txt",
+      "top_3_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmjdy.txt"
+      ],
+      "top_5_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmjdy.txt",
+        "pmuy.txt",
+        "pmuy.txt"
+      ],
+      "top_10_docs": [
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmjdy.txt",
+        "pmuy.txt",
+        "pmuy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What documents are required to apply for an LPG connection under Pradhan Mantri Ujjwala Yojana?",
+          "What are the key requirements, criteria, and details regarding What documents are required to apply for an LPG connection under Pradhan Mantri Ujjwala Yojana",
+          "What specifications, guidelines, and procedures apply to What documents are required to apply for an LPG connection under Pradhan Mantri Ujjwala Yojana"
+        ],
+        "top_rerank_scores": [
+          5.6344,
+          4.8887,
+          3.7653,
+          3.6055,
+          3.5537
+        ],
+        "top_rrf_scores": [
+          0.0883,
+          0.1568,
+          0.0926,
+          0.0765,
+          0.0729
+        ]
+      }
+    },
+    {
+      "query_id": "Q61",
+      "query": "What is the loan amount range provided to greenfield enterprises under Stand-Up India?",
+      "expected_documents": [
+        "stand_up_india.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 4.4346,
+      "top_1_doc": "stand_up_india.txt",
+      "top_3_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt"
+      ],
+      "top_5_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt"
+      ],
+      "top_10_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the loan amount range provided to greenfield enterprises under Stand-Up India?",
+          "What specifications, requirements, and details are defined for loan amount range provided to greenfield enterprises in Stand-Up India",
+          "What are the comprehensive criteria and provisions for loan amount range provided to greenfield enterprises in Stand-Up India"
+        ],
+        "top_rerank_scores": [
+          4.8611,
+          4.0815,
+          0.5216,
+          -0.0831,
+          -0.9882
+        ],
+        "top_rrf_scores": [
+          0.1915,
+          0.1777,
+          0.1864,
+          0.1353,
+          0.1378
+        ]
+      }
+    },
+    {
+      "query_id": "Q62",
+      "query": "Who is eligible to apply for enterprise loans under the Stand-Up India scheme?",
+      "expected_documents": [
+        "stand_up_india.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 7.2464,
+      "top_1_doc": "stand_up_india.txt",
+      "top_3_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt"
+      ],
+      "top_5_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt"
+      ],
+      "top_10_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Who is eligible to apply for enterprise loans under the Stand-Up India scheme?",
+          "What are the eligibility criteria for apply for enterprise loans under the Stand-Up India scheme",
+          "What conditions and requirements determine eligibility for apply for enterprise loans under the Stand-Up India scheme"
+        ],
+        "top_rerank_scores": [
+          5.9039,
+          4.1041,
+          2.8732,
+          2.6535,
+          1.5151
+        ],
+        "top_rrf_scores": [
+          0.1811,
+          0.1916,
+          0.1928,
+          0.0921,
+          0.0894
+        ]
+      }
+    },
+    {
+      "query_id": "Q63",
+      "query": "What shareholding and controlling stake requirement applies to non-individual enterprises?",
+      "expected_documents": [
+        "stand_up_india.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 5.0184,
+      "top_1_doc": "stand_up_india.txt",
+      "top_3_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt"
+      ],
+      "top_5_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt"
+      ],
+      "top_10_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What shareholding and controlling stake requirement applies to non-individual enterprises?",
+          "What are the key requirements, criteria, and details regarding What shareholding and controlling stake requirement applies to non-individual enterprises",
+          "What specifications, guidelines, and procedures apply to What shareholding and controlling stake requirement applies to non-individual enterprises"
+        ],
+        "top_rerank_scores": [
+          0.0102,
+          -7.1796,
+          -8.3,
+          -8.917,
+          -9.3336
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1407,
+          0.1369,
+          0.1419,
+          0.1069
+        ]
+      }
+    },
+    {
+      "query_id": "Q64",
+      "query": "What additional project reports and balance sheets are required for loan exposures exceeding 25 lakhs?",
+      "expected_documents": [
+        "stand_up_india.txt"
+      ],
+      "question_type": "documents",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 6.1304,
+      "top_1_doc": "stand_up_india.txt",
+      "top_3_docs": [
+        "stand_up_india.txt",
+        "pmmy.txt",
+        "stand_up_india.txt"
+      ],
+      "top_5_docs": [
+        "stand_up_india.txt",
+        "pmmy.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_10_docs": [
+        "stand_up_india.txt",
+        "pmmy.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What additional project reports and balance sheets are required for loan exposures exceeding 25 lakhs?",
+          "What required additional project reports and balance sheets and specifications are provided in loan exposures exceeding 25 lakhs",
+          "What are the details, provisions, and criteria for additional project reports and balance sheets in loan exposures exceeding 25 lakhs"
+        ],
+        "top_rerank_scores": [
+          3.1067,
+          0.1188,
+          -5.3211,
+          -5.7123,
+          -6.8554
+        ],
+        "top_rrf_scores": [
+          0.1967,
+          0.1112,
+          0.0476,
+          0.0444,
+          0.1371
+        ]
+      }
+    },
+    {
+      "query_id": "Q65",
+      "query": "What hand-holding support does SIDBI arrange for greenfield borrowers?",
+      "expected_documents": [
+        "stand_up_india.txt"
+      ],
+      "question_type": "procedure",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 4.7952,
+      "top_1_doc": "stand_up_india.txt",
+      "top_3_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt"
+      ],
+      "top_5_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "pmmy.txt"
+      ],
+      "top_10_docs": [
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "stand_up_india.txt",
+        "pmmy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What hand-holding support does SIDBI arrange for greenfield borrowers?",
+          "What are the key requirements, criteria, and details regarding What hand-holding support does SIDBI arrange for greenfield borrowers",
+          "What specifications, guidelines, and procedures apply to What hand-holding support does SIDBI arrange for greenfield borrowers"
+        ],
+        "top_rerank_scores": [
+          1.839,
+          -3.4022,
+          -4.1257,
+          -6.5538,
+          -6.8363
+        ],
+        "top_rrf_scores": [
+          0.1965,
+          0.1873,
+          0.1046,
+          0.183,
+          0.0604
+        ]
+      }
+    },
+    {
+      "query_id": "Q66",
+      "query": "What is the minimum initial deposit and maximum annual investment limit for a Sukanya Samriddhi account?",
+      "expected_documents": [
+        "sukanya_samriddhi.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "easy",
+      "is_cross_document": false,
+      "latency_seconds": 4.7511,
+      "top_1_doc": "sukanya_samriddhi.txt",
+      "top_3_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "top_5_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "top_10_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the minimum initial deposit and maximum annual investment limit for a Sukanya Samriddhi account?",
+          "What specifications, requirements, and details are defined for minimum initial deposit and maximum annual investment limit in a Sukanya Samriddhi account",
+          "What are the comprehensive criteria and provisions for minimum initial deposit and maximum annual investment limit in a Sukanya Samriddhi account"
+        ],
+        "top_rerank_scores": [
+          4.2102,
+          3.1707,
+          2.7715,
+          1.7929,
+          1.2739
+        ],
+        "top_rrf_scores": [
+          0.1941,
+          0.1923,
+          0.0906,
+          0.0908,
+          0.138
+        ]
+      }
+    },
+    {
+      "query_id": "Q67",
+      "query": "What is the maximum age of a girl child at the time of opening a savings account under the scheme?",
+      "expected_documents": [
+        "sukanya_samriddhi.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 4.555,
+      "top_1_doc": "sukanya_samriddhi.txt",
+      "top_3_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "top_5_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_10_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the maximum age of a girl child at the time of opening a savings account under the scheme?",
+          "What specifications, requirements, and details are defined for maximum age in a girl child at the time of opening a savings account under the scheme",
+          "What are the comprehensive criteria and provisions for maximum age in a girl child at the time of opening a savings account under the scheme"
+        ],
+        "top_rerank_scores": [
+          2.7337,
+          1.8435,
+          -1.1804,
+          -2.244,
+          -2.6525
+        ],
+        "top_rrf_scores": [
+          0.1884,
+          0.1946,
+          0.136,
+          0.1077,
+          0.0433
+        ]
+      }
+    },
+    {
+      "query_id": "Q68",
+      "query": "Under what circumstances can more than two accounts be opened within one family?",
+      "expected_documents": [
+        "sukanya_samriddhi.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 5.1873,
+      "top_1_doc": "sukanya_samriddhi.txt",
+      "top_3_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "top_5_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "pmjdy.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "top_10_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "pmjdy.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Under what circumstances can more than two accounts be opened within one family?",
+          "What are the key requirements, criteria, and details regarding Under what circumstances can more than two accounts be opened within one family",
+          "What specifications, guidelines, and procedures apply to Under what circumstances can more than two accounts be opened within one family"
+        ],
+        "top_rerank_scores": [
+          4.91,
+          4.4791,
+          2.4368,
+          -3.9402,
+          -7.6765
+        ],
+        "top_rrf_scores": [
+          0.1383,
+          0.1957,
+          0.1444,
+          0.0943,
+          0.0764
+        ]
+      }
+    },
+    {
+      "query_id": "Q69",
+      "query": "What is the maturity period and deposit tenure for a girl child savings account?",
+      "expected_documents": [
+        "sukanya_samriddhi.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "medium",
+      "is_cross_document": false,
+      "latency_seconds": 4.6154,
+      "top_1_doc": "sukanya_samriddhi.txt",
+      "top_3_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "top_5_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "top_10_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What is the maturity period and deposit tenure for a girl child savings account?",
+          "What specifications, requirements, and details are defined for maturity period and deposit tenure in a girl child savings account",
+          "What are the comprehensive criteria and provisions for maturity period and deposit tenure in a girl child savings account"
+        ],
+        "top_rerank_scores": [
+          0.7065,
+          -2.7458,
+          -4.4115,
+          -6.4453,
+          -6.8923
+        ],
+        "top_rrf_scores": [
+          0.1941,
+          0.1884,
+          0.1954,
+          0.1391,
+          0.0733
+        ]
+      }
+    },
+    {
+      "query_id": "Q70",
+      "query": "What penalty is charged to regularize a defaulted small savings account?",
+      "expected_documents": [
+        "sukanya_samriddhi.txt"
+      ],
+      "question_type": "rules",
+      "difficulty": "hard",
+      "is_cross_document": false,
+      "latency_seconds": 5.4795,
+      "top_1_doc": "sukanya_samriddhi.txt",
+      "top_3_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "pmjdy.txt"
+      ],
+      "top_5_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "pmjdy.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "top_10_docs": [
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt",
+        "pmjdy.txt",
+        "sukanya_samriddhi.txt",
+        "sukanya_samriddhi.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What penalty is charged to regularize a defaulted small savings account?",
+          "What are the key requirements, criteria, and details regarding What penalty is charged to regularize a defaulted small savings account",
+          "What specifications, guidelines, and procedures apply to What penalty is charged to regularize a defaulted small savings account"
+        ],
+        "top_rerank_scores": [
+          -3.6154,
+          -3.9228,
+          -5.9267,
+          -7.829,
+          -9.1577
+        ],
+        "top_rrf_scores": [
+          0.0452,
+          0.1942,
+          0.1398,
+          0.0462,
+          0.0776
+        ]
+      }
+    },
+    {
+      "query_id": "Q71",
+      "query": "Who is eligible for government housing assistance?",
+      "expected_documents": [
+        "pmay_u.txt",
+        "pmay_g.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 4.945,
+      "top_1_doc": "pm_gkay.txt",
+      "top_3_docs": [
+        "pm_gkay.txt",
+        "pmay_u.txt",
+        "pmay_u.txt"
+      ],
+      "top_5_docs": [
+        "pm_gkay.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_g.txt"
+      ],
+      "top_10_docs": [
+        "pm_gkay.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_u.txt",
+        "pmay_g.txt"
+      ],
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 0.5,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "Who is eligible for government housing assistance?",
+          "What are the eligibility criteria for government housing assistance",
+          "What conditions and requirements determine eligibility for government housing assistance"
+        ],
+        "top_rerank_scores": [
+          -2.3898,
+          -3.2173,
+          -3.8372,
+          -4.3892,
+          -5.0884
+        ],
+        "top_rrf_scores": [
+          0.0911,
+          0.1553,
+          0.1864,
+          0.1414,
+          0.094
+        ]
+      }
+    },
+    {
+      "query_id": "Q72",
+      "query": "What government financial assistance is available for building a permanent house?",
+      "expected_documents": [
+        "pmay_u.txt",
+        "pmay_g.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 11.5514,
+      "top_1_doc": "pmay_g.txt",
+      "top_3_docs": [
+        "pmay_g.txt",
+        "pmay_u.txt",
+        "pmay_g.txt"
+      ],
+      "top_5_docs": [
+        "pmay_g.txt",
+        "pmay_u.txt",
+        "pmay_g.txt",
+        "pmay_u.txt",
+        "pmay_u.txt"
+      ],
+      "top_10_docs": [
+        "pmay_g.txt",
+        "pmay_u.txt",
+        "pmay_g.txt",
+        "pmay_u.txt",
+        "pmay_u.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What government financial assistance is available for building a permanent house?",
+          "What available government financial assistance and specifications are provided in building a permanent house",
+          "What are the details, provisions, and criteria for government financial assistance in building a permanent house"
+        ],
+        "top_rerank_scores": [
+          3.6635,
+          -6.569,
+          -6.6127,
+          -7.7806,
+          -8.0278
+        ],
+        "top_rrf_scores": [
+          0.1942,
+          0.1249,
+          0.1558,
+          0.0613,
+          0.095
+        ]
+      }
+    },
+    {
+      "query_id": "Q73",
+      "query": "What support is available for skill development and vocational training?",
+      "expected_documents": [
+        "pm_vishwakarma.txt",
+        "pmkvy.txt"
+      ],
+      "question_type": "purpose",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 10.9784,
+      "top_1_doc": "pm_vishwakarma.txt",
+      "top_3_docs": [
+        "pm_vishwakarma.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_5_docs": [
+        "pm_vishwakarma.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "top_10_docs": [
+        "pm_vishwakarma.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt",
+        "pmkvy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What support is available for skill development and vocational training?",
+          "What available support and specifications are provided in skill development and vocational training",
+          "What are the details, provisions, and criteria for support in skill development and vocational training"
+        ],
+        "top_rerank_scores": [
+          0.9394,
+          0.0738,
+          -0.4066,
+          -0.8471,
+          -1.045
+        ],
+        "top_rrf_scores": [
+          0.0913,
+          0.1717,
+          0.1874,
+          0.0931,
+          0.1967
+        ]
+      }
+    },
+    {
+      "query_id": "Q74",
+      "query": "What financial assistance or credit is provided to small businesses and enterprises?",
+      "expected_documents": [
+        "pmmy.txt",
+        "pm_svanidhi.txt",
+        "stand_up_india.txt"
+      ],
+      "question_type": "financial_limits",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 3.9612,
+      "top_1_doc": "pmmy.txt",
+      "top_3_docs": [
+        "pmmy.txt",
+        "pm_svanidhi.txt",
+        "stand_up_india.txt"
+      ],
+      "top_5_docs": [
+        "pmmy.txt",
+        "pm_svanidhi.txt",
+        "stand_up_india.txt",
+        "pmmy.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_10_docs": [
+        "pmmy.txt",
+        "pm_svanidhi.txt",
+        "stand_up_india.txt",
+        "pmmy.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What financial assistance or credit is provided to small businesses and enterprises?",
+          "What are the key requirements, criteria, and details regarding What financial assistance or credit is provided to small businesses and enterprises",
+          "What specifications, guidelines, and procedures apply to What financial assistance or credit is provided to small businesses and enterprises"
+        ],
+        "top_rerank_scores": [
+          -0.8684,
+          -2.5837,
+          -4.7181,
+          -6.5433,
+          -7.2975
+        ],
+        "top_rrf_scores": [
+          0.1568,
+          0.0777,
+          0.0745,
+          0.1238,
+          0.046
+        ]
+      }
+    },
+    {
+      "query_id": "Q75",
+      "query": "What loan facilities are available without collateral?",
+      "expected_documents": [
+        "pm_vishwakarma.txt",
+        "pmmy.txt",
+        "pm_svanidhi.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 4.058,
+      "top_1_doc": "pm_svanidhi.txt",
+      "top_3_docs": [
+        "pm_svanidhi.txt",
+        "pmmy.txt",
+        "stand_up_india.txt"
+      ],
+      "top_5_docs": [
+        "pm_svanidhi.txt",
+        "pmmy.txt",
+        "stand_up_india.txt",
+        "pm_svanidhi.txt",
+        "pmmy.txt"
+      ],
+      "top_10_docs": [
+        "pm_svanidhi.txt",
+        "pmmy.txt",
+        "stand_up_india.txt",
+        "pm_svanidhi.txt",
+        "pmmy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": false,
+      "all_expected_in_top10": false,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What loan facilities are available without collateral?",
+          "What are the key requirements, criteria, and details regarding What loan facilities are available without collateral",
+          "What specifications, guidelines, and procedures apply to What loan facilities are available without collateral"
+        ],
+        "top_rerank_scores": [
+          -3.5911,
+          -7.3158,
+          -7.4027,
+          -7.9936,
+          -8.741
+        ],
+        "top_rrf_scores": [
+          0.1868,
+          0.1279,
+          0.1223,
+          0.0584,
+          0.0476
+        ]
+      }
+    },
+    {
+      "query_id": "Q76",
+      "query": "What government welfare schemes provide direct financial assistance to farmers?",
+      "expected_documents": [
+        "pm_kisan.txt",
+        "pmfby.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 4.4088,
+      "top_1_doc": "pm_kisan.txt",
+      "top_3_docs": [
+        "pm_kisan.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_5_docs": [
+        "pm_kisan.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "top_10_docs": [
+        "pm_kisan.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt",
+        "pmfby.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What government welfare schemes provide direct financial assistance to farmers?",
+          "What are the key requirements, criteria, and details regarding What government welfare schemes provide direct financial assistance to farmers",
+          "What specifications, guidelines, and procedures apply to What government welfare schemes provide direct financial assistance to farmers"
+        ],
+        "top_rerank_scores": [
+          1.6493,
+          -1.3825,
+          -1.892,
+          -3.3316,
+          -3.5209
+        ],
+        "top_rrf_scores": [
+          0.1947,
+          0.0471,
+          0.0786,
+          0.0452,
+          0.0469
+        ]
+      }
+    },
+    {
+      "query_id": "Q77",
+      "query": "What financial security and savings schemes are designed for women beneficiaries?",
+      "expected_documents": [
+        "stand_up_india.txt",
+        "sukanya_samriddhi.txt",
+        "pmuy.txt"
+      ],
+      "question_type": "eligibility",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 4.2645,
+      "top_1_doc": "sukanya_samriddhi.txt",
+      "top_3_docs": [
+        "sukanya_samriddhi.txt",
+        "atal_pension_yojana.txt",
+        "pmay_u.txt"
+      ],
+      "top_5_docs": [
+        "sukanya_samriddhi.txt",
+        "atal_pension_yojana.txt",
+        "pmay_u.txt",
+        "pm_gkay.txt",
+        "pmuy.txt"
+      ],
+      "top_10_docs": [
+        "sukanya_samriddhi.txt",
+        "atal_pension_yojana.txt",
+        "pmay_u.txt",
+        "pm_gkay.txt",
+        "pmuy.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": false,
+      "all_expected_in_top10": false,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What financial security and savings schemes are designed for women beneficiaries?",
+          "What designed financial security and savings schemes and specifications are provided in women beneficiaries",
+          "What are the details, provisions, and criteria for financial security and savings schemes in women beneficiaries"
+        ],
+        "top_rerank_scores": [
+          -2.8369,
+          -3.555,
+          -4.9757,
+          -6.6706,
+          -6.9409
+        ],
+        "top_rrf_scores": [
+          0.1796,
+          0.0467,
+          0.1236,
+          0.09,
+          0.0755
+        ]
+      }
+    },
+    {
+      "query_id": "Q78",
+      "query": "What pension and old age income security schemes are available for poor citizens?",
+      "expected_documents": [
+        "atal_pension_yojana.txt"
+      ],
+      "question_type": "purpose",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 4.5508,
+      "top_1_doc": "atal_pension_yojana.txt",
+      "top_3_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "pm_gkay.txt"
+      ],
+      "top_5_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_10_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What pension and old age income security schemes are available for poor citizens?",
+          "What available pension and old age income security schemes and specifications are provided in poor citizens",
+          "What are the details, provisions, and criteria for pension and old age income security schemes in poor citizens"
+        ],
+        "top_rerank_scores": [
+          2.1444,
+          -2.7636,
+          -6.6431,
+          -7.8717,
+          -8.0863
+        ],
+        "top_rrf_scores": [
+          0.1265,
+          0.1543,
+          0.1246,
+          0.0462,
+          0.1202
+        ]
+      }
+    },
+    {
+      "query_id": "Q79",
+      "query": "What government initiatives provide free food or subsidized cooking gas to BPL families?",
+      "expected_documents": [
+        "pm_gkay.txt",
+        "pmuy.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 5.0247,
+      "top_1_doc": "pm_gkay.txt",
+      "top_3_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pmuy.txt"
+      ],
+      "top_5_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmay_g.txt"
+      ],
+      "top_10_docs": [
+        "pm_gkay.txt",
+        "pm_gkay.txt",
+        "pmuy.txt",
+        "pmuy.txt",
+        "pmay_g.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What government initiatives provide free food or subsidized cooking gas to BPL families?",
+          "What are the key requirements, criteria, and details regarding What government initiatives provide free food or subsidized cooking gas to BPL families",
+          "What specifications, guidelines, and procedures apply to What government initiatives provide free food or subsidized cooking gas to BPL families"
+        ],
+        "top_rerank_scores": [
+          -5.4551,
+          -5.5745,
+          -5.6202,
+          -5.9147,
+          -7.5656
+        ],
+        "top_rrf_scores": [
+          0.1893,
+          0.1384,
+          0.1928,
+          0.0628,
+          0.0631
+        ]
+      }
+    },
+    {
+      "query_id": "Q80",
+      "query": "What accident insurance coverage is available through RuPay cards?",
+      "expected_documents": [
+        "stand_up_india.txt",
+        "pmjdy.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 4.1538,
+      "top_1_doc": "pmjdy.txt",
+      "top_3_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt"
+      ],
+      "top_5_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "stand_up_india.txt",
+        "pmfby.txt"
+      ],
+      "top_10_docs": [
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "pmjdy.txt",
+        "stand_up_india.txt",
+        "pmfby.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What accident insurance coverage is available through RuPay cards?",
+          "What are the key requirements, criteria, and details regarding What accident insurance coverage is available through RuPay cards",
+          "What specifications, guidelines, and procedures apply to What accident insurance coverage is available through RuPay cards"
+        ],
+        "top_rerank_scores": [
+          1.8289,
+          0.4287,
+          -0.0377,
+          -3.6634,
+          -8.8678
+        ],
+        "top_rrf_scores": [
+          0.1909,
+          0.1424,
+          0.0462,
+          0.1381,
+          0.1518
+        ]
+      }
+    },
+    {
+      "query_id": "Q81",
+      "query": "What financial incentives are provided for conducting digital transactions?",
+      "expected_documents": [
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 4.2019,
+      "top_1_doc": "pm_vishwakarma.txt",
+      "top_3_docs": [
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_5_docs": [
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt",
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "top_10_docs": [
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt",
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt",
+        "pm_vishwakarma.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": true,
+      "all_expected_in_top10": true,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What financial incentives are provided for conducting digital transactions?",
+          "What provided financial incentives and specifications are provided in conducting digital transactions",
+          "What are the details, provisions, and criteria for financial incentives in conducting digital transactions"
+        ],
+        "top_rerank_scores": [
+          2.6579,
+          -3.8999,
+          -5.7165,
+          -8.5683,
+          -9.1561
+        ],
+        "top_rrf_scores": [
+          0.1962,
+          0.189,
+          0.1875,
+          0.0462,
+          0.0909
+        ]
+      }
+    },
+    {
+      "query_id": "Q82",
+      "query": "What assistance is provided to unorganized sector workers and laborers?",
+      "expected_documents": [
+        "pm_vishwakarma.txt",
+        "pm_svanidhi.txt",
+        "pm_gkay.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "question_type": "benefits",
+      "difficulty": "cross_document",
+      "is_cross_document": true,
+      "latency_seconds": 5.0253,
+      "top_1_doc": "atal_pension_yojana.txt",
+      "top_3_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt"
+      ],
+      "top_5_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "pmmy.txt",
+        "pm_gkay.txt"
+      ],
+      "top_10_docs": [
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "atal_pension_yojana.txt",
+        "pmmy.txt",
+        "pm_gkay.txt"
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "mrr": 1.0,
+      "all_expected_in_top5": false,
+      "all_expected_in_top10": false,
+      "diagnostics": {
+        "in_dense": true,
+        "in_bm25": true,
+        "in_rrf": true,
+        "in_final": true,
+        "failure_type": "NONE",
+        "query_variants": [
+          "What assistance is provided to unorganized sector workers and laborers?",
+          "What are the key requirements, criteria, and details regarding What assistance is provided to unorganized sector workers and laborers",
+          "What specifications, guidelines, and procedures apply to What assistance is provided to unorganized sector workers and laborers"
+        ],
+        "top_rerank_scores": [
+          -2.572,
+          -3.8017,
+          -4.2719,
+          -7.3706,
+          -8.3457
+        ],
+        "top_rrf_scores": [
+          0.0489,
+          0.0481,
+          0.0471,
+          0.0591,
+          0.1088
+        ]
+      }
+    }
+  ]
+}

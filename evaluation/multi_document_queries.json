@@ -1,0 +1,658 @@
+[
+  {
+    "query_id": "Q01",
+    "query": "What is the age limit to join Atal Pension Yojana?",
+    "expected_documents": ["atal_pension_yojana.txt"],
+    "question_type": "eligibility",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q02",
+    "query": "What is the guaranteed monthly pension range for unorganized workers upon reaching 60 years of age?",
+    "expected_documents": ["atal_pension_yojana.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q03",
+    "query": "What options are available to the spouse if an old age pension subscriber passes away before sixty years?",
+    "expected_documents": ["atal_pension_yojana.txt"],
+    "question_type": "rules",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q04",
+    "query": "Are contributions to the unorganized worker retirement pension scheme eligible for income tax deduction under Section 80CCD?",
+    "expected_documents": ["atal_pension_yojana.txt"],
+    "question_type": "benefits",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q05",
+    "query": "How can an unorganized sector pension subscriber lodge and track a grievance on CGMS?",
+    "expected_documents": ["atal_pension_yojana.txt"],
+    "question_type": "procedure",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q06",
+    "query": "How much free food grain is supplied per month under Pradhan Mantri Garib Kalyan Anna Yojana?",
+    "expected_documents": ["pm_gkay.txt"],
+    "question_type": "benefits",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q07",
+    "query": "Which ration card holder categories are entitled to free grain distribution under Atmanirbhar Bharat?",
+    "expected_documents": ["pm_gkay.txt"],
+    "question_type": "eligibility",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q08",
+    "query": "Which states and union territories received wheat instead of rice under the free grain distribution scheme?",
+    "expected_documents": ["pm_gkay.txt"],
+    "question_type": "rules",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q09",
+    "query": "How can migrant workers obtain subsidized or free ration outside their home state using biometric authentication?",
+    "expected_documents": ["pm_gkay.txt"],
+    "question_type": "procedure",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q10",
+    "query": "What documents are required to receive food grain rations at a Fair Price Shop under PM-GKAY?",
+    "expected_documents": ["pm_gkay.txt"],
+    "question_type": "documents",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q11",
+    "query": "What is the annual financial assistance provided under PM-KISAN?",
+    "expected_documents": ["pm_kisan.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q12",
+    "query": "Who is eligible for direct income support for agricultural inputs?",
+    "expected_documents": ["pm_kisan.txt"],
+    "question_type": "eligibility",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q13",
+    "query": "Are retired government pensioners receiving more than ten thousand rupees per month eligible for farmer income support?",
+    "expected_documents": ["pm_kisan.txt"],
+    "question_type": "rules",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q14",
+    "query": "What land records and identification papers must be submitted for farmer registration via Common Service Centres?",
+    "expected_documents": ["pm_kisan.txt"],
+    "question_type": "documents",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q15",
+    "query": "What is the main objective of the Pradhan Mantri Kisan Samman Nidhi?",
+    "expected_documents": ["pm_kisan.txt"],
+    "question_type": "purpose",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q16",
+    "query": "What is the initial collateral-free working capital loan amount under PM SVANidhi?",
+    "expected_documents": ["pm_svanidhi.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q17",
+    "query": "What interest subsidy and monthly digital cashback are offered to urban street vendors?",
+    "expected_documents": ["pm_svanidhi.txt"],
+    "question_type": "benefits",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q18",
+    "query": "Can street vendors operating in peri-urban areas without a Certificate of Vending qualify for micro-credit?",
+    "expected_documents": ["pm_svanidhi.txt"],
+    "question_type": "eligibility",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q19",
+    "query": "What is the repayment tenure for the initial micro-credit tranche for street hawkers?",
+    "expected_documents": ["pm_svanidhi.txt"],
+    "question_type": "procedure",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q20",
+    "query": "What documents must Category C and D street vendors produce to apply for PM SVANidhi?",
+    "expected_documents": ["pm_svanidhi.txt"],
+    "question_type": "documents",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q21",
+    "query": "How many traditional trades are covered under the PM Vishwakarma scheme?",
+    "expected_documents": ["pm_vishwakarma.txt"],
+    "question_type": "purpose",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q22",
+    "query": "What is the maximum loan amount and interest rate for the two tranches of enterprise credit support for artisans?",
+    "expected_documents": ["pm_vishwakarma.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q23",
+    "query": "What daily training stipend and toolkit incentive voucher are provided to traditional craftspeople?",
+    "expected_documents": ["pm_vishwakarma.txt"],
+    "question_type": "benefits",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q24",
+    "query": "What conditions must a craftsman fulfill to unlock the second loan tranche of Rs 2 lakh?",
+    "expected_documents": ["pm_vishwakarma.txt"],
+    "question_type": "rules",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q25",
+    "query": "What incentive is paid to artisans per digital transaction under PM Vishwakarma?",
+    "expected_documents": ["pm_vishwakarma.txt"],
+    "question_type": "benefits",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q26",
+    "query": "How much unit assistance is granted for house construction in plain areas under PMAY-G?",
+    "expected_documents": ["pmay_g.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q27",
+    "query": "What additional toilet construction assistance is provided in convergence with Swachh Bharat Mission-Gramin?",
+    "expected_documents": ["pmay_g.txt"],
+    "question_type": "benefits",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q28",
+    "query": "What criteria cause a household to be automatically excluded from rural housing assistance?",
+    "expected_documents": ["pmay_g.txt"],
+    "question_type": "eligibility",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q29",
+    "query": "What is the minimum prescribed floor area for a rural house under PMAY-G?",
+    "expected_documents": ["pmay_g.txt"],
+    "question_type": "rules",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q30",
+    "query": "How are eligible rural housing beneficiaries identified and verified at the village level?",
+    "expected_documents": ["pmay_g.txt"],
+    "question_type": "procedure",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q31",
+    "query": "What are the four core components of Pradhan Mantri Awas Yojana - Urban?",
+    "expected_documents": ["pmay_u.txt"],
+    "question_type": "purpose",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q32",
+    "query": "What income categories qualify for housing assistance in urban areas?",
+    "expected_documents": ["pmay_u.txt"],
+    "question_type": "eligibility",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q33",
+    "query": "Can a family that already owns a pucca house in their native village qualify for urban housing benefits?",
+    "expected_documents": ["pmay_u.txt"],
+    "question_type": "rules",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q34",
+    "query": "What is the Credit Linked Subsidy Scheme under urban housing assistance?",
+    "expected_documents": ["pmay_u.txt"],
+    "question_type": "benefits",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q35",
+    "query": "What proof of identity and income details are required to apply for PMAY-U?",
+    "expected_documents": ["pmay_u.txt"],
+    "question_type": "documents",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q36",
+    "query": "What is the maximum crop insurance premium payable by farmers for Kharif and Rabi food crops under PMFBY?",
+    "expected_documents": ["pmfby.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q37",
+    "query": "What compensation is available if insured farmers are prevented from sowing due to adverse weather?",
+    "expected_documents": ["pmfby.txt"],
+    "question_type": "benefits",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q38",
+    "query": "For how many days after harvesting are crops covered against localized post-harvest losses?",
+    "expected_documents": ["pmfby.txt"],
+    "question_type": "rules",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q39",
+    "query": "What risks are excluded from crop insurance coverage during the cultivation cycle?",
+    "expected_documents": ["pmfby.txt"],
+    "question_type": "purpose",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q40",
+    "query": "How can farmers track the status of their crop insurance application online?",
+    "expected_documents": ["pmfby.txt"],
+    "question_type": "procedure",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q41",
+    "query": "What is the accidental insurance cover provided on RuPay debit cards under PMJDY?",
+    "expected_documents": ["pmjdy.txt"],
+    "question_type": "benefits",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q42",
+    "query": "What is the maximum overdraft limit available on Jan Dhan accounts?",
+    "expected_documents": ["pmjdy.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q43",
+    "query": "What are the rules and validity period for opening a small bank account without standard KYC documents?",
+    "expected_documents": ["pmjdy.txt"],
+    "question_type": "rules",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q44",
+    "query": "What role do Bank Mitras or Business Correspondents play in financial inclusion in remote areas?",
+    "expected_documents": ["pmjdy.txt"],
+    "question_type": "purpose",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q45",
+    "query": "Can a minor above ten years of age open a basic savings bank account under PMJDY?",
+    "expected_documents": ["pmjdy.txt"],
+    "question_type": "eligibility",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q46",
+    "query": "What does Recognition of Prior Learning mean under PMKVY 4.0?",
+    "expected_documents": ["pmkvy.txt"],
+    "question_type": "purpose",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q47",
+    "query": "Which digital platform manages the candidate skilling lifecycle and employment opportunities?",
+    "expected_documents": ["pmkvy.txt"],
+    "question_type": "procedure",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q48",
+    "query": "What new-age and futuristic technological job domains are prioritized under the national skills curriculum?",
+    "expected_documents": ["pmkvy.txt"],
+    "question_type": "rules",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q49",
+    "query": "How does alignment with the National Skills Qualification Framework ensure standardized vocational training?",
+    "expected_documents": ["pmkvy.txt"],
+    "question_type": "benefits",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q50",
+    "query": "What role do industry-led Awarding Bodies play in vocational courses under PMKVY?",
+    "expected_documents": ["pmkvy.txt"],
+    "question_type": "procedure",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q51",
+    "query": "What are the loan limits for Shishu, Kishore, and Tarun categories under Mudra?",
+    "expected_documents": ["pmmy.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q52",
+    "query": "What is the maximum loan limit under the Tarun Plus category for micro enterprises?",
+    "expected_documents": ["pmmy.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q53",
+    "query": "Are upfront fees or processing charges levied on micro enterprise loans up to fifty thousand rupees?",
+    "expected_documents": ["pmmy.txt"],
+    "question_type": "rules",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q54",
+    "query": "What types of business entities and activities allied to agriculture qualify for MUDRA loans?",
+    "expected_documents": ["pmmy.txt"],
+    "question_type": "eligibility",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q55",
+    "query": "Through which online portal can entrepreneurs submit applications for a Mudra loan?",
+    "expected_documents": ["pmmy.txt"],
+    "question_type": "procedure",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q56",
+    "query": "What free benefits are provided to beneficiaries with their first LPG connection under Ujjwala 2.0?",
+    "expected_documents": ["pmuy.txt"],
+    "question_type": "benefits",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q57",
+    "query": "What is the financial grant provided for a 14.2 kg LPG cylinder connection under PMUY?",
+    "expected_documents": ["pmuy.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q58",
+    "query": "Can adult women from poor households not listed in SECC 2011 qualify for a gas connection?",
+    "expected_documents": ["pmuy.txt"],
+    "question_type": "eligibility",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q59",
+    "query": "Can male household members apply for the clean cooking fuel subsidy scheme?",
+    "expected_documents": ["pmuy.txt"],
+    "question_type": "rules",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q60",
+    "query": "What documents are required to apply for an LPG connection under Pradhan Mantri Ujjwala Yojana?",
+    "expected_documents": ["pmuy.txt"],
+    "question_type": "documents",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q61",
+    "query": "What is the loan amount range provided to greenfield enterprises under Stand-Up India?",
+    "expected_documents": ["stand_up_india.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q62",
+    "query": "Who is eligible to apply for enterprise loans under the Stand-Up India scheme?",
+    "expected_documents": ["stand_up_india.txt"],
+    "question_type": "eligibility",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q63",
+    "query": "What shareholding and controlling stake requirement applies to non-individual enterprises?",
+    "expected_documents": ["stand_up_india.txt"],
+    "question_type": "rules",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q64",
+    "query": "What additional project reports and balance sheets are required for loan exposures exceeding 25 lakhs?",
+    "expected_documents": ["stand_up_india.txt"],
+    "question_type": "documents",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q65",
+    "query": "What hand-holding support does SIDBI arrange for greenfield borrowers?",
+    "expected_documents": ["stand_up_india.txt"],
+    "question_type": "procedure",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q66",
+    "query": "What is the minimum initial deposit and maximum annual investment limit for a Sukanya Samriddhi account?",
+    "expected_documents": ["sukanya_samriddhi.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "easy",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q67",
+    "query": "What is the maximum age of a girl child at the time of opening a savings account under the scheme?",
+    "expected_documents": ["sukanya_samriddhi.txt"],
+    "question_type": "eligibility",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q68",
+    "query": "Under what circumstances can more than two accounts be opened within one family?",
+    "expected_documents": ["sukanya_samriddhi.txt"],
+    "question_type": "rules",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q69",
+    "query": "What is the maturity period and deposit tenure for a girl child savings account?",
+    "expected_documents": ["sukanya_samriddhi.txt"],
+    "question_type": "rules",
+    "difficulty": "medium",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q70",
+    "query": "What penalty is charged to regularize a defaulted small savings account?",
+    "expected_documents": ["sukanya_samriddhi.txt"],
+    "question_type": "rules",
+    "difficulty": "hard",
+    "is_cross_document": false
+  },
+  {
+    "query_id": "Q71",
+    "query": "Who is eligible for government housing assistance?",
+    "expected_documents": ["pmay_u.txt", "pmay_g.txt"],
+    "question_type": "eligibility",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  },
+  {
+    "query_id": "Q72",
+    "query": "What government financial assistance is available for building a permanent house?",
+    "expected_documents": ["pmay_u.txt", "pmay_g.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  },
+  {
+    "query_id": "Q73",
+    "query": "What support is available for skill development and vocational training?",
+    "expected_documents": ["pmkvy.txt", "pm_vishwakarma.txt"],
+    "question_type": "purpose",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  },
+  {
+    "query_id": "Q74",
+    "query": "What financial assistance or credit is provided to small businesses and enterprises?",
+    "expected_documents": ["pmmy.txt", "stand_up_india.txt", "pm_svanidhi.txt"],
+    "question_type": "financial_limits",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  },
+  {
+    "query_id": "Q75",
+    "query": "What loan facilities are available without collateral?",
+    "expected_documents": ["pm_svanidhi.txt", "pm_vishwakarma.txt", "pmmy.txt"],
+    "question_type": "benefits",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  },
+  {
+    "query_id": "Q76",
+    "query": "What government welfare schemes provide direct financial assistance to farmers?",
+    "expected_documents": ["pm_kisan.txt", "pmfby.txt"],
+    "question_type": "benefits",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  },
+  {
+    "query_id": "Q77",
+    "query": "What financial security and savings schemes are designed for women beneficiaries?",
+    "expected_documents": ["sukanya_samriddhi.txt", "pmuy.txt", "stand_up_india.txt"],
+    "question_type": "eligibility",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  },
+  {
+    "query_id": "Q78",
+    "query": "What pension and old age income security schemes are available for poor citizens?",
+    "expected_documents": ["atal_pension_yojana.txt"],
+    "question_type": "purpose",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  },
+  {
+    "query_id": "Q79",
+    "query": "What government initiatives provide free food or subsidized cooking gas to BPL families?",
+    "expected_documents": ["pm_gkay.txt", "pmuy.txt"],
+    "question_type": "benefits",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  },
+  {
+    "query_id": "Q80",
+    "query": "What accident insurance coverage is available through RuPay cards?",
+    "expected_documents": ["pmjdy.txt", "stand_up_india.txt"],
+    "question_type": "benefits",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  },
+  {
+    "query_id": "Q81",
+    "query": "What financial incentives are provided for conducting digital transactions?",
+    "expected_documents": ["pm_svanidhi.txt", "pm_vishwakarma.txt"],
+    "question_type": "benefits",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  },
+  {
+    "query_id": "Q82",
+    "query": "What assistance is provided to unorganized sector workers and laborers?",
+    "expected_documents": ["atal_pension_yojana.txt", "pm_gkay.txt", "pm_svanidhi.txt", "pm_vishwakarma.txt"],
+    "question_type": "benefits",
+    "difficulty": "cross_document",
+    "is_cross_document": true
+  }
+]

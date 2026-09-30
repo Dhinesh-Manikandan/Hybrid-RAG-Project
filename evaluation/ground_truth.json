@@ -1,0 +1,20 @@
+﻿[
+  {
+    "query": "Who is eligible for PMAY-U?",
+    "relevant_document_ids": [],
+    "relevant_chunk_ids": [],
+    "notes": "Fill in document_id and chunk_ids after running ingest.py. See data/processed/*_processed.json for IDs."
+  },
+  {
+    "query": "What are the benefits of the scheme?",
+    "relevant_document_ids": [],
+    "relevant_chunk_ids": [],
+    "notes": "Generic query that works across any document."
+  },
+  {
+    "query": "What documents are required to apply?",
+    "relevant_document_ids": [],
+    "relevant_chunk_ids": [],
+    "notes": "Generic query."
+  }
+]
