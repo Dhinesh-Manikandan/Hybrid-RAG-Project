@@ -31,6 +31,7 @@ from src.config import (
     ENABLE_QUERY_REFORMULATION, NUM_REFORMULATIONS,
     ENABLE_MULTI_QUERY_RERANKING,
     GENERATION_CONTEXT_TOP_K,
+    RERANK_RELEVANCE_THRESHOLD,
 )
 from src.indexing.faiss_store   import load_all_indexes
 from src.retrieval.dense        import retrieve_dense
@@ -261,20 +262,46 @@ class HybridRAG:
         }
 
         if generate_answer:
-            _notify("generation_start", "Synthesizing grounded answer with local Qwen model...")
-            from src.generation.context_builder import build_context
-            gen = generator if generator is not None else self.get_generator()
-            context_str, sources = build_context(final_results, top_k=context_top_k)
-            gen_res = gen.generate(
-                query=query,
-                context=context_str,
-                candidates=final_results,
-                top_k=context_top_k,
+            # ── Relevance gate ────────────────────────────────────────────────
+            # The CrossEncoder already scored every retrieved passage against the
+            # user query.  If even the best-scoring passage is below our calibrated
+            # threshold, the query is out-of-scope for this knowledge base and we
+            # skip the LLM entirely, returning a clean refusal instead of a
+            # hallucinated answer.
+            top_rerank_score = (
+                max((r.get("rerank_score", -999) for r in final_results), default=-999)
+                if final_results else -999
             )
-            output["context"] = context_str
-            output["answer"]  = gen_res["answer"]
-            output["sources"] = gen_res["sources"] if gen_res.get("sources") else sources
-            _notify("generation_done", f"Generated grounded response with {len(output.get('sources', []))} supporting citations")
+
+            if top_rerank_score < RERANK_RELEVANCE_THRESHOLD:
+                _notify(
+                    "generation_done",
+                    "Query is out-of-scope: no relevant passages found above relevance threshold",
+                )
+                output["context"] = ""
+                output["answer"] = (
+                    "I'm sorry, but I can only answer questions about the **government welfare schemes** "
+                    "in my knowledge base (e.g., PMAY, PM-KISAN, PM SVANidhi, APY, Stand-Up India, "
+                    "PM Vishwakarma, etc.).\n\n"
+                    "Your question does not appear to be covered by the retrieved documents. "
+                    "Please ask a scheme-related question and I'll be happy to help."
+                )
+                output["sources"] = []
+            else:
+                _notify("generation_start", "Synthesizing grounded answer with local Qwen model...")
+                from src.generation.context_builder import build_context
+                gen = generator if generator is not None else self.get_generator()
+                context_str, sources = build_context(final_results, top_k=context_top_k)
+                gen_res = gen.generate(
+                    query=query,
+                    context=context_str,
+                    candidates=final_results,
+                    top_k=context_top_k,
+                )
+                output["context"] = context_str
+                output["answer"]  = gen_res["answer"]
+                output["sources"] = gen_res["sources"] if gen_res.get("sources") else sources
+                _notify("generation_done", f"Generated grounded response with {len(output.get('sources', []))} supporting citations")
 
         return output
 

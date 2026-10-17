@@ -15,6 +15,8 @@ st.set_page_config(page_title="Hybrid-RAG Research Dashboard", layout="wide", pa
 # Initialize session state for chat BEFORE css so we can conditionally style
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "pending_prompt" not in st.session_state:
+    st.session_state.pending_prompt = None
 
 # Custom CSS for polished look & precision alignment
 st.markdown(f"""
@@ -24,6 +26,13 @@ st.markdown(f"""
         .metric-card {{ background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px; }}
         h1, h2, h3 {{ color: inherit; }}
         
+        /* Centered ChatGPT-like conversation layout */
+        section[data-testid="stMain"] .block-container {{
+            padding-bottom: 120px !important;
+            max-width: 900px !important;
+            margin: 0 auto !important;
+        }}
+
         /* Dynamic chat input placement */
         [data-testid="stChatInput"] > div {{
             width: 100% !important;
@@ -34,9 +43,54 @@ st.markdown(f"""
             border-radius: 12px !important;
         }}
 
-        /* Add bottom padding so content doesn't get hidden behind the pinned input */
-        section[data-testid="stMain"] .block-container {{
-            padding-bottom: 120px !important;
+        /* Suggestion Prompt Cards */
+        div[data-testid="column"] .stButton > button {{
+            height: auto !important;
+            min-height: 74px !important;
+            padding: 14px 18px !important;
+            border-radius: 14px !important;
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            color: #F8FAFC !important;
+            text-align: left !important;
+            align-items: flex-start !important;
+            justify-content: flex-start !important;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }}
+
+        div[data-testid="column"] .stButton > button:hover {{
+            background: rgba(255, 255, 255, 0.07) !important;
+            border-color: rgba(255, 255, 255, 0.25) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+        }}
+
+        div[data-testid="column"] .stButton > button:active {{
+            transform: translateY(0px) !important;
+        }}
+
+        div[data-testid="column"] .stButton > button p {{
+            text-align: left !important;
+            width: 100% !important;
+            margin: 0 !important;
+            font-size: 0.92rem !important;
+            line-height: 1.45 !important;
+        }}
+
+        /* Sidebar New Chat Button styling */
+        [data-testid="stSidebar"] button[kind="primary"] {{
+            background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            border-radius: 10px !important;
+            font-weight: 600 !important;
+            padding: 10px 16px !important;
+            transition: all 0.2s ease !important;
+        }}
+        [data-testid="stSidebar"] button[kind="primary"]:hover {{
+            background: linear-gradient(135deg, #1D4ED8, #1E40AF) !important;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4) !important;
+            transform: translateY(-1px) !important;
         }}
 
         /* ------------------------------------------------------------------ */
@@ -272,6 +326,21 @@ def load_reference_answers():
 
 # Sidebar
 with st.sidebar:
+    st.markdown("### 💬 Chat")
+    if st.button("➕ New Chat", use_container_width=True, type="primary"):
+        st.session_state.messages = []
+        st.session_state.pending_prompt = None
+        st.rerun()
+
+    if st.session_state.messages:
+        user_queries = [m for m in st.session_state.messages if m.get("role") == "user"]
+        st.caption(f"Active Conversation: **{len(user_queries)}** {'turn' if len(user_queries) == 1 else 'turns'}")
+        if st.button("🗑️ Clear Conversation", use_container_width=True):
+            st.session_state.messages = []
+            st.session_state.pending_prompt = None
+            st.rerun()
+
+    st.divider()
     st.header("⚙️ System Status")
     st.success("RAG Backend FROZEN & VALIDATED")
     
@@ -431,71 +500,83 @@ def render_pipeline_analysis(res):
         else:
             st.warning("Response-quality evaluation is not available for this query.")
 
+# ──────────────────────────────────────────────
 # Main UI
+# ──────────────────────────────────────────────
 rag = load_rag()
-quick_prompt = None
 
-if not st.session_state.messages:
-    st.markdown("<h1 style='text-align: center; margin-bottom: 0;'>🤖<br>HYBRID-RAG</h1>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center; margin-top: 0;'>Government Scheme Assistant</h3>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; color: #888;'>Ask questions about government schemes, eligibility, benefits, and application processes.</p>", unsafe_allow_html=True)
-    
-    st.write("")
-    st.write("")
-    st.markdown("<h4 style='text-align: center;'>Try a question</h4>", unsafe_allow_html=True)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        q1 = st.button("PMAY-U Eligibility - What are all the eligibility conditions for PMAY-U?", use_container_width=True)
-        q3 = st.button("PMAY-G Benefits - What are the benefits provided under PMAY-G?", use_container_width=True)
-        q5 = st.button("APY Age Limit - What is the age limit to join Atal Pension Yojana?", use_container_width=True)
-    
-    with col2:
-        q2 = st.button("PM-KISAN Benefits - What is the annual financial benefit provided under PM-KISAN and how is it paid?", use_container_width=True)
-        q4 = st.button("PM-SVANidhi Benefits - What are the benefits of PM-SVANidhi?", use_container_width=True)
-        q6 = st.button("PMAY-U vs PMAY-G - Compare PMAY-U and PMAY-G in terms of beneficiaries and housing support.", use_container_width=True)
-
-    if q1: quick_prompt = "What are all the eligibility conditions for PMAY-U?"
-    elif q2: quick_prompt = "What is the annual financial benefit provided under PM-KISAN and how is it paid?"
-    elif q3: quick_prompt = "What are the benefits provided under PMAY-G?"
-    elif q4: quick_prompt = "What are the benefits of PM-SVANidhi?"
-    elif q5: quick_prompt = "What is the age limit to join Atal Pension Yojana?"
-    elif q6: quick_prompt = "Compare PMAY-U and PMAY-G in terms of beneficiaries and housing support."
-
-# Render chat history
-for msg in st.session_state.messages:
-    with st.chat_message(msg["role"]):
-        if msg["role"] == "user":
-            st.markdown(f'<div class="user-message-text">{msg["content"]}</div>', unsafe_allow_html=True)
-        else:
-            st.markdown('<div class="ai-answer-header"><span class="ai-badge-icon">🤖</span><span class="ai-answer-title">AI Answer</span></div>', unsafe_allow_html=True)
-            
-            if msg.get("thought_steps"):
-                t_time = msg.get("thought_time", 2.0)
-                with st.status(f"Thought for {t_time}s • {len(msg['thought_steps'])} steps completed", expanded=False, state="complete"):
-                    for step in msg["thought_steps"]:
-                        st.markdown(f'<div class="thought-step-item">✓ {step}</div>', unsafe_allow_html=True)
-                        
-            ans = msg.get("answer_text") or msg["content"].replace("### 🤖 AI Answer\n\n", "").replace("### 🤖 AI Answer", "")
-            st.markdown(ans)
-            
-            if "rag_result" in msg:
-                res = msg["rag_result"]
-                if "sources" in res and res["sources"]:
-                    st.markdown("**Supporting Sources:**")
-                    for s in res["sources"]:
-                        st.markdown(f"- **{s.get('document_title', 'Unknown')}** (Section: {s.get('section', 'N/A')}, Chunk: `{s.get('chunk_id')}`)")
-                
-                with st.expander("🔬 View RAG Pipeline Analysis", expanded=False):
-                    render_pipeline_analysis(res)
-
-# Single standard ChatGPT-style chat input pinned to the bottom
-chat_val = st.chat_input("Ask a question about government schemes...")
-prompt = chat_val if chat_val else quick_prompt
-
-# Client-side instantaneous button disable and hover tooltip script
+# ── Step 1: Input Capture & Prompt Determination ──
 import streamlit.components.v1 as components
+
+# Callback for quick-prompt suggestion cards (executes before script rerun)
+def select_quick_prompt(q_text: str):
+    st.session_state.pending_prompt = q_text
+
+chat_val = st.chat_input("Ask a question about government schemes...")
+
+# Determine active prompt: either from bottom chat input or clicked suggestion card
+prompt = chat_val or st.session_state.pop("pending_prompt", None)
+
+# Only show the welcome hero & suggestion cards when NO conversation has started AND NO query is in-flight
+show_welcome = (len(st.session_state.messages) == 0 and not prompt)
+
+if show_welcome:
+    st.markdown("""
+    <div style="text-align: center; margin-top: 40px; margin-bottom: 24px;">
+        <div style="font-size: 3rem; margin-bottom: 8px;">🤖</div>
+        <h1 style="font-size: 2.2rem; font-weight: 700; margin: 0; color: #F8FAFC; letter-spacing: -0.02em;">HYBRID-RAG</h1>
+        <p style="font-size: 1.05rem; color: #94A3B8; margin-top: 6px; margin-bottom: 20px;">Government Welfare Scheme Research & Intelligence Assistant</p>
+        <p style="font-size: 0.85rem; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px;">Suggested Questions</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    col1, col2 = st.columns(2, gap="medium")
+    with col1:
+        st.button(
+            "🏠 **PMAY-U Eligibility**\n\nWhat are all the eligibility conditions for PMAY-U?",
+            key="sugg_pmayu",
+            use_container_width=True,
+            on_click=select_quick_prompt,
+            args=("What are all the eligibility conditions for PMAY-U?",)
+        )
+        st.button(
+            "🌾 **PM-KISAN Financial Support**\n\nWhat is the annual financial benefit provided under PM-KISAN and how is it paid?",
+            key="sugg_pmkisan",
+            use_container_width=True,
+            on_click=select_quick_prompt,
+            args=("What is the annual financial benefit provided under PM-KISAN and how is it paid?",)
+        )
+        st.button(
+            "🛡️ **Atal Pension Yojana (APY)**\n\nWhat is the age limit to join Atal Pension Yojana?",
+            key="sugg_apy",
+            use_container_width=True,
+            on_click=select_quick_prompt,
+            args=("What is the age limit to join Atal Pension Yojana?",)
+        )
+    with col2:
+        st.button(
+            "🏘️ **PMAY-G Rural Benefits**\n\nWhat are the benefits provided under PMAY-G?",
+            key="sugg_pmayg",
+            use_container_width=True,
+            on_click=select_quick_prompt,
+            args=("What are the benefits provided under PMAY-G?",)
+        )
+        st.button(
+            "🛍️ **PM-SVANidhi Credit Facility**\n\nWhat are the benefits of PM-SVANidhi?",
+            key="sugg_svanidhi",
+            use_container_width=True,
+            on_click=select_quick_prompt,
+            args=("What are the benefits of PM-SVANidhi?",)
+        )
+        st.button(
+            "⚖️ **PMAY-U vs PMAY-G Comparison**\n\nCompare PMAY-U and PMAY-G in terms of beneficiaries and housing support.",
+            key="sugg_compare",
+            use_container_width=True,
+            on_click=select_quick_prompt,
+            args=("Compare PMAY-U and PMAY-G in terms of beneficiaries and housing support.",)
+        )
+
+# ── Step 2: Client-side lock/unlock watcher (always active) ──
 components.html("""
 <script>
 (function() {
@@ -515,6 +596,7 @@ components.html("""
         return Boolean(
             parentDoc.querySelector('[data-testid="stStatusWidgetRunningIcon"]') ||
             parentDoc.querySelector('[data-testid="stStatusWidgetRunningManIcon"]') ||
+            parentDoc.querySelector('[data-testid="stAppRunningIcon"]') ||
             parentDoc.querySelector('[aria-label="Running..."]')
         );
     }
@@ -558,32 +640,25 @@ components.html("""
     function syncState() {
         const running = isStreamlitRunning();
         const timeSinceSend = Date.now() - (win.__lastRagSendTime || 0);
-
         if (!running) {
-            // When Streamlit is not running, unlock once past the initial click transition (800ms)
             if (timeSinceSend > 800 || !win.__lastRagSendTime) {
                 unlockInput();
             }
         } else {
-            // Streamlit is actively processing a query
             lockInput();
         }
     }
 
     function bindListeners() {
-        const { chatInput, textarea, submitBtn } = getChatElements();
-        if (!chatInput) return;
-
+        const { submitBtn, textarea } = getChatElements();
         function onSend() {
             win.__lastRagSendTime = Date.now();
             lockInput();
         }
-
         if (submitBtn && !submitBtn.dataset.lockBound) {
             submitBtn.dataset.lockBound = "true";
             submitBtn.addEventListener("click", onSend, true);
         }
-
         if (textarea && !textarea.dataset.lockBound) {
             textarea.dataset.lockBound = "true";
             textarea.addEventListener("keydown", function(e) {
@@ -594,18 +669,13 @@ components.html("""
         }
     }
 
-    // Register globally for explicit unlock call from Python
     win.__unlockRagInput = unlockInput;
-
     bindListeners();
     syncState();
 
     if (!win.__ragStateWatcherActive) {
         win.__ragStateWatcherActive = true;
-        const observer = new MutationObserver(() => {
-            bindListeners();
-            syncState();
-        });
+        const observer = new MutationObserver(() => { bindListeners(); syncState(); });
         observer.observe(parentDoc.body, { childList: true, subtree: true });
         setInterval(syncState, 200);
     }
@@ -613,42 +683,72 @@ components.html("""
 </script>
 """, height=0, width=0)
 
-# Handle new user input
+# Helper function to render assistant turn
+def render_assistant_turn(msg):
+    st.markdown('<div class="ai-answer-header"><span class="ai-badge-icon">🤖</span><span class="ai-answer-title">AI Answer</span></div>', unsafe_allow_html=True)
+
+    if msg.get("thought_steps"):
+        t_time = msg.get("thought_time", 2.0)
+        with st.status(f"Thought for {t_time}s • {len(msg['thought_steps'])} steps completed", expanded=False, state="complete"):
+            for step in msg["thought_steps"]:
+                st.markdown(f'<div class="thought-step-item">✓ {step}</div>', unsafe_allow_html=True)
+
+    ans = msg.get("answer_text") or msg["content"].replace("### 🤖 AI Answer\n\n", "").replace("### 🤖 AI Answer", "")
+    st.markdown(ans)
+
+    if "rag_result" in msg:
+        res = msg["rag_result"]
+        if "sources" in res and res["sources"]:
+            st.markdown("**Supporting Sources:**")
+            for s in res["sources"]:
+                st.markdown(f"- **{s.get('document_title', 'Unknown')}** (Section: *{s.get('section', 'N/A')}*, Chunk: `{s.get('chunk_id')}`)")
+
+        with st.expander("🔬 View RAG Pipeline Analysis", expanded=False):
+            render_pipeline_analysis(res)
+
+# ── Step 3: Render full chat history ──
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        if msg["role"] == "user":
+            st.markdown(f'<div class="user-message-text">{msg["content"]}</div>', unsafe_allow_html=True)
+        else:
+            render_assistant_turn(msg)
+
+# ── Step 4: Process new query if one was submitted ──
 if prompt:
-    # Append and render user message
+    # a) Add user message to state and render it immediately
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(f'<div class="user-message-text">{prompt}</div>', unsafe_allow_html=True)
-        
-    # Process query with live ChatGPT-style reasoning steps
+
+    # b) Process and stream assistant response
     with st.chat_message("assistant"):
         st.markdown('<div class="ai-answer-header"><span class="ai-badge-icon">🤖</span><span class="ai-answer-title">AI Answer</span></div>', unsafe_allow_html=True)
-        
+
         thought_steps = []
         start_time = time.time()
-        
+
         with st.status("Thinking... Initializing pipeline", expanded=True) as status_box:
-            def on_status_update(stage: str, msg: str, data: dict = None):
+            def on_status_update(stage: str, msg_text: str, data: dict = None):
                 if stage.endswith("_start"):
-                    status_box.update(label=f"Thinking... {msg}", state="running")
+                    status_box.update(label=f"Thinking... {msg_text}", state="running")
                 elif stage.endswith("_done"):
-                    thought_steps.append(msg)
-                    st.markdown(f'<div class="thought-step-item">✓ {msg}</div>', unsafe_allow_html=True)
-                    
+                    thought_steps.append(msg_text)
+                    st.markdown(f'<div class="thought-step-item">✓ {msg_text}</div>', unsafe_allow_html=True)
+
             on_status_update("init_start", "Initializing Hybrid-RAG pipeline...")
-            
+
             try:
                 result = rag.answer(prompt, status_callback=on_status_update)
             except TypeError:
                 result = rag.answer(prompt)
-            
+
             on_status_update("evaluation_start", "Evaluating response quality metrics...")
             evaluator = load_evaluator()
             ref_map = load_reference_answers()
             ref_ans = ref_map.get(prompt.strip().lower(), "")
-            
+
             context_str = "\n\n".join([c.get('text', '') for c in result.get('sources', [])])
-            
             eval_res = evaluator.evaluate(
                 query=prompt,
                 generated_answer=result.get("answer", ""),
@@ -656,32 +756,32 @@ if prompt:
                 retrieved_context=context_str
             )
             result["evaluation"] = eval_res
-            
+
             r_score = eval_res.get("relevancy", {}).get("score", 0.0)
             f_score = eval_res.get("faithfulness", {}).get("score", 0.0)
             on_status_update("evaluation_done", f"Evaluated response quality: Relevancy {r_score:.2f}, Faithfulness {f_score:.2f}")
-            
+
             elapsed = time.time() - start_time
             status_box.update(
                 label=f"Thought for {elapsed:.1f}s • {len(thought_steps)} steps completed",
                 state="complete",
                 expanded=False
             )
-            
-        # Display Generated Answer
+
+        # Display answer
         st.markdown(result["answer"])
-        
-        # Display Sources nicely BEFORE the expander
+
+        # Display sources
         if "sources" in result and result["sources"]:
             st.markdown("**Supporting Sources:**")
             for s in result["sources"]:
-                st.markdown(f"- **{s.get('document_title', 'Unknown')}** (Section: {s.get('section', 'N/A')}, Chunk: `{s.get('chunk_id')}`)")
-                
-        # Render analysis expander AFTER sources
+                st.markdown(f"- **{s.get('document_title', 'Unknown')}** (Section: *{s.get('section', 'N/A')}*, Chunk: `{s.get('chunk_id')}`)")
+
+        # Pipeline analysis
         with st.expander("🔬 View RAG Pipeline Analysis", expanded=False):
             render_pipeline_analysis(result)
-            
-        # Save assistant message to state
+
+        # c) Save completed response to history
         st.session_state.messages.append({
             "role": "assistant",
             "content": result["answer"],
@@ -691,7 +791,7 @@ if prompt:
             "rag_result": result,
         })
 
-# Signal completion to release chat input lock and re-enable input for subsequent queries
+# ── Step 5: Post-render completion & smooth scroll ──
 components.html("""
 <script>
 (function() {
@@ -703,28 +803,13 @@ components.html("""
     }
     const doc = win.document;
     if (doc) {
-        const chatInput = doc.querySelector('[data-testid="stChatInput"]');
-        if (chatInput) {
-            chatInput.classList.remove("is-processing");
-            const submitBtn = chatInput.querySelector('[data-testid="stChatInputSubmitButton"]') || chatInput.querySelector('button');
-            const textarea = chatInput.querySelector('textarea');
-            if (submitBtn) {
-                submitBtn.removeAttribute("disabled");
-                submitBtn.removeAttribute("title");
-                submitBtn.style.pointerEvents = "";
-                submitBtn.style.opacity = "";
-                submitBtn.style.filter = "";
-                submitBtn.style.cursor = "";
-            }
-            if (textarea) {
-                textarea.removeAttribute("title");
-                textarea.removeAttribute("disabled");
-                textarea.style.cursor = "";
-            }
-        }
+        try {
+            win.scrollTo({ top: doc.body.scrollHeight, behavior: 'smooth' });
+        } catch(e) {}
     }
 })();
 </script>
 """, height=0, width=0)
+
 
 

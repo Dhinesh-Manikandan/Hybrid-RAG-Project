@@ -82,4 +82,12 @@ LLM_MAX_NEW_TOKENS       = 512
 LLM_ENABLE_THINKING      = False
 GENERATION_CONTEXT_TOP_K = 5
 
+# Relevance gate: if the best CrossEncoder rerank_score for the retrieved passages
+# is below this threshold, the query is considered out-of-scope and the LLM is
+# skipped — returning a clean "not in context" response instead of hallucinating.
+# Calibrated on ms-marco-MiniLM-L-6-v2 raw logit scores:
+#   unrelated queries  → ~-11 to -12   (below threshold → gated out)
+#   scheme queries     → ~-9  to -10   (above threshold → passed through)
+RERANK_RELEVANCE_THRESHOLD = -10.5
+
 
