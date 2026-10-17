@@ -1,4 +1,5 @@
 import sys
+import time
 from pathlib import Path
 import streamlit as st
 import pandas as pd
@@ -15,13 +16,13 @@ st.set_page_config(page_title="Hybrid-RAG Research Dashboard", layout="wide", pa
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Custom CSS for polished look
+# Custom CSS for polished look & precision alignment
 st.markdown(f"""
     <style>
         .stTabs [data-baseweb="tab-list"] {{ gap: 8px; }}
         .stTabs [data-baseweb="tab"] {{ border-radius: 4px; padding-top: 10px; padding-bottom: 10px; }}
         .metric-card {{ background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px; }}
-        h1, h2, h3 {{ color: #1E3A8A; }}
+        h1, h2, h3 {{ color: inherit; }}
         
         /* Dynamic chat input placement */
         [data-testid="stChatInput"] > div {{
@@ -37,11 +38,215 @@ st.markdown(f"""
         section[data-testid="stMain"] .block-container {{
             padding-bottom: 120px !important;
         }}
+
+        /* ------------------------------------------------------------------ */
+        /* Exact Avatar & Container Precision Alignment                       */
+        /* ------------------------------------------------------------------ */
+        [data-testid="stChatMessage"] {{
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: flex-start !important;
+            gap: 14px !important;
+            padding: 12px 16px !important;
+            border-radius: 12px !important;
+            margin-bottom: 12px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }}
+
+        /* User message container */
+        [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {{
+            background-color: rgba(255, 255, 255, 0.04) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        }}
+
+        /* Assistant message container */
+        [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) {{
+            background-color: transparent !important;
+            border: 1px solid transparent !important;
+        }}
+
+        /* Both avatars aligned to exact identical dimensions and position */
+        [data-testid="stChatMessageAvatarUser"],
+        [data-testid="stChatMessageAvatarAssistant"],
+        [data-testid="stChatMessageAvatarCustom"] {{
+            width: 32px !important;
+            height: 32px !important;
+            min-width: 32px !important;
+            min-height: 32px !important;
+            max-width: 32px !important;
+            max-height: 32px !important;
+            border-radius: 8px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            flex-shrink: 0 !important;
+        }}
+
+        /* Ensure material icons inside avatars are centered */
+        [data-testid="stChatMessageAvatarUser"] span,
+        [data-testid="stChatMessageAvatarAssistant"] span {{
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 20px !important;
+            line-height: 1 !important;
+        }}
+
+        /* Message content wrapper */
+        [data-testid="stChatMessageContent"] {{
+            flex-grow: 1 !important;
+            min-width: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }}
+
+        /* User message text aligned and centered to the avatar horizontal axis */
+        .user-message-text {{
+            display: flex !important;
+            align-items: center !important;
+            min-height: 32px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            font-size: 1rem !important;
+            line-height: 1.5 !important;
+            color: #F8FAFC !important;
+        }}
+
+        /* Fallback for standard user message paragraph */
+        [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) [data-testid="stChatMessageContent"] > div:first-child > p:first-child {{
+            min-height: 32px !important;
+            display: flex !important;
+            align-items: center !important;
+            margin: 0 !important;
+        }}
+
+        /* AI Answer Header - centered with orange emoji on the EXACT horizontal axis */
+        .ai-answer-header {{
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            height: 32px !important;
+            min-height: 32px !important;
+            max-height: 32px !important;
+            margin-top: 0px !important;
+            margin-bottom: 8px !important;
+            padding: 0px !important;
+            line-height: 32px !important;
+        }}
+
+        .ai-answer-header .ai-badge-icon {{
+            font-size: 1.2rem !important;
+            line-height: 1 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }}
+
+        .ai-answer-header .ai-answer-title {{
+            font-size: 1.15rem !important;
+            font-weight: 700 !important;
+            color: #F8FAFC !important;
+            line-height: 1 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            letter-spacing: -0.01em !important;
+        }}
+
+        /* Global reset for h3 inside chat to prevent pushing down */
+        [data-testid="stChatMessageContent"] h3:first-child {{
+            margin-top: 0 !important;
+            height: 32px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }}
+
+        /* ChatGPT-style thinking status widget */
+        [data-testid="stStatusWidget"] {{
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 10px !important;
+            margin-top: 4px !important;
+            margin-bottom: 12px !important;
+            padding: 4px 12px !important;
+            transition: all 0.2s ease !important;
+        }}
+
+        [data-testid="stStatusWidget"]:hover {{
+            border-color: rgba(255, 255, 255, 0.2) !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+        }}
+
+        .thought-step-item {{
+            font-size: 0.9rem !important;
+            color: #94A3B8 !important;
+            padding: 2px 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+        }}
+        
+        /* ------------------------------------------------------------------ */
+        /* Lock Chat Input Button & Tooltip While Query is Processing          */
+        /* ------------------------------------------------------------------ */
+        body:has([data-testid="stStatusWidgetRunningIcon"]) [data-testid="stChatInputSubmitButton"],
+        body:has([data-testid="stStatusWidgetRunningManIcon"]) [data-testid="stChatInputSubmitButton"],
+        body:has([aria-label="Running..."]) [data-testid="stChatInputSubmitButton"],
+        body:has([data-testid="stStatusWidgetRunningIcon"]) [data-testid="stChatInput"] button,
+        body:has([data-testid="stStatusWidgetRunningManIcon"]) [data-testid="stChatInput"] button,
+        body:has([aria-label="Running..."]) [data-testid="stChatInput"] button,
+        [data-testid="stChatInput"].is-processing [data-testid="stChatInputSubmitButton"],
+        [data-testid="stChatInput"].is-processing button {{
+            pointer-events: none !important;
+            opacity: 0.3 !important;
+            filter: grayscale(1) !important;
+            cursor: not-allowed !important;
+        }}
+
+        body:has([data-testid="stStatusWidgetRunningIcon"]) [data-testid="stChatInput"] textarea,
+        body:has([data-testid="stStatusWidgetRunningManIcon"]) [data-testid="stChatInput"] textarea,
+        body:has([aria-label="Running..."]) [data-testid="stChatInput"] textarea,
+        [data-testid="stChatInput"].is-processing textarea {{
+            cursor: not-allowed !important;
+        }}
+
+        /* Tooltip when hovering over input area while query is running */
+        body:has([data-testid="stStatusWidgetRunningIcon"]) [data-testid="stChatInput"]:hover::after,
+        body:has([data-testid="stStatusWidgetRunningManIcon"]) [data-testid="stChatInput"]:hover::after,
+        body:has([aria-label="Running..."]) [data-testid="stChatInput"]:hover::after,
+        [data-testid="stChatInput"].is-processing:hover::after {{
+            content: "⏳ Already a query is running. Please wait...";
+            position: absolute;
+            bottom: calc(100% + 10px);
+            right: 20px;
+            background: #0F172A;
+            color: #EF4444;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+            z-index: 999999;
+            white-space: nowrap;
+        }}
     </style>
 """, unsafe_allow_html=True)
 
 @st.cache_resource(show_spinner="Initializing frozen backend models & indexes (this happens only once)...")
 def load_rag():
+    import importlib
+    import src.config as cfg
+    import src.generation.llm_generator as llm_gen
+    import retrieve
+    importlib.reload(cfg)
+    importlib.reload(llm_gen)
+    importlib.reload(retrieve)
+    from retrieve import HybridRAG
     rag = HybridRAG()
     # Force generator initialization to load the model into memory
     rag.get_generator()
@@ -261,39 +466,183 @@ if not st.session_state.messages:
 # Render chat history
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
-        st.markdown(msg["content"])
-        
-        if msg["role"] == "assistant" and "rag_result" in msg:
-            res = msg["rag_result"]
-            if "sources" in res and res["sources"]:
-                st.markdown("**Supporting Sources:**")
-                for s in res["sources"]:
-                    st.markdown(f"- **{s.get('document_title', 'Unknown')}** (Section: {s.get('section', 'N/A')}, Chunk: `{s.get('chunk_id')}`)")
+        if msg["role"] == "user":
+            st.markdown(f'<div class="user-message-text">{msg["content"]}</div>', unsafe_allow_html=True)
+        else:
+            st.markdown('<div class="ai-answer-header"><span class="ai-badge-icon">🤖</span><span class="ai-answer-title">AI Answer</span></div>', unsafe_allow_html=True)
             
-            with st.expander("🔬 View RAG Pipeline Analysis", expanded=False):
-                render_pipeline_analysis(res)
+            if msg.get("thought_steps"):
+                t_time = msg.get("thought_time", 2.0)
+                with st.status(f"Thought for {t_time}s • {len(msg['thought_steps'])} steps completed", expanded=False, state="complete"):
+                    for step in msg["thought_steps"]:
+                        st.markdown(f'<div class="thought-step-item">✓ {step}</div>', unsafe_allow_html=True)
+                        
+            ans = msg.get("answer_text") or msg["content"].replace("### 🤖 AI Answer\n\n", "").replace("### 🤖 AI Answer", "")
+            st.markdown(ans)
+            
+            if "rag_result" in msg:
+                res = msg["rag_result"]
+                if "sources" in res and res["sources"]:
+                    st.markdown("**Supporting Sources:**")
+                    for s in res["sources"]:
+                        st.markdown(f"- **{s.get('document_title', 'Unknown')}** (Section: {s.get('section', 'N/A')}, Chunk: `{s.get('chunk_id')}`)")
+                
+                with st.expander("🔬 View RAG Pipeline Analysis", expanded=False):
+                    render_pipeline_analysis(res)
 
-# Capture chat input at the TOP LEVEL so Streamlit pins it to the bottom of the viewport.
-chat_placeholder = st.empty()
-chat_val = chat_placeholder.chat_input("Ask a question about government schemes...", key="enabled_chat")
+# Single standard ChatGPT-style chat input pinned to the bottom
+chat_val = st.chat_input("Ask a question about government schemes...")
 prompt = chat_val if chat_val else quick_prompt
+
+# Client-side instantaneous button disable and hover tooltip script
+import streamlit.components.v1 as components
+components.html("""
+<script>
+(function() {
+    const parentDoc = window.parent.document;
+    if (!parentDoc) return;
+    const win = window.parent;
+
+    function getChatElements() {
+        const chatInput = parentDoc.querySelector('[data-testid="stChatInput"]');
+        if (!chatInput) return {};
+        const textarea = chatInput.querySelector('textarea');
+        const submitBtn = chatInput.querySelector('[data-testid="stChatInputSubmitButton"]') || chatInput.querySelector('button');
+        return { chatInput, textarea, submitBtn };
+    }
+
+    function isStreamlitRunning() {
+        return Boolean(
+            parentDoc.querySelector('[data-testid="stStatusWidgetRunningIcon"]') ||
+            parentDoc.querySelector('[data-testid="stStatusWidgetRunningManIcon"]') ||
+            parentDoc.querySelector('[aria-label="Running..."]')
+        );
+    }
+
+    function lockInput() {
+        const { chatInput, textarea, submitBtn } = getChatElements();
+        if (!chatInput) return;
+        chatInput.classList.add("is-processing");
+        if (submitBtn) {
+            submitBtn.setAttribute("disabled", "true");
+            submitBtn.setAttribute("title", "Already a query is running. Please wait...");
+            submitBtn.style.pointerEvents = "none";
+            submitBtn.style.opacity = "0.3";
+            submitBtn.style.cursor = "not-allowed";
+        }
+        if (textarea) {
+            textarea.setAttribute("title", "Already a query is running. Please wait...");
+            textarea.style.cursor = "not-allowed";
+        }
+    }
+
+    function unlockInput() {
+        const { chatInput, textarea, submitBtn } = getChatElements();
+        if (!chatInput) return;
+        chatInput.classList.remove("is-processing");
+        if (submitBtn) {
+            submitBtn.removeAttribute("disabled");
+            submitBtn.removeAttribute("title");
+            submitBtn.style.pointerEvents = "";
+            submitBtn.style.opacity = "";
+            submitBtn.style.filter = "";
+            submitBtn.style.cursor = "";
+        }
+        if (textarea) {
+            textarea.removeAttribute("title");
+            textarea.removeAttribute("disabled");
+            textarea.style.cursor = "";
+        }
+    }
+
+    function syncState() {
+        const running = isStreamlitRunning();
+        const timeSinceSend = Date.now() - (win.__lastRagSendTime || 0);
+
+        if (!running) {
+            // When Streamlit is not running, unlock once past the initial click transition (800ms)
+            if (timeSinceSend > 800 || !win.__lastRagSendTime) {
+                unlockInput();
+            }
+        } else {
+            // Streamlit is actively processing a query
+            lockInput();
+        }
+    }
+
+    function bindListeners() {
+        const { chatInput, textarea, submitBtn } = getChatElements();
+        if (!chatInput) return;
+
+        function onSend() {
+            win.__lastRagSendTime = Date.now();
+            lockInput();
+        }
+
+        if (submitBtn && !submitBtn.dataset.lockBound) {
+            submitBtn.dataset.lockBound = "true";
+            submitBtn.addEventListener("click", onSend, true);
+        }
+
+        if (textarea && !textarea.dataset.lockBound) {
+            textarea.dataset.lockBound = "true";
+            textarea.addEventListener("keydown", function(e) {
+                if (e.key === "Enter" && !e.shiftKey && textarea.value.trim().length > 0) {
+                    onSend();
+                }
+            }, true);
+        }
+    }
+
+    // Register globally for explicit unlock call from Python
+    win.__unlockRagInput = unlockInput;
+
+    bindListeners();
+    syncState();
+
+    if (!win.__ragStateWatcherActive) {
+        win.__ragStateWatcherActive = true;
+        const observer = new MutationObserver(() => {
+            bindListeners();
+            syncState();
+        });
+        observer.observe(parentDoc.body, { childList: true, subtree: true });
+        setInterval(syncState, 200);
+    }
+})();
+</script>
+""", height=0, width=0)
 
 # Handle new user input
 if prompt:
-    # Explicitly disable the input box while processing this question
-    chat_placeholder.chat_input("Processing your query...", disabled=True, key="disabled_chat")
-    
     # Append and render user message
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
-        st.markdown(prompt)
+        st.markdown(f'<div class="user-message-text">{prompt}</div>', unsafe_allow_html=True)
         
-    # Process query
+    # Process query with live ChatGPT-style reasoning steps
     with st.chat_message("assistant"):
-        with st.spinner("Processing Hybrid-RAG pipeline..."):
-            result = rag.answer(prompt)
+        st.markdown('<div class="ai-answer-header"><span class="ai-badge-icon">🤖</span><span class="ai-answer-title">AI Answer</span></div>', unsafe_allow_html=True)
+        
+        thought_steps = []
+        start_time = time.time()
+        
+        with st.status("Thinking... Initializing pipeline", expanded=True) as status_box:
+            def on_status_update(stage: str, msg: str, data: dict = None):
+                if stage.endswith("_start"):
+                    status_box.update(label=f"Thinking... {msg}", state="running")
+                elif stage.endswith("_done"):
+                    thought_steps.append(msg)
+                    st.markdown(f'<div class="thought-step-item">✓ {msg}</div>', unsafe_allow_html=True)
+                    
+            on_status_update("init_start", "Initializing Hybrid-RAG pipeline...")
             
-        with st.spinner("Evaluating response quality..."):
+            try:
+                result = rag.answer(prompt, status_callback=on_status_update)
+            except TypeError:
+                result = rag.answer(prompt)
+            
+            on_status_update("evaluation_start", "Evaluating response quality metrics...")
             evaluator = load_evaluator()
             ref_map = load_reference_answers()
             ref_ans = ref_map.get(prompt.strip().lower(), "")
@@ -308,8 +657,18 @@ if prompt:
             )
             result["evaluation"] = eval_res
             
-        # Display AI Answer
-        st.markdown("### 🤖 AI Answer")
+            r_score = eval_res.get("relevancy", {}).get("score", 0.0)
+            f_score = eval_res.get("faithfulness", {}).get("score", 0.0)
+            on_status_update("evaluation_done", f"Evaluated response quality: Relevancy {r_score:.2f}, Faithfulness {f_score:.2f}")
+            
+            elapsed = time.time() - start_time
+            status_box.update(
+                label=f"Thought for {elapsed:.1f}s • {len(thought_steps)} steps completed",
+                state="complete",
+                expanded=False
+            )
+            
+        # Display Generated Answer
         st.markdown(result["answer"])
         
         # Display Sources nicely BEFORE the expander
@@ -324,8 +683,48 @@ if prompt:
             
         # Save assistant message to state
         st.session_state.messages.append({
-            "role": "assistant", 
-            "content": f"### 🤖 AI Answer\n\n{result['answer']}",
-            "rag_result": result
+            "role": "assistant",
+            "content": result["answer"],
+            "answer_text": result["answer"],
+            "thought_steps": thought_steps,
+            "thought_time": round(elapsed, 1),
+            "rag_result": result,
         })
+
+# Signal completion to release chat input lock and re-enable input for subsequent queries
+components.html("""
+<script>
+(function() {
+    const win = window.parent;
+    if (!win) return;
+    win.__lastRagSendTime = 0;
+    if (typeof win.__unlockRagInput === "function") {
+        win.__unlockRagInput();
+    }
+    const doc = win.document;
+    if (doc) {
+        const chatInput = doc.querySelector('[data-testid="stChatInput"]');
+        if (chatInput) {
+            chatInput.classList.remove("is-processing");
+            const submitBtn = chatInput.querySelector('[data-testid="stChatInputSubmitButton"]') || chatInput.querySelector('button');
+            const textarea = chatInput.querySelector('textarea');
+            if (submitBtn) {
+                submitBtn.removeAttribute("disabled");
+                submitBtn.removeAttribute("title");
+                submitBtn.style.pointerEvents = "";
+                submitBtn.style.opacity = "";
+                submitBtn.style.filter = "";
+                submitBtn.style.cursor = "";
+            }
+            if (textarea) {
+                textarea.removeAttribute("title");
+                textarea.removeAttribute("disabled");
+                textarea.style.cursor = "";
+            }
+        }
+    }
+})();
+</script>
+""", height=0, width=0)
+
 

@@ -100,6 +100,8 @@ class HybridRAG:
         generate_answer: bool = False,
         context_top_k:   int = GENERATION_CONTEXT_TOP_K,
         generator:       Optional[Any] = None,
+        status_callback: Optional[Any] = None,
+        **kwargs,
     ) -> dict:
         """
         Run the full Hybrid-RAG pipeline for a query.
@@ -123,6 +125,10 @@ class HybridRAG:
             use_mmr:              Whether to apply MMR diversification.
             enable_reformulation: Whether to generate diverse query formulations.
                                   Defaults to ENABLE_QUERY_REFORMULATION.
+            generate_answer:      Whether to build context and generate an LLM answer.
+            context_top_k:        Number of top candidates used for context generation.
+            generator:            Optional custom LLMGenerator instance.
+            status_callback:      Optional callback(stage: str, msg: str, data: dict) for live step updates.
 
         Returns:
             Dict with keys:
@@ -130,22 +136,35 @@ class HybridRAG:
                 "pc_results", "bm25_results", "fused_results",
                 "diverse_results", "final_results"
         """
+        if status_callback is None and "status_callback" in kwargs:
+            status_callback = kwargs.pop("status_callback")
+
+        def _notify(stage: str, msg: str, data: Optional[dict] = None):
+            if status_callback is not None:
+                try:
+                    status_callback(stage, msg, data or {})
+                except Exception:
+                    pass
+
         if enable_reformulation is None:
             enable_reformulation = ENABLE_QUERY_REFORMULATION
 
         # --------------------------------------------------
         # Step 1: Query Reformulation
         # --------------------------------------------------
+        _notify("reformulation_start", "Formulating multi-query search perspectives...")
         if enable_reformulation:
             # NUM_REFORMULATIONS in config specifies total query perspectives (V=3: original + 2 alternatives)
             num_alts = NUM_REFORMULATIONS - 1 if NUM_REFORMULATIONS > 1 else 1
             query_variants = reformulate_query(query, num_reformulations=num_alts)
         else:
             query_variants = [query]
+        _notify("reformulation_done", f"Formulated {len(query_variants)} diverse search perspectives", {"variants": query_variants})
 
         # --------------------------------------------------
         # Step 2 & 3: Multi-Query Dense and BM25 Retrieval
         # --------------------------------------------------
+        _notify("retrieval_start", f"Searching Dense (Naive, Sentence-Window, Parent-Child) & BM25 indices...")
         all_lists = []
         orig_naive_results = []
         orig_sw_results    = []
@@ -190,9 +209,12 @@ class HybridRAG:
                 orig_pc_results    = pc_res
                 orig_bm25_results  = bm25_res
 
+        _notify("retrieval_done", f"Retrieved candidate pools across 4 retrieval strategies ({len(all_lists)} search passes)")
+
         # --------------------------------------------------
         # Step 4: Canonical RRF fusion
         # --------------------------------------------------
+        _notify("fusion_start", "Fusing candidate pools using Canonical Reciprocal Rank Fusion (RRF)...")
         fused = canonical_rrf(all_lists, k=rrf_k)
         fused = fused[:fusion_top_k]
 
@@ -201,6 +223,7 @@ class HybridRAG:
         # --------------------------------------------------
         diverse = fused
         if use_mmr and len(fused) > final_top_k:
+            _notify("mmr_start", "Applying MMR diversification across semantic embeddings...")
             query_embedding = encode_query(query, self.embedding_model)
             diverse = mmr_diversify(
                 candidates=fused,
@@ -209,10 +232,12 @@ class HybridRAG:
                 top_k=fusion_top_k,
                 lambda_param=mmr_lambda,
             )
+        _notify("fusion_done", f"Fused and diversified candidates into top-{len(diverse)} candidate pool")
 
         # --------------------------------------------------
         # Step 6: CrossEncoder reranking (multi-query evidence aggregation)
         # --------------------------------------------------
+        _notify("rerank_start", "Neural reranking with Cross-Encoder...")
         variants_for_reranking = query_variants if ENABLE_MULTI_QUERY_RERANKING else None
         final_results = rerank(
             query=query,
@@ -221,6 +246,7 @@ class HybridRAG:
             top_k=final_top_k,
             query_variants=variants_for_reranking,
         )
+        _notify("rerank_done", f"Cross-Encoder scored and selected top-{len(final_results)} most relevant passages")
 
         output = {
             "query":             query,
@@ -235,6 +261,7 @@ class HybridRAG:
         }
 
         if generate_answer:
+            _notify("generation_start", "Synthesizing grounded answer with local Qwen model...")
             from src.generation.context_builder import build_context
             gen = generator if generator is not None else self.get_generator()
             context_str, sources = build_context(final_results, top_k=context_top_k)
@@ -247,6 +274,7 @@ class HybridRAG:
             output["context"] = context_str
             output["answer"]  = gen_res["answer"]
             output["sources"] = gen_res["sources"] if gen_res.get("sources") else sources
+            _notify("generation_done", f"Generated grounded response with {len(output.get('sources', []))} supporting citations")
 
         return output
 
@@ -255,6 +283,7 @@ class HybridRAG:
         query: str,
         context_top_k: int = GENERATION_CONTEXT_TOP_K,
         generator: Optional[Any] = None,
+        status_callback: Optional[Any] = None,
         **kwargs,
     ) -> dict:
         """
@@ -266,6 +295,7 @@ class HybridRAG:
             generate_answer=True,
             context_top_k=context_top_k,
             generator=generator,
+            status_callback=status_callback,
             **kwargs,
         )
 
