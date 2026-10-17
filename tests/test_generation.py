@@ -29,6 +29,7 @@ from src.generation.context_builder import (
     build_context_string,
     extract_source_metadata,
     extract_sources,
+    filter_candidates_by_query_scope,
     format_source_entry,
 )
 from src.generation.llm_generator import (
@@ -264,7 +265,24 @@ def test_7_non_thinking_mode_cleaning():
     # Already clean text
     plain = "This is a direct answer."
     assert clean_non_thinking_output(plain) == plain
-    print("PASS: Test 7 - Non-thinking mode guarantees clean answer")
+
+    # Stripping appended out-of-scope disclaimer when answer is already present
+    with_disclaimer = (
+        "Under PM-KISAN, eligible farmers receive Rs. 6,000 per year in three equal installments.\n\n"
+        "I'm sorry, I can only answer questions related to government welfare schemes covered in my knowledge base. "
+        "Your question does not appear to be in scope. Please ask about a scheme such as PMAY, PM-KISAN, APY, PM SVANidhi, Stand-Up India, or PM Vishwakarma."
+    )
+    cleaned_disc = clean_non_thinking_output(with_disclaimer)
+    assert "Under PM-KISAN" in cleaned_disc
+    assert "I'm sorry" not in cleaned_disc
+
+    # Stripping dummy comparison rows
+    with_dummy = "### Key Differences\n| Scheme | Benefit |\n| PM-KISAN | Rs 6,000 |\n| Other Schemes | Not specified | Not mentioned |"
+    cleaned_dummy = clean_non_thinking_output(with_dummy)
+    assert "Other Schemes" not in cleaned_dummy
+
+    print("PASS: Test 7 - Non-thinking mode guarantees clean answer and strips extraneous disclaimers/dummy rows")
+
 
 
 # ---------------------------------------------------------------------------
@@ -291,6 +309,7 @@ def test_8_hybrid_rag_integration_with_generator():
 
     # Patch retrieve_dense, BM25, and rerank to avoid running full retrieval models in unit test
     with patch("retrieve.retrieve_dense", return_value=candidates[:1]), \
+         patch("retrieve.rerank", return_value=candidates[:1]), \
          patch.object(HybridRAG, "__init__", lambda self: None):
         rag = HybridRAG()
         rag.naive_index, rag.naive_meta = None, []
@@ -334,6 +353,79 @@ def test_8_hybrid_rag_integration_with_generator():
     print("PASS: Test 8 - HybridRAG generation integration verified")
 
 
+# ---------------------------------------------------------------------------
+# Test 9: Query-scope filtering excludes unrelated scheme chunks
+# ---------------------------------------------------------------------------
+def test_9_query_scope_filtering_excludes_unrelated_schemes():
+    """When query asks about PM-KISAN, SVANidhi / PMAY chunks must be pruned."""
+    candidates = [
+        {
+            "document_id": "doc_pmkisan",
+            "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+            "chunk_id": "doc_pmkisan__naive__0",
+            "rerank_score": -7.5,
+            "text": "A financial benefit of Rs. 6,000 per annum is provided to eligible farmer families.",
+        },
+        {
+            "document_id": "doc_svanidhi",
+            "document_title": "PM Street Vendor's AtmaNirbhar Nidhi (PM SVANidhi)",
+            "chunk_id": "doc_svanidhi__naive__0",
+            "rerank_score": -8.2,
+            "text": "Financial assistance of up to Rs. 10,000 is provided to eligible street vendors.",
+        },
+        {
+            "document_id": "doc_pmay_u",
+            "document_title": "Pradhan Mantri Awas Yojana - Urban",
+            "chunk_id": "doc_pmay_u__naive__1",
+            "rerank_score": -8.9,
+            "text": "Housing subsidy under PMAY-U for EWS families.",
+        },
+    ]
+
+    # Query specifically about PM-KISAN
+    query = "What is the annual financial benefit provided under PM-KISAN and how is it paid?"
+    filtered = filter_candidates_by_query_scope(candidates, query)
+
+    doc_titles = [c["document_title"] for c in filtered]
+    assert any("kisan" in t.lower() or "pm-kisan" in t.lower() for t in doc_titles), \
+        "PM-KISAN document should be kept"
+    assert not any("svanidhi" in t.lower() for t in doc_titles), \
+        "SVANidhi should be pruned for a PM-KISAN query"
+    assert not any("awas" in t.lower() or "pmay" in t.lower() for t in doc_titles), \
+        "PMAY should be pruned for a PM-KISAN query"
+
+    # Verify build_context with query param also prunes correctly
+    context_str, sources = build_context(candidates, top_k=5, query=query)
+    assert "SVANidhi" not in context_str, "SVANidhi content must not appear in context"
+    assert "street vendor" not in context_str.lower(), "Street vendor content must not appear"
+    assert "kisan" in context_str.lower() or "pm-kisan" in context_str.lower(), \
+        "PM-KISAN content should be present in filtered context"
+
+    # Broad question with no specific scheme → all candidates kept
+    broad_query = "What welfare schemes are available in India?"
+    broad_filtered = filter_candidates_by_query_scope(candidates, broad_query)
+    assert len(broad_filtered) == len(candidates), \
+        "Broad query should not filter any candidates"
+
+    print("PASS: Test 9 - Query-scope filtering prunes unrelated scheme chunks")
+
+
+# ---------------------------------------------------------------------------
+# Test 10: Single-scheme query with 'and' does not trigger comparison prompt
+# ---------------------------------------------------------------------------
+def test_10_single_scheme_query_no_false_comparison():
+    gen = QwenGenerator()
+    query = "What is the annual financial benefit provided under PM-KISAN and how is it paid?"
+    context = "[Source 1] Document: PM-KISAN\nRs. 6,000 per year in 3 installments."
+    prompt = gen.build_prompt(query, context)
+
+    # Should NOT contain multi-scheme comparison instructions or Key Differences
+    assert "Key Differences" not in prompt, "Single-scheme query with 'and' must not trigger Key Differences instruction"
+    assert "Other Schemes" not in prompt
+    assert "Concise & Direct" in prompt
+    print("PASS: Test 10 - Single-scheme query does not trigger comparison instructions")
+
+
 if __name__ == "__main__":
     test_1_context_builder_formatting()
     test_2_context_builder_preserves_metadata()
@@ -343,3 +435,5 @@ if __name__ == "__main__":
     test_6_generator_receives_query_and_context()
     test_7_non_thinking_mode_cleaning()
     test_8_hybrid_rag_integration_with_generator()
+    test_9_query_scope_filtering_excludes_unrelated_schemes()
+    test_10_single_scheme_query_no_false_comparison()

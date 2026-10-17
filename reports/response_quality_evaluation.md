@@ -42,10 +42,10 @@ TABLE I. RESPONSE QUALITY EVALUATION OF DIFFERENT RAG MODELS
 
 | Model | Correctness (±std) | Relevancy (±std) | Faithfulness (±std) |
 |---|---:|---:|---:|
-| Naive RAG | 1.00 ± 0.00 | 0.53 ± 0.00 | 1.00 ± 0.00 |
-| Sentence Window | 1.00 ± 0.00 | 0.53 ± 0.00 | 0.00 ± 0.00 |
-| Parent-Child | 1.00 ± 0.00 | 0.53 ± 0.00 | 0.00 ± 0.00 |
-| Hybrid RAG | 1.00 ± 0.00 | 0.55 ± 0.00 | 1.00 ± 0.00 |
+| Naive RAG | 4.00 ± 0.00 | 1.00 ± 0.00 | 0.73 ± 0.00 |
+| Sentence Window | 4.00 ± 0.00 | 1.00 ± 0.00 | 0.75 ± 0.00 |
+| Parent-Child | 5.00 ± 0.00 | 1.00 ± 0.00 | 0.75 ± 0.00 |
+| Hybrid RAG | 4.00 ± 0.00 | 1.00 ± 0.00 | 0.33 ± 0.00 |
 
 ## 14. Limitations
 Evaluation relies on a smaller model (Qwen3-0.6B) as a judge.

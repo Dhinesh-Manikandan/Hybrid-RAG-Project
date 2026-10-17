@@ -280,18 +280,18 @@ class HybridRAG:
                 )
                 output["context"] = ""
                 output["answer"] = (
-                    "I'm sorry, but I can only answer questions about the **government welfare schemes** "
-                    "in my knowledge base (e.g., PMAY, PM-KISAN, PM SVANidhi, APY, Stand-Up India, "
-                    "PM Vishwakarma, etc.).\n\n"
+                    "I'm sorry, but I can only answer questions about the topics and documents "
+                    "in my knowledge base.\n\n"
                     "Your question does not appear to be covered by the retrieved documents. "
-                    "Please ask a scheme-related question and I'll be happy to help."
+                    "Please ask a relevant question and I'll be happy to help."
                 )
+
                 output["sources"] = []
             else:
                 _notify("generation_start", "Synthesizing grounded answer with local Qwen model...")
                 from src.generation.context_builder import build_context
                 gen = generator if generator is not None else self.get_generator()
-                context_str, sources = build_context(final_results, top_k=context_top_k)
+                context_str, sources = build_context(final_results, top_k=context_top_k, query=query)
                 gen_res = gen.generate(
                     query=query,
                     context=context_str,

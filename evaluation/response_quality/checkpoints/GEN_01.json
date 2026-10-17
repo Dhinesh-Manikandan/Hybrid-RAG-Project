@@ -2,63 +2,75 @@
   "query_id": "GEN_01",
   "query": "What is the age limit to join Atal Pension Yojana?",
   "Naive RAG": {
-    "response": "- Minimum age of joining APY is 18 years.  \n- Maximum age of joining APY is 40 years.",
+    "response": "The age limit to join Atal Pension Yojana (APY) is **18 years** for the minimum age of joining and **40 years** for the maximum age. Additionally, the age of exit and the start of pension is **60 years**. \n\nSubscribers are required to contribute the prescribed contribution amount from the age of joining APY until the age of 60 years. \n\nUpon exiting the scheme at age 60, subscribers receive three benefits:\n\n1. **Guaranteed Minimum Pension**: A fixed amount of Rs. 1000\u20135000 per month, depending on the subscriber\u2019s age and contribution level.\n\n2. **Guaranteed Minimum Pension to the Spouse**: The spouse of the subscriber receives the same pension amount upon the subscriber\u2019s death.\n\n3. **Return of Pension Wealth to the Nominee**: After both the subscriber and spouse die, the nominee receives the accumulated pension wealth.\n\nThere are exclusions for citizens who were or are income tax payers from 1st October 2022. \n\nThe scheme also offers tax benefits similar to the National Pension System (NPS) under Section 80CCD(1). Contributions are eligible for tax deductions, and there are specific refund policies for voluntary exits before 60 years of age, except for those who joined before March 31, 2016, and received government co-contribution.",
     "correctness": {
-      "score": 1,
-      "similarity": 0.4430740773677826
+      "score": 4,
+      "similarity": 0.4159,
+      "reference_available": true,
+      "key_facts_ratio": 1.0
     },
     "relevancy": {
-      "score": 0.5340947508811951
+      "score": 1.0,
+      "raw_similarity": 0.7966
     },
     "faithfulness": {
-      "score": 1.0,
-      "supported_claims": 2,
-      "total_claims": 2
+      "score": 0.7273,
+      "supported_claims": 8,
+      "total_claims": 11
     }
   },
   "Sentence Window": {
-    "response": "- Minimum age: 18 years  \n- Maximum age: 40 years",
+    "response": "The age limit to join Atal Pension Yojana (APY) is **18 years** for the minimum age of joining and **40 years** for the maximum age. Additionally, the age of exit and start of pension is **60 years**. Subscribers are required to contribute the prescribed contribution amount from the age of joining APY until the age of 60 years. The contribution is made through an auto-debit mechanism from the savings bank account on a monthly, quarterly, or half-yearly basis.",
     "correctness": {
-      "score": 1,
-      "similarity": 0.5586307644844055
+      "score": 4,
+      "similarity": 0.4046,
+      "reference_available": true,
+      "key_facts_ratio": 1.0
     },
     "relevancy": {
-      "score": 0.5317850708961487
+      "score": 1.0,
+      "raw_similarity": 0.8533
     },
     "faithfulness": {
-      "score": 0.0,
-      "supported_claims": 0,
-      "total_claims": 2
+      "score": 0.75,
+      "supported_claims": 3,
+      "total_claims": 4
     }
   },
   "Parent-Child": {
-    "response": "- Minimum age: 18 years  \n- Maximum age: 40 years",
+    "response": "The age limit to join Atal Pension Yojana (APY) is **18 years** for the minimum age of joining and **40 years** for the maximum age. Additionally, the age of exit and the start of pension is **60 years**. Subscribers must contribute the prescribed contribution amount from the age of joining APY until they reach **60 years of age**. The benefits of APY are calculated **till the subscriber's age of 60 years**.",
     "correctness": {
-      "score": 1,
-      "similarity": 0.5586307644844055
+      "score": 5,
+      "similarity": 0.4623,
+      "reference_available": true,
+      "key_facts_ratio": 1.0
     },
     "relevancy": {
-      "score": 0.5317850708961487
+      "score": 1.0,
+      "raw_similarity": 0.8399
     },
     "faithfulness": {
-      "score": 0.0,
-      "supported_claims": 0,
-      "total_claims": 2
+      "score": 0.75,
+      "supported_claims": 3,
+      "total_claims": 4
     }
   },
   "Hybrid RAG": {
-    "response": "- The minimum age of joining APY is 18 years and the maximum age is 40 years.",
+    "response": "The age limit to join Atal Pension Yojana (APY) is **18 years** and the **maximum age is 40 years**. This applies to individuals who are not income tax payers and are eligible to contribute to the scheme. The contribution period is made through an automatic debit from the savings bank account on a monthly, quarterly, or half-yearly basis. Subscribers must contribute the prescribed amount from the age of joining until they reach 60 years of age. \n\nAdditionally, the scheme offers several benefits, including tax benefits similar to the National Pension System (NPS) under Section 80CCD(1), voluntary exit benefits, and provisions for pensions to spouses upon the subscriber\u2019s death. The scheme also excludes certain individuals, such as those who were previously income tax payers, from eligibility starting from October 1, 2022.",
     "correctness": {
-      "score": 1,
-      "similarity": 0.46568071842193604
+      "score": 4,
+      "similarity": 0.4327,
+      "reference_available": true,
+      "key_facts_ratio": 1.0
     },
     "relevancy": {
-      "score": 0.5517870783805847
+      "score": 1.0,
+      "raw_similarity": 0.8556
     },
     "faithfulness": {
-      "score": 1.0,
-      "supported_claims": 1,
-      "total_claims": 1
+      "score": 0.3333,
+      "supported_claims": 2,
+      "total_claims": 6
     }
   }
 }

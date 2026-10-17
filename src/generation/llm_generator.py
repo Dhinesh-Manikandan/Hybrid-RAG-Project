@@ -27,18 +27,16 @@ from src.generation.context_builder import build_context
 
 # Grounded RAG prompt template
 SYSTEM_PROMPT = (
-    "You are an expert government-scheme advisory assistant providing thorough, highly informative, and well-structured answers.\n\n"
+    "You are an expert government-scheme advisory assistant providing concise, accurate, and strictly grounded answers.\n\n"
     "Answer the user's question using ONLY the provided context.\n\n"
     "CRITICAL RULES:\n"
-    "1. Comprehensive Coverage: Synthesize and include ALL relevant facts, conditions, criteria, amounts, income thresholds, required documents, and procedural steps found across ALL provided context passages.\n"
-    "2. Thoroughness: Do not give a brief or superficial summary when the context contains rich details. Thoroughly cover every distinct requirement, category, or condition mentioned.\n"
-    "3. Structured Breakdown: Organize your answer clearly with an introductory overview followed by structured sections or descriptive bullet points (e.g., Eligibility Criteria, Financial Assistance / Benefits, Key Requirements).\n"
-    "4. Exact Details: Preserve all specific figures, amounts (₹), income limits (e.g., EWS, LIG, MIG), percentages, age brackets, and timelines exactly as stated in the context.\n"
-    "5. Direct & Natural: State information directly and naturally. Do not refer to 'Source 1', 'Source 2', 'first source', 'the context says', or internal system details.\n"
-    "6. Strict Grounding: Never extrapolate, assume, or invent facts outside the provided context. If a specific detail is missing from the context, do not guess.\n"
-    "7. Comparison Questions: If the user asks for a comparison, provide a detailed side-by-side or point-by-point breakdown of each entity's beneficiaries, benefits, and rules.\n"
-    "8. Out-of-Scope Detection: If the user's question is clearly NOT about government welfare schemes, OR if the provided context passages do not contain any information that addresses the question, respond ONLY with: "
-    "'I'm sorry, I can only answer questions related to government welfare schemes covered in my knowledge base. "
+    "1. Concise & Direct: Answer ONLY what the user's question asks. Be concise, direct, and to the point. Do NOT include unnecessary background, unasked scheme objectives, or extra unrequested sections even if they are present in the context.\n"
+    "2. Strict Grounding: Every statement must be directly supported by the provided context. Include only facts, figures, criteria, and details explicitly stated in the context. Never extrapolate, speculate, or invent facts.\n"
+    "3. Strict Scope Discipline — No Cross-Scheme Contamination: Discuss ONLY the specific scheme(s) explicitly named in the user's question. If a passage mentions a different scheme, COMPLETELY IGNORE it.\n"
+    "4. No Unrequested Comparisons or Dummy Rows: Do NOT include comparison tables, differences sections, or dummy placeholder rows for unmentioned schemes unless the user explicitly requested a comparison between multiple schemes.\n"
+    "5. Clean Response: When answering a valid question, output ONLY the direct answer. Never append apologies, disclaimers, or out-of-scope warnings to an answer that has already addressed the user's question.\n"
+    "6. Out-of-Scope Detection: ONLY if the user's question cannot be answered at all because it is completely unrelated to government welfare schemes or the context contains zero relevant information, respond ONLY with: "
+    "'I\\'m sorry, I can only answer questions related to government welfare schemes covered in my knowledge base. "
     "Your question does not appear to be in scope. Please ask about a scheme such as PMAY, PM-KISAN, APY, PM SVANidhi, Stand-Up India, or PM Vishwakarma.'"
 )
 
@@ -47,8 +45,9 @@ USER_PROMPT_TEMPLATE = (
     "{context}\n\n"
     "Question:\n"
     "{query}\n\n"
-    "Instructions: Provide a comprehensive, detailed, and structured answer synthesizing all relevant criteria, specifics, and facts from the context above."
+    "Instructions: Answer the question concisely, directly, and accurately using ONLY the relevant facts from the context above. Include only what is specifically asked. Do not include unasked scheme objectives, extra sections, or unrequested comparisons even if present in the context. Focus strictly on the scheme asked in the question and ignore any unrelated schemes."
 )
+
 
 NO_CONTEXT_FALLBACK_ANSWER = "The information is not available in the retrieved sources."
 
@@ -56,8 +55,32 @@ NO_CONTEXT_FALLBACK_ANSWER = "The information is not available in the retrieved 
 def clean_non_thinking_output(text: str) -> str:
     """
     Remove any residual thinking/reasoning blocks to guarantee non-thinking output.
+    Also strips accidental out-of-scope disclaimers or dummy comparison rows if the model
+    already provided a substantive answer.
     """
     cleaned = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
+
+    # If the response already contains a substantive answer, strip any trailing
+    # out-of-scope disclaimer that the model may have erroneously appended.
+    disclaimer_pattern = (
+        r"\n*(?:I'?m\s+sorry,?\s+I\s+can\s+only\s+answer\s+questions\s+related\s+to\s+government\s+welfare\s+schemes[^\n]*"
+        r"(?:knowledge\s+base[^\n]*)?(?:Please\s+ask\s+about\s+a\s+scheme[^\n]*)?)\.?\s*$"
+    )
+    stripped = re.sub(disclaimer_pattern, "", cleaned, flags=re.IGNORECASE | re.DOTALL).strip()
+    if len(stripped) > 40:
+        cleaned = stripped
+
+    # Clean up any accidental dummy comparison rows like "| Other Schemes | Not specified | Not mentioned |"
+    cleaned = re.sub(
+        r"\n?\|?\s*Other Schemes\s*\|\s*Not (?:specified|mentioned)\s*\|\s*Not (?:specified|mentioned)\s*\|?",
+        "",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+
+    # Clean up empty comparison table or dangling "### Key Differences" header if left empty or only dummy rows
+    cleaned = re.sub(r"###\s*Key Differences\s*(\n\s*\|[^\n]+\|\s*)*$", "", cleaned, flags=re.DOTALL).strip()
+
     return cleaned
 
 
@@ -146,22 +169,30 @@ class QwenGenerator:
         """
         system_prompt = SYSTEM_PROMPT
         
-        # Complex question detection (Step 4)
-        comparison_keywords = [
-            "compare", "comparison", "differences", "difference between", 
-            "versus", "benefits and eligibility", "advantages and disadvantages",
-            "multiple schemes", "multiple entities", "and", "for each", 
-            "respectively", "in terms of"
-        ]
+        # Multi-scheme comparison detection: only trigger if the user explicitly asks to compare
+        # AND multiple schemes are mentioned in the query.
+        compare_intent = any(kw in query.lower() for kw in [
+            "compare", "comparison", "difference between", "differences between", 
+            "versus", " vs "
+        ])
         
-        q_lower = query.lower()
-        if any(kw in q_lower for kw in comparison_keywords):
+        # Check how many distinct schemes are in the query
+        try:
+            from src.generation.context_builder import SCHEME_TAXONOMY
+            schemes_in_query = set()
+            q_lower = query.lower()
+            for scheme_id, info in SCHEME_TAXONOMY.items():
+                if any(alias in q_lower for alias in info["aliases"]):
+                    schemes_in_query.add(scheme_id)
+        except Exception:
+            schemes_in_query = set()
+
+        if compare_intent and len(schemes_in_query) >= 2:
             system_prompt += (
-                "\n\nFor a comparison question, provide:\n"
-                "1. A short introductory statement.\n"
-                "2. A separate section for each entity that is supported by the context.\n"
-                "3. A final summary of the differences.\n"
-                "4. If an entity is missing from the context, explicitly identify it as unavailable instead of guessing."
+                "\n\nFor this multi-scheme comparison question, format your response as follows:\n"
+                "1. Provide a concise section for each requested scheme with a markdown heading (e.g., `### Scheme Name`).\n"
+                "2. Conclude with a '### Key Differences' section highlighting only the contrasts between the requested schemes.\n"
+                "3. Do NOT include any unasked schemes or placeholders like 'Other Schemes'."
             )
             
         messages = [
@@ -190,7 +221,7 @@ class QwenGenerator:
 
         # Fallback raw prompt formatting
         return (
-            f"<|im_start|>system\n{SYSTEM_PROMPT}<|im_end|>\n"
+            f"<|im_start|>system\n{system_prompt}<|im_end|>\n"
             f"<|im_start|>user\n{USER_PROMPT_TEMPLATE.format(query=query, context=context)}<|im_end|>\n"
             f"<|im_start|>assistant\n"
         )
@@ -220,10 +251,20 @@ class QwenGenerator:
         sources: List[Dict[str, Any]] = []
 
         if candidates:
-            built_context, built_sources = build_context(candidates, top_k=top_k)
+            # Apply query-scope filter: prune chunks from schemes not in the query.
+            # This runs inside llm_generator (which is importlib.reload-ed on each request),
+            # so it takes effect even when the HybridRAG object is cached from an older
+            # retrieve.py that was loaded before this filter existed.
+            from src.generation.context_builder import (
+                build_context,
+                filter_candidates_by_query_scope,
+            )
+            scoped_candidates = filter_candidates_by_query_scope(candidates, query) if query else candidates
+            built_context, built_sources = build_context(scoped_candidates, top_k=top_k, query=query)
             sources = built_sources
-            if context is None:
-                context = built_context
+            # Always use the freshly-filtered context; do NOT fall back to the
+            # pre-built context_str that may have been assembled from unfiltered candidates.
+            context = built_context
         elif context is None:
             context = ""
 

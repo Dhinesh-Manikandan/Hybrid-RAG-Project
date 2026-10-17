@@ -90,8 +90,8 @@ def main():
             response = gen_res["answer"]
             gen_calls += 1
             
-            # Evaluate (one call)
-            eval_res = evaluator.evaluate(q_text, response, ref_ans, context_str)
+            # Evaluate with key_facts support
+            eval_res = evaluator.evaluate(q_text, response, ref_ans, context_str, key_facts=q.get("key_facts"))
             eval_calls += 1
             
             if eval_res["correctness"]["score"] is None:

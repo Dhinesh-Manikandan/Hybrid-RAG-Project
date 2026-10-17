@@ -295,11 +295,14 @@ st.markdown(f"""
 def load_rag():
     import importlib
     import src.config as cfg
+    import src.generation.context_builder as ctx_builder
     import src.generation.llm_generator as llm_gen
     import retrieve
     importlib.reload(cfg)
+    importlib.reload(ctx_builder)
     importlib.reload(llm_gen)
     importlib.reload(retrieve)
+
     from retrieve import HybridRAG
     rag = HybridRAG()
     # Force generator initialization to load the model into memory
@@ -307,9 +310,19 @@ def load_rag():
     return rag
 
 @st.cache_resource
+def get_shared_evaluator_model():
+    from sentence_transformers import SentenceTransformer
+    import src.config as cfg
+    return SentenceTransformer(cfg.EMBEDDING_MODEL_NAME)
+
 def load_evaluator():
-    from src.evaluation.simple_evaluator import SimpleEvaluator
-    return SimpleEvaluator()
+    import importlib
+    import src.evaluation.simple_evaluator as simple_eval_module
+    importlib.reload(simple_eval_module)
+    evaluator = simple_eval_module.SimpleEvaluator()
+    evaluator.model = get_shared_evaluator_model()
+    return evaluator
+
 
 @st.cache_data
 def load_reference_answers():
@@ -322,6 +335,19 @@ def load_reference_answers():
             for q in data:
                 ref_map[q["query"].strip().lower()] = q["expected_answer"]
     return ref_map
+
+@st.cache_data
+def load_benchmark_summary():
+    import json
+    summary_path = PROJECT_ROOT / "evaluation" / "response_quality" / "response_quality_results.json"
+    if summary_path.exists():
+        try:
+            with open(summary_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return None
+    return None
+
 
 
 # Sidebar
@@ -471,34 +497,109 @@ def render_pipeline_analysis(res):
 
     with tabs[3]:
         st.subheader("Automated Response Quality Evaluation")
-        st.caption("Scores are calculated using lightweight semantic similarity and claim-context matching.")
+        st.caption("Calibrated semantic similarity, claim-level grounding verification, and multi-strategy comparison.")
         st.write("")
-        
+
         eval_res = res.get("evaluation")
         if eval_res:
-            c_score = eval_res.get("correctness", {}).get("score", "N/A")
-            r_score = eval_res.get("relevancy", {}).get("score", 0.0)
-            f_score = eval_res.get("faithfulness", {}).get("score", 0.0)
-            
+            c_info = eval_res.get("correctness", {})
+            r_info = eval_res.get("relevancy", {})
+            f_info = eval_res.get("faithfulness", {})
+
+            c_score = c_info.get("score")
+            ref_avail = c_info.get("reference_available", False)
+            r_score = r_info.get("score", 0.0)
+            f_score = f_info.get("score", 0.0)
+            supp = f_info.get("supported_claims", 0)
+            total_claims = f_info.get("total_claims", 0)
+
             col1, col2, col3 = st.columns(3)
             with col1:
-                st.info(f"**Correctness**\n\n{c_score} / 5")
+                if ref_avail:
+                    st.info(f"**Correctness**\n\n### {c_score} / 5\nGround-Truth Match")
+                else:
+                    st.info(f"**Correctness**\n\n### N/A\nReference-Free Query")
             with col2:
-                st.info(f"**Relevancy**\n\n{r_score:.2f}")
+                st.info(f"**Relevancy**\n\n### {r_score:.2f}\nQuery–Answer Alignment")
             with col3:
-                st.info(f"**Faithfulness**\n\n{f_score:.2f}")
-                
+                pct = int(f_score * 100) if total_claims > 0 else 0
+                st.info(f"**Faithfulness**\n\n### {f_score:.2f}\n{supp}/{total_claims} claims grounded ({pct}%)")
+
             st.write("")
             st.markdown("""
-**Correctness:** Semantic similarity between generated answer and reference answer.  
-**Relevancy:** Semantic similarity between the user query and generated answer.  
-**Faithfulness:** Proportion of generated claims supported by the retrieved context.
+**Correctness (1–5):** Semantic and key-fact alignment against benchmark reference answer.  
+**Relevancy (0–1):** Direct semantic relevance of generated answer to the user query.  
+**Faithfulness (0–1):** Proportion of factual claims substantiated by retrieved context passages.
 """)
-            
-            if not eval_res.get("correctness", {}).get("similarity"):
-                st.warning("Correctness score is 1 (minimum) because no reference answer exists in the evaluation dataset for this exact query.")
+
+            ref_match = res.get("reference_match")
+            if ref_match:
+                with st.expander(f"📖 Matched Benchmark Reference ({ref_match.get('match_similarity', 0):.0%} match)"):
+                    st.markdown(f"**Benchmark Query:** {ref_match.get('query')}")
+                    st.markdown(f"**Expected Answer:** {ref_match.get('expected_answer')}")
+            elif not ref_avail:
+                st.caption("ℹ️ *Note: Correctness is N/A because this is a custom query without a predefined ground-truth reference answer.*")
         else:
             st.warning("Response-quality evaluation is not available for this query.")
+
+        st.divider()
+        st.subheader("🔬 4-Strategy Response Quality Comparison")
+        st.caption("Compare how **Naive RAG**, **Sentence Window**, **Parent-Child**, and **Hybrid RAG** perform on this prompt.")
+
+        multi_eval = res.get("multi_strategy_eval")
+        query_text = res.get("query", "")
+
+        btn_key = f"btn_compare_{abs(hash(query_text))}"
+        if not multi_eval:
+            if st.button("⚡ Evaluate All 4 Retrieval Strategies", key=btn_key, type="secondary"):
+                with st.spinner("Synthesizing answers and evaluating Naive, Sentence Window, and Parent-Child (reusing Hybrid RAG metrics)..."):
+                    from src.evaluation.simple_evaluator import evaluate_all_rag_strategies
+                    evaluator = load_evaluator()
+                    ref_m = res.get("reference_match")
+                    ref_text = ref_m.get("expected_answer") if ref_m else None
+                    k_facts = ref_m.get("key_facts") if ref_m else None
+                    multi_eval = evaluate_all_rag_strategies(
+                        rag=load_rag(),
+                        query=query_text,
+                        rag_result=res,
+                        evaluator=evaluator,
+                        reference_answer=ref_text,
+                        key_facts=k_facts,
+                    )
+                    res["multi_strategy_eval"] = multi_eval
+                    st.rerun()
+
+        if multi_eval:
+            st.markdown("#### Performance Metrics by Strategy")
+            summary_df = pd.DataFrame(multi_eval.get("summary_table", []))
+            st.dataframe(summary_df, use_container_width=True, hide_index=True)
+
+            st.markdown("#### Generated Responses by Strategy")
+            strategies_data = multi_eval.get("strategies", {})
+            for strat_name, strat_item in strategies_data.items():
+                with st.expander(f"📝 {strat_name} Response"):
+                    st.markdown(f"**Answer:**\n\n{strat_item.get('answer', 'N/A')}")
+                    e = strat_item.get("evaluation", {})
+                    c_val = f"{e.get('correctness', {}).get('score')}/5" if e.get('correctness', {}).get('reference_available') else "N/A"
+                    r_val = f"{e.get('relevancy', {}).get('score', 0):.2f}"
+                    f_val = f"{e.get('faithfulness', {}).get('score', 0):.2f}"
+                    st.caption(f"Correctness: {c_val} | Relevancy: {r_val} | Faithfulness: {f_val}")
+
+        # Benchmark reference section
+        bench_summary = load_benchmark_summary()
+        if bench_summary and "summary" in bench_summary:
+            with st.expander("📈 Overall Benchmark Evaluation Summary (Standard Test Suite)"):
+                b_rows = []
+                for m_key, m_stats in bench_summary["summary"].items():
+                    b_rows.append({
+                        "Retrieval Strategy": m_key,
+                        "Correctness (Mean ± Std)": f"{m_stats['correctness']['mean']:.2f} ± {m_stats['correctness']['std']:.2f}",
+                        "Relevancy (Mean ± Std)": f"{m_stats['relevancy']['mean']:.2f} ± {m_stats['relevancy']['std']:.2f}",
+                        "Faithfulness (Mean ± Std)": f"{m_stats['faithfulness']['mean']:.2f} ± {m_stats['faithfulness']['std']:.2f}",
+                        "Benchmark Samples": m_stats.get("num_samples", 0),
+                    })
+                st.dataframe(pd.DataFrame(b_rows), use_container_width=True, hide_index=True)
+
 
 # ──────────────────────────────────────────────
 # Main UI
@@ -737,29 +838,113 @@ if prompt:
                     st.markdown(f'<div class="thought-step-item">✓ {msg_text}</div>', unsafe_allow_html=True)
 
             on_status_update("init_start", "Initializing Hybrid-RAG pipeline...")
+            import importlib
+            import src.generation.llm_generator as llm_gen
+            import src.generation.context_builder as ctx_builder
+            importlib.reload(llm_gen)
+            importlib.reload(ctx_builder)
+
+            from src.generation.context_builder import (
+                filter_candidates_by_query_scope,
+                build_context,
+                extract_source_metadata,
+            )
+
+            inner_gen = rag.get_generator()
+            if inner_gen is not None:
+                inner_gen.__class__ = llm_gen.QwenGenerator
+                llm_gen._GLOBAL_GENERATOR = inner_gen
+
+            class _ScopedGenerator:
+                """
+                Wraps the cached QwenGenerator and applies query-scope filtering
+                before every generate() call.
+
+                This is the permanent fix for cross-scheme contamination:
+                - Works regardless of @st.cache_resource on HybridRAG
+                - Works regardless of module reload state on the generator instance
+                - Intercepts candidates at the last moment before context is assembled
+                - Rebuilds a clean, scheme-filtered context and returns filtered sources
+                """
+                def __init__(self, inner):
+                    self._inner = inner
+
+                def generate(self, query, context=None, candidates=None, top_k=5):
+                    filtered_sources = []
+                    if candidates and query:
+                        # Prune candidates from schemes not mentioned in the query
+                        scoped = filter_candidates_by_query_scope(candidates, query)
+                        # Rebuild context from the filtered, scheme-relevant candidates only
+                        context, _ = build_context(scoped, top_k=top_k, query=query)
+                        # Build sources metadata from filtered candidates
+                        filtered_sources = [
+                            extract_source_metadata(i + 1, c)
+                            for i, c in enumerate(scoped[:top_k])
+                        ]
+                    # Forward to the real (cached) model with scope-clean context;
+                    # pass candidates=None so the inner generator uses our context string.
+                    gen_result = self._inner.generate(
+                        query=query,
+                        context=context,
+                        candidates=None,
+                        top_k=top_k,
+                    )
+                    # Attach filtered sources if the inner generator didn't produce any
+                    if filtered_sources and not gen_result.get("sources"):
+                        gen_result["sources"] = filtered_sources
+                    if gen_result.get("answer"):
+                        gen_result["answer"] = llm_gen.clean_non_thinking_output(gen_result["answer"])
+                    return gen_result
+
+            scoped_generator = _ScopedGenerator(inner_gen)
 
             try:
-                result = rag.answer(prompt, status_callback=on_status_update)
+                result = rag.answer(prompt, generator=scoped_generator, status_callback=on_status_update)
             except TypeError:
-                result = rag.answer(prompt)
+                result = rag.answer(prompt, generator=scoped_generator)
 
             on_status_update("evaluation_start", "Evaluating response quality metrics...")
             evaluator = load_evaluator()
-            ref_map = load_reference_answers()
-            ref_ans = ref_map.get(prompt.strip().lower(), "")
 
-            context_str = "\n\n".join([c.get('text', '') for c in result.get('sources', [])])
+            # Robust semantic matching against benchmark dataset with fallback
+            ref_match = None
+            if hasattr(evaluator, "find_reference_match"):
+                try:
+                    ref_match = evaluator.find_reference_match(prompt)
+                except Exception:
+                    ref_match = None
+
+            if not ref_match:
+                ref_map = load_reference_answers()
+                direct_ans = ref_map.get(prompt.strip().lower())
+                if direct_ans:
+                    ref_match = {"expected_answer": direct_ans}
+
+            ref_ans = ref_match.get("expected_answer") if ref_match else None
+            key_facts = ref_match.get("key_facts") if ref_match else None
+
+
+            # Retrieve the true grounded context from the pipeline
+            context_str = result.get("context", "")
+            if not context_str and result.get("final_results"):
+                context_str = "\n\n".join(
+                    [c.get("text", "") for c in result.get("final_results", []) if isinstance(c, dict)]
+                )
+
             eval_res = evaluator.evaluate(
                 query=prompt,
                 generated_answer=result.get("answer", ""),
                 reference_answer=ref_ans,
-                retrieved_context=context_str
+                retrieved_context=context_str,
+                key_facts=key_facts,
             )
             result["evaluation"] = eval_res
+            result["reference_match"] = ref_match
 
             r_score = eval_res.get("relevancy", {}).get("score", 0.0)
             f_score = eval_res.get("faithfulness", {}).get("score", 0.0)
             on_status_update("evaluation_done", f"Evaluated response quality: Relevancy {r_score:.2f}, Faithfulness {f_score:.2f}")
+
 
             elapsed = time.time() - start_time
             status_box.update(

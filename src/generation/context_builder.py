@@ -3,8 +3,12 @@ context_builder.py -- Generic, document-agnostic LLM context builder for Hybrid-
 
 Transforms final ranked retrieval candidates into structured, LLM-ready context
 while preserving source provenance and metadata for attribution.
+
+Key feature: query-aware scope filtering prunes chunks from schemes not referenced
+by the user's query before they ever reach the LLM, preventing cross-scheme contamination.
 """
 
+import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -94,16 +98,109 @@ def extract_source_metadata(index: int, candidate: Dict[str, Any]) -> Dict[str, 
     }
 
 
+# ---------------------------------------------------------------------------
+# Scheme vocabulary: maps lowercase query tokens → canonical document title tokens
+# Add more aliases here when new scheme documents are ingested.
+# ---------------------------------------------------------------------------
+_SCHEME_ALIASES: Dict[str, List[str]] = {
+    "pmay": ["pradhan mantri awas", "pmay"],
+    "pmay-u": ["pradhan mantri awas yojana - urban", "pmay-u", "pmay urban"],
+    "pmay-g": ["pradhan mantri awas yojana - gramin", "pmay-g", "pmay gramin", "pmay rural"],
+    "pm-kisan": ["pradhan mantri kisan samman nidhi", "pm-kisan", "pm kisan"],
+    "kisan": ["pradhan mantri kisan samman nidhi", "pm-kisan", "pm kisan"],
+    "apy": ["atal pension yojana", "apy"],
+    "atal pension": ["atal pension yojana", "apy"],
+    "svani": ["pm svanidhi", "pm street vendor", "svanidhi", "svani"],
+    "svanidhi": ["pm svanidhi", "pm street vendor", "svanidhi"],
+    "stand-up india": ["stand-up india", "stand up india"],
+    "standup": ["stand-up india", "stand up india"],
+    "pm vishwakarma": ["pm vishwakarma", "vishwakarma"],
+    "vishwakarma": ["pm vishwakarma", "vishwakarma"],
+    "pm-jay": ["ayushman bharat", "pm-jay", "pmjay"],
+    "ayushman": ["ayushman bharat", "pm-jay", "pmjay"],
+    "pmjdy": ["pradhan mantri jan dhan", "pmjdy", "jan dhan"],
+    "jan dhan": ["pradhan mantri jan dhan", "pmjdy", "jan dhan"],
+}
+
+
+def _extract_query_scheme_tokens(query: str) -> List[str]:
+    """
+    Extract the canonical title tokens for any scheme(s) mentioned in the query.
+    Returns an empty list if no scheme is detected (broad / multi-scheme query).
+    """
+    q_lower = query.lower()
+    matched_tokens: List[str] = []
+    for alias, canonical_tokens in _SCHEME_ALIASES.items():
+        if alias in q_lower:
+            matched_tokens.extend(canonical_tokens)
+    return list(set(matched_tokens))
+
+
+def _candidate_matches_scope(candidate: Dict[str, Any], scope_tokens: List[str]) -> bool:
+    """
+    Return True if this candidate belongs to a scheme that is within query scope.
+    Checks document_title and document_id (lowercased) against scope_tokens.
+    """
+    doc_title = (candidate.get("document_title") or "").lower()
+    doc_id = (candidate.get("document_id") or "").lower()
+    haystack = doc_title + " " + doc_id
+    return any(tok in haystack for tok in scope_tokens)
+
+
+def filter_candidates_by_query_scope(
+    candidates: List[Dict[str, Any]],
+    query: str,
+) -> List[Dict[str, Any]]:
+    """
+    Prune candidates that belong to schemes NOT referenced by the query.
+
+    Strategy:
+    1. Detect which scheme(s) the query mentions.
+    2. If at least one scheme is identified, keep only candidates whose
+       document_title/document_id matches those schemes.
+    3. If no scheme is detected (broad question) or the filter removes everything,
+       fall back to the original full candidate list.
+
+    This prevents small LLMs from mixing unrelated scheme content even when
+    an unrelated chunk happens to score well in retrieval.
+    """
+    if not candidates or not query:
+        return candidates
+
+    scope_tokens = _extract_query_scheme_tokens(query)
+    if not scope_tokens:
+        # No specific scheme detected — broad question, keep everything
+        return candidates
+
+    filtered = [c for c in candidates if _candidate_matches_scope(c, scope_tokens)]
+    if not filtered:
+        # Scope filter removed everything (document naming mismatch?) — fall back
+        return candidates
+
+    return filtered
+
+
 def build_context(
     candidates: Optional[List[Dict[str, Any]]],
     top_k: int = GENERATION_CONTEXT_TOP_K,
+    score_margin_threshold: float = 5.0,
+    query: Optional[str] = None,
 ) -> Tuple[str, List[Dict[str, Any]]]:
     """
     Build structured LLM context and source attribution records from ranked candidates.
 
+    Two-stage filtering:
+    1. Query-scope filter: drops chunks from unrelated schemes when a specific scheme
+       is detectable in the query (prevents cross-scheme contamination in small LLMs).
+    2. Score-margin filter: drops low-scoring outlier noise passages with a large
+       rerank_score drop relative to the top-ranked candidate.
+
     Args:
         candidates: List of reranked candidate dicts (e.g. from final_results).
         top_k: Maximum number of context sources to include (default: GENERATION_CONTEXT_TOP_K).
+        score_margin_threshold: Maximum allowed drop in rerank_score from the top candidate.
+                                 Candidates scoring worse than (max_score - threshold) are filtered.
+        query: Optional user query string. When provided, enables query-scope filtering.
 
     Returns:
         Tuple of (context_str, sources_metadata_list)
@@ -112,7 +209,24 @@ def build_context(
     if not candidates:
         return "", []
 
-    selected = candidates[:top_k]
+    # Stage 1: query-aware scheme scope filtering
+    if query:
+        candidates = filter_candidates_by_query_scope(candidates, query)
+
+    # Stage 2: Adaptive score-margin filtering
+    scores = [c.get("rerank_score") for c in candidates if c.get("rerank_score") is not None]
+    if scores and len(scores) > 1:
+        top_score = max(scores)
+        filtered_candidates = [
+            c for c in candidates
+            if c.get("rerank_score") is None or (top_score - c.get("rerank_score")) <= score_margin_threshold
+        ]
+        if not filtered_candidates:
+            filtered_candidates = [candidates[0]]
+    else:
+        filtered_candidates = candidates
+
+    selected = filtered_candidates[:top_k]
     source_blocks: List[str] = []
     sources_meta: List[Dict[str, Any]] = []
 
@@ -125,19 +239,22 @@ def build_context(
     return context_str, sources_meta
 
 
+
 def build_context_string(
     candidates: Optional[List[Dict[str, Any]]],
     top_k: int = GENERATION_CONTEXT_TOP_K,
+    query: Optional[str] = None,
 ) -> str:
     """Convenience helper returning only the formatted context text."""
-    context_str, _ = build_context(candidates, top_k=top_k)
+    context_str, _ = build_context(candidates, top_k=top_k, query=query)
     return context_str
 
 
 def extract_sources(
     candidates: Optional[List[Dict[str, Any]]],
     top_k: int = GENERATION_CONTEXT_TOP_K,
+    query: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     """Convenience helper returning only the structured source metadata."""
-    _, sources = build_context(candidates, top_k=top_k)
+    _, sources = build_context(candidates, top_k=top_k, query=query)
     return sources
