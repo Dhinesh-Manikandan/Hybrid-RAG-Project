@@ -459,12 +459,15 @@ This project is developed for academic and applied research in advanced RAG arch
 
 If you use this project in your research, please cite it as follows:
 
+**Dhinesh Manikandan. (2026). _Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation._ GitHub.** [https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project](https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project)
+
+### BibTeX
+
 ```bibtex
-@misc{hybrid_rag_2026,
-  title   = {Hybrid-RAG: Multi-Representation Retrieval,
-             Reciprocal Rank Fusion, and Grounded Generation},
-  author  = {Dhinesh Manikandan},
-  year    = {2026},
-  url     = {https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project}
+@misc{manikandan2026hybridrag,
+  author       = {Dhinesh Manikandan},
+  title        = {Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation},
+  year         = {2026},
+  howpublished = {\url{https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project}}
 }
 ```
