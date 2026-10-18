@@ -1,4 +1,4 @@
-﻿# Core RAG dependencies
+# Core RAG dependencies
 sentence-transformers>=2.2.0
 faiss-cpu>=1.7.0
 rank-bm25>=0.2.2
@@ -15,5 +15,14 @@ jupyter>=1.0.0
 ipykernel>=6.0.0
 matplotlib>=3.6.0
 
+# Deep Learning & Generation
+torch>=2.0.0
+transformers>=4.36.0
+accelerate>=0.25.0
+
+# Web Application
+streamlit>=1.30.0
+
 # Testing
 pytest>=7.0.0
+
