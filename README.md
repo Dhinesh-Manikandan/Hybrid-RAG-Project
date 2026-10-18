@@ -457,11 +457,14 @@ The system comes pre-indexed with detailed guidelines for 14 national welfare pr
 
 This project is developed for academic and applied research in advanced RAG architectures.
 
-```text
+If you use this project in your research, please cite it as follows:
+
+```
 @misc{hybrid_rag_2026,
-  title={Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation},
-  author={Dhinesh Manikandan},
-  year={2026},
-  howpublished={\url{https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project}}
+  title        = {Hybrid-RAG: Multi-Representation Retrieval,
+                  Reciprocal Rank Fusion, and Grounded Generation},
+  author       = {Dhinesh Manikandan},
+  year         = {2026},
+  howpublished = {\url{https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project}}
 }
 ```
