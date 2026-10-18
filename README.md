@@ -453,15 +453,32 @@ The system comes pre-indexed with detailed guidelines for 14 national welfare pr
 
 ---
 
-## License & Citation
+<br>
 
-This project is developed for academic and applied research in advanced RAG architectures.
+## 📖 License & Citation
 
-If you use this project in your research, please cite it as follows:
+<p align="left">
+  <img src="https://img.shields.io/badge/Purpose-Academic%20%26%20Applied%20Research-2563eb?style=for-the-badge" alt="Purpose">
+  <img src="https://img.shields.io/badge/Year-2026-16a34a?style=for-the-badge" alt="Year">
+  <img src="https://img.shields.io/badge/Topic-Advanced%20RAG-9333ea?style=for-the-badge" alt="Topic">
+</p>
 
-**Dhinesh Manikandan. (2026). _Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation._ GitHub.** [https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project](https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project)
+> [!NOTE]
+> This project is developed for **academic and applied research** in advanced RAG architectures.
+> If you use it in your research, please cite it using one of the formats below.
 
-### BibTeX
+### 📌 Cite this work
+
+| | |
+|---|---|
+| **Author** | Dhinesh Manikandan |
+| **Title** | *Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation* |
+| **Year** | 2026 |
+| **Publisher** | GitHub |
+| **URL** | [github.com/Dhinesh-Manikandan/Hybrid-RAG-Project](https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project) |
+
+<details open>
+<summary><b>📄 BibTeX</b></summary>
 
 ```bibtex
 @misc{manikandan2026hybridrag,
@@ -471,3 +488,29 @@ If you use this project in your research, please cite it as follows:
   howpublished = {\url{https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project}}
 }
 ```
+
+</details>
+
+<details>
+<summary><b>📝 APA</b></summary>
+
+```text
+Manikandan, D. (2026). Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation. GitHub. https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project
+```
+
+</details>
+
+<details>
+<summary><b>🏛️ IEEE</b></summary>
+
+```text
+D. Manikandan, "Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation," GitHub, 2026. [Online]. Available: https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project
+```
+
+</details>
+
+<br>
+
+<p align="center">
+  <sub>⭐ If this project helped your research, consider giving it a star!</sub>
+</p>
