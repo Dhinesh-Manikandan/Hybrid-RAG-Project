@@ -471,43 +471,12 @@ The system comes pre-indexed with detailed guidelines for 14 national welfare pr
 
 | | |
 |---|---|
-| **Author** | Dhinesh Manikandan |
+| **Author** | Dhinesh Babu C M |
 | **Title** | *Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation* |
 | **Year** | 2026 |
 | **Publisher** | GitHub |
 | **URL** | [github.com/Dhinesh-Manikandan/Hybrid-RAG-Project](https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project) |
 
-<details open>
-<summary><b>📄 BibTeX</b></summary>
-
-```bibtex
-@misc{manikandan2026hybridrag,
-  author       = {Dhinesh Manikandan},
-  title        = {Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation},
-  year         = {2026},
-  howpublished = {\url{https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project}}
-}
-```
-
-</details>
-
-<details>
-<summary><b>📝 APA</b></summary>
-
-```text
-Manikandan, D. (2026). Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation. GitHub. https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project
-```
-
-</details>
-
-<details>
-<summary><b>🏛️ IEEE</b></summary>
-
-```text
-D. Manikandan, "Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation," GitHub, 2026. [Online]. Available: https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project
-```
-
-</details>
 
 <br>
 
