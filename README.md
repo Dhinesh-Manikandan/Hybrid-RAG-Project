@@ -453,15 +453,33 @@ The system comes pre-indexed with detailed guidelines for 14 national welfare pr
 
 ---
 
-## License & Citation
+<br>
 
-This project is developed for academic and applied research in advanced RAG architectures.
+## 📖 License & Citation
 
-```text
-@misc{hybrid_rag_2026,
-  title={Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation},
-  author={Dhinesh Manikandan},
-  year={2026},
-  howpublished={\url{https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project}}
-}
-```
+<p align="left">
+  <img src="https://img.shields.io/badge/Purpose-Academic%20%26%20Applied%20Research-2563eb?style=for-the-badge" alt="Purpose">
+  <img src="https://img.shields.io/badge/Year-2026-16a34a?style=for-the-badge" alt="Year">
+  <img src="https://img.shields.io/badge/Topic-Advanced%20RAG-9333ea?style=for-the-badge" alt="Topic">
+</p>
+
+> [!NOTE]
+> This project is developed for **academic and applied research** in advanced RAG architectures.
+> If you use it in your research, please cite it using one of the formats below.
+
+### 📌 Cite this work
+
+| | |
+|---|---|
+| **Author** | Dhinesh Babu C M |
+| **Title** | *Hybrid-RAG: Multi-Representation Retrieval, Reciprocal Rank Fusion, and Grounded Generation* |
+| **Year** | 2026 |
+| **Publisher** | GitHub |
+| **URL** | [github.com/Dhinesh-Manikandan/Hybrid-RAG-Project](https://github.com/Dhinesh-Manikandan/Hybrid-RAG-Project) |
+
+
+<br>
+
+<p align="center">
+  <sub>⭐ If this project helped your research, consider giving it a star!</sub>
+</p>
