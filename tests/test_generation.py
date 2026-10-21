@@ -426,6 +426,46 @@ def test_10_single_scheme_query_no_false_comparison():
     print("PASS: Test 10 - Single-scheme query does not trigger comparison instructions")
 
 
+# ---------------------------------------------------------------------------
+# Test 11: Unrelated chunk filtering applied ONLY for Hybrid RAG; baselines get chunks as-is
+# ---------------------------------------------------------------------------
+def test_11_unrelated_chunk_filtering_only_for_hybrid_rag():
+    candidates = [
+        {
+            "document_id": "doc_pmkisan",
+            "document_title": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+            "chunk_id": "doc_pmkisan__naive__0",
+            "rerank_score": -7.5,
+            "text": "A financial benefit of Rs. 6,000 per annum is provided to eligible farmer families.",
+        },
+        {
+            "document_id": "doc_svanidhi",
+            "document_title": "PM Street Vendor's AtmaNirbhar Nidhi (PM SVANidhi)",
+            "chunk_id": "doc_svanidhi__naive__0",
+            "rerank_score": -8.2,
+            "text": "Financial assistance of up to Rs. 10,000 is provided to eligible street vendors.",
+        },
+    ]
+
+    query = "What is the annual financial benefit provided under PM-KISAN?"
+
+    # Hybrid RAG mode (filter_unrelated=True): Prunes SVANidhi
+    ctx_hybrid, sources_hybrid = build_context(candidates, top_k=5, query=query, filter_unrelated=True)
+    assert "SVANidhi" not in ctx_hybrid
+    assert "street vendor" not in ctx_hybrid.lower()
+    assert "PM-KISAN" in ctx_hybrid
+    assert len(sources_hybrid) == 1
+
+    # Baseline RAG mode (filter_unrelated=False): Chunks given 'as is'
+    ctx_baseline, sources_baseline = build_context(candidates, top_k=5, query=query, filter_unrelated=False)
+    assert "SVANidhi" in ctx_baseline
+    assert "street vendor" in ctx_baseline.lower()
+    assert "PM-KISAN" in ctx_baseline
+    assert len(sources_baseline) == 2
+
+    print("PASS: Test 11 - Unrelated chunk filtering is exclusive to Hybrid RAG; baseline RAGs keep raw chunks")
+
+
 if __name__ == "__main__":
     test_1_context_builder_formatting()
     test_2_context_builder_preserves_metadata()
@@ -437,3 +477,5 @@ if __name__ == "__main__":
     test_8_hybrid_rag_integration_with_generator()
     test_9_query_scope_filtering_excludes_unrelated_schemes()
     test_10_single_scheme_query_no_false_comparison()
+    test_11_unrelated_chunk_filtering_only_for_hybrid_rag()
+

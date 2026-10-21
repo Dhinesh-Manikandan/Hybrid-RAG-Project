@@ -869,25 +869,33 @@ if prompt:
                 def __init__(self, inner):
                     self._inner = inner
 
-                def generate(self, query, context=None, candidates=None, top_k=5):
+                def generate(self, query, context=None, candidates=None, top_k=5, filter_unrelated=True):
                     filtered_sources = []
-                    if candidates and query:
-                        # Prune candidates from schemes not mentioned in the query
+                    if candidates and query and filter_unrelated:
+                        # Prune candidates from schemes not mentioned in the query (Hybrid RAG)
                         scoped = filter_candidates_by_query_scope(candidates, query)
                         # Rebuild context from the filtered, scheme-relevant candidates only
-                        context, _ = build_context(scoped, top_k=top_k, query=query)
+                        context, _ = build_context(scoped, top_k=top_k, query=query, filter_unrelated=True)
                         # Build sources metadata from filtered candidates
                         filtered_sources = [
                             extract_source_metadata(i + 1, c)
                             for i, c in enumerate(scoped[:top_k])
                         ]
-                    # Forward to the real (cached) model with scope-clean context;
+                    elif candidates and not filter_unrelated:
+                        # Baseline RAGs: Pass raw chunks as-is without filtering unrelated schemes
+                        context, _ = build_context(candidates, top_k=top_k, query=None, filter_unrelated=False)
+                        filtered_sources = [
+                            extract_source_metadata(i + 1, c)
+                            for i, c in enumerate(candidates[:top_k])
+                        ]
+                    # Forward to the real (cached) model with appropriate context;
                     # pass candidates=None so the inner generator uses our context string.
                     gen_result = self._inner.generate(
                         query=query,
                         context=context,
                         candidates=None,
                         top_k=top_k,
+                        filter_unrelated=filter_unrelated,
                     )
                     # Attach filtered sources if the inner generator didn't produce any
                     if filtered_sources and not gen_result.get("sources"):

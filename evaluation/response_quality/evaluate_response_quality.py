@@ -83,10 +83,22 @@ def main():
 
         for m_name in methods:
             m_cands = candidates[m_name]
-            context_str, _ = build_context(m_cands, top_k=top_k)
+            is_hybrid = (m_name == "Hybrid RAG")
+            context_str, _ = build_context(
+                m_cands,
+                top_k=top_k,
+                query=q_text if is_hybrid else None,
+                filter_unrelated=is_hybrid,
+            )
             
-            # Generate answer
-            gen_res = generator.generate(q_text, context_str, m_cands, top_k=top_k)
+            # Generate answer: only Hybrid RAG filters unrelated chunks; baselines receive chunks as-is
+            gen_res = generator.generate(
+                q_text,
+                context_str,
+                m_cands,
+                top_k=top_k,
+                filter_unrelated=is_hybrid,
+            )
             response = gen_res["answer"]
             gen_calls += 1
             

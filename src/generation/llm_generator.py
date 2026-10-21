@@ -45,7 +45,7 @@ USER_PROMPT_TEMPLATE = (
     "{context}\n\n"
     "Question:\n"
     "{query}\n\n"
-    "Instructions: Answer the question concisely, directly, and accurately using ONLY the relevant facts from the context above. Include only what is specifically asked. Do not include unasked scheme objectives, extra sections, or unrequested comparisons even if present in the context. Focus strictly on the scheme asked in the question and ignore any unrelated schemes."
+    "Instructions: Answer the question comprehensively, accurately, and thoroughly using ONLY the relevant facts from the context above. Provide enough detail and complete information on all key criteria, numbers, and stipulations specifically asked. Focus strictly on the scheme asked in the question and ignore any unrelated schemes."
 )
 
 
@@ -157,6 +157,12 @@ class QwenGenerator:
         )
 
         if not has_cuda:
+            import os
+            optimal_threads = min(8, os.cpu_count() or 4)
+            try:
+                torch.set_num_threads(optimal_threads)
+            except Exception:
+                pass
             self.model.to(self.device)
 
         self.model.eval()
@@ -232,6 +238,7 @@ class QwenGenerator:
         context: Optional[str] = None,
         candidates: Optional[List[Dict[str, Any]]] = None,
         top_k: int = GENERATION_CONTEXT_TOP_K,
+        filter_unrelated: bool = True,
     ) -> Dict[str, Any]:
         """
         Generate grounded answer from query and context/candidates.
@@ -241,6 +248,9 @@ class QwenGenerator:
             context: Optional pre-built context string. If not provided, built from candidates.
             candidates: Optional list of retrieved and reranked candidate dicts.
             top_k: Number of sources to include if building context from candidates.
+            filter_unrelated: If True (Hybrid RAG), applies query-scope filtering to prune
+                             unrelated scheme chunks and score-margin filtering.
+                             If False (baseline RAGs), preserves chunks 'as is'.
 
         Returns:
             Dict containing:
@@ -251,19 +261,23 @@ class QwenGenerator:
         sources: List[Dict[str, Any]] = []
 
         if candidates:
-            # Apply query-scope filter: prune chunks from schemes not in the query.
-            # This runs inside llm_generator (which is importlib.reload-ed on each request),
-            # so it takes effect even when the HybridRAG object is cached from an older
-            # retrieve.py that was loaded before this filter existed.
             from src.generation.context_builder import (
                 build_context,
                 filter_candidates_by_query_scope,
             )
-            scoped_candidates = filter_candidates_by_query_scope(candidates, query) if query else candidates
-            built_context, built_sources = build_context(scoped_candidates, top_k=top_k, query=query)
+            if filter_unrelated:
+                # Hybrid RAG: Prune chunks from schemes not in query and apply score-margin filter
+                scoped_candidates = filter_candidates_by_query_scope(candidates, query) if query else candidates
+                built_context, built_sources = build_context(
+                    scoped_candidates, top_k=top_k, query=query, filter_unrelated=True
+                )
+            else:
+                # Baseline RAGs (Naive RAG, Sentence Window, Parent-Child):
+                # Pass retrieved chunks directly 'as is' without filtering unrelated schemes.
+                built_context, built_sources = build_context(
+                    candidates, top_k=top_k, query=None, filter_unrelated=False
+                )
             sources = built_sources
-            # Always use the freshly-filtered context; do NOT fall back to the
-            # pre-built context_str that may have been assembled from unfiltered candidates.
             context = built_context
         elif context is None:
             context = ""
@@ -288,10 +302,15 @@ class QwenGenerator:
             inputs = {k: v.to(self.device) for k, v in inputs.items()}
 
         # Generate tokens
+        eos_ids = [getattr(self.tokenizer, "eos_token_id", 151645)]
+        im_end_id = getattr(self.tokenizer, "convert_tokens_to_ids", lambda x: None)("<|im_end|>")
+        if im_end_id is not None and im_end_id not in eos_ids:
+            eos_ids.append(im_end_id)
+
         gen_kwargs: Dict[str, Any] = {
             "max_new_tokens": self.max_new_tokens,
             "pad_token_id": getattr(self.tokenizer, "pad_token_id", None) or getattr(self.tokenizer, "eos_token_id", None),
-            "eos_token_id": getattr(self.tokenizer, "eos_token_id", None),
+            "eos_token_id": eos_ids if len(eos_ids) > 1 else eos_ids[0],
             "repetition_penalty": 1.05,
         }
 
@@ -336,6 +355,7 @@ def generate_answer(
     candidates: Optional[List[Dict[str, Any]]] = None,
     top_k: int = GENERATION_CONTEXT_TOP_K,
     generator: Optional[QwenGenerator] = None,
+    filter_unrelated: bool = True,
 ) -> Dict[str, Any]:
     """
     Public functional interface for grounded answer generation.
@@ -346,9 +366,16 @@ def generate_answer(
         candidates: Optional retrieval candidates.
         top_k: Number of sources to include if candidates provided.
         generator: Optional custom or mocked generator instance.
+        filter_unrelated: Whether to filter unrelated chunks (True for Hybrid RAG, False for baselines).
 
     Returns:
         {"answer": str, "sources": list[dict]}
     """
     gen = generator if generator is not None else get_generator()
-    return gen.generate(query=query, context=context, candidates=candidates, top_k=top_k)
+    return gen.generate(
+        query=query,
+        context=context,
+        candidates=candidates,
+        top_k=top_k,
+        filter_unrelated=filter_unrelated,
+    )

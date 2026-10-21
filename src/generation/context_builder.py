@@ -185,22 +185,30 @@ def build_context(
     top_k: int = GENERATION_CONTEXT_TOP_K,
     score_margin_threshold: float = 5.0,
     query: Optional[str] = None,
+    filter_unrelated: bool = True,
 ) -> Tuple[str, List[Dict[str, Any]]]:
     """
     Build structured LLM context and source attribution records from ranked candidates.
 
-    Two-stage filtering:
+    Two-stage filtering (applied ONLY when filter_unrelated is True, typically for Hybrid RAG):
     1. Query-scope filter: drops chunks from unrelated schemes when a specific scheme
        is detectable in the query (prevents cross-scheme contamination in small LLMs).
     2. Score-margin filter: drops low-scoring outlier noise passages with a large
        rerank_score drop relative to the top-ranked candidate.
 
+    When filter_unrelated is False (e.g. for baseline RAG strategies like Naive RAG,
+    Sentence Window, Parent-Child), chunks are passed 'as is' without pruning unrelated
+    schemes or outlier scores.
+
     Args:
-        candidates: List of reranked candidate dicts (e.g. from final_results).
+        candidates: List of candidate dicts.
         top_k: Maximum number of context sources to include (default: GENERATION_CONTEXT_TOP_K).
         score_margin_threshold: Maximum allowed drop in rerank_score from the top candidate.
                                  Candidates scoring worse than (max_score - threshold) are filtered.
-        query: Optional user query string. When provided, enables query-scope filtering.
+        query: Optional user query string. When provided and filter_unrelated is True,
+               enables query-scope filtering.
+        filter_unrelated: Whether to filter unrelated chunks (True for Hybrid RAG, False
+                          for baseline RAGs to preserve raw/unfiltered chunks).
 
     Returns:
         Tuple of (context_str, sources_metadata_list)
@@ -209,20 +217,23 @@ def build_context(
     if not candidates:
         return "", []
 
-    # Stage 1: query-aware scheme scope filtering
-    if query:
-        candidates = filter_candidates_by_query_scope(candidates, query)
+    if filter_unrelated:
+        # Stage 1: query-aware scheme scope filtering
+        if query:
+            candidates = filter_candidates_by_query_scope(candidates, query)
 
-    # Stage 2: Adaptive score-margin filtering
-    scores = [c.get("rerank_score") for c in candidates if c.get("rerank_score") is not None]
-    if scores and len(scores) > 1:
-        top_score = max(scores)
-        filtered_candidates = [
-            c for c in candidates
-            if c.get("rerank_score") is None or (top_score - c.get("rerank_score")) <= score_margin_threshold
-        ]
-        if not filtered_candidates:
-            filtered_candidates = [candidates[0]]
+        # Stage 2: Adaptive score-margin filtering
+        scores = [c.get("rerank_score") for c in candidates if c.get("rerank_score") is not None]
+        if scores and len(scores) > 1:
+            top_score = max(scores)
+            filtered_candidates = [
+                c for c in candidates
+                if c.get("rerank_score") is None or (top_score - c.get("rerank_score")) <= score_margin_threshold
+            ]
+            if not filtered_candidates:
+                filtered_candidates = [candidates[0]]
+        else:
+            filtered_candidates = candidates
     else:
         filtered_candidates = candidates
 
@@ -244,9 +255,15 @@ def build_context_string(
     candidates: Optional[List[Dict[str, Any]]],
     top_k: int = GENERATION_CONTEXT_TOP_K,
     query: Optional[str] = None,
+    filter_unrelated: bool = True,
 ) -> str:
     """Convenience helper returning only the formatted context text."""
-    context_str, _ = build_context(candidates, top_k=top_k, query=query)
+    context_str, _ = build_context(
+        candidates,
+        top_k=top_k,
+        query=query,
+        filter_unrelated=filter_unrelated,
+    )
     return context_str
 
 
@@ -254,7 +271,13 @@ def extract_sources(
     candidates: Optional[List[Dict[str, Any]]],
     top_k: int = GENERATION_CONTEXT_TOP_K,
     query: Optional[str] = None,
+    filter_unrelated: bool = True,
 ) -> List[Dict[str, Any]]:
     """Convenience helper returning only the structured source metadata."""
-    _, sources = build_context(candidates, top_k=top_k, query=query)
+    _, sources = build_context(
+        candidates,
+        top_k=top_k,
+        query=query,
+        filter_unrelated=filter_unrelated,
+    )
     return sources
